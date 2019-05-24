@@ -1,0 +1,8 @@
+Elm comes with a fuzzer built into the unit test library? A language after my heart
+
+I have no clue where to get started here - with basic HTML/JS/CSS you can get started mucking around with files immediately, but with elm I had to find create-elm-app
+
+Note: Run this thing with `elm-app start`
+Note: Test this thing with `elm-test`
+
+
