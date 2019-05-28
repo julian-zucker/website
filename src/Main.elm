@@ -1,88 +1,173 @@
-module Main exposing (Model, Msg(..), init, main, update, view)
+module Main exposing (Msg)
 
-import Browser
+import Blog
+import Browser exposing (Document)
+import Browser.Navigation as Nav
 import Html exposing (..)
 import Html.Attributes exposing (..)
-import Html.Events exposing (onClick)
+import Route exposing (Route)
+import Url exposing (Url)
 
 
 
 ---- MODEL ----
 
 
-type alias Model =
-    { page : Page
-    }
+type Model
+    = Redirect Nav.Key
+    | NotFound Nav.Key
+    | Home Nav.Key
+    | BlogHome Nav.Key
+    | Blog Nav.Key Blog.Model
 
 
-init : ( Model, Cmd Msg )
-init =
-    ( { page = Home }, Cmd.none )
+init : flags -> Url -> Nav.Key -> ( Model, Cmd Msg )
+init _ url key =
+    changeRouteTo (Route.fromUrl url) (Redirect key)
 
 
 
 ---- UPDATE ----
 
 
-type Page
-    = Home
-    | Blog
-
-
 type Msg
-    = MenuItemClick Page
+    = ClickedLink Browser.UrlRequest
+    | ChangedUrl Url
+    | GotBlogPageMsg Nav.Key String
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
-        MenuItemClick page ->
-            ( { model | page = page }, Cmd.none )
+        ClickedLink (Browser.Internal url) ->
+            ( model
+            , Nav.pushUrl (navKey model) (Url.toString url)
+            )
+
+        ClickedLink (Browser.External url) ->
+            ( model, Nav.load url )
+
+        ChangedUrl url ->
+            changeRouteTo (Route.fromUrl url) model
+
+        GotBlogPageMsg key name ->
+            case Blog.getBlog name of
+                Just blog ->
+                    ( Blog key blog, Cmd.none )
+
+                Nothing ->
+                    ( NotFound key, Cmd.none )
+
+
+changeRouteTo : Maybe Route -> Model -> ( Model, Cmd Msg )
+changeRouteTo maybeRoute model =
+    let
+        key =
+            navKey model
+
+        newModel =
+            case maybeRoute of
+                Nothing ->
+                    NotFound key
+
+                Just Route.Home ->
+                    Home key
+
+                Just Route.BlogHome ->
+                    BlogHome key
+
+                Just (Route.Blog name) ->
+                    let
+                        maybeBlog =
+                            Blog.getBlog name
+                    in
+                    case maybeBlog of
+                        Just blog ->
+                            Blog key blog
+
+                        Nothing ->
+                            NotFound key
+    in
+    ( newModel, Cmd.none )
+
+
+navKey : Model -> Nav.Key
+navKey model =
+    case model of
+        Redirect key ->
+            key
+
+        NotFound key ->
+            key
+
+        Home key ->
+            key
+
+        BlogHome key ->
+            key
+
+        Blog key _ ->
+            key
 
 
 
 ---- VIEW ----
 
 
-view : Model -> Html Msg
+view : Model -> Document Msg
 view model =
-    div []
-        [ sidebar model.page
-        , div [ class "page" ]
-            (render_page model.page)
-        ]
-
-
-sidebar : Page -> Html Msg
-sidebar page =
     let
-        attributes page_link =
-            if page_link == page then
-                [ onClick (MenuItemClick page_link)
-                , class "selected"
-                ]
+        ( title, page ) =
+            renderPage model
+    in
+    { title = title
+    , body =
+        [ sidebar model
+        , div [ class "page" ]
+            page
+        ]
+    }
 
-            else
-                [ onClick (MenuItemClick page_link) ]
+
+sidebar : Model -> Html Msg
+sidebar model =
+    let
+        viewSidebarLink : String -> String -> Html Msg
+        viewSidebarLink pageLink pageName =
+            li [] [ a [ href pageLink ] [ text pageName ] ]
     in
     ul [ class "sidenav" ]
         [ li []
             [ img [ src "assets/img/profile.jpg" ] []
             ]
-        , li (attributes Home)
-            [ text "Home" ]
-        , li (attributes Blog) [ text "Blog" ]
+        , viewSidebarLink "/" "Home"
+        , viewSidebarLink "/blog/" "Blog"
         ]
 
 
-render_page : Page -> List (Html Msg)
-render_page page =
+renderPage : Model -> ( String, List (Html Msg) )
+renderPage page =
     case page of
-        Home ->
-            [ div [] [ text "Home" ] ]
+        Redirect key ->
+            ( "Redirecting", [ text "Redirecting…" ] )
 
-        Blog ->
-            [ div [] [ text "Blog" ] ]
+        NotFound key ->
+            ( "Not found", [ text "Not found" ] )
+
+        Blog key model ->
+            Blog.view (GotBlogPageMsg key) model
+
+        Home key ->
+            ( "Home", [ div [] [ text "Home" ] ] )
+
+        BlogHome key ->
+            ( "Blog"
+            , [ div []
+                    ([ text "Blog" ]
+                        ++ List.map (Blog.viewBlogLink (GotBlogPageMsg key)) (List.map .name Blog.posts)
+                    )
+              ]
+            )
 
 
 
@@ -91,9 +176,11 @@ render_page page =
 
 main : Program () Model Msg
 main =
-    Browser.element
-        { view = view
-        , init = \_ -> init
-        , update = update
+    Browser.application
+        { init = init
+        , onUrlChange = ChangedUrl
+        , onUrlRequest = ClickedLink
         , subscriptions = always Sub.none
+        , update = update
+        , view = view
         }
