@@ -40,7 +40,7 @@ toUrlString route =
             "/essays/"
 
         Essay slug ->
-            "/essays/" ++ slug
+            "/essay/" ++ slug
 
         Reviews ->
             "/reviews/"

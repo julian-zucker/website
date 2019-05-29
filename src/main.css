@@ -26,6 +26,7 @@ body {
 .page-wrapper {
     max-width: 700px;
     height: 100%;
+    margin: 50px
     /*overflow-x: hidden;*/
     /*align-self: center;*/
 }
@@ -38,10 +39,15 @@ body {
 }
 
 .header {
-    height: 3em;
+    height: 3.9em;
     width: 100%;
     /*z-index: 1;*/
     margin: 10px;
+}
+
+.header ul {
+    margin: 7px;
+    padding: 0px
 }
 
 .header li {
@@ -75,7 +81,26 @@ body {
     color: #787878;
 }
 
- li .essay-link {
+li .essay-link {
     text-decoration: none;
-     display: block;
+    display: block;
+}
+
+.review-list-item {
+    margin: 3em
+}
+
+.review-list-item header {
+    font-size: 18px;
+    color: black;
+    margin: 10px;
+}
+
+.review-list-item header a {
+    color: black;
+}
+
+.review-item-stars {
+    margin-right: 10px;
+    float: right;
 }

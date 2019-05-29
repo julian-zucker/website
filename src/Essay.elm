@@ -2,6 +2,7 @@ module Essay exposing (Model, getEssayByName, posts, view, viewEssayLink)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
+import Route
 
 
 type alias Model =
@@ -32,10 +33,6 @@ getEssayByName blogName =
             Just post
 
 
-
--- Produces the title of the page, and the html that should be rendered as the body of that page.
-
-
 view : Model -> ( String, List (Html msg) )
 view { name, content, footerLinks } =
     ( name
@@ -53,4 +50,4 @@ view { name, content, footerLinks } =
 
 viewEssayLink : String -> Html msg
 viewEssayLink link =
-    li [ class "essay-link" ] [ a [ href ("/blog/" ++ link) ] [ text link ] ]
+    li [ class "essay-link" ] [ a [ href (Route.toUrlString (Route.Essay link)) ] [ text link ] ]

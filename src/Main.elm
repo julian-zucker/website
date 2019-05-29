@@ -5,6 +5,7 @@ import Browser.Navigation as Nav
 import Essay
 import Html exposing (..)
 import Html.Attributes exposing (..)
+import Review
 import Route exposing (Route)
 import Url exposing (Url)
 
@@ -192,11 +193,7 @@ renderPage page =
 
         Reviews key ->
             ( "Reviews"
-            , [ div []
-                    ([ text "Essay" ]
-                        ++ List.map Essay.viewEssayLink (List.map .name Essay.posts)
-                    )
-              ]
+            , Review.view Review.reviews
             )
 
         Links key ->
