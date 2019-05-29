@@ -1,8 +1,8 @@
 module Main exposing (Msg)
 
-import Blog
 import Browser exposing (Document)
 import Browser.Navigation as Nav
+import Essay
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Route exposing (Route)
@@ -17,8 +17,10 @@ type Model
     = Redirect Nav.Key
     | NotFound Nav.Key
     | Home Nav.Key
-    | BlogHome Nav.Key
-    | Blog Nav.Key Blog.Model
+    | Essays Nav.Key
+    | EssayPage Nav.Key Essay.Model
+    | Reviews Nav.Key
+    | Links Nav.Key
 
 
 init : flags -> Url -> Nav.Key -> ( Model, Cmd Msg )
@@ -33,7 +35,7 @@ init _ url key =
 type Msg
     = ClickedLink Browser.UrlRequest
     | ChangedUrl Url
-    | GotBlogPageMsg Nav.Key String
+    | GotEssayPageMsg Nav.Key String
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -50,10 +52,10 @@ update msg model =
         ChangedUrl url ->
             changeRouteTo (Route.fromUrl url) model
 
-        GotBlogPageMsg key name ->
-            case Blog.getBlog name of
+        GotEssayPageMsg key name ->
+            case Essay.getEssayByName name of
                 Just blog ->
-                    ( Blog key blog, Cmd.none )
+                    ( EssayPage key blog, Cmd.none )
 
                 Nothing ->
                     ( NotFound key, Cmd.none )
@@ -70,23 +72,31 @@ changeRouteTo maybeRoute model =
                 Nothing ->
                     NotFound key
 
-                Just Route.Home ->
-                    Home key
+                Just route ->
+                    case route of
+                        Route.Home ->
+                            Home key
 
-                Just Route.BlogHome ->
-                    BlogHome key
+                        Route.Essays ->
+                            Essays key
 
-                Just (Route.Blog name) ->
-                    let
-                        maybeBlog =
-                            Blog.getBlog name
-                    in
-                    case maybeBlog of
-                        Just blog ->
-                            Blog key blog
+                        Route.Essay name ->
+                            let
+                                maybeEssay =
+                                    Essay.getEssayByName name
+                            in
+                            case maybeEssay of
+                                Just essay ->
+                                    EssayPage key essay
 
-                        Nothing ->
-                            NotFound key
+                                Nothing ->
+                                    NotFound key
+
+                        Route.Reviews ->
+                            Reviews key
+
+                        Route.Links ->
+                            Links key
     in
     ( newModel, Cmd.none )
 
@@ -103,10 +113,16 @@ navKey model =
         Home key ->
             key
 
-        BlogHome key ->
+        Essays key ->
             key
 
-        Blog key _ ->
+        EssayPage key _ ->
+            key
+
+        Reviews key ->
+            key
+
+        Links key ->
             key
 
 
@@ -123,8 +139,9 @@ view model =
     { title = title
     , body =
         [ header model
-        , div [ class "page" ]
-            ([ hr [] [] ] ++ page)
+        , hr [] []
+        , div [ class "page-wrapper" ]
+            page
         ]
     }
 
@@ -138,8 +155,13 @@ header model =
     in
     div [ class "header" ]
         [ ul []
-            [ viewHeaderLink "/" "julianzucker.com"
-            , viewHeaderLink "/blog/" "/blog/"
+            [ viewHeaderLink (Route.toUrlString Route.Home) "julianzucker.com"
+            , li [] [ text "|" ]
+            , viewHeaderLink (Route.toUrlString Route.Essays) "essays"
+            , li [] [ text "|" ]
+            , viewHeaderLink (Route.toUrlString Route.Reviews) "reviews"
+            , li [] [ text "|" ]
+            , viewHeaderLink (Route.toUrlString Route.Links) "links"
             ]
         ]
 
@@ -153,17 +175,35 @@ renderPage page =
         NotFound key ->
             ( "Not found", [ text "Not found" ] )
 
-        Blog key model ->
-            Blog.view (GotBlogPageMsg key) model
+        EssayPage key model ->
+            Essay.view model
 
         Home key ->
             ( "Home", [ div [] [ text "Home" ] ] )
 
-        BlogHome key ->
-            ( "Blog"
+        Essays key ->
+            ( "Essays"
             , [ div []
-                    ([ text "Blog" ]
-                        ++ List.map (Blog.viewBlogLink (GotBlogPageMsg key)) (List.map .name Blog.posts)
+                    ([ text "Essay" ]
+                        ++ List.map Essay.viewEssayLink (List.map .name Essay.posts)
+                    )
+              ]
+            )
+
+        Reviews key ->
+            ( "Reviews"
+            , [ div []
+                    ([ text "Essay" ]
+                        ++ List.map Essay.viewEssayLink (List.map .name Essay.posts)
+                    )
+              ]
+            )
+
+        Links key ->
+            ( "Links"
+            , [ div []
+                    ([ text "Links to various places on the internet:" ]
+                        ++ List.map Essay.viewEssayLink (List.map .name Essay.posts)
                     )
               ]
             )

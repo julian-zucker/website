@@ -1,9 +1,7 @@
-module Blog exposing (Model, getBlog, posts, view, viewBlogLink)
+module Essay exposing (Model, getEssayByName, posts, view, viewEssayLink)
 
-import Browser.Navigation as Nav
 import Html exposing (..)
 import Html.Attributes exposing (..)
-import Html.Events exposing (onClick)
 
 
 type alias Model =
@@ -20,8 +18,8 @@ posts =
     ]
 
 
-getBlog : String -> Maybe Model
-getBlog blogName =
+getEssayByName : String -> Maybe Model
+getEssayByName blogName =
     let
         matches =
             List.filter (\p -> p.name == blogName) posts
@@ -38,21 +36,21 @@ getBlog blogName =
 -- Produces the title of the page, and the html that should be rendered as the body of that page.
 
 
-view : (String -> msg) -> Model -> ( String, List (Html msg) )
-view blogVisitMsg { name, content, footerLinks } =
+view : Model -> ( String, List (Html msg) )
+view { name, content, footerLinks } =
     ( name
     , [ div [ class "blog-content" ]
             [ div [ class "blog-text" ]
                 [ text content ]
             , div [ class "blog-footer" ]
                 [ ul []
-                    (List.map (viewBlogLink blogVisitMsg) footerLinks)
+                    (List.map viewEssayLink footerLinks)
                 ]
             ]
       ]
     )
 
 
-viewBlogLink : (String -> msg) -> String -> Html msg
-viewBlogLink sendMsg link =
-    li [ class "blog-footer-link" ] [ a [ href ("/blog/" ++ link) ] [ text link ] ]
+viewEssayLink : String -> Html msg
+viewEssayLink link =
+    li [ class "essay-link" ] [ a [ href ("/blog/" ++ link) ] [ text link ] ]
