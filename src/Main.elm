@@ -122,26 +122,25 @@ view model =
     in
     { title = title
     , body =
-        [ sidebar model
+        [ header model
         , div [ class "page" ]
-            page
+            ([ hr [] [] ] ++ page)
         ]
     }
 
 
-sidebar : Model -> Html Msg
-sidebar model =
+header : Model -> Html Msg
+header model =
     let
-        viewSidebarLink : String -> String -> Html Msg
-        viewSidebarLink pageLink pageName =
+        viewHeaderLink : String -> String -> Html Msg
+        viewHeaderLink pageLink pageName =
             li [] [ a [ href pageLink ] [ text pageName ] ]
     in
-    ul [ class "sidenav" ]
-        [ li []
-            [ img [ src "assets/img/profile.jpg" ] []
+    div [ class "header" ]
+        [ ul []
+            [ viewHeaderLink "/" "julianzucker.com"
+            , viewHeaderLink "/blog/" "/blog/"
             ]
-        , viewSidebarLink "/" "Home"
-        , viewSidebarLink "/blog/" "Blog"
         ]
 
 
