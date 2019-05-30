@@ -5,6 +5,7 @@ import Browser.Navigation as Nav
 import Essay
 import Html exposing (..)
 import Html.Attributes exposing (..)
+import Log
 import Review
 import Route exposing (Route)
 import Url exposing (Url)
@@ -21,7 +22,10 @@ type Model
     | Essays Nav.Key
     | EssayPage Nav.Key Essay.Model
     | Reviews Nav.Key
-    | Links Nav.Key
+    | Log Nav.Key
+    | LogEntry Nav.Key Log.Model
+    | NoLogEntry Nav.Key
+    | Resume Nav.Key
 
 
 init : flags -> Url -> Nav.Key -> ( Model, Cmd Msg )
@@ -96,8 +100,23 @@ changeRouteTo maybeRoute model =
                         Route.Reviews ->
                             Reviews key
 
-                        Route.Links ->
-                            Links key
+                        Route.Log ->
+                            Log key
+
+                        Route.LogEntry weekNumber ->
+                            let
+                                maybeLog =
+                                    Log.getLogForWeek weekNumber
+                            in
+                            case maybeLog of
+                                Just log ->
+                                    LogEntry key log
+
+                                Nothing ->
+                                    NoLogEntry key
+
+                        Route.Resume ->
+                            Resume key
     in
     ( newModel, Cmd.none )
 
@@ -123,7 +142,16 @@ navKey model =
         Reviews key ->
             key
 
-        Links key ->
+        Log key ->
+            key
+
+        LogEntry key _ ->
+            key
+
+        NoLogEntry key ->
+            key
+
+        Resume key ->
             key
 
 
@@ -156,14 +184,13 @@ header model =
     in
     div [ class "header" ]
         [ ul []
-            [ viewHeaderLink (Route.toUrlString Route.Home) "julianzucker.com"
-            , li [] [ text "|" ]
-            , viewHeaderLink (Route.toUrlString Route.Essays) "essays"
-            , li [] [ text "|" ]
-            , viewHeaderLink (Route.toUrlString Route.Reviews) "reviews"
-            , li [] [ text "|" ]
-            , viewHeaderLink (Route.toUrlString Route.Links) "links"
-            ]
+            (List.intersperse (li [] [ text "|" ])
+                [ viewHeaderLink (Route.toUrlString Route.Home) "julianzucker.com"
+                , viewHeaderLink (Route.toUrlString Route.Essays) "essays"
+                , viewHeaderLink (Route.toUrlString Route.Reviews) "reviews"
+                , viewHeaderLink (Route.toUrlString Route.Log) "log"
+                ]
+            )
         ]
 
 
@@ -180,7 +207,41 @@ renderPage page =
             Essay.view model
 
         Home key ->
-            ( "Home", [ div [] [ text "Home" ] ] )
+            ( "Home"
+            , [ div []
+                    [ p []
+                        [ p [] [ text """Hi! Welcome to my website!""" ]
+                        , p []
+                            [ text """I like teaching computer science, thinking about evolution,
+                                         and writing code. My short-term goals are to grow as a software developer,
+                                         create software that people can use, and publish research while I'm still
+                                         an undergraduate. My longer-term goals are to get a job teaching computer
+                                         science to competent students (although I'm not sure if professorship meets
+                                         this definition), improve the productivity of software engineers
+                                         by 1% through improving tooling/education/methodology, further humanity's
+                                         knowledge of how learning evolves by creating simulations and tools for 
+                                         running simulations, and continue to improve and monetize
+                                      """
+                            , a [ href "https://github.com/julian-zucker" ] [ text "Evvo" ]
+                            , text "."
+                            ]
+                        , p [] [ text """Check out "essays" to read my longform thoughts,
+                                         "reviews" to see brief notes on various products, talks, and books,
+                                         and "log" to check out my weekly devlog.
+                                      """ ]
+                        , p []
+                            [ text "If you're here to hire me, you should look at "
+                            , a [ href "https://github.com/julian-zucker" ] [ text "my github" ]
+                            , text ", "
+                            , a [ href (Route.toUrlString Route.Resume) ] [ text "my resumé" ]
+                            , text ", and "
+                            , a [ href (Route.toUrlString Route.Log) ] [ text "my devlog" ]
+                            , text "."
+                            ]
+                        ]
+                    ]
+              ]
+            )
 
         Essays key ->
             ( "Essays"
@@ -196,14 +257,17 @@ renderPage page =
             , Review.view Review.reviews
             )
 
-        Links key ->
-            ( "Links"
-            , [ div []
-                    ([ text "Links to various places on the internet:" ]
-                        ++ List.map Essay.viewEssayLink (List.map .name Essay.posts)
-                    )
-              ]
-            )
+        Log key ->
+            ( "TODO", [] )
+
+        LogEntry key model ->
+            ( "TODO", [] )
+
+        NoLogEntry key ->
+            ( "TODO", [] )
+
+        Resume key ->
+            ( "TODO", [] )
 
 
 

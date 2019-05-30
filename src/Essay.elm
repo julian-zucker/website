@@ -8,14 +8,13 @@ import Route
 type alias Model =
     { name : String
     , content : String
-    , footerLinks : List String
     }
 
 
 posts : List Model
 posts =
-    [ Model "Test1" "Test1 Content" [ "Test2" ]
-    , Model "Test2" "Test2 Content" [ "Test1" ]
+    [ Model "Test1" "Test1 Content"
+    , Model "Test2" "Test2 Content"
     ]
 
 
@@ -34,15 +33,11 @@ getEssayByName blogName =
 
 
 view : Model -> ( String, List (Html msg) )
-view { name, content, footerLinks } =
+view { name, content } =
     ( name
     , [ div [ class "blog-content" ]
             [ div [ class "blog-text" ]
                 [ text content ]
-            , div [ class "blog-footer" ]
-                [ ul []
-                    (List.map viewEssayLink footerLinks)
-                ]
             ]
       ]
     )

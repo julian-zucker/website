@@ -60,7 +60,7 @@ viewSingleReview model =
                     text model.name
             , viewStars model.stars
             ]
-        , div [] [ text model.review ]
+        , div [ class "review-list-item-text" ] [ text model.review ]
         ]
 
 

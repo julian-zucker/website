@@ -11,7 +11,9 @@ type Route
     | Essays
     | Essay String
     | Reviews
-    | Links
+    | Log
+    | LogEntry Int
+    | Resume
 
 
 parser : Parser (Route -> a) a
@@ -21,7 +23,9 @@ parser =
         , Parser.map Essays (s "essays")
         , Parser.map Essay (s "essay" </> Parser.string)
         , Parser.map Reviews (s "reviews")
-        , Parser.map Links (s "links")
+        , Parser.map Resume (s "resume")
+        , Parser.map Log (s "log")
+        , Parser.map LogEntry (s "log_entry" </> Parser.int)
         ]
 
 
@@ -45,5 +49,11 @@ toUrlString route =
         Reviews ->
             "/reviews/"
 
-        Links ->
-            "/links/"
+        Resume ->
+            "/resume/"
+
+        Log ->
+            "/log/"
+
+        LogEntry weekNum ->
+            "/log/week/" ++ String.fromInt weekNum
