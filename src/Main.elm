@@ -246,8 +246,8 @@ renderPage page =
         Essays key ->
             ( "Essays"
             , [ div []
-                    ([ text "Essay" ]
-                        ++ List.map Essay.viewEssayLink (List.map .name Essay.posts)
+                    ([ p [ class "essay-header" ] [ text "Essays are just pretentious blog posts." ] ]
+                        ++ List.map Essay.viewEssayPreview Essay.essays
                     )
               ]
             )

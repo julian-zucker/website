@@ -8,3 +8,6 @@ Note: Test this thing with `elm-test`
 Elm seems to have a higher overhead than JavaScript, but I'm okay with that - Scala has a higher overhead than Java, but I think it's worth it. It is strange to feel like a novice to a programming language though, most languages are so similar I can pick it up with just a glance at the standard library. Here, messages, ports, DSLs for url parsing, sum types everywhere, all lead to a lot of confusion to get something simple working.
 
 Is there a simple SPA (no, not the realworld one, that is bafflingly complex) that I can find? Let's hope
+
+The Unix philosophy runs deep. My intuitions about directories applied to gcloud: why wasn't `gsutil rsync` syncing the folders in the `build/` directory? Not sure, so I tried the `-r` flag and it worked. Practicing computer science benefits a lot from knowing all this random trivia.
+
