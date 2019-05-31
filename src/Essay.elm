@@ -13,23 +13,14 @@ type alias Model =
 
 essays : List Model
 essays =
-    [ Model "Test1" "Test1 ContentTest1 ContentTest1 ContentTesat1 ContentTest1 ContentTest1 ContentTest1 ContentTest1 ContentTest1 ContentTest1 Content"
-    , Model "Test2" "Test2 ContentTest2 ContentTest2 Contentaaaest2 ContentTest2 ContentTest2 ContentTest2 ContentTest2 ContentTest2 ContentTest2 ContentTest2 ContentTest2 ContentTest2 ContentTest2 ContentTest2 ContentTest2 ContentTest2 ContentTest2 ContentTest2 ContentTest2 ContentTest2 ContentTest2 ContentTest2 ContentTest2 ContentTest2 ContentTest2 ContentTest2 ContentTest2 ContentTest2 ContentTest2 ContentTest2 Contentd"
+    [ Model "Test1" ""
+    , Model "Test2" ""
     ]
 
 
 getEssayByName : String -> Maybe Model
 getEssayByName essayName =
-    let
-        matches =
-            List.filter (\p -> p.name == essayName) essays
-    in
-    case matches of
-        [] ->
-            Nothing
-
-        post :: _ ->
-            Just post
+    List.head (List.filter (\p -> p.name == essayName) essays)
 
 
 view : Model -> ( String, List (Html msg) )

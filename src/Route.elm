@@ -1,8 +1,9 @@
-module Route exposing (Route(..), fromUrl, toUrlString)
+module Route exposing (Route(..), fromUrl, fromUrlString, toUrlString)
 
 ---- ROUTING ----
 
 import Url exposing (Url)
+import Url.Builder
 import Url.Parser as Parser exposing ((</>), Parser, oneOf, s)
 
 
@@ -25,13 +26,27 @@ parser =
         , Parser.map Reviews (s "reviews")
         , Parser.map Resume (s "resume")
         , Parser.map Log (s "log")
-        , Parser.map LogEntry (s "log_entry" </> Parser.int)
+        , Parser.map LogEntry (s "log" </> s "week" </> Parser.int)
         ]
 
 
 fromUrl : Url -> Maybe Route
 fromUrl url =
     Parser.parse parser url
+
+
+fromUrlString : String -> Maybe Route
+fromUrlString urlString =
+    let
+        maybeUrl =
+            Url.fromString ("https://julianzucker.com" ++ Url.Builder.absolute [ urlString ] [])
+    in
+    case maybeUrl of
+        Just url ->
+            fromUrl url
+
+        Nothing ->
+            Nothing
 
 
 toUrlString : Route -> String

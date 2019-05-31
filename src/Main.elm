@@ -207,7 +207,7 @@ renderPage page =
             Essay.view model
 
         Home key ->
-            ( "Home"
+            ( "Julian Zucker's Website"
             , [ div []
                     [ p []
                         [ p [] [ text """Hi! Welcome to my website!""" ]
@@ -244,7 +244,7 @@ renderPage page =
             )
 
         Essays key ->
-            ( "Essays"
+            ( "Internalized blogphobia"
             , [ div []
                     ([ p [ class "essay-header" ] [ text "Essays are just pretentious blog posts." ] ]
                         ++ List.map Essay.viewEssayPreview Essay.essays
@@ -253,15 +253,15 @@ renderPage page =
             )
 
         Reviews key ->
-            ( "Reviews"
+            ( "You're reading this? Five stars."
             , Review.view Review.reviews
             )
 
         Log key ->
-            ( "TODO", [] )
+            ( "A dev log, not a web log", Log.viewLogs Log.weeklyLogs )
 
         LogEntry key model ->
-            ( "TODO", [] )
+            ( Log.pageTitle model, Log.view model )
 
         NoLogEntry key ->
             ( "TODO", [] )
