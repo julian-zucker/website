@@ -6,6 +6,7 @@ import Essay
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Log
+import Resume
 import Review
 import Route exposing (Route)
 import Url exposing (Url)
@@ -267,7 +268,7 @@ renderPage page =
             ( "TODO", [] )
 
         Resume key ->
-            ( "TODO", [] )
+            ( "Resume, as in unpause", Resume.view )
 
 
 
