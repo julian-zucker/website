@@ -65,7 +65,7 @@ viewEssayPreview : Model -> Html msg
 viewEssayPreview model =
     div []
         [ p [] [ viewEssayLink model.name ]
-        , p [ class "essay-preview" ] [ text (String.left 160 (List.foldl (++) "" model.content) ++ "…") ]
+        , p [ class "essay-preview" ] [ text (String.left 160 (List.foldr (++) "" model.content) ++ "…") ]
         ]
 
 
