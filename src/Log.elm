@@ -34,6 +34,20 @@ weeklyLogs =
             ++ " Renting this server costs $1/hour. I love cloud computing."
         , "Configured zsh: autocompletions, transferred my bash aliases over, installed plugins."
         ]
+    , Model 2
+        [ """Learned how to use SLURM, used it for batch processing of simulations - 1000 cores over 100 machines!"""
+        , """Found performance improvements for simulations (essentially memoization) 
+             – roughly square rooting computation time. Still takes a while though!
+             """
+        , "Registered evvo.io, redirected to github page."
+        , "Registered for an account on the Sonatype maven repository, prepared to upload v0.0.0 of Evvo."
+        , "Wrote slides and sample code for week 2 of Machine Learning Workshop, focusing on ensemble methods."
+        , """Investigated some ways to seriarlize scala.Function0's. It is quite hard under the default Java serializer
+             , as it casts to a java.lang.invoke.SerializedLambda, which then throws an error when being cast 
+             into a scala.Function0. This is preventing complex functions from being used in Evvo."""
+        , "Added emigration to Evvo, improving performance when running in parallel."
+        , "Read through some old code of Evvo, finding refactors that should be done and recording them in Github issues."
+        ]
     ]
 
 
