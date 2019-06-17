@@ -48,6 +48,18 @@ weeklyLogs =
         , "Added emigration to Evvo, improving performance when running in parallel."
         , "Read through some old code of Evvo, finding refactors that should be done and recording them in Github issues."
         ]
+    , Model 3
+        [ """Finally got Evvo to correctly serialize/deserialize complex behavior for agents."""
+        , """Including writing a test for serializability, which lead me to read a lot about Java serialization/protobuf."""
+        , """Did a refactor in Evvo for end user convenience, and to make names consistent with the EC literature."""
+        , """Read through the logback docs to figure out why Evvo wasn't logging anything, patched."""
+        , """Rewrote evolutionary game theory simulation code to leverage implicits to avoid
+         the need for global variables."""
+        , """Rewrote evolutionary game theory simulation code to clean up strange design that happened as a
+         result of time crunch."""
+        , """Wrote tests for every class in evolutionary game theory simulation code."""
+        , """Factored out common result type for EGT simulations, separating data processing logic from visualizations."""
+        ]
     ]
 
 
