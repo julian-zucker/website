@@ -60,6 +60,20 @@ weeklyLogs =
         , """Wrote tests for every class in evolutionary game theory simulation code."""
         , """Factored out common result type for EGT simulations, separating data processing logic from visualizations."""
         ]
+    , Model 4
+        [ """Wrote new simulations for exploring multiple groups interacting, including new type of model (as far as I
+        know, completely novel) where group size changes over time."""
+        , """Updated old simulations to test the effect of precedent - how does the initial strategy distribution affect
+        which strategies the groups converge to? """
+        , """Implemented the Push language in Scala, to prepare for parallelizing PushGP with Evvo."""
+        , """Implemented "Immigration Strategies" for Evvo, so islands can choose which immigrants to accept."""
+        , """Reviewed the Evvo codebase, adding missing docs and tests."""
+        , """Read the git-scm book. I knew most of what was in there, especially how to use the tools like branching/
+        committing/unstaging files, but having someone explain it explicitly gave me a better conceptual understanding
+        of what I was actually doing, and why. And I feel more comfortable with `rebase` now."""
+        , """I didn't get as much done this week as I wanted, but I was busy saying my goodbyes and packing, as I'm
+        leaving for Denver on Monday! I'm going to call that an acceptable excuse."""
+        ]
     ]
 
 
