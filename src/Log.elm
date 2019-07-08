@@ -74,6 +74,21 @@ weeklyLogs =
         , """I didn't get as much done this week as I wanted, but I was busy saying my goodbyes and packing, as I'm
         leaving for Denver on Monday! I'm going to call that an acceptable excuse."""
         ]
+    , Model 5
+        [ """Made it to Denver, unpacked. I spent most of the week without a desk, so most of my work was done
+        in coffee shops, and I missed my ErgoDox. Denver has good coffee though!"""
+        , """Worked on an implementation of the Push language in Scala, though not quite done yet. The goal is to
+         parallelize genetic programming with Push using Evvo, which will help with program induction research
+         and also create a publishable unit for Evvo."""
+        , """Related to reading the git-scm book last week, felt much more confident with merges/rebases this week."""
+        , """Finished the socialchoice project. Parallelized using SLURM, ran the results, wrote up the paper. I'm
+        going to circulate the draft to some professors, get some feedback, and try to publish it."""
+        , """Finished the quickstart guide for Evvo. It should be done now, I think we can start publicizing."""
+        , """Updated Evvo to Scala 2.13, which I'm excited for. I've been waiting for `.pipe` for a while."""
+        , """Designed and wrote immigration/emigration strategies. Now, end users of Evvo have control over their
+        island's communication. Although, not as much as there should be. For example, no control over how often
+         the emigration happens, or what the network topology is. I'll create some tickets for it next week."""
+        ]
     ]
 
 
