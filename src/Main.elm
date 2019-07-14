@@ -7,7 +7,6 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 import Log
 import Resume
-import Review
 import Route exposing (Route)
 import Url exposing (Url)
 
@@ -22,7 +21,6 @@ type Model
     | Home Nav.Key
     | Essays Nav.Key
     | EssayPage Nav.Key Essay.Model
-    | Reviews Nav.Key
     | Log Nav.Key
     | LogEntry Nav.Key Log.Model
     | NoLogEntry Nav.Key
@@ -98,9 +96,6 @@ changeRouteTo maybeRoute model =
                                 Nothing ->
                                     NotFound key
 
-                        Route.Reviews ->
-                            Reviews key
-
                         Route.Log ->
                             Log key
 
@@ -138,9 +133,6 @@ navKey model =
             key
 
         EssayPage key _ ->
-            key
-
-        Reviews key ->
             key
 
         Log key ->
@@ -188,7 +180,6 @@ header model =
             (List.intersperse (li [] [ text "|" ])
                 [ viewHeaderLink (Route.toUrlString Route.Home) "julianzucker.com"
                 , viewHeaderLink (Route.toUrlString Route.Essays) "essays"
-                , viewHeaderLink (Route.toUrlString Route.Reviews) "reviews"
                 , viewHeaderLink (Route.toUrlString Route.Log) "log"
                 ]
             )
@@ -251,11 +242,6 @@ renderPage page =
                         ++ List.map Essay.viewEssayPreview Essay.essays
                     )
               ]
-            )
-
-        Reviews key ->
-            ( "You're reading this? Five stars."
-            , Review.view Review.reviews
             )
 
         Log key ->

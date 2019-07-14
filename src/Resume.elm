@@ -6,5 +6,6 @@ import Html.Attributes exposing (..)
 
 view : List (Html msg)
 view =
-    [ embed [ class "resume-embed", src "/assets/Resume.pdf", type_ "application/pdf" ] []
+    [ span [] [ text "Unless I handed you a resume in person recently, the resume below is hideously out of date." ]
+    , embed [ class "resume-embed", src "/assets/Resume.pdf", type_ "application/pdf" ] []
     ]

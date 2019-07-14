@@ -11,7 +11,6 @@ type Route
     = Home
     | Essays
     | Essay String
-    | Reviews
     | Log
     | LogEntry Int
     | Resume
@@ -23,7 +22,6 @@ parser =
         [ Parser.map Home Parser.top
         , Parser.map Essays (s "essays")
         , Parser.map Essay (s "essay" </> Parser.string)
-        , Parser.map Reviews (s "reviews")
         , Parser.map Resume (s "resume")
         , Parser.map Log (s "log")
         , Parser.map LogEntry (s "log" </> s "week" </> Parser.int)
@@ -60,9 +58,6 @@ toUrlString route =
 
         Essay slug ->
             "/essay/" ++ slug
-
-        Reviews ->
-            "/reviews/"
 
         Resume ->
             "/resume/"
