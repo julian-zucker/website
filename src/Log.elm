@@ -89,6 +89,15 @@ weeklyLogs =
         island's communication. Although, not as much as there should be. For example, no control over how often
          the emigration happens, or what the network topology is. I'll create some tickets for it next week."""
         ]
+    , Model 6
+        [ "Started working at Pivotal! This reduced the number of free hours I have by ~40/week."
+        , """Published Evvo on Maven, requiring a hefty time investment in updating xml files and reading documentation.
+        But it's worth it, because if you're writing code for people to use, you need to make it easy to use."""
+        , """Dug through the docs for the Java Executors, and used this to fix some stubbornly still-serial code
+        in Evvo that by all indicatinos should have been running in parallel."""
+        , "Implemented binary trees, for maybe my seventh time, in order to provide them as a built-in datatype in Evvo."
+        , "Used those binary trees to start the \"Evolving Fair Models \" project."
+        ]
     ]
 
 
@@ -101,7 +110,7 @@ viewSummary : Model -> Html msg
 viewSummary model =
     div []
         [ a [ href (Route.toUrlString (Route.LogEntry model.week)) ]
-            -- TODO should render the actual dates (week 1 is the week of Monday, May 27, 2019
+            -- TODO should render the actual dates (week 1 is the week of Monday, May 27, 2019)
             [ text ("Log: Week " ++ String.fromInt model.week)
             ]
         ]
