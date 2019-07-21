@@ -98,6 +98,16 @@ weeklyLogs =
         , "Implemented binary trees, for maybe my seventh time, in order to provide them as a built-in datatype in Evvo."
         , "Used those binary trees to start the \"Evolving Fair Models \" project."
         ]
+    , Model 7
+        [ "This week felt unproductive, but we'll see what the commit logs say below."
+        , """At work, I went through a 1-day training in k8s, and have been working on an extensive refactor to reduce
+        duplication in the internal representations of indicator document's data. """
+        , """Wrote scripts to download and parse the German credit dataset for Evolving Fair Models (EFM)."""
+        , """Evolved neural-net-competitive decision trees on the German credit dataset. using FP and FN rate as two objectives."""
+        , """Created an objective for fairness in EFM, trained models against that metric."""
+        , """Minor cleanups and refactors in Evvo, added a new format to Pareto frontiers where the solutions are sorted by one objective, making it easier to compare."""
+        , """Looking at this list, I did more than I thought, but less than I would have liked. So it goes. There's always next week!"""
+        ]
     ]
 
 
