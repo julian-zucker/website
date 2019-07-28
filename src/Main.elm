@@ -57,7 +57,7 @@ update msg model =
             changeRouteTo (Route.fromUrl url) model
 
         GotEssayPageMsg key name ->
-            case Essay.getEssayByName name of
+            case Essay.getEssayBySlug name of
                 Just blog ->
                     ( EssayPage key blog, Cmd.none )
 
@@ -87,7 +87,7 @@ changeRouteTo maybeRoute model =
                         Route.Essay name ->
                             let
                                 maybeEssay =
-                                    Essay.getEssayByName name
+                                    Essay.getEssayBySlug name
                             in
                             case maybeEssay of
                                 Just essay ->
