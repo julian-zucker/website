@@ -178,7 +178,7 @@ header model =
     div [ class "header" ]
         [ ul []
             (List.intersperse (li [] [ text "|" ])
-                [ viewHeaderLink (Route.toUrlString Route.Home) ""
+                [ viewHeaderLink (Route.toUrlString Route.Home) "julianzucker.com"
                 , viewHeaderLink (Route.toUrlString Route.Essays) "essays"
                 , viewHeaderLink (Route.toUrlString Route.Log) "log"
                 ]
@@ -212,24 +212,15 @@ renderPage page =
                                          this definition), improve the productivity of software engineers
                                          by 1% through improving tooling/education/methodology, further humanity's
                                          knowledge of how learning evolves by creating simulations and tools for 
-                                         running simulations, and continue to improve and monetize
+                                         running simulations, and continue to improve
                                       """
                             , a [ href "https://github.com/julian-zucker" ] [ text "Evvo" ]
                             , text "."
                             ]
                         , p [] [ text """Check out "essays" to read my longform thoughts,
-                                         "reviews" to see brief notes on various products, talks, and books,
+                                         "reviews" to see brief notes on various products,
                                          and "log" to check out my weekly devlog.
                                       """ ]
-                        , p []
-                            [ text "If you're here to hire me, you should look at "
-                            , a [ href "https://github.com/julian-zucker" ] [ text "my github" ]
-                            , text ", "
-                            , a [ href (Route.toUrlString Route.Resume) ] [ text "my resumé" ]
-                            , text ", and "
-                            , a [ href (Route.toUrlString Route.Log) ] [ text "my devlog" ]
-                            , text "."
-                            ]
                         ]
                     ]
               ]
