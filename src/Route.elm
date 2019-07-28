@@ -35,16 +35,9 @@ fromUrl url =
 
 fromUrlString : String -> Maybe Route
 fromUrlString urlString =
-    let
-        maybeUrl =
-            Url.fromString ("https://julianzucker.com" ++ Url.Builder.absolute [ urlString ] [])
-    in
-    case maybeUrl of
-        Just url ->
-            fromUrl url
-
-        Nothing ->
-            Nothing
+    Maybe.andThen
+        (Parser.parse parser)
+        (Url.fromString ("https://julianzucker.com" ++ Url.Builder.absolute [ urlString ] []))
 
 
 toUrlString : Route -> String
