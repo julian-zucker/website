@@ -23,7 +23,7 @@ type Model
     | EssayPage Nav.Key Essay.Model
     | Log Nav.Key
     | LogEntry Nav.Key Log.Model
-    | NoLogEntry Nav.Key
+    | NoSuchLogEntry Nav.Key
     | Resume Nav.Key
 
 
@@ -109,7 +109,7 @@ changeRouteTo maybeRoute model =
                                     LogEntry key log
 
                                 Nothing ->
-                                    NoLogEntry key
+                                    NoSuchLogEntry key
 
                         Route.Resume ->
                             Resume key
@@ -141,7 +141,7 @@ navKey model =
         LogEntry key _ ->
             key
 
-        NoLogEntry key ->
+        NoSuchLogEntry key ->
             key
 
         Resume key ->
@@ -241,8 +241,14 @@ renderPage page =
         LogEntry key model ->
             ( Log.pageTitle model, Log.view model )
 
-        NoLogEntry key ->
-            ( "TODO", [] )
+        NoSuchLogEntry key ->
+            ( "Lack of log"
+            , [ div []
+                    [ p [] [ text "The log page you were trying to access doesn't exist." ]
+                    , p [] [ a [ href "/" ] [ text "Back to homepage." ] ]
+                    ]
+              ]
+            )
 
         Resume key ->
             ( "Resume, as in unpause", Resume.view )

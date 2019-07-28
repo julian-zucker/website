@@ -119,14 +119,23 @@ view model =
             li [] [ text item ]
     in
     [ div []
-        [ span [] [ text ("Dev Log: Week " ++ String.fromInt model.week) ]
-        , ul [] (List.map viewLogItem model.logItems)
-
-        -- TODO: should only render as link if something actually exists there
-        , div [] [ a [ href (Route.toUrlString (Route.LogEntry (model.week - 1))) ] [ text "Previous week" ] ]
-        , div [] [ a [ href (Route.toUrlString (Route.LogEntry (model.week + 1))) ] [ text "Next week" ] ]
-        ]
+        ([ span [] [ text ("Dev Log: Week " ++ String.fromInt model.week) ]
+         , ul [] (List.map viewLogItem model.logItems)
+         ]
+            ++ viewLogLink (model.week + 1) "Next week"
+            ++ viewLogLink (model.week - 1) "Previous week"
+        )
     ]
+
+
+viewLogLink : Int -> String -> List (Html msg)
+viewLogLink index description =
+    case getLogForWeek index of
+        Just _ ->
+            [ div [] [ a [ href (Route.toUrlString (Route.LogEntry index)) ] [ text description ] ] ]
+
+        Nothing ->
+            []
 
 
 pageTitle : Model -> String
