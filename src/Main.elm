@@ -217,10 +217,6 @@ renderPage page =
                             , a [ href "https://github.com/julian-zucker" ] [ text "Evvo" ]
                             , text "."
                             ]
-                        , p [] [ text """Check out "essays" to read my longform thoughts,
-                                         "reviews" to see brief notes on various products,
-                                         and "log" to check out my weekly devlog.
-                                      """ ]
                         ]
                     ]
               ]

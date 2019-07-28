@@ -3,7 +3,6 @@ module Essay exposing (Model, essays, getEssayBySlug, view, viewEssayLink, viewE
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Route
-import Url
 
 
 
@@ -11,9 +10,7 @@ import Url
    This module has some problems.
    * Essays can only be plaintext, no formatting or even links.
    * The source of every essay has to be in code in this file. I want to store the text in plaintext files
-   that I read at build time.
-   * Essays don't have slugs, only the full name. Duplicate names aren't an issue (I doubt I'll publish two files with
-    the same name) but the URLs are ugly.
+     that I read at build time.
 -}
 
 
