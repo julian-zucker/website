@@ -21,8 +21,8 @@ parser =
         , Parser.map Essays (s "essays")
         , Parser.map Essay (s "essay" </> Parser.string)
         , Parser.map Resume (s "resume")
-        , Parser.map Log (s "log")
-        , Parser.map LogEntry (s "log" </> s "week" </> Parser.int)
+        , Parser.map Log (s "logs")
+        , Parser.map LogEntry (s "log" </> Parser.int)
         ]
 
 
@@ -54,7 +54,7 @@ toUrlString route =
             "/resume/"
 
         Log ->
-            "/log/"
+            "/logs/"
 
         LogEntry weekNum ->
-            "/log/week/" ++ String.fromInt weekNum
+            "/log/" ++ String.fromInt weekNum

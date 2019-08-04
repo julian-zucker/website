@@ -2,9 +2,11 @@ module Log exposing (Model, getLogForWeek, pageTitle, view, viewLogs, weeklyLogs
 
 -- TODO implement weekly log
 
+import Date exposing (Date, Interval(..), Unit(..))
 import Html exposing (..)
 import Html.Attributes exposing (href)
 import Route
+import Time exposing (Month(..))
 
 
 type alias Model =
@@ -101,13 +103,23 @@ viewLogs logs =
     List.map viewSummary (List.reverse (List.sortBy .week logs))
 
 
+
+-- Returns the string of the monday of the week of the model, assuming week number is
+-- weeks since May 27 2019.
+
+
+weekString : Model -> String
+weekString model =
+    Date.fromCalendarDate 2019 May 27
+        |> Date.add Weeks (model.week - 1)
+        |> Date.format "MMMM ddd, yyyy"
+
+
 viewSummary : Model -> Html msg
 viewSummary model =
     div []
         [ a [ href (Route.toUrlString (Route.LogEntry model.week)) ]
-            -- TODO should render the actual dates (week 1 is the week of Monday, May 27, 2019)
-            [ text ("Log: Week " ++ String.fromInt model.week)
-            ]
+            [ text ("Week of " ++ weekString model) ]
         ]
 
 
@@ -119,13 +131,18 @@ view model =
             li [] [ text item ]
     in
     [ div []
-        ([ span [] [ text ("Dev Log: Week " ++ String.fromInt model.week) ]
+        ([ span [] [ text ("Week of " ++ weekString model) ]
          , ul [] (List.map viewLogItem model.logItems)
          ]
             ++ viewLogLink (model.week + 1) "Next week"
             ++ viewLogLink (model.week - 1) "Previous week"
         )
     ]
+
+
+
+-- Renders a link to log for week `index`, with message `description`, if such a model exists,
+-- otherwise returns the empty list.
 
 
 viewLogLink : Int -> String -> List (Html msg)

@@ -179,6 +179,7 @@ header model =
         [ ul []
             (List.intersperse (li [] [ text "|" ])
                 [ viewHeaderLink (Route.toUrlString Route.Home) "julianzucker.com"
+                , viewHeaderLink (Route.toUrlString Route.Resume) "resume"
                 , viewHeaderLink (Route.toUrlString Route.Essays) "essays"
                 , viewHeaderLink (Route.toUrlString Route.Log) "log"
                 ]

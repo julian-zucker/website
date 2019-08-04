@@ -16,9 +16,13 @@ import Route
 
 type alias Model =
     { name : String
-    , slug : String
+    , slug : Slug
     , content : List String
     }
+
+
+type alias Slug =
+    String
 
 
 essays : List Model
