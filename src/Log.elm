@@ -93,7 +93,17 @@ weeklyLogs =
         , "Wrote a `jq` one-liner for my PM at pivotal, so that he could look at only the relevant bits of some API responses. I knew ankifying `jq` would pay off!"
         , "Made a PR to fix a typo in Go By Example. It was slightly nerve-wracking to contribute to someone else's OSS project, even though it's a very kind community."
         , "Set up my keychain thumb drive with a script that loads my git ssh key, so that I can push code from anywhere."
-        , "Evolved fair decision trees with accuracy equal to benchmarks in the literature! This is really exciting to me, and I have some awesome visualizations showing the cost of fairness on accuracy. Paper forthcoming."
+        , "Evolved fair decision trees with accuracy similar to benchmarks in the literature! This is really exciting to me, and I have some awesome visualizations showing the cost of fairness on accuracy. Paper forthcoming."
+        ]
+    , Model 9
+        [ "Set up the evolving fair models code to be more reproducible. Produced visualizations of the output."
+        , "Updated some of the code for this website: logs now have their week, there's a link to my resume, etc."
+        , "Added customizable network topology to the islands in Evvo. This is the last piece of core functionality that was hardcoded, everything is now fully pluggable."
+        , "More LaTeX nonsense as I work on migrating the Evolving Fair Models paper to Google Docs."
+        ]
+    , Model 10
+        [ "Working on papers, lots of writing and creating figures."
+        , "Trying to get Evvo running on k8s. Looks like it might require swapping from Akka Remoting to Akka HTTP."
         ]
     ]
 
