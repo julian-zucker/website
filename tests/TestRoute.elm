@@ -15,10 +15,10 @@ all =
     describe "Parsing routes from urls"
         [ test "Parsing log entry routes" <|
             \_ ->
-                Expect.equal (Just (Route.LogEntry 2)) (Route.fromUrlString "log/week/2")
+                Expect.equal (Just (Route.LogEntry 2)) (Route.fromUrlString "log/2")
         , test "Parsing log route" <|
             \_ ->
-                Expect.equal (Just Route.Log) (Route.fromUrlString "log")
+                Expect.equal (Just Route.Log) (Route.fromUrlString "logs")
         , test "Parsing top" <|
             \_ ->
                 Expect.equal (Just Route.Home) (Route.fromUrlString "/")
@@ -30,10 +30,10 @@ urlToRouteTests =
     describe "Generating urls from routes"
         [ test "Parsing log entry routes" <|
             \_ ->
-                Expect.equal "/log/week/2" (Route.toUrlString (Route.LogEntry 2))
+                Expect.equal "/log/2" (Route.toUrlString (Route.LogEntry 2))
         , test "Parsing log route" <|
             \_ ->
-                Expect.equal "/log/" (Route.toUrlString Route.Log)
+                Expect.equal "/logs/" (Route.toUrlString Route.Log)
         , test "Parsing top" <|
             \_ ->
                 Expect.equal "/" (Route.toUrlString Route.Home)
