@@ -205,20 +205,18 @@ renderPage page =
                     [ p []
                         [ p [] [ text """Hi! Welcome to my website!""" ]
                         , p []
-                            [ text """I like teaching computer science, thinking about evolution,
-                                         and writing code. My short-term goals are to grow as a software developer,
-                                         create software that people can use, and publish research while I'm still
-                                         an undergraduate. My longer-term goals are to get a job teaching computer
-                                         science to competent students (although I'm not sure if professorship meets
-                                         this definition), improve the productivity of software engineers
-                                         by 1% through improving tooling/education/methodology, further humanity's
-                                         knowledge of how learning evolves by creating simulations and tools for 
-                                         running simulations, and continue to improve
-                                      """
-                            , a [ href "https://github.com/julian-zucker" ] [ text "Evvo" ]
-                            , text "."
+                            [ text """My short-term goals are to grow as a software developer, create software that people can use, and publish research while I'm still an undergraduate. My longer-term goals are to get a PhD so that I can become a professor, although I may spend a while as a software engineer first. My research interests are computer science education, """
+                            , a [ href "https://github.com/evvo-labs/evvo" ] [ text "evolutionary computing" ]
+                            , text ", and evolutionary game theory."
                             ]
                         ]
+                    , p []
+                        [ text "Check out my "
+                        , a [ href "https://github.com/julian-zucker" ] [ text "GitHub" ]
+                        , text "?"
+                        ]
+                    , p []
+                        [ text "If you're looking at this website, I probably want to hear from you. You can email me at julian.zucker@gmail.com." ]
                     ]
               ]
             )
