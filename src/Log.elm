@@ -99,11 +99,20 @@ weeklyLogs =
         [ "Set up the evolving fair models code to be more reproducible. Produced visualizations of the output."
         , "Updated some of the code for this website: logs now have their week, there's a link to my resume, etc."
         , "Added customizable network topology to the islands in Evvo. This is the last piece of core functionality that was hardcoded, everything is now fully pluggable."
-        , "More LaTeX nonsense as I work on migrating the Evolving Fair Models paper to Google Docs."
+        , "More LaTeX nonsense as I work on migrating the \"Evolving Fair Models\" paper to Google Docs."
         ]
     , Model 10
         [ "Working on papers, lots of writing and creating figures."
         , "Trying to get Evvo running on k8s. Looks like it might require swapping from Akka Remoting to Akka HTTP."
+        ]
+    , Model 11
+        [ "At Pivotal, I wrestled with UAA, BOSH, etc. I really appreciate the powerful tools that Pivotal uses, but learning how to use them and how they all fit together will take some work."
+        , "Minor bugfixes in Evvo."
+        , "Changed some APIs in Evvo to be more consistent. If you have multiple implementations of a trait, some of which are case objects and some of which are case classes, you will get confused."
+        , "Wrestled with moving Evvo to Kubernetes, and failed because Akka Remoting doesn't play nicely with other networking systems. I will try to update that"
+        , "Updated how graphs were generated for \"Evolving Fair Models\", to automate the removal of whitespace that I was doing by hand."
+        , "LaTeXified the entire EFM paper, and also started work on evolutionary game theory with dynamic group sizes."
+        , "Updated essays on this website to support block quotes."
         ]
     ]
 
