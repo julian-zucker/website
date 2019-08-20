@@ -114,6 +114,12 @@ weeklyLogs =
         , "LaTeXified the entire EFM paper, and also started work on evolutionary game theory with dynamic group sizes."
         , "Updated essays on this website to support block quotes."
         ]
+    , Model 12
+        [ "Finished writing the \"Evolving Fair Models\" paper, and submitted it."
+        , "Started playing around with game development using Elm, to get back into functional-programming shape."
+        , "Updates to distributed Evvo, particularly some QoL improvements because I was getting annoyed."
+        , "Started reading about using neural networks for game theoretical modeling."
+        ]
     ]
 
 
