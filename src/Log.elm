@@ -120,6 +120,13 @@ weeklyLogs =
         , "Updates to distributed Evvo, particularly some QoL improvements because I was getting annoyed."
         , "Started reading about using neural networks for game theoretical modeling."
         ]
+    , Model 13
+        [ "At Pivotal, soloed on some work involving making BOSH releases and deploying them. My fear of BOSH is gradually dissipating."
+        , "Did a little more in the Elm game I was working on, including adding a FSM for game state that controls how inputs are interpreted."
+        , "Played with the `go/ast` module, to see if I can automate converting normal-style tests into Ginkgo tests."
+        , "Worked on an implementation of the Io language in Racket, and remembered why I love Racket."
+        , "Updated `socialchoice` so that it conforms to the standard python package structure."
+        ]
     ]
 
 
