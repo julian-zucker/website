@@ -127,6 +127,11 @@ weeklyLogs =
         , "Worked on an implementation of the Io language in Racket, and remembered why I love Racket."
         , "Updated `socialchoice` so that it conforms to the standard python package structure."
         ]
+    , Model 14
+        [ "Started working through Pivotal's internal 'Introduction to Kubernetes' tutorial. Kubernetes has a lot going for it when compared to BOSH."
+        , "Wrote three jupyter notebooks for my O'Reilly class, python code for evolutionary computing."
+        , "Kept working on my Go talk about go/ast for rewriting tests."
+        ]
     ]
 
 
