@@ -129,8 +129,14 @@ weeklyLogs =
         ]
     , Model 14
         [ "Started working through Pivotal's internal 'Introduction to Kubernetes' tutorial. Kubernetes has a lot going for it when compared to BOSH."
-        , "Wrote three jupyter notebooks for my O'Reilly class, python code for evolutionary computing."
+        , "Wrote three jupyter notebooks for my O'Reilly class."
         , "Kept working on my Go talk about go/ast for rewriting tests."
+        ]
+    , Model 15
+        [ "I was severely sidetracked this week, due to wrist pain and studying for the GRE. Nonetheless..."
+        , "At Pivotal, I started working on a CLI plugin that allows people to see the health of their cf services."
+        , "I finished developing the Jupyter notebooks that students will fill in during \"Practical Evolutionary Computing\""
+        , "I typeset my resume in LaTeX, moving from Word."
         ]
     ]
 
