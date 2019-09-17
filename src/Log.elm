@@ -138,6 +138,11 @@ weeklyLogs =
         , "I finished developing the Jupyter notebooks that students will fill in during \"Practical Evolutionary Computing\""
         , "I typeset my resume in LaTeX, moving from Word."
         ]
+    , Model 16
+        [ "I outlined the paper that I want to write about Evvo."
+        , "I changed the API for retrieving the status of an agent in Evvo, to allow for future extension and writing the paper Danny and I are writing"
+        , "I read two papers on philosophy of modeling to start building a background for my writing samples for PhD applications."
+        ]
     ]
 
 
