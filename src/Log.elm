@@ -143,6 +143,13 @@ weeklyLogs =
         , "I changed the API for retrieving the status of an agent in Evvo, to allow for future extension and writing the paper Danny and I are writing"
         , "I read two papers on philosophy of modeling to start building a background for my writing samples for PhD applications."
         ]
+    , Model 17
+        [ "Proved that stable majorities can form in games with three stragies."
+        , "Launched Evvo publicly, got pretty good feedback from the OSS community."
+        , "Swapped from TeXMaker to vim for LaTeX editing, and I'm already enjoying it much more!"
+        , "Reformatted my CV to use the `moderncv` LaTeX style."
+        , "And at work, I worked on updating existing indicator documents to the newest version to help deprecate an old API version without breaking anyone's code."
+        ]
     ]
 
 
