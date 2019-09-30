@@ -150,6 +150,11 @@ weeklyLogs =
         , "Reformatted my CV to use the `moderncv` LaTeX style."
         , "And at work, I worked on updating existing indicator documents to the newest version to help deprecate an old API version without breaking anyone's code."
         ]
+    , Model 18
+        [ "I've been mostly writing my personal statements for PhD programs, and working on my writing sample for the philosophy programs."
+        , "At Pivotal, I did various bugfixes and infrastructure updates."
+        , "Also at Pivotal, I paired on researching the next large project for my team, involving running our code on multiple \"foundations\" (aka cf instances)."
+        ]
     ]
 
 
