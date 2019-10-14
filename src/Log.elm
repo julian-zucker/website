@@ -155,6 +155,15 @@ weeklyLogs =
         , "At Pivotal, I did various bugfixes and infrastructure updates."
         , "Also at Pivotal, I paired on researching the next large project for my team, involving running our code on multiple \"foundations\" (aka cf instances)."
         ]
+    , Model 19
+        [ "Didn't do much this week. It was my birthday celebration weekend, so Friday/Saturday/Sunday were gone. Worth it!"
+        , "I did manage to start working on a paper about the ontology of algorithms, though, and researched some topics in philosophy of math that seemed adjacent.'"
+        ]
+    , Model 20
+        [ "Designed (but did not implement) a programming language for ethical machine learning."
+        , "Worked on more multi-foundation support for Indicator Protocol, which involved learning a fair bit about Google Cloud Platform."
+        , "Writing personal statements for PhD applications."
+        ]
     ]
 
 
