@@ -8,6 +8,7 @@ import Html.Attributes exposing (..)
 import Log
 import Resume
 import Route exposing (Route)
+import TwelveProblems
 import Url exposing (Url)
 
 
@@ -25,6 +26,7 @@ type Model
     | LogEntry Nav.Key Log.Model
     | NoSuchLogEntry Nav.Key
     | Resume Nav.Key
+    | TwelveProblems Nav.Key
 
 
 init : flags -> Url -> Nav.Key -> ( Model, Cmd Msg )
@@ -113,6 +115,9 @@ changeRouteTo maybeRoute model =
 
                         Route.Resume ->
                             Resume key
+
+                        Route.TwelveProblems ->
+                            TwelveProblems key
     in
     ( newModel, Cmd.none )
 
@@ -145,6 +150,9 @@ navKey model =
             key
 
         Resume key ->
+            key
+
+        TwelveProblems key ->
             key
 
 
@@ -182,6 +190,7 @@ header model =
                 , viewHeaderLink (Route.toUrlString Route.Resume) "resume"
                 , viewHeaderLink (Route.toUrlString Route.Essays) "essays"
                 , viewHeaderLink (Route.toUrlString Route.Log) "log"
+                , viewHeaderLink (Route.toUrlString Route.TwelveProblems) "12"
                 ]
             )
         ]
@@ -247,6 +256,9 @@ renderPage page =
 
         Resume key ->
             ( "Resume, as in unpause", Resume.view )
+
+        TwelveProblems key ->
+            ( "What I'm pondering", TwelveProblems.view )
 
 
 

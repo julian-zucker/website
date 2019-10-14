@@ -12,6 +12,7 @@ type Route
     | Log
     | LogEntry Int
     | Resume
+    | TwelveProblems
 
 
 parser : Parser (Route -> a) a
@@ -23,6 +24,7 @@ parser =
         , Parser.map Resume (s "resume")
         , Parser.map Log (s "logs")
         , Parser.map LogEntry (s "log" </> Parser.int)
+        , Parser.map TwelveProblems (s "twelve")
         ]
 
 
@@ -58,3 +60,6 @@ toUrlString route =
 
         LogEntry weekNum ->
             "/log/" ++ String.fromInt weekNum
+
+        TwelveProblems ->
+            "/twelve/"
