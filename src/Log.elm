@@ -164,6 +164,11 @@ weeklyLogs =
         , "Worked on more multi-foundation support for Indicator Protocol, which involved learning a fair bit about Google Cloud Platform."
         , "Writing personal statements for PhD applications."
         ]
+    , Model 21
+        [ "Wrote a lot of a paper about ethical machine learning and how domain-specific languages can help."
+        , "Implemented a DSL that aids the practice of ethical machine learning."
+        , "Revisited \"Evolving Fair Models\", adding new datasets and changing which benchmark we measure against."
+        ]
     ]
 
 
