@@ -180,7 +180,12 @@ essays =
             , TextWithFootnotes
                 [ Body """ Perhaps five minutes into our walk, in the bleak midfall, a pedicab driver """
                 , Footnote 9 """Actually, a "Pedicab Chauffeur", according to his business card."""
-                , Body """ pulls up. It's the weekend of Halloween, so it's not completely absurd that he's wearing a cow onesie with articulated udders. It's still slightly absurd, but not completely. We chat for hours. Or I should say, Orientation and Roommate chat with him for hours. I meet some strangers.  """
+                , Body """ pulls up. It's the weekend of Halloween, so it's not completely absurd that he's wearing a cow onesie with articulated udders. It's still slightly absurd, but not completely. We chat for hours. Or I should say, Orientation and Roommate chat with him for hours. I meet some strangers, including an asian man who pretends he doesn't speak English, until he realizes his friends and I are going to be yelling about philosophy for a while, and then caves. The first English he spoke to me was "Bullshit! You know that's impossible". I was taken aback. I thought, just for a second, that he had learned English in that moment, just to tell me I was wrong. I was impressed at his dedication, and then I realized he had been messing with me leading up to this moment. After an hour of conversation, on a street corner, with a pedicab driver and three random folks, we head home. """
+                ]
+            , TextWithFootnotes
+                [ Body "We make it home, argue about the trolley problem"
+                , Footnote 10 "To Roommate, if you're reading this: you are deeply, hopelessly wrong."
+                , Body "And that concludes the first day. But we still had twenty hours left in Lincoln."
                 ]
             ]
         ]
