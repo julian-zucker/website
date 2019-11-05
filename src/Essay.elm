@@ -179,14 +179,102 @@ essays =
             , TextWithFootnotes
                 [ Body "We make it home, argue about the trolley problem"
                 , Footnote 10 "To Roommate, if you're reading this: you are deeply, hopelessly wrong about the trolley problem."
-                , Body ". And that concludes the first day. But we still had twenty hours left in Lincoln."
+                , Body ". And that concludes the first day. But I still had twenty hours left in Lincoln."
                 ]
             ]
+        , Model "A Nebraska Double: Shot 2"
+            "nebraska2"
+            [ TextWithFootnotes
+                [ Body "I wake up deeply hungover. Through the French doors of my bedroom, I see the living room in disarray. Sitting on the coffee table, taunting me, is the previous night's box of wine. I get up, put it in the fridge, and start to consider the day. I make coffee"
+                , Footnote 1 "This is Nebraska, so the AirBnB only has a Mr. Coffee, although surprisingly the coffee itself is from Peet's, which I consider to be quite good. I curse myself for forgetting to bring my AeroPress. I spend a few minutes contemplating my decision to bring only one backpack on this trip. Was it more motivated by my desire to prove to other people that I can travel light or the actual benefits of traveling light? I'm just about ready to indict my desire to travel light as strictly social signaling, and then the coffee is ready, and I stop thinking about it."
+                , Body " and take a caffeine pill"
+                , Footnote 2 "At this point, I had slept a total of eight hours over the previous two nights. "
+                , Body ". I text everyone else, asking if they're awake. Ex stumbles downstairs, and it looks like someone has punched her in the face –\u{00A0}her lip is swollen and split. I ask what happened and learn that she has no idea either, but she woke up upside down in her bed, with her feet on her pillow, and blood everywhere. We try to piece together what could have happened last night after she went to bed, and idly speculate until Roommate shows up. He says that after we got home, he went upstairs and walked past her room, found her lying on her bed, light still on, and importantly with no blood to be seen anywhere. Seeing as in the morning, it looked like at least two-thirds of a murder happened in her room, it seems unlikely that he missed it. So we knew it happened after we got back from the bar (and the associated pedicab-driver-chatting and stranger-harassing), but we didn't know much else. We speculate a bit more, and then realize we're going to be late to Day 2 of the conference, so we head out."
+                ]
+            , Plain "On that day's walk in, we end up walking behind three UNL students most of the way in. I notice that they are completely ordinary people, very mainstream-looking. I am completely certain that they were not involved in the interpretive dance shenanigans from yesterday, and in fact, that if we suggested that interpretive dance happened on this campus, that they would not believe us."
+            , TextWithFootnotes
+                [ Body "We show up halfway through the only talk I was actually interested in seeing at the conference, which is unfortunate. I stay engaged through the second half of the talk, and quite enjoy it. The next talk, not so much. I take very aggressive notes, calling out the motte-and-bailey "
+                , Footnote 3 "Google it."
+                , Body """ argument, with the motte being "If AI is better than us, it will be different than us", and the bailey not even being a coherent enough thesis to recount here. I complain and complain and complain about this talk, in my notebook, doodle a fair bit, and then the talk concludes and I clap anyways """
+                , Footnote 4 "When there are only twenty people in the audience, not clapping is conspicuous."
+                , Body ". Then, the speaker starts heading back towards her seat. Prior to the walk, she was sitting next to me, so obviously she will be sitting next to me after the talk. I don't realize this, however, and keep sitting and pondering, notebook open to two full pages of scathing attacks on her talk. As the next talk starts, I look down and realize how clear my handwriting is, as I decry that one of her points \"Does not follow!\" and another seems \"Very motte and bailey :(\". I glance over at her, and see that she is looking directly at my notebook. Oh well. I flip to the next page, and start taking notes on the next talk."
+                ]
+            , TextWithFootnotes
+                [ Body "Somewhere in there, Roommate left "
+                , Footnote 5 "Didn't even say bye."
+                , Body "."
+                ]
+            , TextWithFootnotes
+                [ Body "Lunch is served, sandwiches "
+                , Footnote 6 "On pretzel bread. Pretzel bread is deeply underrated in general, so I wanted to take this moment to appreciate it publicly."
+                , Body " and chips and all the sorts of things you expect to be part of a free lunch "
+                , Footnote 7 "Not quite a free lunch, really. It cost a whole trip to Nebraska."
+                , Body ". One of the professional philosophers there was vegan, and someone else brought it up to point out the relative lack of vegan options. Normally, when people say they're vegan, I don't particuarly care. I'm sure that, if we talked for a few minutes, their argument for veganism would at least be inconsistent with some of their other views "
+                , Footnote 8 "Note that this does not mean their argument for veganism is wrong, just that I can feel morally superior to them."
+                , Body ". But with philosophers, I'm almost certain that any discussion about veganism would go the opposite way, with them pointing out the inconsistencies in my beliefs "
+                , Footnote 9 "For instance, I believe that I am not an alcoholic, despite strong evidence to the contrary."
+                , Body ". So I stay out of that debate, and eat my meat-laden sandwich in silent shame. Ex (who is vegan now, I think) asks if I want to eat the meat off of a sandwich, so she can eat the bread "
+                , Footnote 10 "As previously mentioned, pretzel bread is the shit, so it is not surprising that she would want to eat the slightly soggy sandwich bread over chips or trail mix or whatever else they had that was vegan."
+                , Body ". I say yes, and have just the meat and cheese of the sandwich. While holding just meat and cheese, I make eye contact with the vegan philosopher, and immediately turn away to hide my meat-and-cheese habits "
+                , Footnote 11 "Despite my shame in this instance, I generally support easting just the inside of a sandwich. Bread is the worst part of any given sandwich. It's just there because it's cheaper than the other ingredients, and makes it socially acceptable to eat the sandwich with your hands."
+                , Body "."
+                ]
+            , Plain "Lunch is over. We sit back down, sit through a talk, and then it's what the conference schedule describes as \"Social Hours (continue conversations, check out posters, etc)\". We head home, to drop off our backpacks and posters before dinner. As we walk in, Ex jokes, \"Well, time to start drinking again?\" Orientation and I do not realize this is humor, and pour ourselves some more wine."
+            , TextWithFootnotes
+                [ Body "We show up to the dinner buzzed and ready to talk about philosophy. We sit down, order our food "
+                , Footnote 12 "I get the scallions, for two reasons. First, Northeastern was paying for this meal, so I felt someone obliged to get the most expensive thing on the menu. Second, there were vegans afoot, and scallions are some of the least meat-like meats."
+                , Body ", and wait interminably for the food to arrive. Ex has to leave about an hour after we show up to the restaurant, so she gets her food to go. We order drinks "
+                , Footnote 13 "If you're ever in Lincoln (unlikely) and at the Blue Orchid (more likely, once you're in Lincoln) and have someone else paying for your meal (unlikely, despite you being in Lincoln), I would highly recommend ordering three Ginger Flowers. And one for your underage (hopefully, under only the drinking age, and not any other relevant ages) ex. "
+                , Body " and talk about philosophy. Someone else is severly drunk, which is always a relief, because it means you're not the drunkest person at the party. They have paper tablecloths, which some people find tacky but I love. We talk about Newcomb's paradox "
+                , Footnote 14 "I'm a one-boxer."
+                , Body ", and as we talk, we can scrawl decision trees on the paper on the table "
+                , Footnote 15 "This both lets us communicate more clearly, and also signal to people outside of our conversation that we're having more fun than they are."
+                , Body "."
+                ]
+            , TextWithFootnotes
+                [ Body "We finish up dinner, and head out to a bar, or brewery, or taproom, or something. I continue to be shocked by the price of alcohol here. I order a marshmallow stout "
+                , Footnote 16 "It tastes exactly like how it sounds."
+                , Body ", which is 13% by volume, and it costs $7. Orientation and I sit with one of the younger philosophers, talking about the philosophy job market, how to teach, and various other academic-oriented ideas. Orientation and I leave for our AirBnB at 10:50 or so, an hour and a half before my train is scheduled to leave "
+                , Footnote 17 "And you should be able to infer, from the fact that I said \"scheduled\", that it was delayed. "
+                , Body ". We walk by the corner where we met the pedicab driver last night, laugh, and make it home with no event."
+                ]
+            , TextWithFootnotes
+                [ Body "As we walk in, my phone buzzes "
+                , Footnote 18 "Not really. My phone is always on do not disturb. I check my phone, and see the message. No buzzing occurred."
+                , Body ", and I see that my train has been delayed."
+                , Footnote 19 "Well, sort of. The message in the text explains that the train is expected to get in later, but it might be on time, and it may be delayed again. So really it's just warning me that life is uncertain, and not making any definite statements about the train."
+                , Body "Of course, at this point, we're back in the same apartment as a box of wine, so obviously we resume drinking "
+                , Footnote 20 "There are seven bottles of wine in a box, after all, and we had only drank about five of them."
+                , Footnote 21 "And, the more I drank, the better I would sleep on the train."
+                , Footnote 22 "Better here means not sleep quality but speed at which I would fall asleep, I wanted my train ride back to be completely uninteresting, and being asleep for all of it seemed like a feasible way to accomplish that."
+                , Body ". Orientation and I talk about philosophy a bit more, and commit to writing a paper together"
+                , Footnote 23 "Perhaps the most surprising part of this trip was we re-committed to writing this paper while sober."
+                , Body ". Then, I head out for the train, because the text that Amtrak sent warning about the delay did not inspire hope that they knew when the train would arrive."
+                ]
+            , TextWithFootnotes
+                [ Body "I arrive at the train station. Our front, there are three massive parking garages, with different colored lights illuminating each one. I appreciate the architecture for a moment. Then, I realize that spending just two days in Nebraska was enough to compromise my aesthetic sensibilities, and I was enjoying what were objectively quite boring-looking parking garages. I head inside the train station, a small rectangle with twenty or so seats on the benches inside. I check my phone as I walk in. The train is delayed again, and I have an hour and a half "
+                , Footnote 24 "Of course, the text mentions that it may arrive earlier, or later, or at the exact time that they forecast."
+                , Body " to kill. I want to go to a bar, but I don't want to miss my train, and these are conflicting desires. I check a map "
+                , Footnote 25 "Okay, fine, Google Maps. But checking a map sounds much more impressive."
+                , Body " and see that there is a bar just three minute's walk away. The train, when it shows up, will certainlyl take more than three minutes to board "
+                , Footnote 26 "Or at least, that's what I convinced myself."
+                , Body " and so, I could definitely get someone in the station to call me when the train arrives, and then make it back in time."
+                ]
+            , TextWithFootnotes
+                [ Body "I ask around. I approach the people closest to me, a couple with a baby, and regale them with my story: I tell them I want to go to a bar to wait for the train, and that if they could call me when it arrives, I would be able to make it back in time. The husband "
+                , Footnote 27 "I don't know Nebraska's rate of extramarital pregnancy, but I'm hoping it's low, so I'm going to assume the couple was married. "
+                , Body " says \"I'm sorry, but I have a baby\", as if fatherhood was a legitimate excuse to not enable a stranger's alcoholism. The next person down the row, a woman with a large camo-patterened duffle bag that looks vaguely military, says she doesn't have a phone. She is actively using her phone. Whatever. The next person in the row is an old man "
+                , Footnote 28 "Although keep in mind, I am 21, so when I say \"old man\", I mean \"over 40\"."
+                , Body ", who tells me he doesn't approve of drinking."
+                ]
+            , TextWithFootnotes
+                [ Body "Well, I don't need their help anyway. I head out, and three minutes later, I've made it to a place that the people of Nebraska call a bar. It is ramshackle. I ordered a greyhound, and the bartender pulled out a bottle of Svedka, and at that moment, I immediately started doubting my decision. This bears repeating: their well vodka was Svedka. I sit at the bar, writing in my notebook, realizing that this is the first time I've ever been in a bar alone. I don't mind it at all "
+                , Footnote 29 "Which is probably a problem."
+                , Body ", in fact, I quite enjoy exchanging glances with the girl sitting on the other side of the bar, in between moments spent writing. I'll skip over my whole conversation with her, which revealed that she was Nebraskan and existentially unhappy about it, and skip to the good part: I made it back to the train station right as the train was pulling up. Everyone else in the station looked at me with disgust. Clearly, they had been hoping that I would miss the train because I was at the bar, thus getting my comeuppance, but I ruined that for them. I board, and fall asleep rather immediately."
+                ]
+            , Plain "I wake up six hours later. I wake up looking out the window, and the rolling hills of northeastern Colorado wave up and down, white with snow on one side, and the light brown of late-fall grasses on the other. The sun is rising, the clouds are a brilliant, piercing orange, and the whole sky is choosing to take part in the rainbow that normally is relegated to the areas near the horizon. I stand up, dazed, and stare out of the back window of the train, watching it tear over the tracks as the sun slowly meanders its way up, the clouds lose their brilliance, and the rainbow fades. I sit back down, deeply content, and thoroughly sleep-deprived. An hour later, as we pull into Union Station, and I laugh and laugh and laugh, silently, to myself, at what a weekend this has been."
+            ]
         ]
-
-
-
--- Plan to end it with "A two-night stay in Nebraska, much like the Nebraska Double we ordered, is ..."
 
 
 getEssayBySlug : String -> Maybe Model
