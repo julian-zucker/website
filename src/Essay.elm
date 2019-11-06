@@ -40,6 +40,138 @@ type ContentItem
 type FootnoteItem
     = Body String
     | Footnote Int String
+    | NumberedList (List String)
+
+
+getEssayBySlug : String -> Maybe Model
+getEssayBySlug essaySlug =
+    List.head (List.filter (\p -> p.slug == essaySlug) essays)
+
+
+view : Model -> ( String, List (Html msg) )
+view { name, content } =
+    ( name
+    , [ div [ class "blog-content" ]
+            [ div [ class "blog-text" ]
+                (let
+                    accs =
+                        List.foldr viewContentItem ( [], [] ) content
+                 in
+                 List.append (Tuple.first accs) (Tuple.second accs)
+                )
+            ]
+      ]
+    )
+
+
+viewContentItem : ContentItem -> ( List (Html msg), List (Html msg) ) -> ( List (Html msg), List (Html msg) )
+viewContentItem item ( bodyAcc, footnoteAcc ) =
+    case item of
+        Plain contents ->
+            ( p [] [ text contents ] :: bodyAcc, footnoteAcc )
+
+        TextWithFootnotes list ->
+            let
+                fn footnoteItems =
+                    case footnoteItems of
+                        Footnote index content ->
+                            Just
+                                (div [ class "footnote" ]
+                                    [ div [ class "footnote-number" ] [ text ("[" ++ String.fromInt index ++ "]") ]
+                                    , div [ class "footnote-content" ] [ text content ]
+                                    ]
+                                )
+
+                        _ ->
+                            Nothing
+
+                footnotes =
+                    List.filterMap
+                        fn
+                        list
+            in
+            ( p [] (htmlFromFootnoteItems list) :: bodyAcc, List.append footnotes footnoteAcc )
+
+        Quote quoteItem ->
+            let
+                quote =
+                    p [ style "width" "80%", style "padding-left" "8%" ]
+                        [ i [] [ text quoteItem.quote ]
+                        , br [] []
+                        , span [ style "padding-left" "15%" ]
+                            [ text ("— " ++ quoteItem.author)
+                            , i [] [ text (Maybe.withDefault "" (Maybe.map (\s -> ", " ++ s) quoteItem.maybeSource)) ]
+                            ]
+                        ]
+            in
+            ( quote :: bodyAcc, footnoteAcc )
+
+
+htmlFromFootnoteItems : List FootnoteItem -> List (Html msg)
+htmlFromFootnoteItems footNoteItems =
+    let
+        htmlFromFootnoteItem oneItem =
+            case oneItem of
+                Body content ->
+                    text content
+
+                Footnote index _ ->
+                    text ("[" ++ String.fromInt index ++ "]")
+
+                NumberedList list ->
+                    ol [] (List.map (\item -> li [] [ text item ]) list)
+    in
+    List.map htmlFromFootnoteItem footNoteItems
+
+
+textFromFootnoteItems : List FootnoteItem -> String
+textFromFootnoteItems footnoteItems =
+    List.foldr (++) "" (List.map textFromFootnoteItem footnoteItems)
+
+
+textFromFootnoteItem : FootnoteItem -> String
+textFromFootnoteItem item =
+    case item of
+        Body string ->
+            string
+
+        Footnote int string ->
+            ""
+
+        NumberedList list ->
+            ""
+
+
+viewEssayPreview : Model -> Html msg
+viewEssayPreview model =
+    div []
+        [ p [] [ viewEssayLink model ]
+        , p [ class "essay-preview" ]
+            [ text
+                (String.left 160
+                    (List.foldr (++) " " (List.map contentItemToString model.content))
+                    ++ "…"
+                )
+            ]
+        ]
+
+
+contentItemToString : ContentItem -> String
+contentItemToString item =
+    case item of
+        Plain string ->
+            string
+
+        Quote quoteItem ->
+            "\"" ++ quoteItem.quote ++ "\""
+
+        TextWithFootnotes footnoteItems ->
+            textFromFootnoteItems footnoteItems
+
+
+viewEssayLink : Model -> Html msg
+viewEssayLink model =
+    span [ class "essay-link" ] [ a [ href (Route.toUrlString (Route.Essay model.slug)) ] [ text model.name ] ]
 
 
 essays : List Model
@@ -303,114 +435,52 @@ essays =
                 ]
             , Plain "No one is quite sure what the purpose of high school is. Colleges value doing well in high school, because it predicts future success pretty well. But the people in charge of running high schools have forgotten that they could serve a purpose other than improving your chances of getting into a college. "
             ]
-        ]
-
-
-getEssayBySlug : String -> Maybe Model
-getEssayBySlug essaySlug =
-    List.head (List.filter (\p -> p.slug == essaySlug) essays)
-
-
-view : Model -> ( String, List (Html msg) )
-view { name, content } =
-    ( name
-    , [ div [ class "blog-content" ]
-            [ div [ class "blog-text" ]
-                (let
-                    accs =
-                        List.foldr viewContentItem ( [], [] ) content
-                 in
-                 List.append (Tuple.first accs) (Tuple.second accs)
-                )
-            ]
-      ]
-    )
-
-
-viewContentItem : ContentItem -> ( List (Html msg), List (Html msg) ) -> ( List (Html msg), List (Html msg) )
-viewContentItem item ( bodyAcc, footnoteAcc ) =
-    case item of
-        Plain contents ->
-            ( p [] [ text contents ] :: bodyAcc, footnoteAcc )
-
-        TextWithFootnotes list ->
-            let
-                fn footnoteItems =
-                    case footnoteItems of
-                        Footnote index content ->
-                            Just
-                                (div [ class "footnote" ]
-                                    [ div [ class "footnote-number" ] [ text ("[" ++ String.fromInt index ++ "]") ]
-                                    , div [ class "footnote-content" ] [ text content ]
-                                    ]
-                                )
-
-                        _ ->
-                            Nothing
-
-                footnotes =
-                    List.filterMap
-                        fn
-                        list
-            in
-            ( p [] [ text (textFromFootnoteItems list) ] :: bodyAcc, List.append footnotes footnoteAcc )
-
-        Quote quoteItem ->
-            let
-                quote =
-                    p [ style "width" "80%", style "padding-left" "8%" ]
-                        [ i [] [ text quoteItem.quote ]
-                        , br [] []
-                        , span [ style "padding-left" "15%" ]
-                            [ text ("— " ++ quoteItem.author)
-                            , i [] [ text (Maybe.withDefault "" (Maybe.map (\s -> ", " ++ s) quoteItem.maybeSource)) ]
-                            ]
-                        ]
-            in
-            ( quote :: bodyAcc, footnoteAcc )
-
-
-textFromFootnoteItems : List FootnoteItem -> String
-textFromFootnoteItems list =
-    let
-        fn oneItem textSoFar =
-            case oneItem of
-                Body content ->
-                    content ++ textSoFar
-
-                Footnote index _ ->
-                    ("[" ++ String.fromInt index ++ "]") ++ textSoFar
-    in
-    List.foldr fn "" list
-
-
-viewEssayPreview : Model -> Html msg
-viewEssayPreview model =
-    div []
-        [ p [] [ viewEssayLink model ]
-        , p [ class "essay-preview" ]
-            [ text
-                (String.left 160
-                    (List.foldr (++) " " (List.map contentItemToString model.content))
-                    ++ "…"
-                )
+        , Model "Bullet Journaling"
+            "bullet"
+            [ TextWithFootnotes
+                [ Body "Bullet journaling is a mindfulness practice, where you sit down once a day to write down the tasks you want to accomplish in that day, and the events that will happen that day, and you add notes throughout the day "
+                , Footnote 1 "There's more to it, at least as it's written in their official dogma, but this is the general idea."
+                , Body ". During the day, you can plan around the tasks you should be doing and the events that will happen. I started using this system "
+                , Footnote 2 "Well, my variant on it."
+                , Body " in January 2019 and have quite enjoyed it. Bullet journaling helps me follow through on my commitments, achieve long-term goals, define whether a day was successful or not "
+                , Footnote 3 "That's right, motherfucker. This is a high-school-style five-paragraph essay."
+                , Body "."
+                ]
+            , TextWithFootnotes
+                [ Body "Bullet journaling helps with follow-through for somewhat obvious reasons. My journal is structured like this: 53 pages, one per week of the year "
+                , Footnote 4 "You probably think there are 52 weeks in a year. While this is not technically false, 52 * 7 is 364, so there will always be 53 weeks in a year."
+                , Body ", followed by empty pages, which are filled up with my daily to-do and event lists "
+                , Footnote 5 "This is a lie. In reality, the first half is structured as one weekly page, followed by seven daily pages, followed by the next weekly page, and so on. But in the second half, I pulled my shit together and wrote all the weekly pages in a row. This is nice because I can reference them all easily, and plan for the future, but annoying because I have to flip back and forth over many pages. But my next bullet journal will be 53 weekly pages followed by daily pages."
+                , Body ". Whenever I pick up some new responsibility, I write down the date that I have to take each action it required. So, for example, if a friend tells me he's going to fight lions on October 13, and needs me to film it, I'll write down on whatever week October 13th falls on that I have to film a lion fight. When the week rolls around, I'll see this committment, and know that I'll be a bit busy that Friday. Sometimes, though, you have obligations that are less specific. For example, suppose someone tells me that I have to help them burglarize a house at some point in June. In this case, I'll make a note in the page for some week in May to follow up and ask for details "
+                , Footnote 6 """For example, "Which house?", "What's in it for me?", and "How are you not in jail?" """
+                , Body ". And when I get a new deadline, I'll write down not just the deadline but also multiple steps and the times I should do them. For example, for my PhD applications, I saw they had deadlines in late December through early January. So in a week in August, I wrote that I should decide which schools I'm applying to, in a week in October, that I should have finished my writing sample "
+                , Footnote 7 "Full disclosure: It is November, and the writing sample is still not finished."
+                , Body ", and so on, so that each task gets done at the right time, and when December rolls around I'll be ready and unstressed "
+                , Footnote 8 "Leaving aside the previously mentioned unfinished writing sample."
+                ]
+            , TextWithFootnotes
+                [ Body "Achieving long-term goals follows pretty naturally from writing down obligations. When I have some long-term goal that I want to achieve, I can split it into small steps, and achieve each of these as they come up in the journal. The fundamental algorithm for achieving hard things"
+                , Footnote 9 "Which I stole shamelessly from someone on the internet."
+                , Body "is as follows:"
+                , NumberedList
+                    [ "Find something that is like the hard thing but is easy."
+                    , "Modify the easy thing so that it is like the hard thing in exactly one way that you find hard."
+                    , "Do the modified thing until it is no longer hard."
+                    , "If the original hard thing is now easy, you’re done. If not, go back to step 2."
+                    ]
+                , Body "Each time you have a new easy thing that is like the hard thing in one way, you can write tasks in your bullet journal to do that thing. Like the example I gave with my PhD applications. Applying to PhD programs is difficult, but deciding which schools would be interesting is not. So, write that down as a  task. Then, the next step is to create a writing sample "
+                , Footnote 10 "Writing the writing sample may itself be difficult. But one of the benefits of the general algorithm for achieving hard things is that you can apply it recursively. If modifying the easy thing so that it is like the hard thing in exactly one way is itself a hard problem, you have a whole algorithm just for solving hard problems ready at hand."
+                , Body ". Repeat a few more times, and you've done your whole PhD application "
+                , Footnote 11 "Keeping in mind that I am writing this essay while procrastinating on finishing the writing sample."
+                , Body "."
+                ]
+            , TextWithFootnotes
+                [ Body "The most underrated benefit from bullet journaling, though, is being able to define a day, or week, or year as successful. If you write down your goals for each day in the morning, then in the evening, you can see whether those goals were met or not. If they were, congrats! You've had a successful day. If not, do better tomorrow. It's critical, though, that if you are writing down tasks for your immediate goals and tasks that will eventually achieve your long-term goals, simply following the to-do list in your bullet journal lets you achieve everything you need to! Additionally, you're going to have to complete the tasks that weren't completed eventually. Ending a day with tasks unfinished means more work tomorrow, on top of being unsatisfied with today. So writing something in my bullet journal helps me get it done, because once it's written, I am committed to doing it, and may as well just get it done today. Bullet journaling doesn't just define success, it helps you achieve it."
+                ]
+            , TextWithFootnotes
+                [ Body "I know I said this was going to be a five-paragraph essay, but conclusions are useless when someone can just reread your introduction "
+                , Footnote 12 "The reason they're required in high school because high schools are based on colleges, and the reason they're required in colleges is because colleges used to exist to train people to give better legal arguments, and legal arguments at the time were oral, not written."
+                , Body ", so I'll end it here."
+                ]
             ]
         ]
-
-
-contentItemToString : ContentItem -> String
-contentItemToString item =
-    case item of
-        Plain string ->
-            string
-
-        Quote quoteItem ->
-            "\"" ++ quoteItem.quote ++ "\""
-
-        TextWithFootnotes footnoteItems ->
-            String.filter (\c -> not (List.member c [ '[', '1', ']' ])) (textFromFootnoteItems footnoteItems)
-
-
-viewEssayLink : Model -> Html msg
-viewEssayLink model =
-    span [ class "essay-link" ] [ a [ href (Route.toUrlString (Route.Essay model.slug)) ] [ text model.name ] ]
