@@ -508,4 +508,168 @@ essays =
                 , Body ", so I'll end it here."
                 ]
             ]
+        , Model "The Coolest Kid at the Hackathon"
+            "coolest-kid-at-the-hackathon"
+            NotListed
+            [ TextWithFootnotes
+                [ Body "I was the coolest kid at HackBeanpot 2019 "
+                , Footnote 1 "Admittedly, being the coolest person at any hackathon isn't that hard. I'm 100% sure that writing about it on your personal website helps."
+                , Body ". The hackathon itself was held February 8-10, in the Seaport area of Boston "
+                , Footnote 2 "If you're imagining tall brick buildings on the waterfront, you're right on."
+                , Body ", and I was there because my friend invited me. I had known this guy for about a year. He was the friend of my old randomly-assigned college roommate, and he was a big data science/machine learning nerd, so let's call him DataScience. Working with us was a guy DataScience knew. I remember only two facts about him: he was a freshman, and his last name had far too many X's in it "
+                , Footnote 3 "I think it was only one X, but it was at the beginning of his last name. That's excessive."
+                , Body ". Call him X "
+                , Footnote 4 "Or Freshman. I don't care what you call him, and he is not an important character in this story."
+                , Body "."
+                ]
+            , TextWithFootnotes
+                [ Body "We spend about an hour hanging around DataScience's apartment, figuring out what project we want to work on. We get bullied pretty quickly into making a website that lets you visualize and explore the data you can export from Facebook. Then, we gather supplies. I have a laptop, and so I'm set. DataScience brings an external monitor, and a keyboard, the whole nine yards "
+                , Footnote 5 "Or at least, the whole two peripherals."
+                , Body ". We decide we're ready, call an Uber, and make bad jokes about programming the whole way there."
+                ]
+            , TextWithFootnotes
+                [ Body "We show up to the Hackathon, and listen to people telling us about the rules we should follow and how to have good sportsmanship and so on. We idle impatiently near the door to the work area. When the introduction is over,  they let us in to the area where we are going to be working for the next 48 hours. We are, obviously, one of the first groups in, and push towards a nice room in the back "
+                , Footnote 6 "It shocks me, as always, how many people listen to opening speeches so far from where they need to be immediately after the speech ends. Surely, you must get tired of being stuck in the crowd of people pushing through doors?"
+                , Body ". We set up our room, and start drawing plans on a whiteboard."
+                ]
+            , TextWithFootnotes
+                [ Body "People drift in and out of our room, asking questions and telling us about events "
+                , Footnote 7 "Hackathons always have a thousand different events. Yoga? Really? How is that going to help me make fun of Facebook? The lectures on a programming tool I understood completely, but the sparkling water blind taste test challenge I did not. "
+                , Body " that are happening. We hack and hack and hack into the night. Pizza comes. Normally, pizza arriving at a hackathon is not worthy of a sentence in a description of that hackathon "
+                , Footnote 8 "But clearly, I think that descriptions of the normality of pizza at hackathons is worth a sentence."
+                , Body ", it's just to be expected. What is incredible about this particular arrival-of-pizza scenario is the sheer quantity of pizza. This hackathon has maybe 200 people present. The pizzas are stacked on a counter in the kitchen, a rectangular prism "
+                , Footnote 9 "A word that means \"3D rectangle\" and also \"I want to brag about my math education\". "
+                , Body " two boxes wide, seven boxes long, and ten boxes high "
+                , Footnote 10 "I counted."
+                , Body ". Doing the math, that comes out to 140 boxes of pizza, for 200 people. This is my dream. I take two boxes "
+                , Footnote 11 "One meat-lover's, one vegetable-heavy pizza that also included meat. "
+                , Body " back to my team's room, and we keep working. At 3AM, I call it for myself, head home, and crash hard. X leaves with me, but DataScience stays there. He gestures frantically at the Google Sheet we made earlier that day, which demonstrates our work/sleep schedules for the weekend. Apparently, it indicates that he is staying there and working until 7AM, a mild insanity which I am far too tired to argue about. "
+                ]
+            , TextWithFootnotes
+                [ Body "I wake up the next morning, shower "
+                , Footnote 12 "Unlike many other people attending the hackathon."
+                , Body ", and take the train in. On the train with me is my old TA, someone who I never got close to but argued with constantly during labs "
+                , Footnote 13 "Which were only labs in the weakest of senses. Computer Science labs always seem a bit forced. The purpose of a biology or chemistry or geology lab session is the lab building – you cannot perform these experiments anywhere else. The purpose of a computer science lab is to force you to write some code, and maybe to have TAs make fun of you while you do it. Imagine an \"English lab\". No one would take it seriously. But somehow, computer science, by virtue of having science in the name, gets away with it."
+                , Body ". We chat a bit about the hackathon. I ask him if he goes to hackathons often. He says yes. He asks if I do. I say I don't. I ask him if he graduated. He says yes. I say \"cool.\". It's the sort of conversation that doesn't communicate any information, but makes you feel that you followed a social norm. Normally, this feels good, but I had slept around five hours the previous night, so it just made me feel more tired."
+                ]
+            , TextWithFootnotes
+                [ Body "We eventually make it in to the hackathon. I go in to the room, and find DataScience passed out on the couch. I sit outside, working on my laptop, trying to decipher the changes he made after I went home last night. The last commit is at seven AM "
+                , Footnote 14 "And, amazingly, it has a coherent message and no obvious bugs. My 7AM commits tend to have messages like \"code\" and \"it works now\", and include obvious bugs with comments about how I don't care."
+                , Body ". I pick up where he left off. I write code for most of the morning, with X once he shows up. I wander around fairly often, to stretch my legs and rest my eyes, and ask other teams what they're working on. I am unsure whether I am flirting with the girls on the teams, partially because I'm at a hackathon, which is a non-flirting-friendly place, and partially because I'm never sure if I'm flirting with anyone."
+                ]
+            , TextWithFootnotes
+                [ Body "At four, I put a piece of paper on my tongue "
+                , Footnote 15 "Hopefully, this is enough to count as plausible deniability."
+                , Footnote 16 "Reason 1 why I was the coolest kid at the hackathon."
+                , Body ", and coding becomes much more interesting. I can see the abstract syntax tree of the code I am writing, and see links between different pieces of the code that connect together, but my memory gradually deteriorates and typing becomes difficult, because I am too interested in watching the letters on each key swim around."
+                ]
+            , TextWithFootnotes
+                [ Body "Now is probably the best time to explain why I was eating paper. That night, I was going to a sorority social "
+                , Footnote 17 "Not typically my type of event, but I was invited, and it would be churlish to refuse."
+                , Body ", and instead of drinking "
+                , Footnote 18 "Because I was going to a sorority event, I wanted to make sure that I wanted to be edgier than the other people there, so I could assure myself that I wasn't one of them."
+                , Body ", I picked a different drug. I take a Lyft home, and stare at the driver until she stops trying to talk to me. I stare out the window the rest of the drive. We go over a bridge, as the sun sets"
+                , Footnote 19 "It was 5PM. Fuck daylight savings time."
+                , Body "and I notice that everything looks like a painting, everything looks beautiful, and I smile to myself and enjoy the rest of the drive home."
+                , Footnote 20 "The Uber driver rated me five stars, somehow, despite how strangely I was acting."
+                ]
+            , TextWithFootnotes
+                [ Body "I get home, and change into my sorority social outfit, which is, unsurprisingly, different from my hackathon outfit "
+                , Footnote 21 "My outfit for the social included a red velvet turtleneck. The other men at the pre-game were very impressed that I knew how to dress. They were all wearing navy suits, and clearly didn't realize that men's fashion could be anything else."
+                , Body ". I step into my room, changing, and then step back out into the living room "
+                , Footnote 22 "Or the twenty square feet of space that are considered a living room in Northeastern dorms"
+                , Body " and notice the bathroom door is closed. I am slightly concerned about this fact, because it was open when I walked into my room. Of course, I am quite high at this point, and I could be mistaken, but I start to get concerned. After a brief moment that feels like an eternity, one of my roommates steps out of the bathroom. I scream a little, then calm down, then tell her "
+                , Footnote 23 "Yes, I have had female roommates. For some people reading this story, this is the most surprising part."
+                , Body "I walk ten minutes or so to my girlfriends place, where she is hosting a pregame "
+                , Footnote 24 "Or \"presocial\", but that sounds more like a phase of infant development than a type of party"
+                , Body "."
+                ]
+            , TextWithFootnotes
+                [ Body "In the distance between my apartment and hers, nothing interesting happens "
+                , Footnote 25 "Which is quite strange, for a trip (of the walking kind) during a trip (of the drug kind)."
+                , Body "."
+                ]
+            , TextWithFootnotes
+                [ Body "I arrive and stride in, boldly "
+                , Footnote 26 "The front door of her apartment building has conveniently had a broken lock for several months, at this point. It makes striding in boldly much easier."
+                , Body ". Showing up to a party and immediately walking into a girl's bedroom with the girl in tow gives you some respect from everyone else there "
+                , Footnote 27 "Except for Keith. But fuck that guy."
+                , Body ". I give her a piece of paper of her own, and take another half of one myself "
+                , Footnote 28 "No one ever said undergrads made good decisions."
+                , Body ", and we rejoin the party. No one knows. This is the pregame for a sorority event, so everyone is quite drunk. I know too many people here. One guy tries to talk to me about entrepreneurship and a startup idea I mentioned in passing to him "
+                , Footnote 29 "Remember Keith, from footnote 27? This is why I don't like him."
+                , Body ". Someone tries to Ice me. I take the ice, and walk away, somewhere between confusion (what a strange world we live in, where one type of drink demands immediate drinking) and judgement (fuck these frat-type people). I notice how parched my throat was, and how nice the cold Ice tastes. I drink four more over the next hour. This was a bad decision."
+                ]
+            , TextWithFootnotes
+                [ Body "Slightly tipsy "
+                , Footnote 30 "An understatement."
+                , Body "and severely high, I notice that everyone is being shooed out the door. The check-in for the social is starting. In my confusion, I had forgotten for a moment that each person going to a sorority event has to check-in at a place on campus before the event. This is to ensure that everyone is sober enough to make it through the night without embarassing the sorority "
+                , Footnote 31 "If you are a member of a group that encourages (underage) drinking, at least pick a group that won't shame you for (underage) drinking."
+                , Body ". So all forty of the people who were at the pregame head out. We form a line of well-dressed and warm men and scantily-clad "
+                , Footnote 32 "But, some would say, still well-dressed."
+                , Body "and cold women as we stream towards the auditorium where we have to check in."
+                ]
+            , TextWithFootnotes
+                [ Body "The auditorium has a bad aura "
+                , Footnote 33 "I only see or believe in auras while I'm tripping. But in that moment, I knew it was not where I wanted to be."
+                , Body ". The check-in table is set up in the business building "
+                , Footnote 34 "Already, a bad sign."
+                , Body ", and, the second I step in, I feel overwhelmed. Hundreds of drunk freshman throng the lobby, chattering and prattling and jabbering and blabbering. I overhear a girl talk about breaking up with a guy because he cheated on her with her sister. Before I realized she meant sorority sister, I felt very sad on her behalf. After realizing, I just felt regular amounts of sadness. My date and I push forward, trying to get to the desk. As we enter the crowd, I look her in the eyes, and say \"If I lose you in this crowd, I will lose my mind\". I meant it. I grab her hand, and hold it tightly, and she pulls me forward. We make it to the desk, sign in, and rush back outside. But it's too cold outside, so we wait in the airlock between the lobby and the outdoors. Here, we overhear a few more comical stories, meet up with our buddies, and head out."
+                ]
+            , TextWithFootnotes
+                [ Body "You may be wondering what I mean when I say buddy. Each person in the sorority brings a date "
+                , Footnote 35 "Or tries to."
+                , Body ", and pairs of dates are buddied up. Neither pair can get in to the venue without the other, and the pairs will get in trouble if the other pair doesn't sign out at the end of the night. Our \"buddy\" is a small, energetic Asian freshman, who reminds me in many ways of a girl who was an intern at the same company as me, the summer after my freshman year. Over the course of the night, she earns disapproving looks from three different bouncers, show us her (unconvincing) fake ID, and makes emphatically sure that we know she loves Northeastern."
+                ]
+            , TextWithFootnotes
+                [ Body "We arrive at the venue. The bright gold sign proclaims that the venue is named \"Gilt\". I had been hearing it as \"Guilt\" until this point, and I am given a brief moment of clarity in an otherwise very confusing night. The line is long, and cold, and hilarious. People in front of us occassionally stumble as they walk, and the most egregious stumbles, the stumbles that result in falling over the divider that creates the line, results in people getting kicked out. I'm having a grand old time. I get patted down at the entrance. The bouncer asks me if I have any nips on me. I resist the obvious joke that I have two. After investigating most of my pockets, he lets me in. I don't have any alcohol on me, but I do have three more pieces of paper in my wallet." ]
+            , TextWithFootnotes
+                [ Body "We show up, and I try to dance, but my heart just isn't in it. There is a feeling of judgement, that dancing at this party isn't doing anything useful, that the music is too loud, that the people are valid, that the entire Greek life system is fundamentally flawed, and so on "
+                , Footnote 36 "This sentence uses passive voice, but I'll admit in the footnotes: I'm the person doing the judging."
+                , Body ". I loiter on the side of the dance floor. My date and I discuss leaving, and then agree we should leave. We walk out, as people in the line are still coming in. A girl who is in the class I TA sees me, and says hi. I am unhappy with this notion. I wave, and we head out."
+                ]
+            , TextWithFootnotes
+                [ Body "Choosing to leave the event after a mere five minutes inside makes me feel superior to the people who are going to spend more than five minutes there "
+                , Footnote 37 "I'm going to not consider what it says about me that I show up to events that I feel good about leaving."
+                , Body ". We call an Uber, and as we're waiting for it, see two girls who are barred from entering. The bouncers say that they are too drunk, and kick them out. They walk up the street towards where we are, and hide behind us, afraid of the people in line seeing them. We offer to share our Uber with them, as we're heading to similar places, they agree"
+                , Footnote 38 "Well, my date offers. I am nowhere near this kind, and also think it would be rather creepy if I asked two young drunk sorority girls to share an Uber with me."
+                , Body ". The Uber arrives, and we drive back. It was horrific. The girls share the story of not being let in, from their perspective. Their perspective was wrong. They begin the ride by saying that neither of them had drank anything "
+                , Footnote 39 "In which case, it was rather confusing that they were slurring the words in their defense of their sobriety."
+                , Body ", and that they didn't want to go to the social anyway "
+                , Footnote 40 "In which case, it was rather confusing that they showed up at all. On the other hand, I was there, despite not really wanting to be, so I can't really make fun of them for this one."
+                , Body ". My date and I exchange glances through the rear-view mirror. She consoles them a little. The next iteration of their story, they just had one shot each"
+                , Footnote 41 "Shots, famously, being the best way to consume small amounts of alcohol over a long period of time"
+                , Body "and they are slightly bummed about not getting in, but mostly worried about their buddy "
+                , Footnote 42 "I don't think I said this last time I mentioned the buddy system, but it's paternalist bullshit."
+                , Body ". I believe this story slightly more. My date talks about how they'll be laughing about this in a year "
+                , Footnote 43 "I certainly am laughing at them a year later, but I don't think this is what she meant."
+                , Body ", and not to worry about it. They tell us the next iteration of their story, in which they consumed slightly more alcohol, and feel slightly sadder. But they make sure to blame the bouncer for being a dick, because underaged drinking is expected at sorority events, so they didn't really do anything wrong. This pattern repeats for a few more iterations, and then we arrive "
+                , Footnote 44 "Thank god."
+                , Body "."
+                ]
+            , TextWithFootnotes
+                [ Body "My ex and I walk in to her apartment, lie down on her bed, and each eat some more paper. Just as I place it on my tongue, there's an urgent pounding at the door. Because I'm high, I assume that the police have found out about us. I start worrying. My date is in the bathroom, so I get up and go to the door. I open it, and it's just a normal guy"
+                , Footnote 45 "Actually he was 6'9\": the Northeastern baseball team lived in the same building, so everyone weas freakishly tall."
+                , Body ". He tells me there's a fire in the building, and we have to evacuate. I don't hear any fire alarms going off, and we're on the first floor near the door, so I'm not too worried, but I tell my date to hurry up in the bathroom anyway. I pull my shoes on, grab my jacket, and loiter near the front door watching the scene unfold. Various people in various states stumble out the front door. A few minutes in, a fire truck pulls in, and two firemen in full fire gear burst through the front door and run upstairs. At this point, I yell at my date that we really have to be getting a move on, because there's a real fire; she and I run out. Waiting on the street, we are captivated by the beautiful lights on the fire truck and ambulance, and talk about how crazy it is that this night, of all nights, would be the night her apartment building burned down. Her roommates walks out a few minutes later, with a backpack and talking about how she brought her laptop and passport and other valuables out of the building. We feel like idiots for not bringing anything "
+                , Footnote 46 "Well, she does. All my stuff is in my apartment, a 10 minute walk away."
+                , Body " but it's far too late to go back into the building."
+                ]
+            , TextWithFootnotes
+                [ Body "One of my exes walks out of the building. Well, ex is not strictly the correct characterization. She and I are no longer seeing each other, but at the time I was alternating nights between my date to the sorority social and the other girl "
+                , Footnote 47 "She happened to be my former student, and now TAing the same class as me. It was a strange semester for my sex life."
+                , Body ". She and I see each other, and say nothing "
+                , Footnote 48 "We had a relationship based on mutual disrespect."
+                , Body ". We awkwardly glance at each other for a while, but mostly we're concerned with the building on fire next to us. It's cold out, so my date and I decide to head to my apartment. We make it as far as the street corner, before we encounter my ex and her friends. Fortunately "
+                , Footnote 49 "Unfortunately."
+                , Body ", my date knew one of my ex's friends, so my ex and I have to studiously ignore each other while they talk. Then, mercifully, we head opposite directions."
+                ]
+            , TextWithFootnotes
+                [ Body "We make it back to my apartment. One of my date's friends wants her to come hang out. There is some drama, someone offended someone, and my date feels the urge to apologize in this moment. Because she's very high "
+                , Footnote 50 "And, because I want to have sex with her."
+                , Body ", I tell her that this would be a bad idea. She starts panicking in a serious sense, hyperventilating and being unable to form complete sentences. I talk her down from the panic, and we drink some water, and then we merge souls"
+                , Footnote 51 "This is a metaphor for having sex on acid."
+                , Body ". We come down a bit, hanging around and drinking water. We go back to her place. It wasn't on fire, someone on the third floor just burnt something while cooking. We toss and turn and toss and turn and eventually fall asleep."
+                ]
+            , Plain "And the next morning, I wake up at 7 AM, and go back to the hackathon."
+            ]
         ]
