@@ -189,7 +189,8 @@ header model =
                 [ viewHeaderLink (Route.toUrlString Route.Home) "julianzucker.com"
                 , viewHeaderLink (Route.toUrlString Route.Resume) "resume"
                 , viewHeaderLink (Route.toUrlString Route.Essays) "essays"
-                , viewHeaderLink (Route.toUrlString Route.Log) "log"
+
+                --                , viewHeaderLink (Route.toUrlString Route.Log) "log"
                 , viewHeaderLink (Route.toUrlString Route.TwelveProblems) "12"
                 ]
             )
