@@ -655,11 +655,11 @@ essays =
                 , Body " but it's far too late to go back into the building."
                 ]
             , TextWithFootnotes
-                [ Body "One of my exes walks out of the building. Well, ex is not strictly the correct characterization. She and I are no longer seeing each other, but at the time I was alternating nights between my date to the sorority social and the other girl "
-                , Footnote 47 "She happened to be my former student, and now TAing the same class as me. It was a strange semester for my sex life."
+                [ Body "One of my exes, let's call her Russia, walks out of the building. Well, ex is not strictly the correct characterization. She and I are no longer seeing each other, but at the time I was alternating nights between my date and Russia "
+                , Footnote 47 "Russian happened to be my former student, and was at the time TAing the same class as me. It was a strange semester for my sex life."
                 , Body ". She and I see each other, and say nothing "
                 , Footnote 48 "We had a relationship based on mutual disrespect."
-                , Body ". We awkwardly glance at each other for a while, but mostly we're concerned with the building on fire next to us. It's cold out, so my date and I decide to head to my apartment. We make it as far as the street corner, before we encounter my ex and her friends. Fortunately "
+                , Body ". We awkwardly glance at each other for a while, but mostly we're concerned with the building on fire next to us. It's cold out, so my date and I decide to head to my apartment. We make it as far as the street corner, before we encounter Russia and her friends. Fortunately "
                 , Footnote 49 "Unfortunately."
                 , Body ", my date knew one of my ex's friends, so my ex and I have to studiously ignore each other while they talk. Then, mercifully, we head opposite directions."
                 ]
