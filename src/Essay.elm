@@ -672,4 +672,54 @@ essays =
                 ]
             , Plain "And the next morning, I wake up at 7 AM, and go back to the hackathon."
             ]
+        , Model
+            "How to Get an A+ in Algorithms"
+            "how-to-get-an-a-in-algorithms"
+            Listed
+            [ TextWithFootnotes
+                [ Body "Many systems at Northeastern have poorly-designed incentive structures. The Algorithms course is one particularly egregious example. I got a nearly-perfect grade in that class, primarily because I understood the incentive structures better than most other students."
+                ]
+            , TextWithFootnotes
+                [ Body "Of course, I did in fact study and learn in that class. I use Anki, a spaced-repetition flashcarding tool that makes classes much easier. Each lecture, I would record a few (usually around a dozen) notes, the facts that I figured I ought to remember for the rest of the semester, and make a flashcard for each of those facts. This certainly helped, but I still made several mistakes on the first homework assignment. I understood the material well, but it is easy to make small mistakes while doing math, and even easier to make mistakes while doing math you don't care about. " ]
+            , TextWithFootnotes
+                [ Body "So, I thought about the way that the homeworks are graded. At office hours, a TA told me that they give you the points if anythign in your answer is correct. This is a terrible idea. In my future homeworks, I would sometimes answer a question two different ways"
+                , Footnote 1 "Many of the questions were ambigious enough that there were multiple correct answers, making this less insane than it sounds."
+                , Body "and if one of the two was correct, the TAs would mark it correct and give me the points, even as they crossed out the other half of the answer. When a proof was assigned, I would write pages and pages of inscrutable prose, with the correct answer almost definitely in one of the statements I proposed. I would lead with the answer I believed to be most likely to be true, and then write a whole lot more. Why not? If anything in there is correct, I would be given the points, so the more I wrote, the higher the expected grade. For the rest of the semester, I continued this strategy of proof by intimidation, and my grades rose to reflect my deeper understanding of the grading system "
+                , Footnote 2 "Not the material. But then again, what college class is actually about the material?"
+                , Footnote 3 "Fundamentals of Computer Science is actually about the material."
+                , Body "."
+                ]
+            , TextWithFootnotes
+                [ Body "This makes me an asshole. One of the TAs of the course, who I was quite friendly with by the end of the semester "
+                , Footnote 4 "This sounds like I slept with him. I did not sleep with him."
+                , Body ", told me that he hated grading my homeworks. I explained why I was incentivized to write what amounted to a treatise on each problem, and he grudgingly agreed that it makes sense. Still, I forced him to read far more pages of mediocre solutions to mediocre math problems than anyone ought to be forced to read "
+                , Footnote 5 "And it wasn't even typeset or in nice handwriting. I gave them the full cursive treatment. This is because I also understood that if everything I was saying seemed right, and reading it was difficult, the path of least resistance for a grader is to give up and give me a good grade. This is how I got through most of high school."
+                , Body ". I would go to his office hours once a week, and we would collectively struggle through my handwriting and hazy memory of the previous week "
+                , Footnote 6 "This was a semester where I was drinking most Thursdays, Fridays, and Saturdays, so my memory was weaker than usual. And even usually, I have a terrible memory."
+                , Body " to try to find the correct answer in the slew of answer-like things I had written."
+                ]
+            , TextWithFootnotes
+                [ Body "The office hours were absurd for another reason. The TAs were not given the answer key to the homework, but they tended to know the answers to the homeworks "
+                , Footnote 7 "Although when they lead the review sessions for the tests, they tended to tell us that most of the information on the test was bullshit we would never use, to justify why they didn't know the answers to the questions on the test review. While I appreciated the honesty, this was not the time for that type of cynicism; I needed to get an A+ in the class so that I could be taken seriously when I wrote a snarky piece about it later."
+                , Body ". And, they were fully authorized to tell you whether or not an answer was correct. So, I would show up to office hours with several reasonable answers to each question, and run them by the TAs until one was confirmed to be the right idea. Then, I would demonstrate it was true, complete the steps of the proofs, or draw the pretty picture  "
+                , Footnote 8 "Fuck doing graph theory problems on paper."
+                , Body " that was required to get the correct answer. But importantly, I only had to do that work for answers I knew were correct, because I could confirm I was headed in the correct path. This saved a significant amount of time on the homeworks, time that was better-spent writing down four alternative solutions that were all along the path the TA described."
+                ]
+            , TextWithFootnotes
+                [ Body "It may be a surprise, given everything else I've written here, but I enjoy learning, and think it has immense intrinsic value. I just also see the incentive structures behind (and instrumental value of) getting good grades. I learned a lot during this class "
+                , Footnote 9 "And ended up hanging out with two different girls to study (and not study), an unusually high number for a computer science class."
+                , Body " and ended up enjoying it quite thoroughly "
+                , Footnote 10 "Although I won't speculate on on I enjoyed the class because of the girls I met, or because I learned some interesting things."
+                , Body "."
+                ]
+            ]
+
+        --        , Model
+        --            "Stop Inviting Me to Bible Study"
+        --            "bible-study"
+        --            Listed
+        --            [ TextWithFootnotes
+        --                [ Body "TODO"
+        --                ]
+        --            ]
         ]
