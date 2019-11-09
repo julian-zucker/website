@@ -124,3 +124,7 @@ li .essay-link {
     margin-left: 5%;
 }
 
+ol {
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
+}

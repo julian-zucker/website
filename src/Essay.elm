@@ -47,6 +47,7 @@ type FootnoteItem
     = Body String
     | Footnote Int String
     | NumberedList (List String)
+    | NumberedListStartingAt Int (List String)
 
 
 getEssayBySlug : String -> Maybe Model
@@ -126,6 +127,9 @@ htmlFromFootnoteItems footNoteItems =
 
                 NumberedList list ->
                     ol [] (List.map (\item -> li [] [ text item ]) list)
+
+                NumberedListStartingAt startingAt list ->
+                    ol [ start startingAt ] (List.map (\item -> li [] [ text item ]) list)
     in
     List.map htmlFromFootnoteItem footNoteItems
 
@@ -145,6 +149,9 @@ textFromFootnoteItem item =
             ""
 
         NumberedList list ->
+            ""
+
+        NumberedListStartingAt int list ->
             ""
 
 
@@ -785,7 +792,44 @@ essays =
             , TextWithFootnotes
                 [ Body "Too many people have asked me to Bible study for it to be a coincidence "
                 , Footnote 26 "They would tell me that this means I should believe in the Christian God. A meta-argument for Bible study."
-                , Body ". I don't know what it is about me that attracts them. But I'd like to say, to all of them: please, stop asking me to Bible study. And, to God: the girls would have to be way more attractive to convince me that Bible study is worth it."
+                , Body ". I don't know what it is about me that attracts them. But I'd like to say, to all of them: please, stop asking me to Bible study. And, to God: you're going to have to send some more attractive girls."
                 ]
+            ]
+        , Model "Professional StarCraft 2"
+            "professional-starcraft"
+            Listed
+            [ TextWithFootnotes
+                [ Body "I am, technically, a former professional StarCraft 2 player. When I was in middle school, I played StarCraft 2 extensively. I was very good for my age "
+                , Footnote 1 "I think."
+                , Body ", and played in some age-limited tournaments, which I occasionally won. In fact, I won often enough that I recouped my tournament buy-ins, enough to cover the cost of the game itself, and I thought this was a pretty good deal "
+                , Footnote 2 "My slightly-older self realizes that spending hundreds of hours playing a game in order to make ~$100 is not a good deal. But as a child, I had far fewer opportunities to make money than I do today. In fact, it was probably illegal for people to hire me. And playing video games is more enjoyable than mowing lawns."
+                , Body ". The money was nice, I guess "
+                , Footnote 3 "Can you tell I grew up in a firmly upper-ish-part-of-the-middle-class household? "
+                , Body ", but playing StarCraft competitively changed my life. Other than being one of the reasons I met one of my best friends through all of middle and high school, it taught me the generic algorithm for getting better at things "
+                , Footnote 4 "Although it took me several years to realize that this algorithm could be applied to things other than StarCraft."
+                ]
+            , TextWithFootnotes
+                [ Body "StarCraft 2 has a ladder system that provides immediate feedback on your performance. You can queue up, get matched against a stranger, and play a game. At the end of the game, the winner gains some points, and the loser loses some. Internally, they use Elo rankings, but they publish a different number. Regardless of the exact scoring mechanism, you can see this score trend up and down, and if you play enough games "
+                , Footnote 5 "And I was certainly playing enough games."
+                , Body ", it becomes quite accurate. I floundered about in the lowest rung on the ladder, playing games and being so incompetent that I didn't even understand why I was losing games when I lost. I thought perhaps I could learn from the real professional games, and so I tuned in to a tournament. The camera flew around, showing different parts of the game map every second, mysterious things were happening, and the close-ups of the players' hands dancing over the keyboard were downright intimidating. Eventually, I found the livestream of a StarCraft personality, Day9. He would watch a replay of a game, commentating on why one player did better or worse than another, and importantly, his content was targeted at bad players like me."
+                ]
+            , TextWithFootnotes
+                [ Body "He introduced me to the general algorithm for getting better at things."
+                , NumberedList
+                    [ "Choose the thing you want to get better at."
+                    , "Choose one piece of that thing that you are doing poorly."
+                    , "Practice, focusing only on that one piece, even at a cost to your overall performance."
+                    , "Once you are doing better at the one piece, go to 2."
+                    ]
+                , Body "Armed with this way to create practice regimes, I did. I knew what I was failing at "
+                , Footnote 6 "And this part is hard. Often, the hardest part of this algorithm is step 2. If you are unconscious of your incompetence, you don't know what you ought to be improving."
+                , Body ", and I could get better at those things! My ranking suffered in the short term, because I was focusing on some small parts of the game while neglecting almost everything else. But after picking enough of those small parts of the game to improve at, my ranking began to climb again. This felt really good. "
+                ]
+            , TextWithFootnotes
+                [ Body "I kept playing StarCraft, occasionally competitively, mostly just with friends, for most of middle school. By the time high school rolled around, I was starting to make the transition into MineCraft and various indie single-player games, which aren't skill-focused. They're about enjoying yourself and making cool-looking contraptions or following a story. There's nothing inherently wrong with this type of game, but they will never provide someone with an environment where they really want to grow their skill at something. StarCraft 2, for me, was like learning how to play an instrument. The reason we want children to learn how to play instruments "
+                , Footnote 7 "Except guitar. If you pressure your kid to learn guitar, you want them to get laid. But oboe? Not so much."
+                , Body " is to give them this same experience. This is the growth mindset –\u{00A0}knowing that you can improve, and having to figure out how to devise training regimens for yourself. This is an invaluable skill. Much to my parent's disappointment, clarinet did not teach me any of this, but fortunately, I managed to get some of the same outcomes through video games."
+                ]
+            , Plain "See, Mom? I told you playing video games was good for me."
             ]
         ]
