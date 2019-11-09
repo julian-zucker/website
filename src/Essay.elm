@@ -709,17 +709,83 @@ essays =
                 [ Body "It may be a surprise, given everything else I've written here, but I enjoy learning, and think it has immense intrinsic value. I just also see the incentive structures behind (and instrumental value of) getting good grades. I learned a lot during this class "
                 , Footnote 9 "And ended up hanging out with two different girls to study (and not study), an unusually high number for a computer science class."
                 , Body " and ended up enjoying it quite thoroughly "
-                , Footnote 10 "Although I won't speculate on on I enjoyed the class because of the girls I met, or because I learned some interesting things."
+                , Footnote 10 "Although I won't speculate on whether I enjoyed the class because of the girls I met or because of the things I learned."
                 , Body "."
                 ]
             ]
-
-        --        , Model
-        --            "Stop Inviting Me to Bible Study"
-        --            "bible-study"
-        --            Listed
-        --            [ TextWithFootnotes
-        --                [ Body "TODO"
-        --                ]
-        --            ]
+        , Model
+            "Stop Inviting Me to Bible Study"
+            "bible-study"
+            Listed
+            [ TextWithFootnotes
+                [ Body "I've been living in Denver for four months. Mostly, it has been like any other city, but more people smoke weed "
+                , Footnote 1 "This is an oversimplification. More people have tripped acid, also."
+                , Body ". Denver is a revelrous city, with drunk people whirring past on electric scooters "
+                , Footnote 2 "Boston really needs to get its shit together with respect to e-scooters."
+                , Body " pretty much constantly after 9PM "
+                , Footnote 3 "Or, to be honest to Denver's drinking culture, 6PM. My coworkers and I go out for drinks after work, and it turns out that two drinks at 5280 feet above sea level is equivalent to several bottles of wine at sea level. I got the opportunity to test this fact when I visited Boston for my 21st birthday. Drinking at sea level felt like a marathon. I drank a bottle of wine to warm up, had a few Mike's Hard Lemonade's, and then went out and had several drinks at several bars. I stayed vertical. After four drinks at altitude, I get horizontal."
+                , Body ". But strangely, despite the higher rate of revelry per capita, people keep asking me to if I want to go to  bible study."
+                ]
+            , TextWithFootnotes
+                [ Body "I am severely athiest. To convince me that God exists, you're going to need a whole new miracle, caught on several cameras. If your argument is predicated on the Bible being God's "
+                , Footnote 4 "As an athiest, do I have to capitalize God?"
+                , Body "literal truth "
+                , Footnote 5 "Which the Bible itself doesn't claim. None of the Bible is Jesus's words, it's all random goons who happened to be nearby and wanted to talk to journalists."
+                , Body ", I'm not going to be convined. I signal this, strongly. A man wearing all black, scowling on a street corner, trying to cross the road, is probably not the best target for your Bible study. I was crossing 15th "
+                , Footnote 6 "The road itself doesn't matter, but saying a specific road probably convinces you that this really happened."
+                , Body ", and a man waiting at the corner with me starts making sketchy eye contact with me. I say sketchy, because he was acting as if he was very attracted to me "
+                , Footnote 7 "A common Bible-study-inviter tactic. We'll revisit this."
+                , Body ": he would glance over at me, and when I glared back "
+                , Footnote 8 "I was having a bad day. I don't normally glare."
+                , Body ", he would avert his eyes. We played this game of stare-glare-avert several times, until he eventually started talking to me. He said hello, and so I said hello. He asked me if I wanted to go to Bible Study "
+                , Footnote 9 "Okay, I know that the S in Study isn't capitalized, but Jesus-types want me to capitalize so much else. I get carried away with capitalization around God."
+                , Body """. I laugh, and say "Sorry! I'm very athiest, doesn't my outfit signal that?", as I gesture towards myself. I am wearing Chelsea boots, a famously atheistic shoe """
+                , Footnote 10 "At least, I wear Chelsea boots to signal my athiesm."
+                , Body """. He laughs back, and tries to convince me that anyone can wear any clothing. While he isn't strictly wrong, he is missing the point of clothing. Clothing is the most potent social signaling mechanism that we have, and wearing a long(ish) black coat over black jeans with black chelsea boots with a band shirt is a pretty strong social signal. It signals that I don't want to go to Bible study. """
+                ]
+            , TextWithFootnotes
+                [ Body "He won't accept no for an answer "
+                , Footnote 11 "Which says bad things about him as a person."
+                , Body ", and he presses me. Every Bible-study-inviter has a set of talking points. And, incredibly, they're all different "
+                , Footnote 12 "I wonder if they have a handbook. They probably don't A/B test opening lines, because I'm pretty sure they think statistics was invented 6000 years ago."
+                , Body ". This guy asks me how long I've been studying math. I think for a second, forgetting for a moment how old I am "
+                , Footnote 13 "Everything since I turned 21 has been somewhat of a blur."
+                , Body ", then I tell him fifteen years, which I figure is close enough to true "
+                , Footnote 14 "I'm sure it doesn't matter for his pickup line. And, in fact, it doesn't."
+                , Body ". He asks me if I think I understand all of math, and I reply with a long laugh and a \"Nope!\". He doesn't find it as funny as I do. He asks me how long I've spent studying the Bible. I see where this is going. I say \"long enough\", which he doesn't hear at all. He asks whether I can understand, truly, what the Bible is saying, if I've studied it for less time that I've studied math. I tell him that I think I understand what Animorphs is saying, and I only studied each book in the series for a few hours tops. At least they had good cover art! He is not happy with this. We part ways. I turn left without telling him, and he goes straight. The same social pressures that lead me into conversation with him prevents him from turning around and following me. I make it home. Being asked to Bible study once is not particularly interesting, so I take no note."
+                ]
+            , TextWithFootnotes
+                [ Body "The next day, I'm on CU Denver's campus"
+                , Footnote 15 "Sometimes I go to campus, and sit on a bench, and write poetry. Not that it's any of your business what I do on CU Denver's campus."
+                , Body ". I hang out for a bit, revel in what I know to be one of the last days of summer "
+                , Footnote 16 "This is false. Denver's weather is slightly schizophrenic, so that it can be overcast and snowy on the same day that it's 70 and sunny."
+                , Body ", bask in the sun, write a bit. I pack my stuff, stand up and leave, and as I'm walking out, I pass a gaggle of girls. One of them whispers something to another, which I hear as \"go for it!\", so I am marginally excited, as I think someone is about to ask for my number"
+                , Footnote 17 "Despite the fact that something like this has never happened before. I suffer from the male predisposition to fantasize about things like this."
+                , Body ". But that is not the case. This cute black girl "
+                , Footnote 18 "My understanding of churches is that they are typically strongly segregated by race. The man in the previous paragraph was Asian. Are these two different churches? Are they both members of a single group of churches, united by their shared love of Bible study?"
+                , Body " walks up to me, and my heart flutters a bit "
+                , Footnote 19 "Although, at 5280 feet above sea level, even just walking short distances causes my heart to flutter. So we can't rule out very small amounts of exercise as the cause of this heart flutter."
+                , Body ". She asks me whether I want to go to Bible study this Thursday at 3. I laugh, and say I'm athiest. She has no banter. She just looks severely disappointed in me. I walk home, confused about the emerging pattern of people asking me to Bible study."
+                ]
+            , TextWithFootnotes
+                [ Body "I am sitting on a bench on CU Denver's campus. I have had a weird morning "
+                , Footnote 20 "I met a man named Imhotep. I am firmly convinced he is a drug dealer. He gave me his number. We have plans to get drinks. He said the phrase \"movin' and groovin'\" at least three times."
+                , Body ", and so I am ready for anything. Or so I think. A man "
+                , Footnote 21 "White, to emphasive the multicultural nature of the people who ask me to Bible study."
+                , Body " asks if he can sit next to me. I say yes, assuming he is going to be an interesting bench compatriot. He is not. He asks what I'm doing on campus. I make something up. He asks me if I want to go to Bible study. By now, I've started formulating responses to this question. I quip \"I'm sorry, but I have a girlfriend. Thanks for the offer, though\". Despite hours "
+                , Footnote 22 "Maybe minutes. But I certainly had one full shower worth of thoughts about responses to Bible study invites."
+                , Body " of time spent preparing this response, aimed at unsettling the asker enough to scare them away, designed to cut deeply at the (presumed) fear of homosexuality in the person asking me to Bible study, it has no effect. He laughs, and says it's not like that. He wants me to find Jesus inside me "
+                , Footnote 23 "A message with deeply homosexual undertones, I might add."
+                , Body ". I tell him to please leave my bench. He asks whether I've ever experienced something I would consider unexplainable by science "
+                , Footnote 24 "No."
+                , Body ". I tell him to please leave my bench. He asks whether I've ever been in a situation of mortal danger, when I thought I was going to die, but I lived "
+                , Footnote 25 "I've been to New York and tried to jaywalk, so the answer is definitively yes."
+                , Body "."
+                ]
+            , TextWithFootnotes
+                [ Body "Too many people have asked me to Bible study for it to be a coincidence "
+                , Footnote 26 "They would tell me that this means I should believe in the Christian God. A meta-argument for Bible study."
+                , Body ". I don't know what it is about me that attracts them. But I'd like to say, to all of them: please, stop asking me to Bible study. And, to God: the girls would have to be way more attractive to convince me that Bible study is worth it."
+                ]
+            ]
         ]
