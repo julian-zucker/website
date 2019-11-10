@@ -83,6 +83,10 @@ li .essay-link {
     display: block;
 }
 
+.essay-title {
+    font-size: 23px;
+}
+
 .essay-header {
   padding-bottom: 20px;
 }

@@ -58,8 +58,9 @@ getEssayBySlug essaySlug =
 view : Model -> ( String, List (Html msg) )
 view { name, content } =
     ( name
-    , [ div [ class "blog-content" ]
-            [ div [ class "blog-text" ]
+    , [ div [ class "essay-content" ]
+            [ div [ class "essay-title" ] [ text name ]
+            , div [ class "essay-text" ]
                 (let
                     accs =
                         List.foldr viewContentItem ( [], [] ) content
