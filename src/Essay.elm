@@ -11,6 +11,7 @@ import Route
 -- TODO footnotes shouldn't have to specify their number, should be automatically generated
 -- TODO essay titles should appear above essays when on their pages
 -- TODO include date that the essay was written
+-- TODO previous/next links?
 
 
 type alias Model =
@@ -838,7 +839,7 @@ essays =
             Listed
             [ TextWithFootnotes
                 [ Body "We co-evolved with it. Alcohol was discovered thousands of years ago "
-                , Footnote 1 "I made this number up. But it sounds believable, right?"
+                , Footnote 1 "I made this fact up. But it sounds believable, right? Alcohol's been around for a bit, is all I really mean to say, but thousands of years is just so much more impressive. "
                 , Body " and humans have been drinking it ever since. If humans evolved with alcohol, then it makes since that we would evolve to be dependent on it."
                 ]
             , TextWithFootnotes
@@ -862,5 +863,27 @@ essays =
                 , Footnote 7 "And conwomen. Conpeople? That sounds wrong. I'll keep it as conmen."
                 , Body ", but open enough that a little bit of alcohol puts you in a sociable enough mood to meet new friends and dance in religious ceremonies and whatever else added to reproductive fitness thousands of years ago."
                 ]
+            ]
+        , Model "Philosophy Is Hard"
+            "philosophy-is-hard"
+            Listed
+            [ TextWithFootnotes
+                [ Body "But people often act as if it's not. The default perception is that any person could do professional philosophy, but that only a few people can do professional math "
+                , Footnote 1 "I'm talking almost exclusively about research here. Engineers, I suppose, are mostly professional mathematicians."
+                , Body ". I think that both are difficult, but in different ways, and that social perception here is wrong."
+                ]
+            , TextWithFootnotes
+                [ Body "First, a caveat: it is much easier to bullshit in philosophy than in math. Because philosophy texts are so full of jargon and words with different meanings in philosophy and common parlance "
+                , Footnote 2 "I blame this on the GRE. Academics spend many hours studying vocabulary for this test, and then spend the rest of their careers trying to justify it by overusing esoteric words in their papers. This is my theory for why academics tend to write like assholes."
+                , Body ", bullshit philosophy and real philosophy look quite similar. Because the medium for communicating is English, a relatively imprecise language, real philosophy described poorly can seem quite like bullshit, and well-presented bullshit philosophy can seem legitimate. In math, the mode of communicating is a symbolic logic, more precise, and much easier to fact check. Philosophers can make arguments in favor of a point, and then realize they were mistaken, in math, it is somewhat shameful to publish a proof that is later found to be flawed. It may be easier to bullshit philosophy than math, but that doesn't mean that doing good philosophy is easier than doing good math."
+                ]
+            , TextWithFootnotes
+                [ Body "Philosophy, as a discipline, involves lots of reading and writing. Most people can read, and write, and so assume that philosophy can't be that hard. But the reading and writing is quite different; extracting a coherent argument from someone else's writing involves much more thought and care than just skimming a news article. Math, on the other hand, involves lots of messing around with little squiggly lines on paper. This is something that most people can't do, or at least are afraid of. So, math gets a reputation for being more difficult, because it involves squigglier lines." ]
+            , TextWithFootnotes
+                [ Body "A thought experiment someone told me once, aimed at identifying which academic disciplines are the easier, goes like this: \"Imagine that we live in a dictatorship, and all of the professors are forced into another discipline, chosen randomly. They have two years to get up to speed in that discipline, and then are expected to start producing research in that field. Who is the most scared?\" The example I heard it with was swapping the fields of literature and physics professors, where my intuition says that the physicists would have a better shot at adapting to their new field. But I'm not so sure about philosophy and math "
+                , Footnote 3 "Of course, there is a broad overlap between philosophy and math, for example, most of logic can be ascribed to either field. Pretend that there is no overlap here, for now. Imagine we swap the metaethicists with the linear algebraists."
+                , Body ". Could math professors really understand metaethics? Would they be totally fine ramping up on Kant in two years? I think they would struggle as much as the philosophers who had to learn how to do mathematical research."
+                ]
+            , Plain "Math is hard. Philosophy is hard. Stop insulting the intelligence of philosophers, please."
             ]
         ]
