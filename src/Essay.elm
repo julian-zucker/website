@@ -833,4 +833,34 @@ essays =
                 ]
             , Plain "See, Mom? I told you playing video games was good for me."
             ]
+        , Model "Of Course We're Dependent On Alcohol"
+            "of-course-were-dependent-on-alcohol"
+            Listed
+            [ TextWithFootnotes
+                [ Body "We co-evolved with it. Alcohol was discovered thousands of years ago "
+                , Footnote 1 "I made this number up. But it sounds believable, right?"
+                , Body " and humans have been drinking it ever since. If humans evolved with alcohol, then it makes since that we would evolve to be dependent on it."
+                ]
+            , TextWithFootnotes
+                [ Body "Obviously, the environment that a population exists in influences the path of their evolution. But a bunch of creatures in a warmer climate, those with less fur will thrive, in a colder climate, just the opposite. All evolution works in this way: based on the environment that a species is in, certain traits are advantageous, and those traits allow their owners to have more children (or more successful children), so they take over the population. But this may not make as much sense in the human context. Reproductive fitness, in the modern age, is more determined by will to have children than ability to produce enough for your children to survive. This is why religions that encourage their members to have many kids, or avoid using birth control, tend to survive"
+                , Footnote 2 "Unfortunately."
+                , Body "."
+                ]
+            , TextWithFootnotes
+                [ Body "But thousands of years ago, in semi-pre-historic times, food was still scarce, rates of murder were quite high, and reproductive fitness was based on more than just your inclination to baby-making "
+                , Footnote 3 "In the literal sense, not the euphemistic one. Have as much protected sex as you want, it won't make you more fit (in the Darwinian sense, although it may make you more fit in the athletic sense)."
+                , Body ". So the evolutionary pressure exerted by the environment were a bit stronger. And alcohol had been invented."
+                ]
+            , TextWithFootnotes
+                [ Body "If we evolved in an environment with alcohol "
+                , Footnote 4 "We did."
+                , Body " and the environment shapes evolution "
+                , Footnote 5 "It does."
+                , Body "it follows that alcohol shaped our evolution. Human social instincts are the result of evolution. And the presence of alcohol shapes what social instincts are beneficial to have. In an environment where alcohol is present, people can choose to lower their inhibitions and become more gregarious, whenever they choose "
+                , Footnote 6 "Alcohol won't always be available, but let's imagine for a second."
+                , Body ". If this is the case, then people whose social instincts are overly sociable have no way to fix this problem, while people whose social instincts are overly reserved can make up the difference with alcohol. So, I imagine, the best social disposition is one that is slightly too shy - shy enough to keep you safe from conmen "
+                , Footnote 7 "And conwomen. Conpeople? That sounds wrong. I'll keep it as conmen."
+                , Body ", but open enough that a little bit of alcohol puts you in a sociable enough mood to meet new friends and dance in religious ceremonies and whatever else added to reproductive fitness thousands of years ago."
+                ]
+            ]
         ]
