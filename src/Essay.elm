@@ -913,4 +913,31 @@ essays =
             , Plain "We walk in the spring. Mist and rain together drizzle down, or perhaps it's just a fog, but anyway it's rather damp and you feel droplets accumulate in your hair. A light jacket, pants, boots, serve to protect you, mostly, from this set of weather. Are you wearing rainboots? If so, go ahead, jump in the puddle. If not, jump anyways, we'll all be thoroughly waterlogged at the end of the walk anyway, may as well hasten the process. See the skyscrapers, enshrouded in fog, cut off halfway up, looking as if they go on forever, past the fog line. The light is dim, though the sun is overhead, the clouds diffusing and blocking the sun to various degrees, so that you can see everything, but everything still seems concealed. The animals are out, again, and you can hear birds twitter away in the trees that have yet to regrow their leaves."
             , Plain "They drive. And they feel nothing."
             ]
+        , Model "What Are Libraries For?"
+            "what-are-libraries-for"
+            Listed
+            [ TextWithFootnotes
+                [ Body "I am sitting in a library while writing this. It's no good, writing in a library. The goal of perfect silence, an admirable goal, means that the library is almost dead still. Except, of course, once or twice a minute, when someone zips up a backpack, drops a book, or says a few words to their friend. Then, because the moments before and after the noise are so silent, it stands out, makes you look up, stop concentrating. The syncopated bursts of sound in otherwise deep silence doesn't work for me, the coffeeshop's consistent white noise being far less distracting "
+                , Footnote 1 "Until a rambunctious group of people comes in, and they start loudly discussing their friend group's most recent breakup. During those moments, I prefer the library."
+                , Body "."
+                ]
+            , TextWithFootnotes
+                [ Body "I am conscious of the sound of my typing. One of the keys on my keyboard squeaks a little, every time you press it. It never annoyed me before. Now, I slam the key down, hoping the mushy thud of a laptop key being pressed will drown out the squeak, hoping that I'm not causing anyone undue annoyance. Near me, a pencil scratches on a piece of paper. An eraser, pushed past the edge of the page, squeaks onto the table. No comments from the people in the library, these are the noises of people at work. My laptop keyboard, squeak or no, is a working sound, and so accepted. Nearby, a man chuckles, and the people near him shush him."
+                ]
+            , Plain "Libraries are the only place where people will always shush you if you laugh."
+            , TextWithFootnotes
+                [ Body "I type away on my computer. When I need to look something up, I open a new tab, and launch a search "
+                , Footnote 2 "On DuckDuckGo, not on Google. You should be afraid of Google."
+                , Body ". The books next to me, although they may hold the answer, aren't as easily searched as the internet. Fiction, and books I want to read for fun, those I can understand having in print form, because there's something distinctive about reading a physical book. But my textbooks, and books I'll want to cite later, those I prefer having on a computer. But libraries still hold on to shelves after shelves of reference material. There are computers here, available for the public to use "
+                , Footnote 3 "Although I'm not sure I would trust the cleanliness of the keyboards."
+                , Body ", so everyone else who needs to learn some particular fact will turn to Google "
+                , Footnote 4 "And probably not DuckDuckGo, unfortunately."
+                , Body "."
+                ]
+            , Plain "I hear clothing rustling. Someone whispers \"stop\", and the rustling stops. A hushed conversation, back-and-forth, between a guy and a girl. I can't hear what words they say, but I can hear the tones of their voices. A couple is having sex in this library."
+            , TextWithFootnotes
+                [ Body "Many of the people in the library are clearly students. One is watching a movie, presumed Netflix. One is scolling through Facebook. One is on Reddit. Two, sitting next to each other, are on Twitter. I bet they all consider this time \"studying\". One girl, sitting behind a pile of what looks to be pre-med coursework, has four takeout boxes open on the table: a hamburger, a cheeseburger, fries, curly fries. All are untouched."
+                ]
+            , Plain "Sitting in the library was okay. At the very least, I wrote this."
+            ]
         ]
