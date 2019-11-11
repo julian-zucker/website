@@ -8,7 +8,6 @@ import Route
 
 -- TODO The source of every essay has to be in code in this file. I want to store the text in markdown-esque files
 -- TODO footnotes are janky, no links and show up as [1] instead of a superscript
--- TODO footnotes shouldn't have to specify their number, should be automatically generated
 -- TODO essay titles should appear above essays when on their pages
 -- TODO include date that the essay was written
 -- TODO previous/next links?
@@ -47,7 +46,7 @@ type ContentItem
 type ParagraphItem
     = Body String
     | Link String Route.Route
-    | Footnote Int String
+    | Footnote String
     | NumberedList (List String)
     | NumberedListStartingAt Int (List String)
 
@@ -65,9 +64,9 @@ view { name, content } =
             , div [ class "essay-text" ]
                 (let
                     accs =
-                        List.foldr viewContentItem ( [], [] ) content
+                        List.foldl viewContentItem ( [], [] ) content
                  in
-                 List.append (Tuple.first accs) (Tuple.second accs)
+                 List.append (List.reverse (Tuple.first accs)) (List.reverse (Tuple.second accs))
                 )
             ]
       ]
@@ -80,27 +79,27 @@ viewContentItem item ( bodyAcc, footnoteAcc ) =
         Plain contents ->
             ( p [] [ text contents ] :: bodyAcc, footnoteAcc )
 
-        Paragraph list ->
+        Paragraph paragraphItems ->
             let
-                fn footnoteItems =
+                fn footnoteItems footnotesSoFar =
                     case footnoteItems of
-                        Footnote index content ->
-                            Just
-                                (div [ class "footnote" ]
-                                    [ div [ class "footnote-number" ] [ text ("[" ++ String.fromInt index ++ "]") ]
-                                    , div [ class "footnote-content" ] [ text content ]
-                                    ]
-                                )
+                        Footnote content ->
+                            div [ class "footnote" ]
+                                [ div [ class "footnote-number" ] [ text ("[" ++ String.fromInt (List.length footnotesSoFar + 1) ++ "]") ]
+                                , div [ class "footnote-content" ] [ text content ]
+                                ]
+                                :: footnotesSoFar
 
                         _ ->
-                            Nothing
+                            footnotesSoFar
 
                 footnotes =
-                    List.filterMap
+                    List.foldr
                         fn
-                        list
+                        footnoteAcc
+                        paragraphItems
             in
-            ( p [] (htmlFromFootnoteItems list) :: bodyAcc, List.append footnotes footnoteAcc )
+            ( p [] (htmlFromFootnoteItems paragraphItems (List.length footnoteAcc + 1)) :: bodyAcc, footnotes )
 
         Quote quoteItem ->
             let
@@ -117,27 +116,27 @@ viewContentItem item ( bodyAcc, footnoteAcc ) =
             ( quote :: bodyAcc, footnoteAcc )
 
 
-htmlFromFootnoteItems : List ParagraphItem -> List (Html msg)
-htmlFromFootnoteItems footNoteItems =
+htmlFromFootnoteItems : List ParagraphItem -> Int -> List (Html msg)
+htmlFromFootnoteItems footNoteItems footnoteNumber =
     let
-        htmlFromFootnoteItem oneItem =
+        htmlFromFootnoteItem oneItem ( soFar, currentFootnoteNumber ) =
             case oneItem of
                 Body content ->
-                    text content
+                    ( List.append soFar [ text content ], currentFootnoteNumber )
 
-                Footnote index _ ->
-                    text ("[" ++ String.fromInt index ++ "]")
+                Footnote _ ->
+                    ( List.append soFar [ text ("[" ++ String.fromInt currentFootnoteNumber ++ "]") ], currentFootnoteNumber + 1 )
 
                 NumberedList list ->
-                    ol [] (List.map (\item -> li [] [ text item ]) list)
+                    ( List.append soFar [ ol [] (List.map (\item -> li [] [ text item ]) list) ], currentFootnoteNumber )
 
                 NumberedListStartingAt startingAt list ->
-                    ol [ start startingAt ] (List.map (\item -> li [] [ text item ]) list)
+                    ( List.append soFar [ ol [ start startingAt ] (List.map (\item -> li [] [ text item ]) list) ], currentFootnoteNumber )
 
                 Link string route ->
-                    a [ href (Route.toUrlString route) ] [ text string ]
+                    ( List.append soFar [ a [ href (Route.toUrlString route) ] [ text string ] ], currentFootnoteNumber )
     in
-    List.map htmlFromFootnoteItem footNoteItems
+    Tuple.first (List.foldl htmlFromFootnoteItem ( [], footnoteNumber ) footNoteItems)
 
 
 textFromFootnoteItems : List ParagraphItem -> String
@@ -151,7 +150,7 @@ textFromFootnoteItem item =
         Body string ->
             string
 
-        Footnote int string ->
+        Footnote string ->
             ""
 
         NumberedList list ->
@@ -312,13 +311,13 @@ essays =
             Listed
             [ Paragraph
                 [ Body """ On Halloween, one of my ex-roommates (call him Roommate), one of my exes (call her Ex), and a guy I met at my college orientation (call him Orientation) and I went to Lincoln, Nebraska. You need to have a very legitimate reason to leave Seattle, Boston, Boston, and Denver (respectively) to go to Nebraska, but we had one: we were going to present posters at a philosophy conference. Our poster was titled "Technology, Social Choice, and Democracy: The Cute Dog Project","""
-                , Footnote 1 "I put commas outside of quotes, and you're just gonna have to deal with it."
+                , Footnote "I put commas outside of quotes, and you're just gonna have to deal with it."
                 , Body """ and it was pretty much what it sounded like: we ran a vote to determine who in Northeastern's philosophy department had the cutest dog. I thought this whole situation was pretty absurd. """
                 ]
             , Plain """ My train leaves Denver at 7:10, so I leave my office's Halloween party at 6:50. I stumble up to the AmTrak at 7:08, and when I say "stumble", I really mean stumble. I make it onboard, collapse into a seat, and fall fast asleep. Or at least, wished I could fall asleep. The man next to me was having a hushed but still quite loud phone call, where he describes in detail how his girlfriend has been stealing his drugs. Looking at him, I'm not quite sure how he has a girlfriend, and I imagine that he could benefit from having fewer drugs around. So I'm sympathetic to his girlfriend's choices, if she really exists and really is stealing from him. A few roads ahead, a baby wails. I put on soundproof headphones, and get ready to read. I take my shoes off, trying to get comfortable, and the second I set my sock-clad feet on the ground, I feel cold and wet. Someone has left some kind of liquid on the ground beneath the seat I'm in. I take a deep breath, convince myself that it's just water, and move one seat up. At this point, I'm pretty sure that the weekend is going to be mediocre at best."""
             , Paragraph
                 [ Body "My Lyft driver "
-                , Footnote 2 "I feel an ethical imperative to choose Lyft over Uber, because of various bad things that Uber does. Strangely, this is the only company I feel negatively about – my assembled-by-children-in-sweatshops iPhone doesn't make me feel bad in the slightest, and I don't particularly care about the fair trade label on food and coffee. I think that having the two apps on my phone, right next to each other, makes it very obvious that I have a choice between something bad and something worse, whereas in most decisions I make, there's no one pointing to the ethical alternative next door."
+                , Footnote "I feel an ethical imperative to choose Lyft over Uber, because of various bad things that Uber does. Strangely, this is the only company I feel negatively about – my assembled-by-children-in-sweatshops iPhone doesn't make me feel bad in the slightest, and I don't particularly care about the fair trade label on food and coffee. I think that having the two apps on my phone, right next to each other, makes it very obvious that I have a choice between something bad and something worse, whereas in most decisions I make, there's no one pointing to the ethical alternative next door."
                 , Body """ didn't change my mind. He picked me up, and started up a conversation. I did not enjoy this. Leaving aside the fact that it was 4 AM and I had possibly stepped in someone's pee, the only thing he wanted to talk about was how boring a town Lincoln was. It's not that he was saying things he thought were interesting, but I found uninsteresting (like "Lincoln has more than four bars!"): he actually told me that he liked Lincoln because nothing much happened at all. Shit. I like when things happen, and I was going to be stuck here for fourty-eight hours. I wasn't too worried, after all, with my collegiate colleagues around, something interesting was guaranteed to happen. """
                 ]
             , Plain """ I get to the AirBnB. A small, stout, brick house, sturdy and imposing but not particularly pretty. I open the front door, and I immediately begin to worry for my mental health. The entire house is "The Office" themed. The pillows on the couch all have Michael Scott's face. The posters on the wall are all quotes from The Office. (Later, I would discover to my horror that the shower curtain had a large watercolor painting of Prison Mike printed on it. This made pooping difficult, as whenever you sat on the toilet, you had to stare deep into the eyes of Michael Scott.) The AirBnB was not listed as a themed apartment, but they changed it between my reservation and us showing up. Also, the only bedroom left was the bedroom that has French doors: unfrosted glass windows let people in the living room see into my bed. Perfect."""
@@ -328,23 +327,23 @@ essays =
             , Plain """ In the center of a lobby, a group of college students wearing all black are setting up a wide variety of percussion instruments. Gradually, as they get set up, an ethereal tune starts to haunt us. This is not music that makes you comfortable, this is music that tells you a ghost is about to kill someone in the horror movie you're watching. We look up again. The woman is still massaging the air balloon with the blowdryer. We decide we're not going to get any more work done, and try to head upstairs, to the room where we dropped our stuff. Along the way, we see a piece of art that can only be described as two robots breaking up. We get ready to head out to a restaurant, looking for a vegan restaurant. There are more vegan restaurants in Lincoln than in Denver, which seems backwards. When your primary export is beef, you'd imagine that restaurants would end up serving a lot of it. When your primary export is tech workers who smoke a lot, it's easier to understand the market forces that allow vegan restaurants to exist. """
             , Paragraph
                 [ Body """ The food is good. Vegan restaurants are always really good """
-                , Footnote 3 "Restaurants that serve meat can afford to be bad, because meat done poorly is still okay and many meat-eaters just want a meal, they're not looking for something exceptional. But vegan restaurants, because they're serving such cheap ingredients, need to stand out in other ways to convince you to spend money. Sautéed brocolli isn't going to make me fork over $10. Something interesting, with many ingredients, and good spices, and "
+                , Footnote "Restaurants that serve meat can afford to be bad, because meat done poorly is still okay and many meat-eaters just want a meal, they're not looking for something exceptional. But vegan restaurants, because they're serving such cheap ingredients, need to stand out in other ways to convince you to spend money. Sautéed brocolli isn't going to make me fork over $10. Something interesting, with many ingredients, and good spices, and "
                 , Body """. After dinner, we go to another restaurant. This restaurant also serves drinks, but we can't go to a real bar as Ex is still 20 years old.  """
-                , Footnote 4 "Lame."
+                , Footnote "Lame."
                 , Body """. I am shocked at how cheap alcohol is here. Some of the beers on this menu (and they're nice, craft beers, with fun backstories) are five bucks. At nine, Roommate informs us that he's leaving because he has some work to do. We're undergrads, and so we follow him: we're used to the idea of leaving when the people your age start to leave. We are real adults, and we could have hung out with the philosophers, but our instincts lead us outside."""
                 ]
             , Paragraph
                 [ Body """ As we walk out, Orientation asks "are we done drinking for the night?", and I immediately tell him that we have at least four more hours of drinking in the night"""
-                , Footnote 5 "We had seven more hours, in fact."
+                , Footnote "We had seven more hours, in fact."
                 , Body """. Our plan of leaving to do work is postponed, and we find a liquor store. The nearest liquor store is a half mile away"""
-                , Footnote 6 "Fucking Nebraska."
+                , Footnote "Fucking Nebraska."
                 , Body """but we walk it. Once we've made it there, only half-frozen, we split up into underage person and someone to hang out (Ex and Roommate), and Orientation and I go inside. Alcohol in liquor stores is strangely similar in price to Boston and Denver liquor stores, for a place where restaurant alcohol prices mean that poor people can afford to be alcoholics too. When waiting in line, we see a wee lad, clearly not more than 19, holding a bottle of Smirnoff Raspberry. He asks the cashier, "Do you have this in... big?". They do. We laugh, buy our box of wine """
-                , Footnote 7 "Rosé, obviously."
+                , Footnote "Rosé, obviously."
                 , Body ", and we back to our AirBnB."
                 ]
             , Paragraph
                 [ Body "To make a long story short, we drink, play The Office Trivia Game™, and drink some more. We read passages at random from Peter Welch's book \"Observtions of a Straight White Male with No Interesting Fetishes\", and drink every time he says \"sex\". We drink pretty often, and pretty thoroughly. Ex goes to bed at 12:30 "
-                , Footnote 8 "Which normally is early enough that I'll make fun of the person going to bed, but in this case, we had been drinking since 6, so I thought it was reasonable."
+                , Footnote "Which normally is early enough that I'll make fun of the person going to bed, but in this case, we had been drinking since 6, so I thought it was reasonable."
                 , Body ", and Roommate and Orientation and I head out to a bar. We are trying to figure out which bar to go to, and discover another strange parallel between Northeastern and UNL: Boston has a bar called Tavern in the Square, Lincoln has a bar called Tavern on the Square. Obviously, this is a sign, and so we head out."
                 ]
             , Plain "We make it to Tavern on the Square just before 1. I order a Ketel One double with ginger beer, not realizing that this is equivalent to asking for a mule until the drinks come in copper mugs. I know what a double mule tastes like, and this was not that. A Nebraska double includes far more alcohol than a Boston double. We drink, and talk, and drink, and I play some darts with strangers, and so on, and then we head outside. They have a Connect Four board that's about four feet tall, and we square up to play. It's important to know that when Roommate and I lived together, a Connect Four board lived on our dinner table, and when we had fifteen minutes of downtime we would talk while we played Connect Four. In other words, Connect Four ability was very important to both of us, and we always had a friendly competition going."
@@ -353,12 +352,12 @@ essays =
             , Plain """ Last call rolls around. I was getting bored of yelling about philosophy with the high-school dropouts at the bar, and last call is as good an excuse as any to leave a bar. We head home. But the night is not even close to over yet."""
             , Paragraph
                 [ Body """ Perhaps five minutes into our walk, in the bleak midfall, a pedicab driver """
-                , Footnote 9 """Actually, a "Pedicab Chauffeur", according to his business card."""
+                , Footnote """Actually, a "Pedicab Chauffeur", according to his business card."""
                 , Body """ pulls up. It's the weekend of Halloween, so it's not completely absurd that he's wearing a cow onesie with articulated udders. It's still slightly absurd, but not completely. We chat for hours. Or I should say, Orientation and Roommate chat with him for hours. I meet some strangers, including an Asian man who pretends he doesn't speak English, until he realizes his friends and I are going to be yelling about philosophy for a while, and then caves and joins the conversation. The first English he spoke to me was "Bullshit! You know that's impossible". I was taken aback. I thought, just for a second, that he had learned English in that moment, just to tell me I was wrong. I was impressed at his dedication, and then I realized he had been messing with me. After an hour of conversation, on a street corner, with a pedicab driver and three random folks (they claimed that one of them had just gotten married, but they hadn't given me much reason to trust them, and they were carrying take-out food, so I choose not to believe it), we head home. """
                 ]
             , Paragraph
                 [ Body "We make it home, argue about the trolley problem"
-                , Footnote 10 "To Roommate, if you're reading this: you are deeply, hopelessly wrong about the trolley problem."
+                , Footnote "To Roommate, if you're reading this: you are deeply, hopelessly wrong about the trolley problem."
                 , Body ". And that concludes the first day. But I still had twenty hours left in Lincoln."
                 ]
             ]
@@ -367,90 +366,90 @@ essays =
             Listed
             [ Paragraph
                 [ Body "I wake up deeply hungover. Through the French doors of my bedroom, I see the living room in disarray. Sitting on the coffee table, taunting me, is the previous night's box of wine. I get up, put it in the fridge, and start to consider the day. I make coffee"
-                , Footnote 1 "This is Nebraska, so the AirBnB only has a Mr. Coffee, although surprisingly the coffee itself is from Peet's, which I consider to be quite good. I curse myself for forgetting to bring my AeroPress. I spend a few minutes contemplating my decision to bring only one backpack on this trip. Was it more motivated by my desire to prove to other people that I can travel light or the actual benefits of traveling light? I'm just about ready to indict my desire to travel light as strictly social signaling, and then the coffee is ready, and I stop thinking about it."
+                , Footnote "This is Nebraska, so the AirBnB only has a Mr. Coffee, although surprisingly the coffee itself is from Peet's, which I consider to be quite good. I curse myself for forgetting to bring my AeroPress. I spend a few minutes contemplating my decision to bring only one backpack on this trip. Was it more motivated by my desire to prove to other people that I can travel light or the actual benefits of traveling light? I'm just about ready to indict my desire to travel light as strictly social signaling, and then the coffee is ready, and I stop thinking about it."
                 , Body " and take a caffeine pill"
-                , Footnote 2 "At this point, I had slept a total of eight hours over the previous two nights. "
+                , Footnote "At this point, I had slept a total of eight hours over the previous two nights. "
                 , Body ". I text everyone else, asking if they're awake. Ex stumbles downstairs, and it looks like someone has punched her in the face –\u{00A0}her lip is swollen and split. I ask what happened and learn that she has no idea either, but she woke up upside down in her bed, with her feet on her pillow, and blood everywhere. We try to piece together what could have happened last night after she went to bed, and idly speculate until Roommate shows up. He says that after we got home, he went upstairs and walked past her room, found her lying on her bed, light still on, and importantly with no blood to be seen anywhere. Seeing as in the morning, it looked like at least two-thirds of a murder happened in her room, it seems unlikely that he missed it. So we knew it happened after we got back from the bar (and the associated pedicab-driver-chatting and stranger-harassing), but we didn't know much else. We speculate a bit more, and then realize we're going to be late to Day 2 of the conference, so we head out."
                 ]
             , Plain "On that day's walk in, we end up walking behind three UNL students most of the way in. I notice that they are completely ordinary people, very mainstream-looking. I am completely certain that they were not involved in the interpretive dance shenanigans from yesterday, and in fact, that if we suggested that interpretive dance happened on this campus, that they would not believe us."
             , Paragraph
                 [ Body "We show up halfway through the only talk I was actually interested in seeing at the conference, which is unfortunate. I stay engaged through the second half of the talk, and quite enjoy it. The next talk, not so much. I take very aggressive notes, calling out the motte-and-bailey "
-                , Footnote 3 "Google it."
+                , Footnote "Google it."
                 , Body """ argument, with the motte being "If AI is better than us, it will be different than us", and the bailey not even being a coherent enough thesis to recount here. I complain and complain and complain about this talk, in my notebook, doodle a fair bit, and then the talk concludes and I clap anyways """
-                , Footnote 4 "When there are only twenty people in the audience, not clapping is conspicuous."
+                , Footnote "When there are only twenty people in the audience, not clapping is conspicuous."
                 , Body ". Then, the speaker starts heading back towards her seat. Prior to the walk, she was sitting next to me, so obviously she will be sitting next to me after the talk. I don't realize this, however, and keep sitting and pondering, notebook open to two full pages of scathing attacks on her talk. As the next talk starts, I look down and realize how clear my handwriting is, as I decry that one of her points \"Does not follow!\" and another seems \"Very motte and bailey :(\". I glance over at her, and see that she is looking directly at my notebook. Oh well. I flip to the next page, and start taking notes on the next talk."
                 ]
             , Paragraph
                 [ Body "Somewhere in there, Roommate left "
-                , Footnote 5 "Didn't even say bye."
+                , Footnote "Didn't even say bye."
                 , Body "."
                 ]
             , Paragraph
                 [ Body "Lunch is served, sandwiches "
-                , Footnote 6 "On pretzel bread. Pretzel bread is deeply underrated in general, so I wanted to take this moment to appreciate it publicly."
+                , Footnote "On pretzel bread. Pretzel bread is deeply underrated in general, so I wanted to take this moment to appreciate it publicly."
                 , Body " and chips and all the sorts of things you expect to be part of a free lunch "
-                , Footnote 7 "Not quite a free lunch, really. It cost a whole trip to Nebraska."
+                , Footnote "Not quite a free lunch, really. It cost a whole trip to Nebraska."
                 , Body ". One of the professional philosophers there was vegan, and someone else brought it up to point out the relative lack of vegan options. Normally, when people say they're vegan, I don't particuarly care. I'm sure that, if we talked for a few minutes, their argument for veganism would at least be inconsistent with some of their other views "
-                , Footnote 8 "Note that this does not mean their argument for veganism is wrong, just that I can feel morally superior to them."
+                , Footnote "Note that this does not mean their argument for veganism is wrong, just that I can feel morally superior to them."
                 , Body ". But with philosophers, I'm almost certain that any discussion about veganism would go the opposite way, with them pointing out the inconsistencies in my beliefs "
-                , Footnote 9 "For instance, I believe that I am not an alcoholic, despite strong evidence to the contrary."
+                , Footnote "For instance, I believe that I am not an alcoholic, despite strong evidence to the contrary."
                 , Body ". So I stay out of that debate, and eat my meat-laden sandwich in silent shame. Ex (who is vegan now, I think) asks if I want to eat the meat off of a sandwich, so she can eat the bread "
-                , Footnote 10 "As previously mentioned, pretzel bread is the shit, so it is not surprising that she would want to eat the slightly soggy sandwich bread over chips or trail mix or whatever else they had that was vegan."
+                , Footnote "As previously mentioned, pretzel bread is the shit, so it is not surprising that she would want to eat the slightly soggy sandwich bread over chips or trail mix or whatever else they had that was vegan."
                 , Body ". I say yes, and have just the meat and cheese of the sandwich. While holding just meat and cheese, I make eye contact with the vegan philosopher, and immediately turn away to hide my meat-and-cheese habits "
-                , Footnote 11 "Despite my shame in this instance, I generally support easting just the inside of a sandwich. Bread is the worst part of any given sandwich. It's just there because it's cheaper than the other ingredients, and makes it socially acceptable to eat the sandwich with your hands."
+                , Footnote "Despite my shame in this instance, I generally support easting just the inside of a sandwich. Bread is the worst part of any given sandwich. It's just there because it's cheaper than the other ingredients, and makes it socially acceptable to eat the sandwich with your hands."
                 , Body "."
                 ]
             , Plain "Lunch is over. We sit back down, sit through a talk, and then it's what the conference schedule describes as \"Social Hours (continue conversations, check out posters, etc)\". We head home, to drop off our backpacks and posters before dinner. As we walk in, Ex jokes, \"Well, time to start drinking again?\" Orientation and I do not realize this is humor, and pour ourselves some more wine."
             , Paragraph
                 [ Body "We show up to the dinner buzzed and ready to talk about philosophy. We sit down, order our food "
-                , Footnote 12 "I get the scallops, for two reasons. First, Northeastern was paying for this meal, so I felt someone obliged to get the most expensive thing on the menu. Second, there were vegans afoot, and scallops are some of the least meat-like meats."
+                , Footnote "I get the scallops, for two reasons. First, Northeastern was paying for this meal, so I felt someone obliged to get the most expensive thing on the menu. Second, there were vegans afoot, and scallops are some of the least meat-like meats."
                 , Body ", and wait interminably for the food to arrive. Ex has to leave about an hour after we show up to the restaurant, so she gets her food to go. We order drinks "
-                , Footnote 13 "If you're ever in Lincoln (unlikely) and at the Blue Orchid (more likely, once you're in Lincoln) and have someone else paying for your meal (unlikely, despite you being in Lincoln), I would highly recommend ordering three Ginger Flowers. And one for your underage (hopefully, under only the drinking age, and not any other relevant ages) ex. "
+                , Footnote "If you're ever in Lincoln (unlikely) and at the Blue Orchid (more likely, once you're in Lincoln) and have someone else paying for your meal (unlikely, despite you being in Lincoln), I would highly recommend ordering three Ginger Flowers. And one for your underage (hopefully, under only the drinking age, and not any other relevant ages) ex. "
                 , Body " and talk about philosophy. Someone else is severly drunk, which is always a relief, because it means you're not the drunkest person at the party. They have paper tablecloths, which some people find tacky but I love. We talk about Newcomb's paradox "
-                , Footnote 14 "I'm a one-boxer."
+                , Footnote "I'm a one-boxer."
                 , Body ", and as we talk, we can scrawl decision trees on the paper on the table "
-                , Footnote 15 "This both lets us communicate more clearly, and also signal to people outside of our conversation that we're having more fun than they are."
+                , Footnote "This both lets us communicate more clearly, and also signal to people outside of our conversation that we're having more fun than they are."
                 , Body "."
                 ]
             , Paragraph
                 [ Body "We finish up dinner, and head out to a bar, or brewery, or taproom, or something. I continue to be shocked by the price of alcohol here. I order a marshmallow stout "
-                , Footnote 16 "It tastes exactly like how it sounds."
+                , Footnote "It tastes exactly like how it sounds."
                 , Body ", which is 13% by volume, and it costs $7. Orientation and I sit with one of the younger philosophers, talking about the philosophy job market, how to teach, and various other academic-oriented ideas. Orientation and I leave for our AirBnB at 10:50 or so, an hour and a half before my train is scheduled to leave "
-                , Footnote 17 "And you should be able to infer, from the fact that I said \"scheduled\", that it was delayed. "
+                , Footnote "And you should be able to infer, from the fact that I said \"scheduled\", that it was delayed. "
                 , Body ". We walk by the corner where we met the pedicab driver last night, laugh, and make it home with no event."
                 ]
             , Paragraph
                 [ Body "As we walk in, my phone buzzes "
-                , Footnote 18 "Not really. My phone is always on do not disturb. I check my phone, and see the message. No buzzing occurred."
+                , Footnote "Not really. My phone is always on do not disturb. I check my phone, and see the message. No buzzing occurred."
                 , Body ", and I see that my train has been delayed."
-                , Footnote 19 "Well, sort of. The message in the text explains that the train is expected to get in later, but it might be on time, and it may be delayed again. So really it's just warning me that life is uncertain, and not making any definite statements about the train."
+                , Footnote "Well, sort of. The message in the text explains that the train is expected to get in later, but it might be on time, and it may be delayed again. So really it's just warning me that life is uncertain, and not making any definite statements about the train."
                 , Body "Of course, at this point, we're back in the same apartment as a box of wine, so obviously we resume drinking "
-                , Footnote 20 "There are seven bottles of wine in a box, after all, and we had only drank about five of them."
-                , Footnote 21 "And, the more I drank, the better I would sleep on the train."
-                , Footnote 22 "Better here means not sleep quality but speed at which I would fall asleep, I wanted my train ride back to be completely uninteresting, and being asleep for all of it seemed like a feasible way to accomplish that."
+                , Footnote "There are seven bottles of wine in a box, after all, and we had only drank about five of them."
+                , Footnote "And, the more I drank, the better I would sleep on the train."
+                , Footnote "Better here means not sleep quality but speed at which I would fall asleep, I wanted my train ride back to be completely uninteresting, and being asleep for all of it seemed like a feasible way to accomplish that."
                 , Body ". Orientation and I talk about philosophy a bit more, and commit to writing a paper together"
-                , Footnote 23 "Perhaps the most surprising part of this trip was we re-committed to writing this paper while sober."
+                , Footnote "Perhaps the most surprising part of this trip was we re-committed to writing this paper while sober."
                 , Body ". Then, I head out for the train, because the text that Amtrak sent warning about the delay did not inspire hope that they knew when the train would arrive."
                 ]
             , Paragraph
                 [ Body "I arrive at the train station. Our front, there are three massive parking garages, with different colored lights illuminating each one. I appreciate the architecture for a moment. Then, I realize that spending just two days in Nebraska was enough to compromise my aesthetic sensibilities, and I was enjoying what were objectively quite boring-looking parking garages. I head inside the train station, a small rectangle with twenty or so seats on the benches inside. I check my phone as I walk in. The train is delayed again, and I have an hour and a half "
-                , Footnote 24 "Of course, the text mentions that it may arrive earlier, or later, or at the exact time that they forecast."
+                , Footnote "Of course, the text mentions that it may arrive earlier, or later, or at the exact time that they forecast."
                 , Body " to kill. I want to go to a bar, but I don't want to miss my train, and these are conflicting desires. I check a map "
-                , Footnote 25 "Okay, fine, Google Maps. But checking a map sounds much more impressive."
+                , Footnote "Okay, fine, Google Maps. But checking a map sounds much more impressive."
                 , Body " and see that there is a bar just three minute's walk away. The train, when it shows up, will certainlyl take more than three minutes to board "
-                , Footnote 26 "Or at least, that's what I convinced myself."
+                , Footnote "Or at least, that's what I convinced myself."
                 , Body " and so, I could definitely get someone in the station to call me when the train arrives, and then make it back in time."
                 ]
             , Paragraph
                 [ Body "I ask around. I approach the people closest to me, a couple with a baby, and regale them with my story: I tell them I want to go to a bar to wait for the train, and that if they could call me when it arrives, I would be able to make it back in time. The husband "
-                , Footnote 27 "I don't know Nebraska's rate of extramarital pregnancy, but I'm hoping it's low, so I'm going to assume the couple was married. "
+                , Footnote "I don't know Nebraska's rate of extramarital pregnancy, but I'm hoping it's low, so I'm going to assume the couple was married. "
                 , Body " says \"I'm sorry, but I have a baby\", as if fatherhood was a legitimate excuse to not enable a stranger's alcoholism. The next person down the row, a woman with a large camo-patterened duffle bag that looks vaguely military, says she doesn't have a phone. She is actively using her phone. Whatever. The next person in the row is an old man "
-                , Footnote 28 "Although keep in mind, I am 21, so when I say \"old man\", I mean \"over 40\"."
+                , Footnote "Although keep in mind, I am 21, so when I say \"old man\", I mean \"over 40\"."
                 , Body ", who tells me he doesn't approve of drinking."
                 ]
             , Paragraph
                 [ Body "Well, I don't need their help anyway. I head out, and three minutes later, I've made it to a place that the people of Nebraska call a bar. It is ramshackle. I ordered a greyhound, and the bartender pulled out a bottle of Svedka, and at that moment, I immediately started doubting my decision. This bears repeating: their well vodka was Svedka. I sit at the bar, writing in my notebook, realizing that this is the first time I've ever been in a bar alone. I don't mind it at all "
-                , Footnote 29 "Which is probably a problem."
+                , Footnote "Which is probably a problem."
                 , Body ", in fact, I quite enjoy exchanging glances with the girl sitting on the other side of the bar, in between moments spent writing. I'll skip over my whole conversation with her, which revealed that she was Nebraskan and existentially unhappy about it, and skip to the good part: I made it back to the train station right as the train was pulling up. Everyone else in the station looked at me with disgust. Clearly, they had been hoping that I would miss the train because I was at the bar, thus getting my comeuppance, but I ruined that for them. I board, and fall asleep rather immediately."
                 ]
             , Plain "I wake up six hours later. I wake up looking out the window, and the rolling hills of northeastern Colorado wave up and down, white with snow on one side, and the light brown of late-fall grasses on the other. The sun is rising, the clouds are a brilliant, piercing orange, and the whole sky is choosing to take part in the rainbow that normally is relegated to the areas near the horizon. I stand up, dazed, and stare out of the back window of the train, watching it tear over the tracks as the sun slowly meanders its way up, the clouds lose their brilliance, and the rainbow fades. I sit back down, deeply content, and thoroughly sleep-deprived. An hour later, as we pull into Union Station, and I laugh and laugh and laugh, silently, to myself, at what a weekend this has been."
@@ -460,12 +459,12 @@ essays =
             Listed
             [ Paragraph
                 [ Body "As a software engineer, I am pampered "
-                , Footnote 1 "Breakfast is served in my office everyday. Lunch is usually free, whether catered or delivered. I can leave early if I want, and no one cares if I'm late. And, most importantly, the office has a ping pong table."
+                , Footnote "Breakfast is served in my office everyday. Lunch is usually free, whether catered or delivered. I can leave early if I want, and no one cares if I'm late. And, most importantly, the office has a ping pong table."
                 , Body " because the people in charge want to maximize my output and keep me around. High schoolers, on the other hand, are not exactly pampered."
                 ]
             , Paragraph
                 [ Body "I think there's something contradictory about those two facts. Surely, we behave as though we want high schoolers to be successful, to learn a lot, and to be reasonably happy "
-                , Footnote 2 "People's definitions of reasonably differ a lot. For example, Gunn High School, near where I grew up, only started thinking about it's students emotional health after five students committed suicide in a year. Before that, they assumed that pushing high schoolers to be perfect in their school work while also volunteering and being on a sports team and assigning many hours of home work a night would make them reasonably happy."
+                , Footnote "People's definitions of reasonably differ a lot. For example, Gunn High School, near where I grew up, only started thinking about it's students emotional health after five students committed suicide in a year. Before that, they assumed that pushing high schoolers to be perfect in their school work while also volunteering and being on a sports team and assigning many hours of home work a night would make them reasonably happy."
                 , Body ". If any of those three things are the case, we ought to take better care of them. While there are some social programs that give (poor) high schoolers free lunches, it is framed as an ethical requirement, not an economic benefit. We force them to sit in classes, require that they ask permission to use the bathroom, and they certainly don't have any ping pong tables. People don't think there are self-interested reasons to provide high-schoolers with supportive environments."
                 ]
             , Paragraph
@@ -473,14 +472,14 @@ essays =
                 ]
             , Paragraph
                 [ Body "Perhaps people don't believe that the purpose of high school is to educate. Suppose the purpose of high school is to keep young criminals out of trouble for some part of the day "
-                , Footnote 3 "An argument that Bryan Caplan makes pretty compellingly in \"The Case Against Education\"."
+                , Footnote "An argument that Bryan Caplan makes pretty compellingly in \"The Case Against Education\"."
                 , Body ", surely the more appealing you make high school, the less appealing you make skipping school?"
                 ]
             , Paragraph
                 [ Body "There are many reasons to believe that primary school isn't about education"
-                , Footnote 4 "And many reasons to believe it about college, but I won't go there today."
+                , Footnote "And many reasons to believe it about college, but I won't go there today."
                 , Body ". For example, Direct Instruction, a teaching paradigm, has been shown to have better outcomes for students than standard high school classes. But no public high schools have adopted it "
-                , Footnote 5 "There are some principled objections. For example, the argument that DI is \"teacher-proofed\" and so cannot allow excellent teachers to help students as much as they could otherwise. I'm glad the public school system thinks that having a few excellent teachers makes up for the rest."
+                , Footnote "There are some principled objections. For example, the argument that DI is \"teacher-proofed\" and so cannot allow excellent teachers to help students as much as they could otherwise. I'm glad the public school system thinks that having a few excellent teachers makes up for the rest."
                 , Body "."
                 ]
             , Plain "No one is quite sure what the purpose of high school is. Colleges value doing well in high school, because it predicts future success pretty well. But the people in charge of running high schools have forgotten that they could serve a purpose other than improving your chances of getting into a college. "
@@ -490,28 +489,28 @@ essays =
             Listed
             [ Paragraph
                 [ Body "Bullet journaling is a mindfulness practice, where you sit down once a day to write down the tasks you want to accomplish in that day, and the events that will happen that day, and you add notes throughout the day "
-                , Footnote 1 "There's more to it, at least as it's written in their official dogma, but this is the general idea."
+                , Footnote "There's more to it, at least as it's written in their official dogma, but this is the general idea."
                 , Body ". During the day, you can plan around the tasks you should be doing and the events that will happen. I started using this system "
-                , Footnote 2 "Well, my variant on it."
+                , Footnote "Well, my variant on it."
                 , Body " in January 2019 and have quite enjoyed it. Bullet journaling helps me follow through on my commitments, achieve long-term goals, define whether a day was successful or not "
-                , Footnote 3 "That's right, motherfucker. This is a high-school-style five-paragraph essay."
+                , Footnote "That's right, motherfucker. This is a high-school-style five-paragraph essay."
                 , Body "."
                 ]
             , Paragraph
                 [ Body "Bullet journaling helps with follow-through for somewhat obvious reasons. My journal is structured like this: 53 pages, one per week of the year "
-                , Footnote 4 "You probably think there are 52 weeks in a year. While this is not technically false, 52 * 7 is 364, so there will always be 53 weeks in a year."
+                , Footnote "You probably think there are 52 weeks in a year. While this is not technically false, 52 * 7 is 364, so there will always be 53 weeks in a year."
                 , Body ", followed by empty pages, which are filled up with my daily to-do and event lists "
-                , Footnote 5 "This is a lie. In reality, the first half is structured as one weekly page, followed by seven daily pages, followed by the next weekly page, and so on. But in the second half, I pulled my shit together and wrote all the weekly pages in a row. This is nice because I can reference them all easily, and plan for the future, but annoying because I have to flip back and forth over many pages. But my next bullet journal will be 53 weekly pages followed by daily pages."
+                , Footnote "This is a lie. In reality, the first half is structured as one weekly page, followed by seven daily pages, followed by the next weekly page, and so on. But in the second half, I pulled my shit together and wrote all the weekly pages in a row. This is nice because I can reference them all easily, and plan for the future, but annoying because I have to flip back and forth over many pages. But my next bullet journal will be 53 weekly pages followed by daily pages."
                 , Body ". Whenever I pick up some new responsibility, I write down the date that I have to take each action it required. So, for example, if a friend tells me he's going to fight lions on October 13, and needs me to film it, I'll write down on whatever week October 13th falls on that I have to film a lion fight. When the week rolls around, I'll see this committment, and know that I'll be a bit busy that Friday. Sometimes, though, you have obligations that are less specific. For example, suppose someone tells me that I have to help them burglarize a house at some point in June. In this case, I'll make a note in the page for some week in May to follow up and ask for details "
-                , Footnote 6 """For example, "Which house?", "What's in it for me?", and "How are you not in jail?" """
+                , Footnote """For example, "Which house?", "What's in it for me?", and "How are you not in jail?" """
                 , Body ". And when I get a new deadline, I'll write down not just the deadline but also multiple steps and the times I should do them. For example, for my PhD applications, I saw they had deadlines in late December through early January. So in a week in August, I wrote that I should decide which schools I'm applying to, in a week in October, that I should have finished my writing sample "
-                , Footnote 7 "Full disclosure: It is November, and the writing sample is still not finished."
+                , Footnote "Full disclosure: It is November, and the writing sample is still not finished."
                 , Body ", and so on, so that each task gets done at the right time, and when December rolls around I'll be ready and unstressed "
-                , Footnote 8 "Leaving aside the previously mentioned unfinished writing sample."
+                , Footnote "Leaving aside the previously mentioned unfinished writing sample."
                 ]
             , Paragraph
                 [ Body "Achieving long-term goals follows pretty naturally from writing down obligations. When I have some long-term goal that I want to achieve, I can split it into small steps, and achieve each of these as they come up in the journal. The fundamental algorithm for achieving hard things"
-                , Footnote 9 "Which I stole shamelessly from someone on the internet."
+                , Footnote "Which I stole shamelessly from someone on the internet."
                 , Body "is as follows:"
                 , NumberedList
                     [ "Find something that is like the hard thing but is easy."
@@ -520,9 +519,9 @@ essays =
                     , "If the original hard thing is now easy, you’re done. If not, go back to step 2."
                     ]
                 , Body "Each time you have a new easy thing that is like the hard thing in one way, you can write tasks in your bullet journal to do that thing. Like the example I gave with my PhD applications. Applying to PhD programs is difficult, but deciding which schools would be interesting is not. So, write that down as a  task. Then, the next step is to create a writing sample "
-                , Footnote 10 "Writing the writing sample may itself be difficult. But one of the benefits of the general algorithm for achieving hard things is that you can apply it recursively. If modifying the easy thing so that it is like the hard thing in exactly one way is itself a hard problem, you have a whole algorithm just for solving hard problems ready at hand."
+                , Footnote "Writing the writing sample may itself be difficult. But one of the benefits of the general algorithm for achieving hard things is that you can apply it recursively. If modifying the easy thing so that it is like the hard thing in exactly one way is itself a hard problem, you have a whole algorithm just for solving hard problems ready at hand."
                 , Body ". Repeat a few more times, and you've done your whole PhD application "
-                , Footnote 11 "Keeping in mind that I am writing this essay while procrastinating on finishing the writing sample."
+                , Footnote "Keeping in mind that I am writing this essay while procrastinating on finishing the writing sample."
                 , Body "."
                 ]
             , Paragraph
@@ -530,7 +529,7 @@ essays =
                 ]
             , Paragraph
                 [ Body "I know I said this was going to be a five-paragraph essay, but conclusions are useless when someone can just reread your introduction "
-                , Footnote 12 "The reason they're required in high school because high schools are based on colleges, and the reason they're required in colleges is because colleges used to exist to train people to give better legal arguments, and legal arguments at the time were oral, not written."
+                , Footnote "The reason they're required in high school because high schools are based on colleges, and the reason they're required in colleges is because colleges used to exist to train people to give better legal arguments, and legal arguments at the time were oral, not written."
                 , Body ", so I'll end it here."
                 ]
             ]
@@ -539,161 +538,161 @@ essays =
             NotListed
             [ Paragraph
                 [ Body "I was the coolest kid at HackBeanpot 2019 "
-                , Footnote 1 "Admittedly, being the coolest person at any hackathon isn't that hard. I'm 100% sure that writing about it on your personal website helps."
+                , Footnote "Admittedly, being the coolest person at any hackathon isn't that hard. I'm 100% sure that writing about it on your personal website helps."
                 , Body ". The hackathon itself was held February 8-10, in the Seaport area of Boston "
-                , Footnote 2 "If you're imagining tall brick buildings on the waterfront, you're right on."
+                , Footnote "If you're imagining tall brick buildings on the waterfront, you're right on."
                 , Body ", and I was there because my friend invited me. I had known this guy for about a year. He was the friend of my old randomly-assigned college roommate, and he was a big data science/machine learning nerd, so let's call him DataScience. Working with us was a guy DataScience knew. I remember only two facts about him: he was a freshman, and his last name had far too many X's in it "
-                , Footnote 3 "I think it was only one X, but it was at the beginning of his last name. That's excessive."
+                , Footnote "I think it was only one X, but it was at the beginning of his last name. That's excessive."
                 , Body ". Call him X "
-                , Footnote 4 "Or Freshman. I don't care what you call him, and he is not an important character in this story."
+                , Footnote "Or Freshman. I don't care what you call him, and he is not an important character in this story."
                 , Body "."
                 ]
             , Paragraph
                 [ Body "We spend about an hour hanging around DataScience's apartment, figuring out what project we want to work on. We get bullied pretty quickly into making a website that lets you visualize and explore the data you can export from Facebook. Then, we gather supplies. I have a laptop, and so I'm set. DataScience brings an external monitor, and a keyboard, the whole nine yards "
-                , Footnote 5 "Or at least, the whole two peripherals."
+                , Footnote "Or at least, the whole two peripherals."
                 , Body ". We decide we're ready, call an Uber, and make bad jokes about programming the whole way there."
                 ]
             , Paragraph
                 [ Body "We show up to the Hackathon, and listen to people telling us about the rules we should follow and how to have good sportsmanship and so on. We idle impatiently near the door to the work area. When the introduction is over,  they let us in to the area where we are going to be working for the next 48 hours. We are, obviously, one of the first groups in, and push towards a nice room in the back "
-                , Footnote 6 "It shocks me, as always, how many people listen to opening speeches so far from where they need to be immediately after the speech ends. Surely, you must get tired of being stuck in the crowd of people pushing through doors?"
+                , Footnote "It shocks me, as always, how many people listen to opening speeches so far from where they need to be immediately after the speech ends. Surely, you must get tired of being stuck in the crowd of people pushing through doors?"
                 , Body ". We set up our room, and start drawing plans on a whiteboard."
                 ]
             , Paragraph
                 [ Body "People drift in and out of our room, asking questions and telling us about events "
-                , Footnote 7 "Hackathons always have a thousand different events. Yoga? Really? How is that going to help me make fun of Facebook? The lectures on a programming tool I understood completely, but the sparkling water blind taste test challenge I did not. "
+                , Footnote "Hackathons always have a thousand different events. Yoga? Really? How is that going to help me make fun of Facebook? The lectures on a programming tool I understood completely, but the sparkling water blind taste test challenge I did not. "
                 , Body " that are happening. We hack and hack and hack into the night. Pizza comes. Normally, pizza arriving at a hackathon is not worthy of a sentence in a description of that hackathon "
-                , Footnote 8 "But clearly, I think that descriptions of the normality of pizza at hackathons is worth a sentence."
+                , Footnote "But clearly, I think that descriptions of the normality of pizza at hackathons is worth a sentence."
                 , Body ", it's just to be expected. What is incredible about this particular arrival-of-pizza scenario is the sheer quantity of pizza. This hackathon has maybe 200 people present. The pizzas are stacked on a counter in the kitchen, a rectangular prism "
-                , Footnote 9 "A word that means \"3D rectangle\" and also \"I want to brag about my math education\". "
+                , Footnote "A word that means \"3D rectangle\" and also \"I want to brag about my math education\". "
                 , Body " two boxes wide, seven boxes long, and ten boxes high "
-                , Footnote 10 "I counted."
+                , Footnote "I counted."
                 , Body ". Doing the math, that comes out to 140 boxes of pizza, for 200 people. This is my dream. I take two boxes "
-                , Footnote 11 "One meat-lover's, one vegetable-heavy pizza that also included meat. "
+                , Footnote "One meat-lover's, one vegetable-heavy pizza that also included meat. "
                 , Body " back to my team's room, and we keep working. At 3AM, I call it for myself, head home, and crash hard. X leaves with me, but DataScience stays there. He gestures frantically at the Google Sheet we made earlier that day, which demonstrates our work/sleep schedules for the weekend. Apparently, it indicates that he is staying there and working until 7AM, a mild insanity which I am far too tired to argue about. "
                 ]
             , Paragraph
                 [ Body "I wake up the next morning, shower "
-                , Footnote 12 "Unlike many other people attending the hackathon."
+                , Footnote "Unlike many other people attending the hackathon."
                 , Body ", and take the train in. On the train with me is my old TA, someone who I never got close to but argued with constantly during labs "
-                , Footnote 13 "Which were only labs in the weakest of senses. Computer Science labs always seem a bit forced. The purpose of a biology or chemistry or geology lab session is the lab building – you cannot perform these experiments anywhere else. The purpose of a computer science lab is to force you to write some code, and maybe to have TAs make fun of you while you do it. Imagine an \"English lab\". No one would take it seriously. But somehow, computer science, by virtue of having science in the name, gets away with it."
+                , Footnote "Which were only labs in the weakest of senses. Computer Science labs always seem a bit forced. The purpose of a biology or chemistry or geology lab session is the lab building – you cannot perform these experiments anywhere else. The purpose of a computer science lab is to force you to write some code, and maybe to have TAs make fun of you while you do it. Imagine an \"English lab\". No one would take it seriously. But somehow, computer science, by virtue of having science in the name, gets away with it."
                 , Body ". We chat a bit about the hackathon. I ask him if he goes to hackathons often. He says yes. He asks if I do. I say I don't. I ask him if he graduated. He says yes. I say \"cool.\". It's the sort of conversation that doesn't communicate any information, but makes you feel that you followed a social norm. Normally, this feels good, but I had slept around five hours the previous night, so it just made me feel more tired."
                 ]
             , Paragraph
                 [ Body "We eventually make it in to the hackathon. I go in to the room, and find DataScience passed out on the couch. I sit outside, working on my laptop, trying to decipher the changes he made after I went home last night. The last commit is at seven AM "
-                , Footnote 14 "And, amazingly, it has a coherent message and no obvious bugs. My 7AM commits tend to have messages like \"code\" and \"it works now\", and include obvious bugs with comments about how I don't care."
+                , Footnote "And, amazingly, it has a coherent message and no obvious bugs. My 7AM commits tend to have messages like \"code\" and \"it works now\", and include obvious bugs with comments about how I don't care."
                 , Body ". I pick up where he left off. I write code for most of the morning, with X once he shows up. I wander around fairly often, to stretch my legs and rest my eyes, and ask other teams what they're working on. I am unsure whether I am flirting with the girls on the teams, partially because I'm at a hackathon, which is a non-flirting-friendly place, and partially because I'm never sure if I'm flirting with anyone."
                 ]
             , Paragraph
                 [ Body "At four, I put a piece of paper on my tongue "
-                , Footnote 15 "Hopefully, this is enough to count as plausible deniability."
-                , Footnote 16 "Reason 1 why I was the coolest kid at the hackathon."
+                , Footnote "Hopefully, this is enough to count as plausible deniability."
+                , Footnote "Reason 1 why I was the coolest kid at the hackathon."
                 , Body ", and coding becomes much more interesting. I can see the abstract syntax tree of the code I am writing, and see links between different pieces of the code that connect together, but my memory gradually deteriorates and typing becomes difficult, because I am too interested in watching the letters on each key swim around."
                 ]
             , Paragraph
                 [ Body "Now is probably the best time to explain why I was eating paper. That night, I was going to a sorority social "
-                , Footnote 17 "Not typically my type of event, but I was invited, and it would be churlish to refuse."
+                , Footnote "Not typically my type of event, but I was invited, and it would be churlish to refuse."
                 , Body ", and instead of drinking "
-                , Footnote 18 "Because I was going to a sorority event, I wanted to make sure that I wanted to be edgier than the other people there, so I could assure myself that I wasn't one of them."
+                , Footnote "Because I was going to a sorority event, I wanted to make sure that I wanted to be edgier than the other people there, so I could assure myself that I wasn't one of them."
                 , Body ", I picked a different drug. I take a Lyft home, and stare at the driver until she stops trying to talk to me. I stare out the window the rest of the drive. We go over a bridge, as the sun sets"
-                , Footnote 19 "It was 5PM. Fuck daylight savings time."
+                , Footnote "It was 5PM. Fuck daylight savings time."
                 , Body "and I notice that everything looks like a painting, everything looks beautiful, and I smile to myself and enjoy the rest of the drive home."
-                , Footnote 20 "The Uber driver rated me five stars, somehow, despite how strangely I was acting."
+                , Footnote "The Uber driver rated me five stars, somehow, despite how strangely I was acting."
                 ]
             , Paragraph
                 [ Body "I get home, and change into my sorority social outfit, which is, unsurprisingly, different from my hackathon outfit "
-                , Footnote 21 "My outfit for the social included a red velvet turtleneck. The other men at the pre-game were very impressed that I knew how to dress. They were all wearing navy suits, and clearly didn't realize that men's fashion could be anything else."
+                , Footnote "My outfit for the social included a red velvet turtleneck. The other men at the pre-game were very impressed that I knew how to dress. They were all wearing navy suits, and clearly didn't realize that men's fashion could be anything else."
                 , Body ". I step into my room, changing, and then step back out into the living room "
-                , Footnote 22 "Or the twenty square feet of space that are considered a living room in Northeastern dorms"
+                , Footnote "Or the twenty square feet of space that are considered a living room in Northeastern dorms"
                 , Body " and notice the bathroom door is closed. I am slightly concerned about this fact, because it was open when I walked into my room. Of course, I am quite high at this point, and I could be mistaken, but I start to get concerned. After a brief moment that feels like an eternity, one of my roommates steps out of the bathroom. I scream a little, then calm down, then tell her "
-                , Footnote 23 "Yes, I have had female roommates. For some people reading this story, this is the most surprising part."
+                , Footnote "Yes, I have had female roommates. For some people reading this story, this is the most surprising part."
                 , Body "I walk ten minutes or so to my girlfriends place, where she is hosting a pregame "
-                , Footnote 24 "Or \"presocial\", but that sounds more like a phase of infant development than a type of party"
+                , Footnote "Or \"presocial\", but that sounds more like a phase of infant development than a type of party"
                 , Body "."
                 ]
             , Paragraph
                 [ Body "In the distance between my apartment and hers, nothing interesting happens "
-                , Footnote 25 "Which is quite strange, for a trip (of the walking kind) during a trip (of the drug kind)."
+                , Footnote "Which is quite strange, for a trip (of the walking kind) during a trip (of the drug kind)."
                 , Body "."
                 ]
             , Paragraph
                 [ Body "I arrive and stride in, boldly "
-                , Footnote 26 "The front door of her apartment building has conveniently had a broken lock for several months, at this point. It makes striding in boldly much easier."
+                , Footnote "The front door of her apartment building has conveniently had a broken lock for several months, at this point. It makes striding in boldly much easier."
                 , Body ". Showing up to a party and immediately walking into a girl's bedroom with the girl in tow gives you some respect from everyone else there "
-                , Footnote 27 "Except for Keith. But fuck that guy."
+                , Footnote "Except for Keith. But fuck that guy."
                 , Body ". I give her a piece of paper of her own, and take another half of one myself "
-                , Footnote 28 "No one ever said undergrads made good decisions."
+                , Footnote "No one ever said undergrads made good decisions."
                 , Body ", and we rejoin the party. No one knows. This is the pregame for a sorority event, so everyone is quite drunk. I know too many people here. One guy tries to talk to me about entrepreneurship and a startup idea I mentioned in passing to him "
-                , Footnote 29 "Remember Keith, from footnote 27? This is why I don't like him."
+                , Footnote "Remember Keith, from Footnote ? This is why I don't like him."
                 , Body ". Someone tries to Ice me. I take the ice, and walk away, somewhere between confusion (what a strange world we live in, where one type of drink demands immediate drinking) and judgement (fuck these frat-type people). I notice how parched my throat was, and how nice the cold Ice tastes. I drink four more over the next hour. This was a bad decision."
                 ]
             , Paragraph
                 [ Body "Slightly tipsy "
-                , Footnote 30 "An understatement."
+                , Footnote "An understatement."
                 , Body "and severely high, I notice that everyone is being shooed out the door. The check-in for the social is starting. In my confusion, I had forgotten for a moment that each person going to a sorority event has to check-in at a place on campus before the event. This is to ensure that everyone is sober enough to make it through the night without embarassing the sorority "
-                , Footnote 31 "If you are a member of a group that encourages (underage) drinking, at least pick a group that won't shame you for (underage) drinking."
+                , Footnote "If you are a member of a group that encourages (underage) drinking, at least pick a group that won't shame you for (underage) drinking."
                 , Body ". So all forty of the people who were at the pregame head out. We form a line of well-dressed and warm men and scantily-clad "
-                , Footnote 32 "But, some would say, still well-dressed."
+                , Footnote "But, some would say, still well-dressed."
                 , Body "and cold women as we stream towards the auditorium where we have to check in."
                 ]
             , Paragraph
                 [ Body "The auditorium has a bad aura "
-                , Footnote 33 "I only see or believe in auras while I'm tripping. But in that moment, I knew it was not where I wanted to be."
+                , Footnote "I only see or believe in auras while I'm tripping. But in that moment, I knew it was not where I wanted to be."
                 , Body ". The check-in table is set up in the business building "
-                , Footnote 34 "Already, a bad sign."
+                , Footnote "Already, a bad sign."
                 , Body ", and, the second I step in, I feel overwhelmed. Hundreds of drunk freshman throng the lobby, chattering and prattling and jabbering and blabbering. I overhear a girl talk about breaking up with a guy because he cheated on her with her sister. Before I realized she meant sorority sister, I felt very sad on her behalf. After realizing, I just felt regular amounts of sadness. My date and I push forward, trying to get to the desk. As we enter the crowd, I look her in the eyes, and say \"If I lose you in this crowd, I will lose my mind\". I meant it. I grab her hand, and hold it tightly, and she pulls me forward. We make it to the desk, sign in, and rush back outside. But it's too cold outside, so we wait in the airlock between the lobby and the outdoors. Here, we overhear a few more comical stories, meet up with our buddies, and head out."
                 ]
             , Paragraph
                 [ Body "You may be wondering what I mean when I say buddy. Each person in the sorority brings a date "
-                , Footnote 35 "Or tries to."
+                , Footnote "Or tries to."
                 , Body ", and pairs of dates are buddied up. Neither pair can get in to the venue without the other, and the pairs will get in trouble if the other pair doesn't sign out at the end of the night. Our \"buddy\" is a small, energetic Asian freshman, who reminds me in many ways of a girl who was an intern at the same company as me, the summer after my freshman year. Over the course of the night, she earns disapproving looks from three different bouncers, show us her (unconvincing) fake ID, and makes emphatically sure that we know she loves Northeastern."
                 ]
             , Paragraph
                 [ Body "We arrive at the venue. The bright gold sign proclaims that the venue is named \"Gilt\". I had been hearing it as \"Guilt\" until this point, and I am given a brief moment of clarity in an otherwise very confusing night. The line is long, and cold, and hilarious. People in front of us occassionally stumble as they walk, and the most egregious stumbles, the stumbles that result in falling over the divider that creates the line, results in people getting kicked out. I'm having a grand old time. I get patted down at the entrance. The bouncer asks me if I have any nips on me. I resist the obvious joke that I have two. After investigating most of my pockets, he lets me in. I don't have any alcohol on me, but I do have three more pieces of paper in my wallet." ]
             , Paragraph
                 [ Body "We show up, and I try to dance, but my heart just isn't in it. There is a feeling of judgement, that dancing at this party isn't doing anything useful, that the music is too loud, that the people are valid, that the entire Greek life system is fundamentally flawed, and so on "
-                , Footnote 36 "This sentence uses passive voice, but I'll admit in the footnotes: I'm the person doing the judging."
+                , Footnote "This sentence uses passive voice, but I'll admit in the footnotes: I'm the person doing the judging."
                 , Body ". I loiter on the side of the dance floor. My date and I discuss leaving, and then agree we should leave. We walk out, as people in the line are still coming in. A girl who is in the class I TA sees me, and says hi. I am unhappy with this notion. I wave, and we head out."
                 ]
             , Paragraph
                 [ Body "Choosing to leave the event after a mere five minutes inside makes me feel superior to the people who are going to spend more than five minutes there "
-                , Footnote 37 "I'm going to not consider what it says about me that I show up to events that I feel good about leaving."
+                , Footnote "I'm going to not consider what it says about me that I show up to events that I feel good about leaving."
                 , Body ". We call an Uber, and as we're waiting for it, see two girls who are barred from entering. The bouncers say that they are too drunk, and kick them out. They walk up the street towards where we are, and hide behind us, afraid of the people in line seeing them. We offer to share our Uber with them, as we're heading to similar places, they agree"
-                , Footnote 38 "Well, my date offers. I am nowhere near this kind, and also think it would be rather creepy if I asked two young drunk sorority girls to share an Uber with me."
+                , Footnote "Well, my date offers. I am nowhere near this kind, and also think it would be rather creepy if I asked two young drunk sorority girls to share an Uber with me."
                 , Body ". The Uber arrives, and we drive back. It was horrific. The girls share the story of not being let in, from their perspective. Their perspective was wrong. They begin the ride by saying that neither of them had drank anything "
-                , Footnote 39 "In which case, it was rather confusing that they were slurring the words in their defense of their sobriety."
+                , Footnote "In which case, it was rather confusing that they were slurring the words in their defense of their sobriety."
                 , Body ", and that they didn't want to go to the social anyway "
-                , Footnote 40 "In which case, it was rather confusing that they showed up at all. On the other hand, I was there, despite not really wanting to be, so I can't really make fun of them for this one."
+                , Footnote "In which case, it was rather confusing that they showed up at all. On the other hand, I was there, despite not really wanting to be, so I can't really make fun of them for this one."
                 , Body ". My date and I exchange glances through the rear-view mirror. She consoles them a little. The next iteration of their story, they just had one shot each"
-                , Footnote 41 "Shots, famously, being the best way to consume small amounts of alcohol over a long period of time"
+                , Footnote "Shots, famously, being the best way to consume small amounts of alcohol over a long period of time"
                 , Body "and they are slightly bummed about not getting in, but mostly worried about their buddy "
-                , Footnote 42 "I don't think I said this last time I mentioned the buddy system, but it's paternalist bullshit."
+                , Footnote "I don't think I said this last time I mentioned the buddy system, but it's paternalist bullshit."
                 , Body ". I believe this story slightly more. My date talks about how they'll be laughing about this in a year "
-                , Footnote 43 "I certainly am laughing at them a year later, but I don't think this is what she meant."
+                , Footnote "I certainly am laughing at them a year later, but I don't think this is what she meant."
                 , Body ", and not to worry about it. They tell us the next iteration of their story, in which they consumed slightly more alcohol, and feel slightly sadder. But they make sure to blame the bouncer for being a dick, because underaged drinking is expected at sorority events, so they didn't really do anything wrong. This pattern repeats for a few more iterations, and then we arrive "
-                , Footnote 44 "Thank god."
+                , Footnote "Thank god."
                 , Body "."
                 ]
             , Paragraph
                 [ Body "My ex and I walk in to her apartment, lie down on her bed, and each eat some more paper. Just as I place it on my tongue, there's an urgent pounding at the door. Because I'm high, I assume that the police have found out about us. I start worrying. My date is in the bathroom, so I get up and go to the door. I open it, and it's just a normal guy"
-                , Footnote 45 "Actually he was 6'9\": the Northeastern baseball team lived in the same building, so everyone weas freakishly tall."
+                , Footnote "Actually he was 6'9\": the Northeastern baseball team lived in the same building, so everyone weas freakishly tall."
                 , Body ". He tells me there's a fire in the building, and we have to evacuate. I don't hear any fire alarms going off, and we're on the first floor near the door, so I'm not too worried, but I tell my date to hurry up in the bathroom anyway. I pull my shoes on, grab my jacket, and loiter near the front door watching the scene unfold. Various people in various states stumble out the front door. A few minutes in, a fire truck pulls in, and two firemen in full fire gear burst through the front door and run upstairs. At this point, I yell at my date that we really have to be getting a move on, because there's a real fire; she and I run out. Waiting on the street, we are captivated by the beautiful lights on the fire truck and ambulance, and talk about how crazy it is that this night, of all nights, would be the night her apartment building burned down. Her roommates walks out a few minutes later, with a backpack and talking about how she brought her laptop and passport and other valuables out of the building. We feel like idiots for not bringing anything "
-                , Footnote 46 "Well, she does. All my stuff is in my apartment, a 10 minute walk away."
+                , Footnote "Well, she does. All my stuff is in my apartment, a 10 minute walk away."
                 , Body " but it's far too late to go back into the building."
                 ]
             , Paragraph
                 [ Body "One of my exes, let's call her Russia, walks out of the building. Well, ex is not strictly the correct characterization. She and I are no longer seeing each other, but at the time I was alternating nights between my date and Russia "
-                , Footnote 47 "Russian happened to be my former student, and was at the time TAing the same class as me. It was a strange semester for my sex life."
+                , Footnote "Russian happened to be my former student, and was at the time TAing the same class as me. It was a strange semester for my sex life."
                 , Body ". She and I see each other, and say nothing "
-                , Footnote 48 "We had a relationship based on mutual disrespect."
+                , Footnote "We had a relationship based on mutual disrespect."
                 , Body ". We awkwardly glance at each other for a while, but mostly we're concerned with the building on fire next to us. It's cold out, so my date and I decide to head to my apartment. We make it as far as the street corner, before we encounter Russia and her friends. Fortunately "
-                , Footnote 49 "Unfortunately."
+                , Footnote "Unfortunately."
                 , Body ", my date knew one of my ex's friends, so my ex and I have to studiously ignore each other while they talk. Then, mercifully, we head opposite directions."
                 ]
             , Paragraph
                 [ Body "We make it back to my apartment. One of my date's friends wants her to come hang out. There is some drama, someone offended someone, and my date feels the urge to apologize in this moment. Because she's very high "
-                , Footnote 50 "And, because I want to have sex with her."
+                , Footnote "And, because I want to have sex with her."
                 , Body ", I tell her that this would be a bad idea. She starts panicking in a serious sense, hyperventilating and being unable to form complete sentences. I talk her down from the panic, and we drink some water, and then we merge souls"
-                , Footnote 51 "This is a metaphor for having sex on acid."
+                , Footnote "This is a metaphor for having sex on acid."
                 , Body ". We come down a bit, hanging around and drinking water. We go back to her place. It wasn't on fire, someone on the third floor just burnt something while cooking. We toss and turn and toss and turn and eventually fall asleep."
                 ]
             , Plain "And the next morning, I wake up at 7 AM, and go back to the hackathon."
@@ -709,33 +708,33 @@ essays =
                 [ Body "Of course, I did in fact study and learn in that class. I use Anki, a spaced-repetition flashcarding tool that makes classes much easier. Each lecture, I would record a few (usually around a dozen) notes, the facts that I figured I ought to remember for the rest of the semester, and make a flashcard for each of those facts. This certainly helped, but I still made several mistakes on the first homework assignment. I understood the material well, but it is easy to make small mistakes while doing math, and even easier to make mistakes while doing math you don't care about. " ]
             , Paragraph
                 [ Body "So, I thought about the way that the homeworks are graded. At office hours, a TA told me that they give you the points if anythign in your answer is correct. This is a terrible idea. In my future homeworks, I would sometimes answer a question two different ways"
-                , Footnote 1 "Many of the questions were ambigious enough that there were multiple correct answers, making this less insane than it sounds."
+                , Footnote "Many of the questions were ambigious enough that there were multiple correct answers, making this less insane than it sounds."
                 , Body "and if one of the two was correct, the TAs would mark it correct and give me the points, even as they crossed out the other half of the answer. When a proof was assigned, I would write pages and pages of inscrutable prose, with the correct answer almost definitely in one of the statements I proposed. I would lead with the answer I believed to be most likely to be true, and then write a whole lot more. Why not? If anything in there is correct, I would be given the points, so the more I wrote, the higher the expected grade. For the rest of the semester, I continued this strategy of proof by intimidation, and my grades rose to reflect my deeper understanding of the grading system "
-                , Footnote 2 "Not the material. But then again, what college class is actually about the material?"
-                , Footnote 3 "Fundamentals of Computer Science is actually about the material."
+                , Footnote "Not the material. But then again, what college class is actually about the material?"
+                , Footnote "Fundamentals of Computer Science is actually about the material."
                 , Body "."
                 ]
             , Paragraph
                 [ Body "This makes me an asshole. One of the TAs of the course, who I was quite friendly with by the end of the semester "
-                , Footnote 4 "This sounds like I slept with him. I did not sleep with him."
+                , Footnote "This sounds like I slept with him. I did not sleep with him."
                 , Body ", told me that he hated grading my homeworks. I explained why I was incentivized to write what amounted to a treatise on each problem, and he grudgingly agreed that it makes sense. Still, I forced him to read far more pages of mediocre solutions to mediocre math problems than anyone ought to be forced to read "
-                , Footnote 5 "And it wasn't even typeset or in nice handwriting. I gave them the full cursive treatment. This is because I also understood that if everything I was saying seemed right, and reading it was difficult, the path of least resistance for a grader is to give up and give me a good grade. This is how I got through most of high school."
+                , Footnote "And it wasn't even typeset or in nice handwriting. I gave them the full cursive treatment. This is because I also understood that if everything I was saying seemed right, and reading it was difficult, the path of least resistance for a grader is to give up and give me a good grade. This is how I got through most of high school."
                 , Body ". I would go to his office hours once a week, and we would collectively struggle through my handwriting and hazy memory of the previous week "
-                , Footnote 6 "This was a semester where I was drinking most Thursdays, Fridays, and Saturdays, so my memory was weaker than usual. And even usually, I have a terrible memory."
+                , Footnote "This was a semester where I was drinking most Thursdays, Fridays, and Saturdays, so my memory was weaker than usual. And even usually, I have a terrible memory."
                 , Body " to try to find the correct answer in the slew of answer-like things I had written."
                 ]
             , Paragraph
                 [ Body "The office hours were absurd for another reason. The TAs were not given the answer key to the homework, but they tended to know the answers to the homeworks "
-                , Footnote 7 "Although when they lead the review sessions for the tests, they tended to tell us that most of the information on the test was bullshit we would never use, to justify why they didn't know the answers to the questions on the test review. While I appreciated the honesty, this was not the time for that type of cynicism; I needed to get an A+ in the class so that I could be taken seriously when I wrote a snarky piece about it later."
+                , Footnote "Although when they lead the review sessions for the tests, they tended to tell us that most of the information on the test was bullshit we would never use, to justify why they didn't know the answers to the questions on the test review. While I appreciated the honesty, this was not the time for that type of cynicism; I needed to get an A+ in the class so that I could be taken seriously when I wrote a snarky piece about it later."
                 , Body ". And, they were fully authorized to tell you whether or not an answer was correct. So, I would show up to office hours with several reasonable answers to each question, and run them by the TAs until one was confirmed to be the right idea. Then, I would demonstrate it was true, complete the steps of the proofs, or draw the pretty picture  "
-                , Footnote 8 "Fuck doing graph theory problems on paper."
+                , Footnote "Fuck doing graph theory problems on paper."
                 , Body " that was required to get the correct answer. But importantly, I only had to do that work for answers I knew were correct, because I could confirm I was headed in the correct path. This saved a significant amount of time on the homeworks, time that was better-spent writing down four alternative solutions that were all along the path the TA described."
                 ]
             , Paragraph
                 [ Body "It may be a surprise, given everything else I've written here, but I enjoy learning, and think it has immense intrinsic value. I just also see the incentive structures behind (and instrumental value of) getting good grades. I learned a lot during this class "
-                , Footnote 9 "And ended up hanging out with two different girls to study (and not study), an unusually high number for a computer science class."
+                , Footnote "And ended up hanging out with two different girls to study (and not study), an unusually high number for a computer science class."
                 , Body " and ended up enjoying it quite thoroughly "
-                , Footnote 10 "Although I won't speculate on whether I enjoyed the class because of the girls I met or because of the things I learned."
+                , Footnote "Although I won't speculate on whether I enjoyed the class because of the girls I met or because of the things I learned."
                 , Body "."
                 ]
             ]
@@ -745,72 +744,72 @@ essays =
             Listed
             [ Paragraph
                 [ Body "I've been living in Denver for four months. Mostly, it has been like any other city, but more people smoke weed "
-                , Footnote 1 "This is an oversimplification. More people have tripped acid, also."
+                , Footnote "This is an oversimplification. More people have tripped acid, also."
                 , Body ". Denver is a revelrous city, with drunk people whirring past on electric scooters "
-                , Footnote 2 "Boston really needs to get its shit together with respect to e-scooters."
+                , Footnote "Boston really needs to get its shit together with respect to e-scooters."
                 , Body " pretty much constantly after 9PM "
-                , Footnote 3 "Or, to be honest to Denver's drinking culture, 6PM. My coworkers and I go out for drinks after work, and it turns out that two drinks at 5280 feet above sea level is equivalent to several bottles of wine at sea level. I got the opportunity to test this fact when I visited Boston for my 21st birthday. Drinking at sea level felt like a marathon. I drank a bottle of wine to warm up, had a few Mike's Hard Lemonade's, and then went out and had several drinks at several bars. I stayed vertical. After four drinks at altitude, I get horizontal."
+                , Footnote "Or, to be honest to Denver's drinking culture, 6PM. My coworkers and I go out for drinks after work, and it turns out that two drinks at 5280 feet above sea level is equivalent to several bottles of wine at sea level. I got the opportunity to test this fact when I visited Boston for my 21st birthday. Drinking at sea level felt like a marathon. I drank a bottle of wine to warm up, had a few Mike's Hard Lemonade's, and then went out and had several drinks at several bars. I stayed vertical. After four drinks at altitude, I get horizontal."
                 , Body ". But strangely, despite the higher rate of revelry per capita, people keep asking me to if I want to go to  bible study."
                 ]
             , Paragraph
                 [ Body "I am severely athiest. To convince me that God exists, you're going to need a whole new miracle, caught on several cameras. If your argument is predicated on the Bible being God's "
-                , Footnote 4 "As an athiest, do I have to capitalize God?"
+                , Footnote "As an athiest, do I have to capitalize God?"
                 , Body "literal truth "
-                , Footnote 5 "Which the Bible itself doesn't claim. None of the Bible is Jesus's words, it's all random goons who happened to be nearby and wanted to talk to journalists."
+                , Footnote "Which the Bible itself doesn't claim. None of the Bible is Jesus's words, it's all random goons who happened to be nearby and wanted to talk to journalists."
                 , Body ", I'm not going to be convined. I signal this, strongly. A man wearing all black, scowling on a street corner, trying to cross the road, is probably not the best target for your Bible study. I was crossing 15th "
-                , Footnote 6 "The road itself doesn't matter, but saying a specific road probably convinces you that this really happened."
+                , Footnote "The road itself doesn't matter, but saying a specific road probably convinces you that this really happened."
                 , Body ", and a man waiting at the corner with me starts making sketchy eye contact with me. I say sketchy, because he was acting as if he was very attracted to me "
-                , Footnote 7 "A common Bible-study-inviter tactic. We'll revisit this."
+                , Footnote "A common Bible-study-inviter tactic. We'll revisit this."
                 , Body ": he would glance over at me, and when I glared back "
-                , Footnote 8 "I was having a bad day. I don't normally glare."
+                , Footnote "I was having a bad day. I don't normally glare."
                 , Body ", he would avert his eyes. We played this game of stare-glare-avert several times, until he eventually started talking to me. He said hello, and so I said hello. He asked me if I wanted to go to Bible Study "
-                , Footnote 9 "Okay, I know that the S in Study isn't capitalized, but Jesus-types want me to capitalize so much else. I get carried away with capitalization around God."
+                , Footnote "Okay, I know that the S in Study isn't capitalized, but Jesus-types want me to capitalize so much else. I get carried away with capitalization around God."
                 , Body """. I laugh, and say "Sorry! I'm very athiest, doesn't my outfit signal that?", as I gesture towards myself. I am wearing Chelsea boots, a famously atheistic shoe """
-                , Footnote 10 "At least, I wear Chelsea boots to signal my athiesm."
+                , Footnote "At least, I wear Chelsea boots to signal my athiesm."
                 , Body """. He laughs back, and tries to convince me that anyone can wear any clothing. While he isn't strictly wrong, he is missing the point of clothing. Clothing is the most potent social signaling mechanism that we have, and wearing a long(ish) black coat over black jeans with black chelsea boots with a band shirt is a pretty strong social signal. It signals that I don't want to go to Bible study. """
                 ]
             , Paragraph
                 [ Body "He won't accept no for an answer "
-                , Footnote 11 "Which says bad things about him as a person."
+                , Footnote "Which says bad things about him as a person."
                 , Body ", and he presses me. Every Bible-study-inviter has a set of talking points. And, incredibly, they're all different "
-                , Footnote 12 "I wonder if they have a handbook. They probably don't A/B test opening lines, because I'm pretty sure they think statistics was invented 6000 years ago."
+                , Footnote "I wonder if they have a handbook. They probably don't A/B test opening lines, because I'm pretty sure they think statistics was invented 6000 years ago."
                 , Body ". This guy asks me how long I've been studying math. I think for a second, forgetting for a moment how old I am "
-                , Footnote 13 "Everything since I turned 21 has been somewhat of a blur."
+                , Footnote "Everything since I turned 21 has been somewhat of a blur."
                 , Body ", then I tell him fifteen years, which I figure is close enough to true "
-                , Footnote 14 "I'm sure it doesn't matter for his pickup line. And, in fact, it doesn't."
+                , Footnote "I'm sure it doesn't matter for his pickup line. And, in fact, it doesn't."
                 , Body ". He asks me if I think I understand all of math, and I reply with a long laugh and a \"Nope!\". He doesn't find it as funny as I do. He asks me how long I've spent studying the Bible. I see where this is going. I say \"long enough\", which he doesn't hear at all. He asks whether I can understand, truly, what the Bible is saying, if I've studied it for less time that I've studied math. I tell him that I think I understand what Animorphs is saying, and I only studied each book in the series for a few hours tops. At least they had good cover art! He is not happy with this. We part ways. I turn left without telling him, and he goes straight. The same social pressures that lead me into conversation with him prevents him from turning around and following me. I make it home. Being asked to Bible study once is not particularly interesting, so I take no note."
                 ]
             , Paragraph
                 [ Body "The next day, I'm on CU Denver's campus"
-                , Footnote 15 "Sometimes I go to campus, and sit on a bench, and write poetry. Not that it's any of your business what I do on CU Denver's campus."
+                , Footnote "Sometimes I go to campus, and sit on a bench, and write poetry. Not that it's any of your business what I do on CU Denver's campus."
                 , Body ". I hang out for a bit, revel in what I know to be one of the last days of summer "
-                , Footnote 16 "This is false. Denver's weather is slightly schizophrenic, so that it can be overcast and snowy on the same day that it's 70 and sunny."
+                , Footnote "This is false. Denver's weather is slightly schizophrenic, so that it can be overcast and snowy on the same day that it's 70 and sunny."
                 , Body ", bask in the sun, write a bit. I pack my stuff, stand up and leave, and as I'm walking out, I pass a gaggle of girls. One of them whispers something to another, which I hear as \"go for it!\", so I am marginally excited, as I think someone is about to ask for my number"
-                , Footnote 17 "Despite the fact that something like this has never happened before. I suffer from the male predisposition to fantasize about things like this."
+                , Footnote "Despite the fact that something like this has never happened before. I suffer from the male predisposition to fantasize about things like this."
                 , Body ". But that is not the case. This cute black girl "
-                , Footnote 18 "My understanding of churches is that they are typically strongly segregated by race. The man in the previous paragraph was Asian. Are these two different churches? Are they both members of a single group of churches, united by their shared love of Bible study?"
+                , Footnote "My understanding of churches is that they are typically strongly segregated by race. The man in the previous paragraph was Asian. Are these two different churches? Are they both members of a single group of churches, united by their shared love of Bible study?"
                 , Body " walks up to me, and my heart flutters a bit "
-                , Footnote 19 "Although, at 5280 feet above sea level, even just walking short distances causes my heart to flutter. So we can't rule out very small amounts of exercise as the cause of this heart flutter."
+                , Footnote "Although, at 5280 feet above sea level, even just walking short distances causes my heart to flutter. So we can't rule out very small amounts of exercise as the cause of this heart flutter."
                 , Body ". She asks me whether I want to go to Bible study this Thursday at 3. I laugh, and say I'm athiest. She has no banter. She just looks severely disappointed in me. I walk home, confused about the emerging pattern of people asking me to Bible study."
                 ]
             , Paragraph
                 [ Body "I am sitting on a bench on CU Denver's campus. I have had a weird morning "
-                , Footnote 20 "I met a man named Imhotep. I am firmly convinced he is a drug dealer. He gave me his number. We have plans to get drinks. He said the phrase \"movin' and groovin'\" at least three times."
+                , Footnote "I met a man named Imhotep. I am firmly convinced he is a drug dealer. He gave me his number. We have plans to get drinks. He said the phrase \"movin' and groovin'\" at least three times."
                 , Body ", and so I am ready for anything. Or so I think. A man "
-                , Footnote 21 "White, to emphasive the multicultural nature of the people who ask me to Bible study."
+                , Footnote "White, to emphasive the multicultural nature of the people who ask me to Bible study."
                 , Body " asks if he can sit next to me. I say yes, assuming he is going to be an interesting bench compatriot. He is not. He asks what I'm doing on campus. I make something up. He asks me if I want to go to Bible study. By now, I've started formulating responses to this question. I quip \"I'm sorry, but I have a girlfriend. Thanks for the offer, though\". Despite hours "
-                , Footnote 22 "Maybe minutes. But I certainly had one full shower worth of thoughts about responses to Bible study invites."
+                , Footnote "Maybe minutes. But I certainly had one full shower worth of thoughts about responses to Bible study invites."
                 , Body " of time spent preparing this response, aimed at unsettling the asker enough to scare them away, designed to cut deeply at the (presumed) fear of homosexuality in the person asking me to Bible study, it has no effect. He laughs, and says it's not like that. He wants me to find Jesus inside me "
-                , Footnote 23 "A message with deeply homosexual undertones, I might add."
+                , Footnote "A message with deeply homosexual undertones, I might add."
                 , Body ". I tell him to please leave my bench. He asks whether I've ever experienced something I would consider unexplainable by science "
-                , Footnote 24 "No."
+                , Footnote "No."
                 , Body ". I tell him to please leave my bench. He asks whether I've ever been in a situation of mortal danger, when I thought I was going to die, but I lived "
-                , Footnote 25 "I've been to New York and tried to jaywalk, so the answer is definitively yes."
+                , Footnote "I've been to New York and tried to jaywalk, so the answer is definitively yes."
                 , Body "."
                 ]
             , Paragraph
                 [ Body "Too many people have asked me to Bible study for it to be a coincidence "
-                , Footnote 26 "They would tell me that this means I should believe in the Christian God. A meta-argument for Bible study."
+                , Footnote "They would tell me that this means I should believe in the Christian God. A meta-argument for Bible study."
                 , Body ". I don't know what it is about me that attracts them. But I'd like to say, to all of them: please, stop asking me to Bible study. And, to God: you're going to have to send some more attractive girls."
                 ]
             ]
@@ -819,17 +818,17 @@ essays =
             Listed
             [ Paragraph
                 [ Body "I am, technically, a former professional StarCraft 2 player. When I was in middle school, I played StarCraft 2 extensively. I was very good for my age "
-                , Footnote 1 "I think."
+                , Footnote "I think."
                 , Body ", and played in some age-limited tournaments, which I occasionally won. In fact, I won often enough that I recouped my tournament buy-ins, enough to cover the cost of the game itself, and I thought this was a pretty good deal "
-                , Footnote 2 "My slightly-older self realizes that spending hundreds of hours playing a game in order to make ~$100 is not a good deal. But as a child, I had far fewer opportunities to make money than I do today. In fact, it was probably illegal for people to hire me. And playing video games is more enjoyable than mowing lawns."
+                , Footnote "My slightly-older self realizes that spending hundreds of hours playing a game in order to make ~$100 is not a good deal. But as a child, I had far fewer opportunities to make money than I do today. In fact, it was probably illegal for people to hire me. And playing video games is more enjoyable than mowing lawns."
                 , Body ". The money was nice, I guess "
-                , Footnote 3 "Can you tell I grew up in a firmly upper-ish-part-of-the-middle-class household? "
+                , Footnote "Can you tell I grew up in a firmly upper-ish-part-of-the-middle-class household? "
                 , Body ", but playing StarCraft competitively changed my life. Other than being one of the reasons I met one of my best friends through all of middle and high school, it taught me the generic algorithm for getting better at things "
-                , Footnote 4 "Although it took me several years to realize that this algorithm could be applied to things other than StarCraft."
+                , Footnote "Although it took me several years to realize that this algorithm could be applied to things other than StarCraft."
                 ]
             , Paragraph
                 [ Body "StarCraft 2 has a ladder system that provides immediate feedback on your performance. You can queue up, get matched against a stranger, and play a game. At the end of the game, the winner gains some points, and the loser loses some. Internally, they use Elo rankings, but they publish a different number. Regardless of the exact scoring mechanism, you can see this score trend up and down, and if you play enough games "
-                , Footnote 5 "And I was certainly playing enough games."
+                , Footnote "And I was certainly playing enough games."
                 , Body ", it becomes quite accurate. I floundered about in the lowest rung on the ladder, playing games and being so incompetent that I didn't even understand why I was losing games when I lost. I thought perhaps I could learn from the real professional games, and so I tuned in to a tournament. The camera flew around, showing different parts of the game map every second, mysterious things were happening, and the close-ups of the players' hands dancing over the keyboard were downright intimidating. Eventually, I found the livestream of a StarCraft personality, Day9. He would watch a replay of a game, commentating on why one player did better or worse than another, and importantly, his content was targeted at bad players like me."
                 ]
             , Paragraph
@@ -841,12 +840,12 @@ essays =
                     , "Once you are doing better at the one piece, go to 2."
                     ]
                 , Body "Armed with this way to create practice regimes, I did. I knew what I was failing at "
-                , Footnote 6 "And this part is hard. Often, the hardest part of this algorithm is step 2. If you are unconscious of your incompetence, you don't know what you ought to be improving."
+                , Footnote "And this part is hard. Often, the hardest part of this algorithm is step 2. If you are unconscious of your incompetence, you don't know what you ought to be improving."
                 , Body ", and I could get better at those things! My ranking suffered in the short term, because I was focusing on some small parts of the game while neglecting almost everything else. But after picking enough of those small parts of the game to improve at, my ranking began to climb again. This felt really good. "
                 ]
             , Paragraph
                 [ Body "I kept playing StarCraft, occasionally competitively, mostly just with friends, for most of middle school. By the time high school rolled around, I was starting to make the transition into MineCraft and various indie single-player games, which aren't skill-focused. They're about enjoying yourself and making cool-looking contraptions or following a story. There's nothing inherently wrong with this type of game, but they will never provide someone with an environment where they really want to grow their skill at something. StarCraft 2, for me, was like learning how to play an instrument. The reason we want children to learn how to play instruments "
-                , Footnote 7 "Except guitar. If you pressure your kid to learn guitar, you want them to get laid. But oboe? Not so much."
+                , Footnote "Except guitar. If you pressure your kid to learn guitar, you want them to get laid. But oboe? Not so much."
                 , Body " is to give them this same experience. This is the growth mindset –\u{00A0}knowing that you can improve, and having to figure out how to devise training regimens for yourself. This is an invaluable skill. Much to my parent's disappointment, clarinet did not teach me any of this, but fortunately, I managed to get some of the same outcomes through video games."
                 ]
             , Plain "See, Mom? I told you playing video games was good for me."
@@ -856,28 +855,28 @@ essays =
             Listed
             [ Paragraph
                 [ Body "We co-evolved with it. Alcohol was discovered thousands of years ago "
-                , Footnote 1 "I made this fact up. But it sounds believable, right? Alcohol's been around for a bit, is all I really mean to say, but thousands of years is just so much more impressive. "
+                , Footnote "I made this fact up. But it sounds believable, right? Alcohol's been around for a bit, is all I really mean to say, but thousands of years is just so much more impressive. "
                 , Body " and humans have been drinking it ever since. If humans evolved with alcohol, then it makes since that we would evolve to be dependent on it."
                 ]
             , Paragraph
                 [ Body "Obviously, the environment that a population exists in influences the path of their evolution. But a bunch of creatures in a warmer climate, those with less fur will thrive, in a colder climate, just the opposite. All evolution works in this way: based on the environment that a species is in, certain traits are advantageous, and those traits allow their owners to have more children (or more successful children), so they take over the population. But this may not make as much sense in the human context. Reproductive fitness, in the modern age, is more determined by will to have children than ability to produce enough for your children to survive. This is why religions that encourage their members to have many kids, or avoid using birth control, tend to survive"
-                , Footnote 2 "Unfortunately."
+                , Footnote "Unfortunately."
                 , Body "."
                 ]
             , Paragraph
                 [ Body "But thousands of years ago, in semi-pre-historic times, food was still scarce, rates of murder were quite high, and reproductive fitness was based on more than just your inclination to baby-making "
-                , Footnote 3 "In the literal sense, not the euphemistic one. Have as much protected sex as you want, it won't make you more fit (in the Darwinian sense, although it may make you more fit in the athletic sense)."
+                , Footnote "In the literal sense, not the euphemistic one. Have as much protected sex as you want, it won't make you more fit (in the Darwinian sense, although it may make you more fit in the athletic sense)."
                 , Body ". So the evolutionary pressure exerted by the environment were a bit stronger. And alcohol had been invented."
                 ]
             , Paragraph
                 [ Body "If we evolved in an environment with alcohol "
-                , Footnote 4 "We did."
+                , Footnote "We did."
                 , Body " and the environment shapes evolution "
-                , Footnote 5 "It does."
+                , Footnote "It does."
                 , Body "it follows that alcohol shaped our evolution. Human social instincts are the result of evolution. And the presence of alcohol shapes what social instincts are beneficial to have. In an environment where alcohol is present, people can choose to lower their inhibitions and become more gregarious, whenever they choose "
-                , Footnote 6 "Alcohol won't always be available, but let's imagine for a second."
+                , Footnote "Alcohol won't always be available, but let's imagine for a second."
                 , Body ". If this is the case, then people whose social instincts are overly sociable have no way to fix this problem, while people whose social instincts are overly reserved can make up the difference with alcohol. So, I imagine, the best social disposition is one that is slightly too shy - shy enough to keep you safe from conmen "
-                , Footnote 7 "And conwomen. Conpeople? That sounds wrong. I'll keep it as conmen."
+                , Footnote "And conwomen. Conpeople? That sounds wrong. I'll keep it as conmen."
                 , Body ", but open enough that a little bit of alcohol puts you in a sociable enough mood to meet new friends and dance in religious ceremonies and whatever else added to reproductive fitness thousands of years ago."
                 ]
             ]
@@ -886,19 +885,19 @@ essays =
             Listed
             [ Paragraph
                 [ Body "But people often act as if it's not. The default perception is that any person could do professional philosophy, but that only a few people can do professional math "
-                , Footnote 1 "I'm talking almost exclusively about research here. Engineers, I suppose, are mostly professional mathematicians."
+                , Footnote "I'm talking almost exclusively about research here. Engineers, I suppose, are mostly professional mathematicians."
                 , Body ". I think that both are difficult, but in different ways, and that social perception here is wrong."
                 ]
             , Paragraph
                 [ Body "First, a caveat: it is much easier to bullshit in philosophy than in math. Because philosophy texts are so full of jargon and words with different meanings in philosophy and common parlance "
-                , Footnote 2 "I blame this on the GRE. Academics spend many hours studying vocabulary for this test, and then spend the rest of their careers trying to justify it by overusing esoteric words in their papers. This is my theory for why academics tend to write like assholes."
+                , Footnote "I blame this on the GRE. Academics spend many hours studying vocabulary for this test, and then spend the rest of their careers trying to justify it by overusing esoteric words in their papers. This is my theory for why academics tend to write like assholes."
                 , Body ", bullshit philosophy and real philosophy look quite similar. Because the medium for communicating is English, a relatively imprecise language, real philosophy described poorly can seem quite like bullshit, and well-presented bullshit philosophy can seem legitimate. In math, the mode of communicating is a symbolic logic, more precise, and much easier to fact check. Philosophers can make arguments in favor of a point, and then realize they were mistaken, in math, it is somewhat shameful to publish a proof that is later found to be flawed. It may be easier to bullshit philosophy than math, but that doesn't mean that doing good philosophy is easier than doing good math."
                 ]
             , Paragraph
                 [ Body "Philosophy, as a discipline, involves lots of reading and writing. Most people can read, and write, and so assume that philosophy can't be that hard. But the reading and writing is quite different; extracting a coherent argument from someone else's writing involves much more thought and care than just skimming a news article. Math, on the other hand, involves lots of messing around with little squiggly lines on paper. This is something that most people can't do, or at least are afraid of. So, math gets a reputation for being more difficult, because it involves squigglier lines." ]
             , Paragraph
                 [ Body "A thought experiment someone told me once, aimed at identifying which academic disciplines are the easier, goes like this: \"Imagine that we live in a dictatorship, and all of the professors are forced into another discipline, chosen randomly. They have two years to get up to speed in that discipline, and then are expected to start producing research in that field. Who is the most scared?\" The example I heard it with was swapping the fields of literature and physics professors, where my intuition says that the physicists would have a better shot at adapting to their new field. But I'm not so sure about philosophy and math "
-                , Footnote 3 "Of course, there is a broad overlap between philosophy and math, for example, most of logic can be ascribed to either field. Pretend that there is no overlap here, for now. Imagine we swap the metaethicists with the linear algebraists."
+                , Footnote "Of course, there is a broad overlap between philosophy and math, for example, most of logic can be ascribed to either field. Pretend that there is no overlap here, for now. Imagine we swap the metaethicists with the linear algebraists."
                 , Body ". Could math professors really understand metaethics? Would they be totally fine ramping up on Kant in two years? I think they would struggle as much as the philosophers who had to learn how to do mathematical research."
                 ]
             , Plain "Math is hard. Philosophy is hard. Stop insulting the intelligence of philosophers, please."
@@ -911,9 +910,9 @@ essays =
                 ]
             , Paragraph
                 [ Body "There are few studies on how to teach programming, and so most people must be doing a bad job at it. Personally, I love Northeastern's curriculum, which begins with software design, and then gets into the details of implementing software. But we have no idea what the most effective way to teach developers is. There are some studies, where professors will teach one class to write their tests after their code, and another to write tests before their code "
-                , Footnote 1 "Although my experience as a TA for a class that demands you write tests before code is that students will always write the code first."
+                , Footnote "Although my experience as a TA for a class that demands you write tests before code is that students will always write the code first."
                 , Body ". And then they will compare the average scores of the two classes, or something similar. These experiments are nice, but they are being conducted primarily by computer science professors, and so often make silly mistakes in their attempts at pedagogical research. The professors with degrees in Education are teaching classes about Education, and so can't influence CS curricula or run experiments on computer science students of their own. Even Northeastern's curriculum, which increased the number of students getting co-ops where they write code from 33% to 90%, is not considered to be superior "
-                , Footnote 2 "By the population of CS educators in general. At Northeastern, it has a pretty good rap."
+                , Footnote "By the population of CS educators in general. At Northeastern, it has a pretty good rap."
                 , Body " to the curriculum it replaced. So much effort is poured into getting middle schoolers higher standardized test scores, and so little into training computer scientists."
                 ]
             , Paragraph
@@ -924,7 +923,7 @@ essays =
             "Pedestrian"
             "pedestrian"
             Listed
-            [ Plain "We walk in the winter. Imagine the bitter, freezing wind burning at your exposed face, your hands gloved and shoved in pockets but nonetheless tingling a bit. Snow crunches underfoot, until it gives way to ice, where you must expend all of your available focus on just making horizontal motion happen without a fall. But this all is good for the soul. Brushing up against the primal fear of death by exposure, I feel all the more grateful when I make it back inside. For some moments, out on a walk in the cold, your life is in your own hands, you must make it back to shelter soon, and everyone else is inside, hiding from the elements, unable to help. You know you are safe, and that you will survive this brief winter walk, but parts of your brain are unaware of our modern civilization. Those parts of your brain reward you, when you find a reprieve from the cold in your apartment. But if you never walk, if you leave your heated apartment for your heated car for your heated destination, you don't really experience the winter."
+            [ Plain "We walk in the winter. The bitter, freezing wind burning at your exposed face, your hands gloved and shoved in pockets but nonetheless tingling a bit. Snow crunches underfoot, until it gives way to ice, where you must expend all of your available focus on just making horizontal motion happen without a fall. But this all is good for the soul. Brushing up against the primal fear of death by exposure, I feel all the more grateful when I make it back inside. For some moments, out on a walk in the cold, your life is in your own hands, you must make it back to shelter soon, and everyone else is inside, hiding from the elements, unable to help. You know you are safe, and that you will survive this brief winter walk, but parts of your brain are unaware of our modern civilization. Those parts of your brain reward you, when you find a reprieve from the cold in your apartment. But if you never walk, if you leave your heated apartment for your heated car for your heated destination, you don't really experience the winter."
             , Plain "We walk in the fall. Leaves crunch underfoot, but quietly; quietly enough, at least, that you can hear yourself think. Cars may rush by, pulling you out of your thoughts with the sputter of their exhaust and the hum of their engines, but walking, alone, the air brisk but not cold, you can ponder and ponder and ponder. You can sit on a bench, if you get tired, or if the ambulation of footsteps is disrupting you. You notice things, in the fall, mushrooms sprouting out of otherwise well-manicured yards, the decorations for the various holidays, the people you walk by. Motorists are always mad at each other, because they can't see each other's faces; pedestrians pass each other without contest, sometimes with a smile and a wave and a \"Good Morning!\". You can grab the leaves, throw them in the air, stomp them and kick them and even jump in them."
             , Plain "We walk in the summer. Wind blows cool over your face, pulls your shirt away from your sweaty back, provides an iota of relief. The heat is not fun, by any means, but it makes the water you drink all the sweeter. You can enjoy a nice drink in the comfort of your apartment, insulated from the world by four walls and a roof and the knowledge that you have somewhere to stay. But that drink, no matter what it is, will feel worse than ice-cold water on a summer walk. The sun may beat down, your sunglasses seemingly useless, your eyes blind. A bench, in the shade, may provide respite. The summer walk demands a shower, when you return home. Walking near the water, you fantasize about jumping in, cooling off. But you don't. Remembering the winter, so recent in memory, the cold that chills you to your bones, you catch as much of the sun as you can, expel the last remnants of winter in your body and your spirit. The summer walk is a sauna. Relax, and let the sun beat down, and feel your skin turn golden-brown, and bask in the moment."
             , Plain "We walk in the spring. Mist and rain together drizzle down, or perhaps it's just a fog, but anyway it's rather damp and you feel droplets accumulate in your hair. A light jacket, pants, boots, serve to protect you, mostly, from this set of weather. Are you wearing rainboots? If so, go ahead, jump in the puddle. If not, jump anyways, we'll all be thoroughly waterlogged at the end of the walk anyway, may as well hasten the process. See the skyscrapers, enshrouded in fog, cut off halfway up, looking as if they go on forever, past the fog line. The light is dim, though the sun is overhead, the clouds diffusing and blocking the sun to various degrees, so that you can see everything, but everything still seems concealed. The animals are out, again, and you can hear birds twitter away in the trees that have yet to regrow their leaves."
@@ -935,7 +934,7 @@ essays =
             Listed
             [ Paragraph
                 [ Body "I am sitting in a library while writing this. It's no good, writing in a library. The goal of perfect silence, an admirable goal, means that the library is almost dead still. Except, of course, once or twice a minute, when someone zips up a backpack, drops a book, or says a few words to their friend. Then, because the moments before and after the noise are so silent, it stands out, makes you look up, stop concentrating. The syncopated bursts of sound in otherwise deep silence doesn't work for me, the coffeeshop's consistent white noise being far less distracting "
-                , Footnote 1 "Until a rambunctious group of people comes in, and they start loudly discussing their friend group's most recent breakup. During those moments, I prefer the library."
+                , Footnote "Until a rambunctious group of people comes in, and they start loudly discussing their friend group's most recent breakup. During those moments, I prefer the library."
                 , Body "."
                 ]
             , Paragraph
@@ -944,11 +943,11 @@ essays =
             , Plain "Libraries are the only place where people will always shush you if you laugh."
             , Paragraph
                 [ Body "I type away on my computer. When I need to look something up, I open a new tab, and launch a search "
-                , Footnote 2 "On DuckDuckGo, not on Google. You should be afraid of Google."
+                , Footnote "On DuckDuckGo, not on Google. You should be afraid of Google."
                 , Body ". The books next to me, although they may hold the answer, aren't as easily searched as the internet. Fiction, and books I want to read for fun, those I can understand having in print form, because there's something distinctive about reading a physical book. But my textbooks, and books I'll want to cite later, those I prefer having on a computer. But libraries still hold on to shelves after shelves of reference material. There are computers here, available for the public to use "
-                , Footnote 3 "Although I'm not sure I would trust the cleanliness of the keyboards."
+                , Footnote "Although I'm not sure I would trust the cleanliness of the keyboards."
                 , Body ", so everyone else who needs to learn some particular fact will turn to Google "
-                , Footnote 4 "And probably not DuckDuckGo, unfortunately."
+                , Footnote "And probably not DuckDuckGo, unfortunately."
                 , Body "."
                 ]
             , Plain "I hear clothing rustling. Someone whispers \"stop\", and the rustling stops. A hushed conversation, back-and-forth, between a guy and a girl. I can't hear what words they say, but I can hear the tones of their voices. A couple is having sex in this library."
@@ -963,45 +962,45 @@ essays =
             Listed
             [ Paragraph
                 [ Body "I feel like I really should know the answer to this question, but I don't. Years of living in a dorm desensitized me to fire alarms. When a fire alarm goes off once a year, I can make a big deal about it, but when you're at five per week "
-                , Footnote 1 "Of course, all of them between 2 and 6 AM. Thanks, stoners."
+                , Footnote "Of course, all of them between 2 and 6 AM. Thanks, stoners."
                 , Body ", you stop caring."
                 ]
             , Paragraph
                 [ Body "In a dorm, at least, someone told me when I moved in what to do if there was a fire alarm "
-                , Footnote 2 "I didn't listen. I was too busy trying to flirt with every girl in my dorm at the same time, and failing miserably."
+                , Footnote "I didn't listen. I was too busy trying to flirt with every girl in my dorm at the same time, and failing miserably."
                 , Body ". So, when the fire alarm did happen, I could pop my head out the door, see everyone else making for the stairs, and decide to follow them. My freshman year, fire alarms were quite regular. I owned a pair of large, flowy, cotton pants, tie-dyed in a rainbow, from red near the waist to purple at the ankle "
-                , Footnote 3 "I made it myself. It was the choice of a younger, more colorful me."
+                , Footnote "I made it myself. It was the choice of a younger, more colorful me."
                 , Body ". I would wear those, and whatever t-shirt I was wearing the previous day, and would stagger down five flights of stairs with the rest of my bleary-eyed dormmates. We would loiter across the street, and I would always meet someone new, an acquaintance of an acquaintance. I almost appreciated the fire-alarms, as a way of putting everyone in one place with nothing to do but socialize "
-                , Footnote 4 "Or check their phones incessantly. But at 4AM, everyone knows no one is up and texting you, so you're not fooling anyone."
+                , Footnote "Or check their phones incessantly. But at 4AM, everyone knows no one is up and texting you, so you're not fooling anyone."
                 , Body ". After several of these fire alarms, we start to get a bit slower in our responses. We have to clear out of our rooms, or firefighters might yell at us, but the timeline is reasonably long, a few minutes at least. We realize that we can afford to pack our backpack with whatever we need, laptops to do work on, water bottles filled with alcohol if it's a Friday or Saturday night fire alarm "
-                , Footnote 5 "The worst timing for a fire alarm. The best timing is when you're already leaving, and so the fire alarm doesn't effect you. A fire alarm can't make your day better, but with good timing, it won't make your day worse."
+                , Footnote "The worst timing for a fire alarm. The best timing is when you're already leaving, and so the fire alarm doesn't effect you. A fire alarm can't make your day better, but with good timing, it won't make your day worse."
                 , Body ", that sort of thing."
                 ]
             , Paragraph
                 [ Body "So in a dorm, I knew what was up: grab some stuff, head down, wait for the fire fighters to show up, as resigned as you are about this one dorm building's alarm system "
-                , Footnote 6 "Halfway through the year, they disabled the fire alarms entirely. At first, I was scared about losing that measure of safety against fires, and then I realized that I was happy to trade a small risk of dying in a fire for being able to sleep through the night."
+                , Footnote "Halfway through the year, they disabled the fire alarms entirely. At first, I was scared about losing that measure of safety against fires, and then I realized that I was happy to trade a small risk of dying in a fire for being able to sleep through the night."
                 , Body ". A fire alarm is a reason for a grumble, but not panic."
                 ]
             , Paragraph
                 [ Body "Today, in my apartment building, the fire alarm went off. This was the first time since I moved in that the entire, building-wide alarm went off "
-                , Footnote 7 "I have set off my apartment's fire alarm multiple times while cooking, but managed to ventilate well enough that it didn't trigger the whole building. You know, how competent people handle fire alarms."
+                , Footnote "I have set off my apartment's fire alarm multiple times while cooking, but managed to ventilate well enough that it didn't trigger the whole building. You know, how competent people handle fire alarms."
                 , Body ". I didn't know what to do! Should I panic? Probably not, right? Not having anyone else around to confirm this with "
-                , Footnote 8 "And, also, being high enough that I didn't care."
+                , Footnote "And, also, being high enough that I didn't care."
                 , Body ", I decided that it was no big deal, I would throw on pants "
-                , Footnote 9 "I was wearing pants in my apartment, but they were sweatpants. I figured odds were good of this not being a huge deal, so I had time to change into something more reasonable."
+                , Footnote "I was wearing pants in my apartment, but they were sweatpants. I figured odds were good of this not being a huge deal, so I had time to change into something more reasonable."
                 , Body " and a jacket "
-                , Footnote 10 "I thought a light jacket would be appropriate. I stepped outside, and despite the day being a balmy 70 degrees, the night was 40-something. I was cold."
+                , Footnote "I thought a light jacket would be appropriate. I stepped outside, and despite the day being a balmy 70 degrees, the night was 40-something. I was cold."
                 , Body ". I storm down the stairs, other residents of the apartment building and I commiserating about how loud the fire alarm was "
-                , Footnote 11 "Many fire alarms are obnoxious, this fire alarm was absurd. I understand it has to be loud to get everyone's attention. And in my apartment, it was loud but not unbearable. But the second I step into the hallway, I get a splitting headache, the grinding sound (why was it grinding? who designed this alarm??) overwhelming my feeble ears."
+                , Footnote "Many fire alarms are obnoxious, this fire alarm was absurd. I understand it has to be loud to get everyone's attention. And in my apartment, it was loud but not unbearable. But the second I step into the hallway, I get a splitting headache, the grinding sound (why was it grinding? who designed this alarm??) overwhelming my feeble ears."
                 , Body ". I go for a lap around the block, hoping the situation will have resolved itself by the time I get back. Waiting on the sidewalk for the light to turn, so I can escape, other residents trickle in. We chat about our hopes, expectations, and goals for this fire alarm. Many of them are strangers, and almost certainly, I had quietly passed them in the stairs or shared a wordless elevator ride with them before. But today, in light of the fire alarm, we were all incredibly chatty "
-                , Footnote 12 "This is thinly veiled social commentary."
+                , Footnote "This is thinly veiled social commentary."
                 , Body "."
                 ]
             , Paragraph
                 [ Body "Coming back from my walk, I notice some people loitering in front of the liquor store in my apartment building "
-                , Footnote 13 "The location of this liquor store is quite bad for my liver."
+                , Footnote "The location of this liquor store is quite bad for my liver."
                 , Body ". I chat with them, and learn that you can get fined stupid amounts of money for being in a building while the fire alarm is going off, up to $2000. This is the sort of information I wish adults had told me in my formative years. I was ready to stroll back in, and just assume that the fire alarm ending meant we were all safe. One woman is called away by a man who seems to be quite impatient, and does not convince me the building is safe. Eventually, it's just me and a girl wearing a barstool hoodie "
-                , Footnote 14 "Yikes."
+                , Footnote "Yikes."
                 , Body ". We make our way back into the building. We call the elevator, and briefly discuss whether an elevator is safe to take in what may be a fire. I feign for the stairs, but we're interrupted: the elevator we called arrives. Two firemen, clad in full neon-and-black firefighting regalia, step outside. I ask them if it's safe for us to be in the building, and they say we're fine. I step into the elevator with this girl. We pull up to my floor. I think about asking for her number, as we've spent the last half-hour bantering about this fire. Then I remember she is wearing a barstool hoodie, and step out of the elevator. She tells me to have a good night. I tell her that I hope her apartment didn't burn down."
                 ]
             ]
@@ -1010,14 +1009,14 @@ essays =
             Listed
             [ Paragraph
                 [ Body "My parents are divorced. All of my grandparents are divorced "
-                , Footnote 1 "A fact I learned only in the first grade. They all divorced and remarried before I was born, so I just had eight grandparents, and no one found it necessary to tell me that I was only biologically related to four of them. One day, in first grade, we had to draw our family trees. I wrote my name down, put it in a circle. I wrote my parents names in circles, and drew two lines, one to my mom, one to my dad. I drew my grandparents, and realized that there were four lines from each of my parents. I asked my teacher for help; my teacher was equally confused. I asked my parents after school, and they filled me in on the whole divorce thing."
+                , Footnote "A fact I learned only in the first grade. They all divorced and remarried before I was born, so I just had eight grandparents, and no one found it necessary to tell me that I was only biologically related to four of them. One day, in first grade, we had to draw our family trees. I wrote my name down, put it in a circle. I wrote my parents names in circles, and drew two lines, one to my mom, one to my dad. I drew my grandparents, and realized that there were four lines from each of my parents. I asked my teacher for help; my teacher was equally confused. I asked my parents after school, and they filled me in on the whole divorce thing."
                 , Body ". Divorce is highly heritable. Statistically, I am almost certain to get a divorce."
                 ]
             , Paragraph
                 [ Body "Perhaps the statistics don't apply here, but I am generally in favor of "
                 , Link "taking the outside view" (Route.Essay "outside")
                 , Body ", so I have to imagine I'm not special. Anyway, looking at who I am as a person "
-                , Footnote 2 "Promiscuous, atheistic, and alcoholic, just for starters."
+                , Footnote "Promiscuous, atheistic, and alcoholic, just for starters."
                 , Body " it seems unlikely that I would be less likely to get divorced than the statistics predict. Even knowing that I have this genetic predisposition to getting divorced doesn't seem like it can help me escape it."
                 ]
             , Paragraph
@@ -1025,16 +1024,16 @@ essays =
                 ]
             , Paragraph
                 [ Body "Having a high chance of divorce seems like the sort of thing people should care about, when they're thinking about whether they might want to marry someone. People will give all kinds of advice about evaluating potential spouses: make sure that you have compatible star signs "
-                , Footnote 3 "Ha!"
+                , Footnote "Ha!"
                 , Body ", that you have similar hobbies, that you agree on the number of children you want to have. For just about every attribute you can judge someone on, I have been told that that attribute determines whether we could be happy together. But I have never been told to look at a potential spouse's family history of divorce. It is the one of the best predictors of divorce, certainly a better predictor than star sign, but no one seems to advocate it. Maybe it's because most dating advice is old "
-                , Footnote 4 "For example, \"don't have premarital sex\"."
+                , Footnote "For example, \"don't have premarital sex\" makes perfect sense in a world where there is no birth control, STDs are more likely to be fatal, and you can get more money for marrying if you are a virgin."
                 , Body ", and understanding of genetics and the heritability of divorce is relatively new. Maybe we want to believe in freedom from genetic determinism, so we choose to ignore this piece of information. Whatever the reason, people seem to be ignoring something that could help them decide not to marry me. I think I'll choose to not be too upset about this irrationality."
                 ]
             , Paragraph
                 [ Body "I also have genetic predispositions to alcoholism, depression, and heart disease "
-                , Footnote 5 "But also, to becoming a professor or engineer. My genes aren't all bad, I just like to complain. Maybe I have a genetic predisposition to complaining."
+                , Footnote "But also, to becoming a professor or engineer. My genes aren't all bad, I just like to complain. Maybe I have a genetic predisposition to complaining."
                 , Body ". Lots of my friends would not genetically modify their children's embryos to improve them. I suspect that my position on genetic enhancement "
-                , Footnote 6 "I think genetically enhancing your children is as obligatory as reading to them."
+                , Footnote "I think genetically enhancing your children is as obligatory as reading to them."
                 , Body ", while backed up by what I find to be sound philosophical arguments, probably derives from my fear of the ticking time-bombs in my genes. I'm aware that I can overcome just about anything in my genes, that nothing is guaranteed. But statistically, things look somewhat bleak."
                 ]
             ]
