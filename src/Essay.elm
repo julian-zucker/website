@@ -45,7 +45,7 @@ type ContentItem
 
 type ParagraphItem
     = Body String
-    | Link String Route.Route
+    | Link String String
     | Footnote String
     | NumberedList (List String)
     | NumberedListStartingAt Int (List String)
@@ -134,7 +134,7 @@ htmlFromFootnoteItems footNoteItems footnoteNumber =
                     ( List.append soFar [ ol [ start startingAt ] (List.map (\item -> li [] [ text item ]) list) ], currentFootnoteNumber )
 
                 Link string route ->
-                    ( List.append soFar [ a [ href (Route.toUrlString route) ] [ text string ] ], currentFootnoteNumber )
+                    ( List.append soFar [ a [ href route ] [ text string ] ], currentFootnoteNumber )
     in
     Tuple.first (List.foldl htmlFromFootnoteItem ( [], footnoteNumber ) footNoteItems)
 
@@ -244,7 +244,6 @@ essays =
             ]
 
         --  Written 2019-08-04
-        -- TODO make that XKCD link a real link
         , Model "The GRE"
             "gre"
             Listed
@@ -252,7 +251,11 @@ essays =
             , Plain """Research requires a lot of reading, a fair bit of applied statistics, and a lot of writing. The reading is obvious, as papers are the primary way for researchers to formally communicate their ideas. If you lack reading comprehension, you won't be able to keep up with the literature, as you won't understand what the experts in your field are saying. So you must be able to extract the core arguments from a text, evaluate arguments, and understand the vocabulary used in these papers. You have to  used to evaluate statistical arguments, particularly in the health and social sciences, where a lot of the research is based on RCTs and statistical experiments to show the efficacy of a drug or the power of some psychological effect. If you don't know how to evaluate study design, what a p-value means, and how to do Bayesian inference, you will fail to understand many of the arguments being made. And writing is important for the same reason as reading - papers are the primary way to package your ideas for general consumption, so you must be clear and accurate in your writing."""
             , Plain """At first glance, the GRE appears to be testing on those things, after all, the three sections are "Reading", "Quantitative", and "Writing". So surely the skills tested by the GRE are those that will be valuable in a PhD? No. The section headers line up with the abstract notions of the skills, but the details are all wrong. """
             , Plain """Starting with the reading section, there is a large portion that is simply vocabulary and multiple-choice-test-taking skills. One section, about 6 of the 25 questions on the practice exams I've taken, are called the "Section Equivalence" Questions. The question asks you to find a pair of answers that mean the same thing when plugged into the sentence, and lead to a coherent sentence. Let's leave aside the discussion of whether their desired vocabulary is relevant. (Did you know that phlegmatic means "sluggish, unemotional or apathetic"? I didn't, because no one says or writes "phlegmatic".) The question has six possible answers. Looking at the answers alone, avoiding the question, you can get a decent score on these questions. Typically, there are only one or two pairs that mean the same thing, allowing you to narrow down the selection of answers from 30 (picking 2 answers from 6 possible choices) to 2. A 50/50 shot is pretty good: On the GRE, getting 50% of the questions right is around 50th percentile [citation needed]. But notice that we haven't even examined the sentence – this question format is almost entirely a vocabulary question. Once you read the sentence, some mental effort is required to understand which of the two pairs would be coherent, but normally the two pairs are diametric opposites, as in "commonplace/everyday" and "opulent/expensive". Yeah, a quick glance at the sentence is going to immediately tell you which of the two pairs fits. The "text completion" section is similarly based entirely on knowledge of vocabulary, if you assume that people who want to get a PhD have some basic understanding of how sentences work. Maybe my undergraduate classes are atypical, but I had reading comprehension drilled into me by my philosophy professors (after a series of low grades and hanging around in office hours until I got it). Finally, I'll give the GRE some credit: the passage comprehension problems I have no problem with, as reading a passage, performing basic exegesis, and understanding the conclusions that the argument makes and how each point ties in to the whole are fundamentally useful skills. They're useful for PhD students, yes, but also for reading and comprehending news articles and political speeches, so I have no problem practicing my ability to understand arguments."""
-            , Plain """ Moving to the math section, I question the usefulness of a majority of questions. As I said above, I am entirely in favor of statistical reasoning being tested. Researchers need this skill. However, beyond the statistics, which are fairly rudimentary, the majority of the questions are about basic algebra and geometry. Don't get me wrong, these skills are incredibly useful in day-to-day life. Algebra is required to budget effectively, understand which of two items in the grocery store is cheaper per unit (https://xkcd.com/309/), and other basic problems of optimization that pop up in your life. Geometry is useful for understanding how much surface area something has before you paint it, intuiting the amount of water in different-sized pots while cooking, and other operations on physical items. But these are not problems that are guaranteed to crop up in someone's research. In evolutinoary game theory, algebra (and calculus) are essential to manipulating the mathematical symbols we represent evolutionary processes with. It's a crucial skill – in the field I want to go into. Neuroscientists, moral philosophers, and historians don't need geometry. So why do we evaluate them on this? You could say that at least the philosophers and historians aren't being evaluated on their quantitative scores as much as the verbal portion of the test - but neuroscientists most definitely are judged on the scores on the mathy parts. I don't object to assessing the quantitative skills of applicants, but the test would be more effective if it tested the quantitative skills that will actually be used most often. Studying geometry for the sake of one test, instead of learning some principles of statistics that will help you forever, seems like a waste. """
+            , Paragraph
+                [ Body """ Moving to the math section, I question the usefulness of a majority of questions. As I said above, I am entirely in favor of statistical reasoning being tested. Researchers need this skill. However, beyond the statistics, which are fairly rudimentary, the majority of the questions are about basic algebra and geometry. Don't get me wrong, these skills are incredibly useful in day-to-day life. Algebra is required to budget effectively, understand which of two items in the grocery store is cheaper per unit  ("""
+                , Link "https://xkcd.com/309/" "https://xkcd.com/309/"
+                , Body """), and other basic problems of optimization that pop up in your life. Geometry is useful for understanding how much surface area something has before you paint it, intuiting the amount of water in different-sized pots while cooking, and other operations on physical items. But these are not problems that are guaranteed to crop up in someone's research. In evolutinoary game theory, algebra (and calculus) are essential to manipulating the mathematical symbols we represent evolutionary processes with. It's a crucial skill – in the field I want to go into. Neuroscientists, moral philosophers, and historians don't need geometry. So why do we evaluate them on this? You could say that at least the philosophers and historians aren't being evaluated on their quantitative scores as much as the verbal portion of the test - but neuroscientists most definitely are judged on the scores on the mathy parts. I don't object to assessing the quantitative skills of applicants, but the test would be more effective if it tested the quantitative skills that will actually be used most often. Studying geometry for the sake of one test, instead of learning some principles of statistics that will help you forever, seems like a waste. """
+                ]
             , Plain """The writing section gets at some of the same skills that are used in writing a full paper, but misses the mark in some keys ways. For example, the text editor they give you is crap. No find-and-replace, no spellchecker, nothing. You're given 30 minutes to respond to make an argument for or against a prompt on a random topic, and then 30 minutes to find the holes in an argument. These are both legitimate writing tasks - the argumentative essay is a great way to express your opinions on a subject, and argument analyses demonstrate not only effective writing skills but the ability to understand the flaws in arguments. But giving someone only thirty minutes, while more or less demanding that both essays fit the "intro/three body paragraphs/conclusion" structure, divorces this writing task from academic writing. Papers are written over weeks or months, with multiple rounds of revisions. And they tend to be much longer than the ~750 words I can bang out in a half-hour. This is more about writing to the test, than it is about overall writing ability, although the most egregious lacks will be apparent. For example, a heavy reliance on a spellchecker, a complete misunderstanding of sentence structure, or an inability to make valid arguments will show through in this thirty minute mini-essay. So this task is fine for weeding out terrible writers, who I guess PhD programs assume can't be trained. But do we really need that? If someone is a terrible writer, and particularly if they are bad in the thirty-minute rushed essay responding to a novel prompt with no research, you'll already know. Most of high school involved writing those types of essays, and you know that this applicant got into college. Surely, if their grasp on the English language were so bad as to prevent them from being able to fake it for thirty minutes, they wouldn't be where they are. I understand the purpose of this section for non-native English speakers, but that's what the TOEFL is for."""
             , Plain """I still studied for the test a bit, and had a low-grade fear of doing poorly on it until I took the first practice test. Now, armed with some level of confidence that my score will be good enough, I won't be spending any more of my time on skills that will be useful only in this context. I hope PhD programs use the GRE to reject bad candidates, but don't look at high GRE scores as indicative of anything more than test-taking ability."""
             ]
@@ -1014,7 +1017,7 @@ essays =
                 ]
             , Paragraph
                 [ Body "Perhaps the statistics don't apply here, but I am generally in favor of "
-                , Link "taking the outside view" (Route.Essay "outside")
+                , Link "taking the outside view" "./outside/"
                 , Body ", so I have to imagine I'm not special. Anyway, looking at who I am as a person "
                 , Footnote "Promiscuous, atheistic, and alcoholic, just for starters."
                 , Body " it seems unlikely that I would be less likely to get divorced than the statistics predict. Even knowing that I have this genetic predisposition to getting divorced doesn't seem like it can help me escape it."
@@ -1035,6 +1038,51 @@ essays =
                 , Body ". Lots of my friends would not genetically modify their children's embryos to improve them. I suspect that my position on genetic enhancement "
                 , Footnote "I think genetically enhancing your children is as obligatory as reading to them."
                 , Body ", while backed up by what I find to be sound philosophical arguments, probably derives from my fear of the ticking time-bombs in my genes. I'm aware that I can overcome just about anything in my genes, that nothing is guaranteed. But statistically, things look somewhat bleak."
+                ]
+            ]
+        , Model
+            "Daniel G Doesn't Know What The Fuck He's Talking About"
+            "daniel-g"
+            Listed
+            [ Paragraph
+                [ Body "Sometimes, I read Yelp reviews. Never to figure out whether a restaurant is good or not "
+                , Footnote "I'm not very picky. Most restaurants are good, and I don't trust other people know which restaurants I'll like. When I'm with a group of people, and someone says they have two ideas for where to go, I'll tell them to pick the first one. If everyone agrees, we get to avoid ten minutes of bickering about what sounds better based on someone's hazy recollection, and go to a restaurant unsullied by the trash-talking of the propoenents of the second choice."
+                , Body ", but to try and remember what I found amusing about a place I've been before, or to convince picky eaters that the Yelp reviewers of the world are on my side. I was scrolling through Yelp reviews of my apartment building, and saw a review from a man named Daniel G. He said that he has \"recently moved to Denver to work in tech\", which amused me. Such pointless detail! I don't care that you work in tech, I care about whether you wrote down the name of the security company that our apartment building uses "
+                , Footnote "Don't worry about why."
+                , Body ". And he didn't, in fact, include the one piece of information I wanted in his review. But his bold opener intrigued me, so I investigated further."
+                ]
+            , Paragraph
+                [ Body "Here's what we know about Daniel G, from his Yelp profile. He just moved to Denver to work in tech. At the top of his profile, right below his name, it says \"Honolulu, HI\", from his reviews, he clearly lives in Denver, so I am unsure what Hawai'i has to do with him. Nonetheless, it's safe to assume that he's thought about Hawai'i at least several times. His photo is the most generically white man you can imagine, brunette but with a forgettable hairstyle, his whole face so astoundingly normal that it's difficult to describe. He is wearing a suit, a black blazer and black tie with a light blue shirt "
+                , Footnote "It doesn't look good, but it fits with the rest of his look: bland, uninspired."
+                , Body ". He looks somewhat like a cardboard cutout. The proportions are wrong, or the lighting is bad, or something. "
+                ]
+            , Paragraph
+                [ Body "Let's discuss some of his reviews. He started in LA, before moving to reviewing Denver spots, lending some credence to his earlier claim that he was new to Denver. In LA, he rated the same bar four times, drowning them in praise. Here's something strange, though: his first review says that they have \"amazing cocktails, and even better food\", his next review says that the \"cocktail menu looks awesome\". Did he forget that he has tried the cocktails? Did they redesign their menu, and he decided just to look at it this time, not ordering anything, not commenting on the drinks themselves, just the presentation "
+                , Footnote "Of the menu, not the drinks."
+                , Body "? He includes a photo, in that same review: a burger, partially disassembled but not eaten, a half-empty glass of water to the side, two sets of utensils "
+                , Footnote "But only one glass, so I doubt he was there with anyone. Also, he is a prolific Yelp reviewer, so I doubt he was there with anyone."
+                , Body ". He seems to be sitting at a couch; the table is low to the ground, the same height as the seat of the couch opposite him. The empty couch opposite him."
+                ]
+            , Paragraph
+                [ Body "\"The lounge area is the best\", he says, in his most recent review. \"I'll be coming here all the time\", he follows, but surely, given that this is his fourth review, he has already been going there all the time? Dnaiel G is uncertain of his relationship with this bar."
+                ]
+            , Paragraph
+                [ Body "Let's move, now, to Daniel's reviews of places in Denver. I knew that he rated my apartment building, but that was not the only apartment building he rated. In fact, Daniel doesn't live in my apartment building. He lives in a different building owned by the same management. His first review, in May, sings the praise of his building. His next review, in August, is of the management company that runs both of our buildings."
+                ]
+            , Plain "So far, so good."
+            , Paragraph
+                [ Body "His next review, on the same day as his review of the management, is a bad copy-and-paste job of his review of the management in general. He missed the first letter. One starts \"I recently moved to Denver to work in tech…\", while the other just starts \"recently moved to Denver to work in tech…\". What motivates a man to copy-paste his Yelp reviews, to tell people looking at an apartment build he doesn't live in that the management has done a pretty good job "
+                , Footnote "He seems a bit more excited than that. \"Highly recommend!\", he says."
+                , Body " elsewhere?"
+                ]
+            , Paragraph
+                [ Body "This is clearly a mating call. He's telling people he's new to Denver and works in tech. New to Denver is informing the world he's single, that he's well-traveled "
+                , Footnote "At least, that he's lived in at least two places in his life."
+                , Body ", and where to find him "
+                , Footnote "Although presumably the only people looking at Yelp reviews of apartment buildings in Denver already live there."
+                , Body ". He's saying he works in tech to advertise that he's doing alright for himself, that despite being normal in literally every other way, that he might just make an above-average salary. He's advertising his apartment building, which is reasonably nice, to corroborate this fact. Daniel G is on Yelp to find himself a woman "
+                , Footnote "Or man, I suppose, but his incredibly bog-standard white-man appearance gives me some confidence in my heteronormative assumption."
+                , Body "."
                 ]
             ]
         ]
