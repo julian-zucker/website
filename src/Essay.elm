@@ -940,4 +940,52 @@ essays =
                 ]
             , Plain "Sitting in the library was okay. At the very least, I wrote this."
             ]
+        , Model
+            "What Are You Supposed To Do When A Fire Alarm Goes Off?"
+            "fire-alarm"
+            Listed
+            [ TextWithFootnotes
+                [ Body "I feel like I really should know the answer to this question, but I don't. Years of living in a dorm desensitized me to fire alarms. When a fire alarm goes off once a year, I can make a big deal about it, but when you're at five per week "
+                , Footnote 1 "Of course, all of them between 2 and 6 AM. Thanks, stoners."
+                , Body ", you stop caring."
+                ]
+            , TextWithFootnotes
+                [ Body "In a dorm, at least, someone told me when I moved in what to do if there was a fire alarm "
+                , Footnote 2 "I didn't listen. I was too busy trying to flirt with every girl in my dorm at the same time, and failing miserably."
+                , Body ". So, when the fire alarm did happen, I could pop my head out the door, see everyone else making for the stairs, and decide to follow them. My freshman year, fire alarms were quite regular. I owned a pair of large, flowy, cotton pants, tie-dyed in a rainbow, from red near the waist to purple at the ankle "
+                , Footnote 3 "I made it myself. It was the choice of a younger, more colorful me."
+                , Body ". I would wear those, and whatever t-shirt I was wearing the previous day, and would stagger down five flights of stairs with the rest of my bleary-eyed dormmates. We would loiter across the street, and I would always meet someone new, an acquaintance of an acquaintance. I almost appreciated the fire-alarms, as a way of putting everyone in one place with nothing to do but socialize "
+                , Footnote 4 "Or check their phones incessantly. But at 4AM, everyone knows no one is up and texting you, so you're not fooling anyone."
+                , Body ". After several of these fire alarms, we start to get a bit slower in our responses. We have to clear out of our rooms, or firefighters might yell at us, but the timeline is reasonably long, a few minutes at least. We realize that we can afford to pack our backpack with whatever we need, laptops to do work on, water bottles filled with alcohol if it's a Friday or Saturday night fire alarm "
+                , Footnote 5 "The worst timing for a fire alarm. The best timing is when you're already leaving, and so the fire alarm doesn't effect you. A fire alarm can't make your day better, but with good timing, it won't make your day worse."
+                , Body ", that sort of thing."
+                ]
+            , TextWithFootnotes
+                [ Body "So in a dorm, I knew what was up: grab some stuff, head down, wait for the fire fighters to show up, as resigned as you are about this one dorm building's alarm system "
+                , Footnote 6 "Halfway through the year, they disabled the fire alarms entirely. At first, I was scared about losing that measure of safety against fires, and then I realized that I was happy to trade a small risk of dying in a fire for being able to sleep through the night."
+                , Body ". A fire alarm is a reason for a grumble, but not panic."
+                ]
+            , TextWithFootnotes
+                [ Body "Today, in my apartment building, the fire alarm went off. This was the first time since I moved in that the entire, building-wide alarm went off "
+                , Footnote 7 "I have set off my apartment's fire alarm multiple times while cooking, but managed to ventilate well enough that it didn't trigger the whole building. You know, how competent people handle fire alarms."
+                , Body ". I didn't know what to do! Should I panic? Probably not, right? Not having anyone else around to confirm this with "
+                , Footnote 8 "And, also, being high enough that I didn't care."
+                , Body ", I decided that it was no big deal, I would throw on pants "
+                , Footnote 9 "I was wearing pants in my apartment, but they were sweatpants. I figured odds were good of this not being a huge deal, so I had time to change into something more reasonable."
+                , Body " and a jacket "
+                , Footnote 10 "I thought a light jacket would be appropriate. I stepped outside, and despite the day being a balmy 70 degrees, the night was 40-something. I was cold."
+                , Body ". I storm down the stairs, other residents of the apartment building and I commiserating about how loud the fire alarm was "
+                , Footnote 11 "Many fire alarms are obnoxious, this fire alarm was absurd. I understand it has to be loud to get everyone's attention. And in my apartment, it was loud but not unbearable. But the second I step into the hallway, I get a splitting headache, the grinding sound (why was it grinding? who designed this alarm??) overwhelming my feeble ears."
+                , Body ". I go for a lap around the block, hoping the situation will have resolved itself by the time I get back. Waiting on the sidewalk for the light to turn, so I can escape, other residents trickle in. We chat about our hopes, expectations, and goals for this fire alarm. Many of them are strangers, and almost certainly, I had quietly passed them in the stairs or shared a wordless elevator ride with them before. But today, in light of the fire alarm, we were all incredibly chatty "
+                , Footnote 12 "This is thinly veiled social commentary."
+                , Body "."
+                ]
+            , TextWithFootnotes
+                [ Body "Coming back from my walk, I notice some people loitering in front of the liquor store in my apartment building "
+                , Footnote 13 "The location of this liquor store is quite bad for my liver."
+                , Body ". I chat with them, and learn that you can get fined stupid amounts of money for being in a building while the fire alarm is going off, up to $2000. This is the sort of information I wish adults had told me in my formative years. I was ready to stroll back in, and just assume that the fire alarm ending meant we were all safe. One woman is called away by a man who seems to be quite impatient, and does not convince me the building is safe. Eventually, it's just me and a girl wearing a barstool hoodie "
+                , Footnote 14 "Yikes."
+                , Body ". We make our way back into the building. We call the elevator, and briefly discuss whether an elevator is safe to take in what may be a fire. I feign for the stairs, but we're interrupted: the elevator we called arrives. Two firemen, clad in full neon-and-black firefighting regalia, step outside. I ask them if it's safe for us to be in the building, and they say we're fine. I step into the elevator with this girl. We pull up to my floor. I think about asking for her number, as we've spent the last half-hour bantering about this fire. Then I remember she is wearing a barstool hoodie, and step out of the elevator. She tells me to have a good night. I tell her that I hope her apartment didn't burn down."
+                ]
+            ]
         ]
