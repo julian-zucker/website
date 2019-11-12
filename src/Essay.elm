@@ -94,7 +94,7 @@ viewContentItem item ( bodyAcc, footnoteAcc ) =
                             footnotesSoFar
 
                 footnotes =
-                    List.foldr
+                    List.foldl
                         fn
                         footnoteAcc
                         paragraphItems
