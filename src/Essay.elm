@@ -8,7 +8,6 @@ import Route
 
 -- TODO The source of every essay has to be in code in this file. I want to store the text in markdown-esque files
 -- TODO footnotes are janky, no links and show up as [1] instead of a superscript
--- TODO essay titles should appear above essays when on their pages
 -- TODO include date that the essay was written
 -- TODO previous/next links?
 
@@ -45,7 +44,7 @@ type ContentItem
 
 type ParagraphItem
     = Body String
-    | Link String String
+    | Link { text : String, href : String }
     | Footnote String
     | NumberedList (List String)
     | NumberedListStartingAt Int (List String)
@@ -119,8 +118,8 @@ viewContentItem item ( bodyAcc, footnoteAcc ) =
 htmlFromFootnoteItems : List ParagraphItem -> Int -> List (Html msg)
 htmlFromFootnoteItems footNoteItems footnoteNumber =
     let
-        htmlFromFootnoteItem oneItem ( soFar, currentFootnoteNumber ) =
-            case oneItem of
+        htmlFromFootnoteItem item ( soFar, currentFootnoteNumber ) =
+            case item of
                 Body content ->
                     ( List.append soFar [ text content ], currentFootnoteNumber )
 
@@ -128,13 +127,13 @@ htmlFromFootnoteItems footNoteItems footnoteNumber =
                     ( List.append soFar [ text ("[" ++ String.fromInt currentFootnoteNumber ++ "]") ], currentFootnoteNumber + 1 )
 
                 NumberedList list ->
-                    ( List.append soFar [ ol [] (List.map (\item -> li [] [ text item ]) list) ], currentFootnoteNumber )
+                    ( List.append soFar [ ol [] (List.map (\e -> li [] [ text e ]) list) ], currentFootnoteNumber )
 
                 NumberedListStartingAt startingAt list ->
-                    ( List.append soFar [ ol [ start startingAt ] (List.map (\item -> li [] [ text item ]) list) ], currentFootnoteNumber )
+                    ( List.append soFar [ ol [ start startingAt ] (List.map (\e -> li [] [ text e ]) list) ], currentFootnoteNumber )
 
-                Link string route ->
-                    ( List.append soFar [ a [ href route ] [ text string ] ], currentFootnoteNumber )
+                Link link ->
+                    ( List.append soFar [ a [ href link.href ] [ text link.text ] ], currentFootnoteNumber )
     in
     Tuple.first (List.foldl htmlFromFootnoteItem ( [], footnoteNumber ) footNoteItems)
 
@@ -159,8 +158,8 @@ textFromFootnoteItem item =
         NumberedListStartingAt int list ->
             ""
 
-        Link string route ->
-            string
+        Link { text } ->
+            text
 
 
 viewEssayPreview : Model -> Html msg
@@ -253,7 +252,7 @@ essays =
             , Plain """Starting with the reading section, there is a large portion that is simply vocabulary and multiple-choice-test-taking skills. One section, about 6 of the 25 questions on the practice exams I've taken, are called the "Section Equivalence" Questions. The question asks you to find a pair of answers that mean the same thing when plugged into the sentence, and lead to a coherent sentence. Let's leave aside the discussion of whether their desired vocabulary is relevant. (Did you know that phlegmatic means "sluggish, unemotional or apathetic"? I didn't, because no one says or writes "phlegmatic".) The question has six possible answers. Looking at the answers alone, avoiding the question, you can get a decent score on these questions. Typically, there are only one or two pairs that mean the same thing, allowing you to narrow down the selection of answers from 30 (picking 2 answers from 6 possible choices) to 2. A 50/50 shot is pretty good: On the GRE, getting 50% of the questions right is around 50th percentile [citation needed]. But notice that we haven't even examined the sentence – this question format is almost entirely a vocabulary question. Once you read the sentence, some mental effort is required to understand which of the two pairs would be coherent, but normally the two pairs are diametric opposites, as in "commonplace/everyday" and "opulent/expensive". Yeah, a quick glance at the sentence is going to immediately tell you which of the two pairs fits. The "text completion" section is similarly based entirely on knowledge of vocabulary, if you assume that people who want to get a PhD have some basic understanding of how sentences work. Maybe my undergraduate classes are atypical, but I had reading comprehension drilled into me by my philosophy professors (after a series of low grades and hanging around in office hours until I got it). Finally, I'll give the GRE some credit: the passage comprehension problems I have no problem with, as reading a passage, performing basic exegesis, and understanding the conclusions that the argument makes and how each point ties in to the whole are fundamentally useful skills. They're useful for PhD students, yes, but also for reading and comprehending news articles and political speeches, so I have no problem practicing my ability to understand arguments."""
             , Paragraph
                 [ Body """ Moving to the math section, I question the usefulness of a majority of questions. As I said above, I am entirely in favor of statistical reasoning being tested. Researchers need this skill. However, beyond the statistics, which are fairly rudimentary, the majority of the questions are about basic algebra and geometry. Don't get me wrong, these skills are incredibly useful in day-to-day life. Algebra is required to budget effectively, understand which of two items in the grocery store is cheaper per unit  ("""
-                , Link "https://xkcd.com/309/" "https://xkcd.com/309/"
+                , Link { text = "https://xkcd.com/309/", href = "https://xkcd.com/309/" }
                 , Body """), and other basic problems of optimization that pop up in your life. Geometry is useful for understanding how much surface area something has before you paint it, intuiting the amount of water in different-sized pots while cooking, and other operations on physical items. But these are not problems that are guaranteed to crop up in someone's research. In evolutinoary game theory, algebra (and calculus) are essential to manipulating the mathematical symbols we represent evolutionary processes with. It's a crucial skill – in the field I want to go into. Neuroscientists, moral philosophers, and historians don't need geometry. So why do we evaluate them on this? You could say that at least the philosophers and historians aren't being evaluated on their quantitative scores as much as the verbal portion of the test - but neuroscientists most definitely are judged on the scores on the mathy parts. I don't object to assessing the quantitative skills of applicants, but the test would be more effective if it tested the quantitative skills that will actually be used most often. Studying geometry for the sake of one test, instead of learning some principles of statistics that will help you forever, seems like a waste. """
                 ]
             , Plain """The writing section gets at some of the same skills that are used in writing a full paper, but misses the mark in some keys ways. For example, the text editor they give you is crap. No find-and-replace, no spellchecker, nothing. You're given 30 minutes to respond to make an argument for or against a prompt on a random topic, and then 30 minutes to find the holes in an argument. These are both legitimate writing tasks - the argumentative essay is a great way to express your opinions on a subject, and argument analyses demonstrate not only effective writing skills but the ability to understand the flaws in arguments. But giving someone only thirty minutes, while more or less demanding that both essays fit the "intro/three body paragraphs/conclusion" structure, divorces this writing task from academic writing. Papers are written over weeks or months, with multiple rounds of revisions. And they tend to be much longer than the ~750 words I can bang out in a half-hour. This is more about writing to the test, than it is about overall writing ability, although the most egregious lacks will be apparent. For example, a heavy reliance on a spellchecker, a complete misunderstanding of sentence structure, or an inability to make valid arguments will show through in this thirty minute mini-essay. So this task is fine for weeding out terrible writers, who I guess PhD programs assume can't be trained. But do we really need that? If someone is a terrible writer, and particularly if they are bad in the thirty-minute rushed essay responding to a novel prompt with no research, you'll already know. Most of high school involved writing those types of essays, and you know that this applicant got into college. Surely, if their grasp on the English language were so bad as to prevent them from being able to fake it for thirty minutes, they wouldn't be where they are. I understand the purpose of this section for non-native English speakers, but that's what the TOEFL is for."""
@@ -1017,7 +1016,7 @@ essays =
                 ]
             , Paragraph
                 [ Body "Perhaps the statistics don't apply here, but I am generally in favor of "
-                , Link "taking the outside view" "./outside/"
+                , Link { text = "taking the outside view", href = "./outside/" }
                 , Body ", so I have to imagine I'm not special. Anyway, looking at who I am as a person "
                 , Footnote "Promiscuous, atheistic, and alcoholic, just for starters."
                 , Body " it seems unlikely that I would be less likely to get divorced than the statistics predict. Even knowing that I have this genetic predisposition to getting divorced doesn't seem like it can help me escape it."
@@ -1083,6 +1082,44 @@ essays =
                 , Body ". He's saying he works in tech to advertise that he's doing alright for himself, that despite being normal in literally every other way, that he might just make an above-average salary. He's advertising his apartment building, which is reasonably nice, to corroborate this fact. Daniel G is on Yelp to find himself a woman "
                 , Footnote "Or man, I suppose, but his incredibly bog-standard white-man appearance gives me some confidence in my heteronormative assumption."
                 , Body "."
+                ]
+            ]
+        , Model "Wear Black To Frat Parties"
+            "wear-black-to-frat-parties"
+            Listed
+            [ Paragraph
+                [ Body "You will have more sex if you use game theory to inform your choice of outfits "
+                , Footnote "This sentence perfectly captures who I am as a person."
+                , Body ". In this essay, I will argue that you should be wearing black to frat parties. If you're going to a frat party, I hope your goal is to have casual sex. I hope this for two reasons, first, because I go frat parties for casual sex, and having other people there with the same goal makes that easier, and second, because there is no other possible justification "
+                , Footnote "Well, the booze is cheap. If you're there to drink economically, I support that as well."
+                , Body " for spending several hours crammed in a smallish basement with a hundred people. Assuming that your goal is to find a partner, let's talk about the game theory behind this choice."
+                ]
+            , Paragraph
+                [ Body "Finding a sexual partner at a frat party is roughly equivalent to the "
+                , Link { text = "stable marriage problem", href = "https://en.wikipedia.org/wiki/Stable_marriage_problem#Different_stable_matchings" }
+                , Body " "
+                , Footnote "Except that you're not looking for a marriage, or anything close to that."
+                , Footnote "And that a little instability can be fun."
+                , Body ". Assume for a moment we just care about the heterosexual subset of the people at this party, and further, we only care about the people who are there to get laid "
+                , Footnote "When I say \"care\", I mean for the stable matching, not in general."
+                , Body "There is imperfect information, and people don't even know their own preference set over the people at the party "
+                , Footnote "Partially because people never know their exact preference set, partially because a dark basement with flashing lights is not the best place to evaluate someone else's attractiveness. "
+                , Body ", but the general principle is the same. People are trying to end the night matched with a partner, and they have some set of preferences over partners."
+                ]
+            , Paragraph
+                [ Body "So let's examine these preference sets! It is pretty easy to observe that, on average, tall, muscular men are more attractive. You don't have to spend a lot of time at frat parties in order to discover these facts. But it is important to notice the girls that these men are making out with "
+                , Footnote "Making out with so very very publicly."
+                , Body ". They also fall within one particular archetype, slender and sorority-esque. Around the edges of the party, however, there are people that don't fit either of these archetypes. People who look more like musicians, or like art students, chat with each other. And they're pretty hot too! While many people find people who fit the main frat party archetypes attractive, those are not the only people there. In fact, because they are the largest group there, most people are tailoring the way they look to be attractive to those people."
+                ]
+            , Paragraph
+                [ Body "But the more people that are competing for a girl's attention, the harder it will be for you to stand out. The hordes of tall, fit white men wearing button-downs and jeans are rough competition. As long as your preference set is similar to mine, where you find lots of different types of people attractive, you don't want to be competing for this oversaturated part of the population. Think about the preference sets of the girls that you find attractive. Some of them absolutely love the button-down look, and have plenty of options within that. But some of them prefer men wearing something else "
+                , Footnote "Of course, it's not just about physical appearance. Wearing a button-down and blue jeans signals very different things about who you are as a person compared to wearing black jeans and a black band t-shirt, especially in a frat context."
+                , Body ". And it is far easier to be at the top of their preference set. And, in my experience at least, it is better to be at the top of a few people's lists than in the top-middle-ish of many people's lists."
+                ]
+            , Paragraph
+                [ Body "I stopped going to frat parties, so this doesn't matter as much for me as it used to "
+                , Footnote "Also, I gained 40 lbs of muscle, which I'm sure changes the payoffs for different aesthetics. I was kicked out from a frat for having sex with someone on a couch in their basement while a party was happening upstairs. Prior to gaining weight, I don't think that people would have been as willing to have frat-basement-couch sex with me. "
+                , Body ". But it's an interesting thought experiment, and it made a large difference in how I experienced my junior year of college."
                 ]
             ]
         ]
