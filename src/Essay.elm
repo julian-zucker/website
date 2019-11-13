@@ -45,6 +45,7 @@ type ContentItem
 type ParagraphItem
     = Body String
     | Link { text : String, href : String }
+    | Image { href : String }
     | Footnote String
     | NumberedList (List String)
     | NumberedListStartingAt Int (List String)
@@ -134,6 +135,9 @@ htmlFromFootnoteItems footNoteItems footnoteNumber =
 
                 Link link ->
                     ( List.append soFar [ a [ href link.href ] [ text link.text ] ], currentFootnoteNumber )
+
+                Image image ->
+                    ( List.append soFar [ img [ src image.href ] [] ], currentFootnoteNumber )
     in
     Tuple.first (List.foldl htmlFromFootnoteItem ( [], footnoteNumber ) footNoteItems)
 
@@ -149,17 +153,20 @@ textFromFootnoteItem item =
         Body string ->
             string
 
-        Footnote string ->
+        Footnote _ ->
             ""
 
-        NumberedList list ->
+        NumberedList _ ->
             ""
 
-        NumberedListStartingAt int list ->
+        NumberedListStartingAt _ _ ->
             ""
 
         Link { text } ->
             text
+
+        Image _ ->
+            ""
 
 
 viewEssayPreview : Model -> Html msg
@@ -1096,7 +1103,7 @@ essays =
                 ]
             , Paragraph
                 [ Body "Finding a sexual partner at a frat party is roughly equivalent to the "
-                , Link { text = "stable marriage problem", href = "https://en.wikipedia.org/wiki/Stable_marriage_problem#Different_stable_matchings" }
+                , Link { text = "stable marriage problem", href = "https://en.wikipedia.org/wiki/Stable_marriage_problem" }
                 , Body " "
                 , Footnote "Except that you're not looking for a marriage, or anything close to that."
                 , Footnote "And that a little instability can be fun."
@@ -1118,8 +1125,62 @@ essays =
                 ]
             , Paragraph
                 [ Body "I stopped going to frat parties, so this doesn't matter as much for me as it used to "
-                , Footnote "Also, I gained 40 lbs of muscle, which I'm sure changes the payoffs for different aesthetics. I was kicked out from a frat for having sex with someone on a couch in their basement while a party was happening upstairs. Prior to gaining weight, I don't think that people would have been as willing to have frat-basement-couch sex with me. "
+                , Footnote "Also, I gained 40 lbs of muscle, which I'm sure changes the payoffs for different aesthetics. I was kicked out of a frat for having sex with someone on a couch in their basement while a party was happening upstairs. Prior to gaining weight, I don't think that people would have been as willing to have frat-basement-couch sex with me. "
                 , Body ". But it's an interesting thought experiment, and it made a large difference in how I experienced my junior year of college."
+                ]
+            ]
+        , Model "The Punisher Guards My Pool"
+            "the-punisher-guards-my-pool"
+            Listed
+            [ Paragraph
+                [ Body "My apartment building has a pool "
+                , Footnote "In my first week, I went to read by the pool. After reading for about an hour, I noticed my skin was turning pink: I had a sunburn. That day, I spent a while learning about things that work differently at 5280 feet above sea level."
+                , Footnote "And I realized that the reason so many apartment buildings in Denver have pools is because there are no beaches, which made me slightly sad. But most of the sadness went away when I remembered that I had a pool."
+                , Body ". This pool has three conflicting user groups: the people who want to read quietly, the riotous twenty-somethings who want to blast music, and the parents who want to teach their babies to swim."
+                ]
+            , Paragraph
+                [ Body "In order to resolve this conflict, my apartment building's management decided to institute some policies. For example, each resident can only have two guests with them at a time in a pool, open alcoholic beverages can't go in the pool, and you can't play loud music. This excludes the riotous twenty-somethings, leaving the readers "
+                , Footnote "Just me, really."
+                , Body " to be annoyed at the parents for having such loud offspring. But the riotous twenty-somethings aren't exactly the types of people who follow rules "
+                , Footnote "Before you judge them, consider how many rules you broke in college, and remember that living in Denver as a twenty-something is the closest you can get to college without paying tuition."
+                , Body ", and so they continued to riot, blast music, drink, jump into the pool, and so on. I didn't really mind, I empathized with them and understood their motivations entirely. But slowly, the parents complained on the internal social media site that management spun up for residents of the apartment building "
+                , Footnote "This social media site was pretty strange. The only times people used it was when something changed and they were unhappy. The staff would run a competition once a month where the person who posted the pet photo that got the most likes would get a $20 gift card to a pet store. The only posts I ever saw were people whoring their pets out for gift cards, and people complaining about the pool."
+                , Body ". Eventually, management took action."
+                ]
+            , Paragraph
+                [ Body "I saw a post mentioning that a \"Courtesy Patrol\" was going to be instituted. This Courtesy Patrol was going to make sure that the rules were followed. I thought nothing of it, except for a cursory curse at having RAs again. I go to the pool that same week, and notice nothing different, and lacking obvious evidence in favor of the existence of the Courtesy Patrol, I assume that it was just a scare tactic."
+                ]
+            , Plain "I was wrong."
+            , Paragraph
+                [ Body "The next time I go to the pool, it's some holiday. As I beep in "
+                , Footnote "Beeping is the technical term for unlocking something with a keyfob."
+                , Body " to the pool. I see what appears to be the precursor to a mass shooting. The pool and the people around it are eerie, silent, motionless. I see a man, standing off to the side of the path, dressed in all black. He is wearing all black, from his tactical sunglasses "
+                , Footnote "Actually, everything he wore was black, and could easily be described as tactical, so I'll leave that off of the rest of the descriptions."
+                , Body " down to his combat boots. Black cargo pants, a long-sleeve shirt under a bulletproof vest, various bits of equipment hanging from his vest and belt. Most notably: a combat truncheon "
+                , Footnote "Not that there are other kinds of truncheon."
+                , Body ", and a gun. He stands there, glaring out at the pool, at the people trying to have fun. Once I realize he is the Courtesy Patrol, my heartbeat slows from \"Am I about to get shot?\" to \"There is an man with a gun near me but he's probably safe, I hope\"."
+                ]
+            , Paragraph
+                [ Body "The security company he works for is called Front Range Patrol. Their logo is this: "
+                , Image { href = "../assets/front_range_patrol_logo.png" }
+                ]
+            , Paragraph
+                [ Body "There is no high-resolution version of the logo in the center, only this fake police badge. Other than the fact that they're clearly pretending to be police officers, there is an obvious flaw with their logo: it's a fucking skull. How can you convince yourself that your company is doing the right thing when they give you a gun and tell you to wear body armor that has several large skulls on it? There's a whole "
+                , Link { text = "sketch", href = "https://www.youtube.com/watch?v=hn1VxaMEjRU" }
+                , Body " about this! And, even worse, the particular skull they use is the same as the logo of The Punisher: "
+                , Image { href = "../assets/punisher_real.jpeg" }
+                , Body "If you look really closely, you can even see that they copied the stars and stripes. We get it, you have a superhero fantasy inside your fantasy of being a police officer, but you don't have to make it so obvious!"
+                ]
+            , Paragraph
+                [ Body "He starts walking towards me, and my heartbeat elevates again "
+                , Footnote "In case it isn't obvious, I don't like guns, or authority, and I especially don't like when authorities have guns."
+                , Body ". He asks if I have any guests coming. I stammer out a no, and keep walking to the nearest available pool chair. It is uncomfortable to talk to someone wearing body armor covered in skulls at any time, but it is undoubtedly more uncomfortable while you are shirtless."
+                ]
+            , Paragraph
+                [ Body "I find a chair, sit, and try to read. Anytime someone new walks into the pool area, The Punisher asks them which resident they are the guest of. There is a minor scene when someone tries to bring three guests, which is strictly forbidden. I say that one of them is my guest, earning looks of gratitude from these people, and a minor glare from The Punisher, who says something about knowing that I'm up to no good before he returns to his post. This continues for a little while, until I decide that I am not having a good time anymore, and I go back to my apartment to read there."
+                ]
+            , Paragraph
+                [ Body "The pool was quiet, and I could read without distractions, but to the parents who pushed for this change: would you rather your kids growing up seeing people having fun (sometimes obnoxiously), or that they grow up learning that when people are doing things you don't like, you should hire men with guns to make them stop? "
                 ]
             ]
         ]
