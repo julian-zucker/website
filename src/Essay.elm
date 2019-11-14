@@ -1183,4 +1183,101 @@ essays =
                 [ Body "The pool was quiet, and I could read without distractions, but to the parents who pushed for this change: would you rather your kids growing up seeing people having fun (sometimes obnoxiously), or that they grow up learning that when people are doing things you don't like, you should hire men with guns to make them stop? "
                 ]
             ]
+        , Model
+            "Frat Basement Couch Sex"
+            "yikes"
+            NotListed
+            [ Paragraph
+                [ Body "MIT has more frats than attractive people "
+                , Footnote "Sorry, MIT. Please still let me into your PhD program."
+                , Body ", so the frats welcome Northeastern students with open arms. I ended up going to quite a few parties across the river. This is the story of one such party."
+                ]
+            , Paragraph
+                [ Body "It was Saturday "
+                , Footnote "I'm guessing, but I have a 50%ish chance of being right."
+                , Body ". Around dinnertime, some of my friends invites me to a party at MIT. I get ready "
+                , Footnote "That is to say, I start drinking."
+                , Body ", and head down the hill to their apartment. We hang out and drink for a bit, shoot the shit in the collegiate way, sprawled across a couch, drinking and laughing and enjoying the heat of a summer night. This couch was slightly broken, because a month or so earlier, during St Patrick's day, we got drunk "
+                , Footnote "We started drinking at noon. I blacked out at 3 PM. That's a personal record!"
+                , Body " and fought a little "
+                , Footnote "We fought a lot. To be fair, getting drunk and fighting is Irish tradition!"
+                , Body ". In the heat of the fighting, or wrestling, or whatever you want to call it, I throw someone onto the couch "
+                , Footnote "It's not so much that I didn't know my own strength, as that I wasn't sure if everyone else in the room knew my strength, so I had to show off. Or at least, this is what I reconstruct my motivation to be, I have but a hazy memory of this. The throw looked good on people's social medias, though, so I guess I have that going for me."
+                , Body ", and from that point onward, the couch was slightly wobbly and creaky."
+                ]
+            , Paragraph
+                [ Body "We hop in two separate Ubers "
+                , Footnote "Ten or twelve of us went. That's a lot of people to bring to a party. That's enough people to have your own party!"
+                , Body ", and drive over. I get lightly mocked for dancing to Ariana Grande in the car "
+                , Footnote "I stand by it. \"break up with your girlfriend, i'm bored\" is art."
+                , Body ". We arrive, and I realize with a start exactly which frat we're at."
+                ]
+            , Paragraph
+                [ Body "My freshman year, I was a prolific frat thief. I would go to frat parties, and drink and dance and snog, which are all behaviors sanctioned by the people who are throwing the party. But I would also tend to leave with something –\u{00A0}a shot glass, a pocket beer, once some salt and pepper "
+                , Footnote "I was out, and this was more convenient than going to a grocery store."
+                , Body ". Most notably, near the end of my freshman year, I walked out of a frat house with a full create of pears. Buried in the pears was a handle of rum. The frat brothers manning the front door saw me walk out fully laden; I winked at them, and they didn't stop us "
+                , Footnote "My friends tell a slightly different story. They claim that I ran out full speed, forgetting my jacket, and that one of them had to go back in to get it, because obviously the people running the place wouldn't be super happy to see me in that moment. I'll let you choose who to believe."
+                , Body "."
+                ]
+            , Paragraph
+                [ Body "So, I return to my old haunt "
+                , Footnote "Or, because I stole from them and only ever visited once before, my old mark."
+                , Body ", two full years later. I try to reflect for a moment on all that has happened between then and now, but I am too busy being pushed out of the Uber, into the frat, upstairs "
+                , Footnote "Actually, before we went upstairs, we were diverted to a side room, where people were sitting at a desk. We wrote our names and colleges on a sign-in sheet (scanning the college column, I saw that everyone there was from Northeastern), then they write that you are over 21 and give you a wristband saying as much. This must either be some half-brained scheme to avoid legal liability (\"officer, the wristband said they were 21! how were we to know?\"), or just to give the older frat brothers plausible deniability when they sleep with freshmen (\"bro, she had a wristband that said she was 21. how was I to know?\")."
+                , Body ". We get drinks. There's a solid crowd there, maybe sixty or seventy people, in a nice open room, large enough to fit everyone comfortably, small enough that people can rub against each other and pretend it's an accident "
+                , Footnote "This is the perfect people to room size ratio for a frat party. Northeastern students tend to have normal houses with normal size basements, and cram over a hundred people in there. Being in these basements feels like getting groped on a Japanese subway."
+                , Body ". We dance, and dance. My friend and I dance our way up to a group of girls, and introduce ourselves. Well, more accurately, I introduce myself as Julian, and my friend as \"Coolguy Wearsgoldchain\" "
+                , Footnote "I am a bad wingman."
+                , Body ". I had been making fun of him for wearing a gold chain earlier "
+                , Footnote "He normally wears the chain tucked under his shirt, in a quite reasonable look. As we got ready to leave for this party, he pulls it out over his shirt. He looked like he was trying to impersonate a small-time drug dealer, and I wanted him to stop."
+                , Body ", and botched this introduction. For him. It worked out pretty well for me. This girl and I dance closer, and closer, and closer, and so on."
+                ]
+            , Paragraph
+                [ Body "After some discussion back-and-forth, with her friends saying out loud that she shouldn't sleep with me, and her saying that she wanted to "
+                , Footnote "I appreciated the sentiment, but it is weird to see a group of girls yelling over music about whether one should sleep with you, particularly when your friends have moved on to somewhere else, so you're left dancing along while people decide how many people will sleep in your bed that night."
+                , Body ". Eventually, her friends let her go with me. I remember seeing, as I walked in, a sign on a door, saying \"Basement. Do not enter!\", and I figure that a place where no one is allowed to go is the perfect place to bring a girl, moreso when that girl's friends just sanctioned a sexual encounter. We go down there, and we have the basement to ourselves. This basement is awesome. There's a bar on one side, a ring of couches on the other, a pool table, the works."
+                , Body "This girl is the second-worst kisser I've ever had the displeasure of making out with. Her strategy for kissing someone goes roughly like this:"
+                , NumberedList
+                    [ "Close your eyes."
+                    , "Fall towards the person you want to make out with."
+                    , "Hope."
+                    ]
+                , Body "The first fall went alright, because I caught her. After the first one I was busy formulating a way to say \"What the fuck was that?\" in way that let me tell her what she was doing wrong "
+                , Footnote "If you make out with someone, and they're a bad kisser, you have an obligation to tell them what they're doing wrong, and help them try to improve."
+                , Body " in a way that would make her continue making out with me, just less dangerously. The second kamikaze dive took me by surprise. Our faces collided somewhat faster, and in slightly bonier places, than most kisses go. It hurt. I sit down on one of the couches, hoping that it would prevent this insanity from continuing. She closes her eyes, puckers her lips, and falls three feet onto me as I sit on the couch. Eventually, I decide she is too drunk to be hooking up with anyone, and I go back upstairs."
+                ]
+            , Paragraph
+                [ Body "While this is a girl I fooled around with on a frat basement couch, this is not the titular "
+                , Footnote "Heh."
+                , Body " girl."
+                ]
+            , Paragraph
+                [ Body "Once I'm back upstairs, my friends congratulate me for disappearing with a girl, but then I tell them the story, and some of them retract their congratulations. I get another drink, dance a bit more, and then I see her. A little shorter than me, blonde, wearing a tight blue halter top with white stripes "
+                , Footnote "It is probably bad that this is most of what I remember about her."
+                , Body ", dancing with her friends. I go over to say hello, and her friends rapidly part their circle, leaving me and her on the outside. I tell her I'm Julian, she tell's me she's Anna. We confirm that we both go to Northeastern. She tells me that she's a first-year, I tell her I am a third-year. She asks me what I do, and I ramble for a while about various projects I'm involved in "
+                , Footnote "She was asking me what my major is."
+                , Body ". She scroffs, and asks \"Do you think that makes you impressive?\", and I say \"Yes\". I smile, and she smiles, and I lean in, and she leans in, and then we're making out. This was a very public make-out, we were around fifteen feet away from the couches my friends were all sitting on. They cheer and hoot and holler and provide suggestions (which I ignored for the most part, but when they said \"grab her boobs!\" I pulled my face off hers and glare at them). Then, I realize that this was actually a pretty good suggestion, or at least something I would like to do, so I invite her to come with me to find somewhere quieter "
+                , Footnote "Quieter meaning both more private and also literally quieter, frat parties are loud and my ears were starting to ring a bit."
+                , Body ". So, obviously, we go to the basement. She seems slightly offput by the sign saying not to enter, so I tell her that it means that no one else is likely to be down there. She gets it. There is a frat boy hovering near the door, who tries to prevent us from going downstairs, but I make up a story (I think I tell him that I left my wallet downstairs), and he lets us through."
+                ]
+            , Paragraph
+                [ Body "Twenty minutes after we go downstairs, we hear the door open. Shit. Let me describe the current state of that couch. I was lying down on my back, with my pants not quite off, but just on one leg and rotated 180 degrees so they were out of the way. I am still wearing one shoe, the shoe that is on the leg that holds my pants. Anna is sitting on top of me "
+                , Footnote "So, in some strange sense, I am not fully naked, or at least not fully exposed."
+                , Body ". She has her top mostly off, hanging loose around her neck, and that's all she's wearing. She can see the door from where she sits, I have to contort a little as I turn around to see what's happening."
+                ]
+            , Paragraph
+                [ Body "Two frat guys walk in, somewhat obliviously, chatting with themselves. Then, they notice us on the couch. One stutters out a \"Uh... you can't be doing that here!\", the other one just turns around and walks out. I apologize profusely "
+                , Footnote "And insincerely. I was pretty happy with the situation, other than being interrupted, and would do it again in a heartbeat."
+                , Body ", but this guy keeps giving us variations on a theme: \"This is not the place for that\", \"I can't believe you're doing that here\", and on and on. He tells us to get dressed, and tells me to get out"
+                , Footnote "He didn't tell her to get out. Frats want to keep around the women who have sex in frat basements, but not the men who do the same. There's a lot to unpack here."
+                , Body ". Then, he waits in the doorframe. I am mildly uncomfortable. I say \"If you don't leave right now, you're going to see my penis while I change\". He is extremely uncomfortable. He leaves, Anna and I get dressed "
+                , Footnote "And fool around a bit more, because we just got the room to ourselves again."
+                , Body ", and then walk out. She makes a beeline to the second floor, to find her friends. I am accosted by two burly "
+                , Footnote "Burly by MIT standards."
+                , Body " frat bros, who tell me I have to leave."
+                ]
+            , Paragraph
+                [ Body "As I'm getting ready to leave, finding my jacket and so on, I talk to the guys guarding me. We discover that we're all computer science majors, and talk about how certain grading practices are bullshit, and how our eyes and fingers hurt after we write code for hours, and generally bond over shared hardship. I talk about MIT's curriculum, and how Northeastern imitated and changed it, we have a brief discussion about our opinions on the best way to teach computer science. We make it to the lobby, and I sigh dramatically, \"I guess I'll leave, then\". They exchange glances, and say that I can stay, as long as I don't do it again."
+                ]
+            ]
         ]
