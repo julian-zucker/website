@@ -49,7 +49,7 @@ update msg model =
     case msg of
         ClickedLink (Browser.Internal url) ->
             ( model
-            , Nav.pushUrl (navKey model) (Url.toString url)
+            , Nav.load (Url.toString url)
             )
 
         ClickedLink (Browser.External url) ->
