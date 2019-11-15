@@ -186,7 +186,7 @@ viewEssayPreview model =
                                 (String.replace
                                     " ,"
                                     ","
-                                    (List.foldr (++) " " (List.map contentItemToString model.content))
+                                    (List.foldr (\first -> \second -> first ++ " " ++ second) " " (List.map contentItemToString model.content))
                                 )
                             )
                             ++ "…"
@@ -1278,6 +1278,34 @@ essays =
                 ]
             , Paragraph
                 [ Body "As I'm getting ready to leave, finding my jacket and so on, I talk to the guys guarding me. We discover that we're all computer science majors, and talk about how certain grading practices are bullshit, and how our eyes and fingers hurt after we write code for hours, and generally bond over shared hardship. I talk about MIT's curriculum, and how Northeastern imitated and changed it, we have a brief discussion about our opinions on the best way to teach computer science. We make it to the lobby, and I sigh dramatically, \"I guess I'll leave, then\". They exchange glances, and say that I can stay, as long as I don't do it again."
+                ]
+            ]
+        , Model
+            "Flipping Cones"
+            "flip"
+            Listed
+            [ Paragraph
+                [ Body "Would you flip a traffic cone? As in, walk up to a traffic cone that's standing up and push it over, and then leave it lying on its side? Most people wouldn't. And it's not just that they wouldn't, but that the mere thought of flipping a traffic cone makes their heart race and makes them anxious."
+                ]
+            , Paragraph
+                [ Body "People are afraid of violating social norms in public. This is a completely normal feeling to have. Historically, making strangers feel uncomfortable might get you killed, so it's understandable that the people who survived long enough to have children are those who feel uncomfortable making strangers uncomfortable. We inherited this desire to fit in socially, in a world where it doesn't really matter. The rule of law is strong, in most places, in most first-world countries, and strangers are really unlikely to murder you. But we still feel a deep-seated anxiety about breaking social norms."
+                ]
+            , Paragraph
+                [ Body "I first flipped a cone in public to impress a girl "
+                , Footnote "I was young and naive. I understand now that this was not very attractive."
+                , Body ". Walking down a Boston street, I pushed a cone over. I felt the nervousness, the pounding heartbeat, and all the trappings of social anxiety. But nothing bad happened "
+                , Footnote "Except that the date went poorly. But I think that was for other reasons."
+                , Body ". It felt kinda good, actually, to have flipped this cone, to have defied this social norm, and to feel no repercussions."
+                ]
+            , Paragraph
+                [ Body "I kept up this habit. I would flip cones often "
+                , Footnote "More often when drunk."
+                , Body ". It changed my general demeanor. I became more outgoing, more willing to be slightly transgressive, and more fearless in social interactions. While it's hard to say which way the causation runs, whether flipping cones made me more confident or being more confident made me more willing to flip cones, it sounds plausible that consistently violating social norms in public made me more unafraid of what I thought were social norms elsewhere. One result, for example, is that I started asking stores if they had student discounts, and eventually, just asking if they were running any promos that they could get me in on. Often they would say no, but occasionally they would say yes "
+                , Footnote "I am realizing, years too late to act on it, that some of those cashiers that gave me a discount after some banter were into me."
+                , Body ". So in a very real sense, flipping cones made me some money."
+                ]
+            , Paragraph
+                [ Body "Violate the silly social norms, when it will cost you nothing, so that you can avoid blindly following the serious social norms, when it will cost you something."
                 ]
             ]
         ]
