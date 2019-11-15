@@ -1308,4 +1308,58 @@ essays =
                 [ Body "Violate the silly social norms, when it will cost you nothing, so that you can avoid blindly following the serious social norms, when it will cost you something."
                 ]
             ]
+        , Model
+            "Alien Girl"
+            "alien"
+            NotListed
+            [ Paragraph
+                [ Body "The summer after my sophomore year of college, I slept around. I was living in a dorm. Well, not quite a dorm –\u{00A0}Northeastern leased an apartment building, and then leased it to me. And, for the first half of the summer at least, it was just me and one other guy in this massive apartment, that Northeastern normally crammed four students in. The living room alone was larger than my last apartment: the whole apartment was maybe 2100 square feet. My roommate and I threw many, many parties, finally freed from the tyrannical oppression of RAs. I had sex in a closet while people were in the adjoining room, standing in the bathtub while people were coming in and out of the bathroom during a party, and in my bed "
+                , Footnote "Although this last one doesn't have the same shock factor as the previous two."
+                , Body ". And during the week, when the party turnout wouldn't have been as high, I went on Tinder dates."
+                , Body "Many of these Tinder dates went strangely. But there's one that really stands out, with a girl that my friends and I call Alien Girl "
+                ]
+            , Paragraph
+                [ Body "We chatted on Tinder, briefly, exchanged numbers, and then made plans to meet up, all in the span of three days "
+                , Footnote "In hindsight, this should have been a red flag."
+                , Body ". We plan to meet in the Boston Common, so I come home from work a bit early, get changed, and head over. I text her that I'm there. No response. I hang around and enjoy the summer breeze. She doesn't text me back. Fifteen minutes pass, and I text her again. No response. I start to head home. Just as I make it back, she texts me that her phone died, but she found a place to charge it, and is now at the Common. Ugh. I tell her to meet me at the T stop near my apartment, and she says she's on her way."
+                ]
+            , Paragraph
+                [ Body "We go for a walk, as the sun sets. She tells me that she works as an aesthetician, and I ask what that means "
+                , Footnote "A bad idea. If you don't know what someone does for a living, just smile and nod. They're not going to be excited by your desire to learn about them, they're going to be offended that you are ignorant of the thing that they spend the majority of their waking hours doing."
+                , Body ". She tells me. She tells me some interesting stories: how she gets naked at parties often "
+                , Footnote "Hot."
+                , Body " how she once slept with her boss for a promotion "
+                , Footnote "Less hot."
+                , Body ", how she drinks most nights "
+                , Footnote "I'm honestly not sure whether this one is hot or not."
+                , Body ". I try to keep up, telling some of the tamer stories from the parties my roommate and I had been throwing that summer. She shows me some photos of her in a bikini on her phone, under some pretext, but covers the image preview on the bottom of her phone, presumably because there were nudes there."
+                ]
+            , Paragraph
+                [ Body "At this point, I'm conflicted between my desire to run far away and my desire to sleep with her "
+                , Footnote "She was hot, and I was in a competition with my roommate to see who could have the most unique sexual partners in a week. I understand now that this competition was a bad idea, but at the time, I saw no problems with it."
+                , Body ". The desire to sleep with her wins out, so I invite her up to my apartment."
+                ]
+            , Paragraph
+                [ Body "We go back to my room, and start making out. We gradually shed our clothing and make our way into the bed. She makes some offhand comment, along the lines of \"you're kinkier than I thought you would be\", which is not actually a compliment. I banter with her a bit. When her mouth isn't full, she banters back. Offhandedly, she mentions that she has had sex with seven guys in the past week "
+                , Footnote "Word of advice: if you are sleeping with seven unique people in a week, don't tell them. It devalues the experience."
+                , Footnote "I got tested immediately after this encounter"
+                , Body ". I stutter out some half-hearted rejoinder, saying that I was at three "
+                , Footnote "The first two was a Harvard girl who was going to start her freshman year next year (with ID to prove it, although we didn't actually have sex because she was 17 and I hadn't learned about Massachusetts' shockingly young age of consent yet), and a girl who wanted me to slap her in the face during sex (with bruising to prove it). I honestly can't remember the third, although I remember saying three and don't remember it being a lie."
+                , Body "."
+                ]
+            , Paragraph
+                [ Body "I don't know if it was becasuse she was vegan, or something else, but she had the weirdest skin texture of anyone I've ever touched. She was thin "
+                , Footnote "She said she modeled. Now that I think about it, it's quite likely she did porn."
+                , Body ", but her skin hung weirdly off her body, oddly supple. Perhaps she had no muscle, anywhere, but regardless the reason, her skin felt loose on her body. And the texture of it, itself, was slightly odd, just enough to make me vaguely uncomfortable about touching her "
+                , Footnote "Not enough to make me stop, though: remember that I was 20 years old, horny as hell, and in a competition over number of unique sexual partners."
+                , Body ". This is why we called her alien girl. Everything about her was pretty alien to us."
+                ]
+            , Paragraph
+                [ Body "Eventually, she stops, and tells me that she's not sure whether she wants to have sex with me or be my friend, becasuse I seem really cool and she wants to keep hanging out with me. Given that we've already exchanged pleasantries "
+                , Footnote "Oral pleasantries, to be specific."
+                , Body ", the distinction between that and sex seems minimal. I tell her that. She laughs, and starts putting her clothing on. She gets dressed and leaves. She texts me on her way out that she left a bag at my place, and that she wants to come back to pick up the bag and \"finish what she started\" "
+                , Footnote "Direct quote from my text history."
+                , Body ". I look in the bag: a loaf of bread, shampoo, hand sanitizer, bouillon cubes, a birthday card, cinnamon. Alien."
+                ]
+            ]
         ]
