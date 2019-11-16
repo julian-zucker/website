@@ -1362,4 +1362,22 @@ essays =
                 , Body ". I look in the bag: a loaf of bread, shampoo, hand sanitizer, bouillon cubes, a birthday card, cinnamon. Alien."
                 ]
             ]
+        , Model
+            "\"Problematic\" is Problematic"
+            "problematic"
+            Listed
+            [ Paragraph
+                [ Body "The word \"problematic\" is uninformative and difficult to discuss earnestly. Often, it means \"racist\" or \"sexist\" or \"ageist\" "
+                , Footnote "Although the people calling things problematic tend to care more about racism and sexism than ageism."
+                , Body ". Those things are all problems, so it is true that they are problematic. But if you point at a book or movie or blog post, and call it problematic, you would do better to specify the problem."
+                ]
+            , Paragraph
+                [ Body "If you call something problematic, I can't know exactly what you think the problem is. If I agree, we may think that we both share an opinion about whatever it is we're talking about, even when we think there are different problems. Imagine two people (with very different views about society) both reading East of Eden. One turns to the other and says its depiction of society is problematic, meaning that Steinbeck was sexist in his depictions of some characters "
+                , Footnote "I agree with this. Cathy's only motivation in life was to manipulate other people. It didn't even seem as though she was doing it for her own benefit, most of the time, just that she got off on being manipulative."
+                , Body ". The other agrees, because they think that it advocates for Christianity and blind devotion. These two people think they agree with each other about the particular problems in East of Eden, but they don't. They just agree that there is at least one problem."
+                ]
+            , Paragraph
+                [ Body "This also makes it hard for authors to defend their works. If you call someone's novel problematic, for instance, your complain is not concrete enough to be addressed. They can't earnestly claim that there are no problems in their novel, and having to enumerate everything that might possibly be problematic and defend it would be a fool's errand. If you say that a novel is sexist, an author can ask why you think that. If there are particular scenes or characters or pieces of dialogue that you think are sexist, you can point those out. Then, the author can defend themselves, or realize that there is a problem. Calling something out as sexist seems to require bits of evidence to point at, while calling something problematic is vague enough to be true of everything. Asking someone to point out the sexist parts of a movie seems like a reasonable request, but asking them to point out the problematic parts doesn't even make sense as a question."
+                ]
+            ]
         ]
