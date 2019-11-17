@@ -1387,7 +1387,7 @@ essays =
             [ Paragraph
                 [ Body "It was a brisk November night. I was walking around downtown Denver, with my girlfriend at the time "
                 , Footnote "I am not entirely sure that she was my girlfriend. When I asked her what our relationship was, she said that it was confusing and difficult and she didn't want to talk about it. But we went on dates and had sex and such, so I'm guessing girlfriend is the right word."
-                , Body " taking some photos "
+                , Body ", taking some photos "
                 , Footnote "An underrated date idea. It's free, it gets you to explore new places, and it's nice to hvae subjects in the photos you're taking. A side benefit is that it produces raw material to be refined into Instagram posts."
                 , Body ". We try to shoot in various locations: a ballroom in a hotel "
                 , Footnote "It looked unoccupied, from the street. We go in and ask the front desk staff if we can take photos in it. After five minutes of being told to talk to different people, we eventually get told that the ballroom is in use today, but if we come back some other day when it's empty, we can totally shoot photos there. This impresses the girl, because she was certain that they would reject us out of hand."
@@ -1452,9 +1452,37 @@ essays =
             "quantifying-sexuality"
             Listed
             [ Paragraph
-                [ Body "The Kinsey scale is okay. It's not the worst possibl quantification of sexuality, but I think it misses some important elements. It can capture the spectrum from completely straight to completely gay, but misses the intensity of attraction. It can handle any ratio of attraction to same-sex or different-sex people, but it just tells you a ratio, not a magnitude."
+                [ Body "The Kinsey scale is okay. It's not the worst possible quantification of sexuality, but I think it misses some important elements. It can capture the spectrum from completely straight to completely gay, but misses the intensity of attraction. It can handle any ratio of attraction to same-sex or different-sex people, but it just tells you a ratio, not a magnitude."
                 ]
             , Plain "My take on quantifying sexuality would be two-dimensional, a square more than a line. Instead of a one-dimensional representation, where you fall somewhere on the straight-gay line, I think you need two dimensions. One dimension would be same-sex attraction, and the other would be opposite-sex attraction. This allows the expression of more sexual identities than Kinsey's scale does. For example, asexual people are at (0, 0), having no attraction to either, or possibly (1,0) or (0,1) or (1,1), the point being, somewhere in the bottom-left, near the origin. Straight people would have high opposite-sex attraction, gay people high same-sex attraction, bisexual people high at both. But when I say high in that previous sentence, I mean relatively high. Let's say the scale is out of 7, to be more similar to Kinsey's scale. People who have no same-sex attraction and anywhere from a 3 to a 7 opposite-sex attraction might all identify as straight. Degree of sexual attraction is important to defining someone's sexual identify. Asexuality is not a boolean value, I think there's a scale from asexual to whatever the word for the opposite of asexual is. This scale would capture that."
             , Plain "It still has all the same information from the Kinsey scale, expressed as the difference between same-sex and opposite-sex attraction. But this maps more closely to my understanding of sexual identities. I am attracted to men very similarly to many of the girls I know, but I am far more attracted to women than most of the people I know. So, despite being just as happy leaving a party with a guy as my girl friends are, I tend to leave parties with girls. Degree of attraction is important to understanding sexual behavior, and the Kinsey scale misses that."
+            ]
+        , Model "The Multi-Objective Argument For Polyamory"
+            "multi-objective-argument-for-polyamory"
+            Listed
+            [ Paragraph
+                [ Body "I am polyamorous "
+                , Footnote "And, honestly, I think you would be, if you had the opportunity."
+                , Body ". I don't expect to convince people who are currently happily monogamous "
+                , Footnote "Although mono-amorous is really the right term. I think that marriages with more than 2 people start to get confusing. But you can be having sex with multiple people concurrently with far fewer repercussions."
+                , Footnote "Also, this includes people are unhappily monogamous, but believe that they are destined for monogamy and so refuse to question it."
+                , Body " that polyamory is the best lifestyle for them, but I do want to explain some of the benefits of polyamory."
+                ]
+            , Paragraph
+                [ Body "First, I need to introduce the mathematical notion of a multi-objective optimization problem "
+                , Footnote "Don't fret, I promise there will be no greek letters."
+                , Body ". An optimization problem is any problem where the aim is to find the minimum or maximum value of some function, for example, Google Maps solves the optimization problem that is finding the shortest route from where you are to where you are trying to go. It searches through many possible routes, and returns the fastest one. This is a single-objective optimization problem, because it is only concerned with one objective: time. Add in some of the other things Google Maps allows you to optimize for, like maximizing or minimizing freeway time, and you get a multi-objective problem. One of the distinctive features of multi-objective problems is that there may not be one unique best solution. With a single-objective problem, either one solution is best, or there are several tied. Imagine two different routes with the same projected time: Google can return either of them, and you won't care. But imagine two different routes, where one is faster but entirely through city roads, and one is slower but is much more scenic. It's impossible to say, definitively, that one solution is better than another "
+                , Footnote "These solutions are part of the \"non-dominated set\". A solution that is better than another in every way \"dominates\" the worse point. These terms take on an entirely different meaning when you're talking about dating."
+                , Body "."
+                ]
+            , Paragraph
+                [ Body "The typical view of dating is that it is a single-objective optimization problem. Your goal is to find the person that is best for you to date. Under this view, monogamy makes sense, as there is in fact one unique optimal person to date. This is the general idea of soulmates, I think. And, if the single-objective assumption is true, this is a reasonable conclusion: you are only optimizing for one thing, so there is one unique optimum."
+                ]
+            , Paragraph
+                [ Body "But I don't think that you can reduce the dating experience to just one thing. I like to dance with the people I'm dating, to rant about philosophy, to explore the beautiful parts of math and computer science, to talk about books, to have sex with them. These are all separate activities, and no single person is the best at all of them! When I am seeing multiple people concurrently, typically they are very different people. If I am seeing two people, and one is better in every way than the other, I would stop seeing the one that is  less of what I am looking for. But typically, people are amazing in very different ways, and as much as I enjoy the way that each person is, if I were limited to just one person, I wouldn't be able to get everything I want out of the relationship. We have multiple friends, because each of our friends brings out a different version of ourselves, and encourages us to pursue certain goals and accompanies us on certain adventues. It would be absurd to tell someone that one friend should be enough; I think that it is equally absurd to tell someone that one romantic partner shoudl be enough."
+                ]
+            , Paragraph
+                [ Body ""
+                ]
             ]
         ]
