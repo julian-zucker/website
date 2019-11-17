@@ -1380,4 +1380,59 @@ essays =
                 [ Body "This also makes it hard for authors to defend their works. If you call someone's novel problematic, for instance, your complain is not concrete enough to be addressed. They can't earnestly claim that there are no problems in their novel, and having to enumerate everything that might possibly be problematic and defend it would be a fool's errand. If you say that a novel is sexist, an author can ask why you think that. If there are particular scenes or characters or pieces of dialogue that you think are sexist, you can point those out. Then, the author can defend themselves, or realize that there is a problem. Calling something out as sexist seems to require bits of evidence to point at, while calling something problematic is vague enough to be true of everything. Asking someone to point out the sexist parts of a movie seems like a reasonable request, but asking them to point out the problematic parts doesn't even make sense as a question."
                 ]
             ]
+        , Model
+            "The Villain on 16th Street"
+            "villain-on-16th"
+            Listed
+            [ Paragraph
+                [ Body "It was a brisk November night. I was walking around downtown Denver, with my girlfriend at the time "
+                , Footnote "I am not entirely sure that she was my girlfriend. When I asked her what our relationship was, she said that it was confusing and difficult and she didn't want to talk about it. But we went on dates and had sex and such, so I'm guessing girlfriend is the right word."
+                , Body " taking some photos "
+                , Footnote "An underrated date idea. It's free, it gets you to explore new places, and it's nice to hvae subjects in the photos you're taking. A side benefit is that it produces raw material to be refined into Instagram posts."
+                , Body ". We try to shoot in various locations: a ballroom in a hotel "
+                , Footnote "It looked unoccupied, from the street. We go in and ask the front desk staff if we can take photos in it. After five minutes of being told to talk to different people, we eventually get told that the ballroom is in use today, but if we come back some other day when it's empty, we can totally shoot photos there. This impresses the girl, because she was certain that they would reject us out of hand."
+                , Body ", standing in the shrubbery at the base of a statue, and in front of a building that was lit all blue. As we loop back from these photos spots, we walk up 16th Street "
+                , Footnote "Technically, it's \"16th Street Mall\",  but it's just a street, not a mall, so the name feels like false advertising to me."
+                , Body "."
+                ]
+            , Paragraph
+                [ Body "Along the way, I see this long, white hallway, brightly illumated with an interesting pattern on the walls. It looked like it would make a good backdrop for a photo. So, we step inside, into a plain, white lobby. On one wall, there is a sign saying \"Thank you for your patience. Be amazed\". I was unsure what exactly we were being patient for, or what the amazement was –\u{00A0}the lobby was completely empty, lacking any corporate branding. There was an elevator in the lobby, and the hallway, and that was it."
+                ]
+            , Paragraph
+                [ Body "Behind a large desk, there were two security guards "
+                , Footnote "I would say receptionists, but they both were wearing large jackets with a private security company's logo, so I guess they were security guards?"
+                , Body "both wearing beanies with their heads down, avoiding eye contact. I wander over, and ask them if I can take photos in the hallway. They don't seem to hear. I ask again, and this time, one of them looks up. She takes out her AirPods, and asks me to repeat the question, so I do. She looks deeply confused. \"You want to take photos here?\", she asks, incredulously. I point at the hallway, talk about the various ways in which it is pretty, and explain why I would want to take photos. I have a DSLR around my neck, so it doesn't seem completely implausible. She turns to the other security guard, and nudges him. He looks up and removes his AirPods, then says that I'd have to talk to building management about taking photos there. I decide that this is more trouble than it would be worth, and turn to walk away. "
+                ]
+            , Paragraph
+                [ Body "But I am struck by curiosity. Why is the lobby so empty? What patience are they thanking me for? What is this building for and who owns it? I actually ask the last question, and I am met with a blank stare from both security guards. One says, slowly, that she isn't sure. The other says that \"it is many things\". That sounds ominous, and you would think that the security guards for a building would know at least a little about what happens inside."
+                ]
+            , Paragraph
+                [ Body "There is only one possible explanation for this building. It is an evil villain's lair, hidden in plain sight on 16th Street. It is many things, both an evil headquarters and a front for said headquarters. They are thanking us for our patience while they try to take over the world, at which point we'll be amazed. The AirPods in the guards' ears are used for mind control. It is clear: there is a villain on 16th Street."
+                ]
+            ]
+        , Model
+            "Shitty Design"
+            "shitty-design"
+            Listed
+            [ Paragraph
+                [ Body "Bathrooms in America are poorly-designed. Obviously, I have seen only a small subset of the America's bathrooms, and even then only a subset of the men's bathrooms. But there are some consistent design flaws that bathroom designers keep making, and it's pissing me off. " ]
+            , Paragraph
+                [ Body "Let's start with urinals. There are some pretty simple ideas here, like putting dividers between the urinals, but people tend to get most things about urinals right. One mistake I've seen, though, is having urinals next to the sinks. If you're going to do this, please, dear god, put a divider between the urinals and the sinks. I understand that there won't be someone peeing in the sink "
+                , Footnote "Hopefully. I'm not making any promises here, though."
+                , Body ", but I still would prefer to see zero dicks while I wash my hands "
+                , Footnote "There are other contexts where I do want to see dicks, but when I am using a bathroom, I feel exactly zero desire to see dicks. Other than my own, I guess, it would be quite strange if I used the bathroom and didn't see my own dick."
+                , Body ". For the most part, though, urinals are difficult to fuck up. They're splashy, and sometimes surrounded by a vast ocean of piss, but I'm willing to chalk those two things up to user error."
+                ]
+            , Paragraph
+                [ Body "The doors on stalls should lock. This one seems pretty self-explanatory, and well-justified. The reason I went to the bathroom, instead of just shitting in the kitchen sink, is so that other people won't be looking at me while I'm doing my business "
+                , Footnote "Okay, there are some other reasons to prefer bathrooms to kitchen sinks. But not interacting with other people is an important component."
+                , Body ". But in many stalls, the lock on the door doesn't line up with the lock on the doorframe, or the lock isn't long enough and so doesn't reach over the massive gap between door and doorframe. This is bad. It signals not just laziness in construction or maintenance, but a fundamental issue with the way we construct our bathrooms. If you have a real door, and a real doorframe, then when the lock doesn't line up, you can fix it by adjusting how the door is attached. Here, the door and doorframe are suspended from the ceiling, and therefore difficult to move, and therefore difficult to fix."
+                ]
+            , Paragraph
+                [ Body "The doors on stalls need handles. If you have a stall, where I can push the door shut, and then lock it, that's already a miracle. I would settle for doors that lock. But while we're talking about improvements we could be making to bathrooms, how about putting a handle on stall doors? I push a door shut, and then lock it, but when I unlock it, I have to stand and stare at the door, hoping that it will open on it's own. If it doesn't, I must resort to pulling on the lock, and the lock is clearly not meant for being pulled. Sometimes my fingers slip off the lock, the door refuses  to open, and I have to grab the top of the door and pull it towards me. There's no reason, in this modern world, why doors should be this difficult to open." ]
+            , Paragraph
+                [ Body "And the sinks have been getting worse over time. I actually have no problems with faucets that I have to physically touch to make water flow. Automatic faucets, however, seem to be poorly thought out. Typically, there is only one spigot, and no temperature control, so you are left at the whims of the plumbing. On hot days, when I want to splash cold water in my face, the water is scalding, on cold days, when I want to warm my hands, the water is freezing. Give me some control over the temperature, please. Our sink technology is regressing." ]
+            , Paragraph
+                [ Body "Automatic faucets also usually have the sensor outside of the sink bowl. So, when you are washing your hands, you have to hold your hands above the bowl. This means that water will splash all over the place. The bowl is there to catch splashes, and the height of the sensor makes it fail at that purpose. So in bathrooms with automatic sinks, the entire counter area is covered with water. When you lean up against it, to strain and reach to try and trigger the sensor, some of the water will soak into your pants. There's no need for this. Put a little lip on the countertop, and this problem is avoided. If you're going to push users of a bathroom to wash their hands in a way that will splash water all over the place, the least you can do is keep that water off of them." ]
+            ]
         ]
