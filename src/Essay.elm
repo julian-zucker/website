@@ -174,23 +174,25 @@ viewEssayPreview model =
     case model.isShown of
         Listed ->
             div []
-                [ p [] [ viewEssayLink model ]
-                , p [ class "essay-preview" ]
-                    [ text
-                        (String.left 160
-                            (String.replace
-                                -- There were spaces left over after stripping footnotes,
-                                -- this fixes the obvious cases.
-                                " ."
-                                "."
+                [ p []
+                    [ viewEssayLink model
+                    , div [ class "essay-preview" ]
+                        [ text
+                            (String.left 80
                                 (String.replace
-                                    " ,"
-                                    ","
-                                    (List.foldr (\first -> \second -> first ++ " " ++ second) " " (List.map contentItemToString model.content))
+                                    -- There were spaces left over after stripping footnotes,
+                                    -- this fixes the obvious cases.
+                                    " ."
+                                    "."
+                                    (String.replace
+                                        " ,"
+                                        ","
+                                        (List.foldr (\first -> \second -> first ++ " " ++ second) " " (List.map contentItemToString model.content))
+                                    )
                                 )
+                                ++ "…"
                             )
-                            ++ "…"
-                        )
+                        ]
                     ]
                 ]
 
@@ -1511,6 +1513,30 @@ essays =
                 , Body ", I think I was really talking about triggering these survival instincts. Cold showers makes you worry about hypothermia, fasting makes you worry about food, and exercise makes you worry about whatever it is your body is being pushed to its limits for. Obviously, rationally, you know that there is nothing to be afraid of, but the subconscious knows. If the state of the modern world is any indication, we overvalue the rational part of the brain, and undervalue the subconscious. All of our best efforts to improve society have resulted in higher suicide rates "
                 , Footnote "And, to be fair, lower rates of murder and death by disease and hunger. It's not all bad, it's just not working out for us, psychologically."
                 , Body ". Clearly, modern society is missing something, and we shouldn't follow the prescribed path. Avoid digital oblivion, try to find some kind of analog awareness."
+                ]
+            ]
+        , Model
+            "Drinking and Writing"
+            "drinking-and-writing"
+            NotListed
+            [ Paragraph
+                [ Body "I drink when I write "
+                , Footnote "Which is a bad habit, when you're trying to write 50,000 words in November."
+                , Body ". Sometimes, this means I drink alone, on weeknights. Typically, drinking alone on weeknights is considered a problem. I don't think that applies to me, however "
+                , Footnote "Which is what any self-respecting alcoholic would say, but I have a website and a principled argument."
+                , Body "."
+                ]
+            , Paragraph
+                [ Body "The reason I frown on drinking alone, generally, is that alcohol makes you okay with not doing anything. Sitting around drunk, or high, you can consume entertainment mindlessly for hours "
+                , Footnote "Or, at least, until you sober up."
+                , Body ". This is bad, in my view of the world. I am highly suspect of choices made right now that make it easier to laze around later. I used to own only bluetooth speakers and headphones, which lagged a second or so behind what my computer thought was playing. This made watching TV quite difficult, as the audio lag was very noticeable and quite annoying. Listening to music was fine, and so I was able to listen to music as I worked, but I ended up not watching much TV. Later, I got a wired headset because I needed a mic, and this dramatically increased the amount of TV I watched. In this way, I think that getting a wired headset was at least partially bad for me. Similarly, most drinking is bad for the people doing the drinking, because people tend to do less interesting things with their lives while they are drunk "
+                , Footnote "For their livers and physical health, but also this mental reason."
+                , Body "."
+                ]
+            , Paragraph
+                [ Body "But can you call drinking and writing similarly wasteful? For me, drinking lets the words flow more easily, removes my inner censor, and dulls my hyperactive consciousness so that I don't tab out to a distraction after five minutes of writing. I think drinking might be a performance enhancing drug for writing. If so, if drinking allows me to write more than I would otherwise, it may be helping me do more interesting things with my life. This nullifies one of the principal arguments against drinking alone. It may or may not improve the writing I do produce "
+                , Footnote "I am certain that most things I write while drunk are full of misspellings and sentences that violate basic rules of grammar, but I'm going to call that a \"conversation style\", instead of trying to defend it."
+                , Body ", but it lets me spend more time writing. It has some value."
                 ]
             ]
         ]
