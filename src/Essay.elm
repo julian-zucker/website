@@ -1535,8 +1535,106 @@ essays =
                 ]
             , Paragraph
                 [ Body "But can you call drinking and writing similarly wasteful? For me, drinking lets the words flow more easily, removes my inner censor, and dulls my hyperactive consciousness so that I don't tab out to a distraction after five minutes of writing. I think drinking might be a performance enhancing drug for writing. If so, if drinking allows me to write more than I would otherwise, it may be helping me do more interesting things with my life. This nullifies one of the principal arguments against drinking alone. It may or may not improve the writing I do produce "
-                , Footnote "I am certain that most things I write while drunk are full of misspellings and sentences that violate basic rules of grammar, but I'm going to call that a \"conversation style\", instead of trying to defend it."
+                , Footnote "I am certain that most things I write while drunk are full of misspellings and sentences that violate basic rules of grammar, but I'm going to call that a \"conversational style\", instead of trying to defend it."
                 , Body ", but it lets me spend more time writing. It has some value."
+                ]
+            ]
+        , Model
+            "PayPal"
+            "paypal"
+            Listed
+            [ Paragraph
+                [ Body "I worked at PayPal for eight months, after my second year of college. It was the worst job I have ever had "
+                , Footnote "Although I have mostly worked as a software engineer, so despite being the worst job I have ever had, it wasn't all that bad."
+                , Body ". My official job title was \"Business Intelligence Engineer, Graduate Student\". The last two words there may be confusing, as I was an undergrad at the time. They were looking to hire a grad student, but the grad students that got interviews were all laughably bad "
+                , Footnote "This is probably because Northeastern's ALIGN Master's program allows people with no prior experience to get a master's degree in CS in three years. These students had been taking CS classes for three semesters. I had been taking CS classes for four semesters. While time spent in classes isn't everything, it does matter."
+                , Body ". They were so laughable that one of the people interviewing me paused me five minutes into the hour he had with me to tell me how much better I was than the other candidates "
+                , Footnote "My ego doesn't need any more inflating, but this definitely inflated my ego. And so did having \"Graduate Student\" in my job title as a third-year."
+                , Body "."
+                ]
+            , Paragraph
+                [ Body "I was impressed by the interview "
+                , Footnote "Pivotal's interview process is the best of any company, but PayPal's interview was okay too."
+                , Body " process. They brought everyone in for an afternoon, and had a matrix of when each person would see each interviewer, so we all saw each person for the same amount of time, and were asked the same question. This is incredible, because it allows some objective measures to be recorded, and then those measures can be correlated in the future to job performance, to see which interview questions need to be changed."
+                ]
+            , Paragraph
+                [ Body "The first part of the interview is a thirty-minute written coding challenge. But get this - the question is how to implement a client-server tic-tac-toe game, and they tell us that it's okay not to write any code. They just want a high-level design. I love this! You can't get a good grasp on someone's programming skills by having them write a new program for thirty minutes, but you can get a good grasp on someone's system design skills in that time. Maybe it's not the most important skill for the job, although it is important, but at least it is honestly measuable. I spend my thirty minutes writing, laugh at some of the questions that the people around me ask "
+                , Footnote "For example, \"Is it okay to use Django?\". Clearly, this guy missed the part where they said to not write code. He was sweating heavily, but I didn't hold it against him, because he was clearly out of his league here."
+                , Body ", and eventually the time is up. I grab my pencil, and I am shuffled to the opposite side of the office. What I didn't realize at the time is that they were hiring for two distinct positions: Software Engineer (Graduate Student) and Business Intelligence Engineer (Graduate Student). I thought they were just hiring software engineers, and some of them would end up on the business intelligence team. I was wrong."
+                ]
+            , Paragraph
+                [ Body "The interviewees for the Business Intelligence Engineer position make it to the other side of the office. We are stationed in a large conference room, and called out for hour-long interviews, and told we'd have lunch off and another random hour off during the day. I am the only white person in the room, everyone else being interviewed is Indian. This will be important later."
+                ]
+            , Paragraph
+                [ Body "The first interview asks me some basic SQL queries. I have no trouble here, as I have taken at this point three classes that covered SQL"
+                , Footnote "Although the first two just expected me to know it, and by the third, I had taught myself most of SQL for independent reasons, so I only attended on the days that there were tests."
+                , Body ". The second interview is more behavioral, about projects I've worked on before, and similar. Still no worries. The third interview was one of the best interviews I have ever been subject to. I was given a very vague prompt, and told to roleplay asking other people questions and drawing out system designs to answer it. The prompt was something about making a personnel management system where you can update birthdays and names and photos and such of all the people working at a company. My interviewer gives me some background information, some of which are clearly bogus (that the database password is in /etc/password), I call out the obviously false things, and start drawing up an API design. We go back and forth about the exact system requirements, security measurements. I bring up SQL injection "
+                , Footnote "Interviewers love it when you bring up SQL injection."
+                , Body ". Then that interview is over, and there is some fourth interview that I don't remember at all. "
+                ]
+            , Paragraph
+                [ Body "At no point in the day did any of my interviewers ask me about the tic-tac-toe server that I spent thirty minutes designing. This should have been a red flag, but at the time, I thought it was just a miscommunication, but it turns out that the tic-tac-toe exercise was a major part of the interviews for the Software Engineers. They didn't really care about our system design skills, it turns out. But I was young and foolish. Their failure to examine my system design skills should have signaled to me that they wouldn't have me designing systems. But it didn't. I go home, taking the T, my mind racing. Because I am still mentally recapping the whole day, and because I was similarly distracted on the way in, I don't realize that the commute takes an hour each way. Long commutes are brutal, but I had never commuted more than fifteen minutes before "
+                , Footnote "Not strictly true. I had a part-time job that had an hour-and-a-half commute, but I worked remotely almost all the time, so I didn't notice. And when I did go into the office, the CEO would typically pick me up from the nearest train station on the way in, and we would stay late drinking whisky (and good whiskey, at that, although it was wasted on my nineteen year old self), so I didn't mind the commute too much."
+                , Body ", so I didn't realize how brutal long commutes are."
+                ]
+            , Paragraph
+                [ Body "To make a long story short, they offered me the job, and I took it because I had no other offers and I wasn't sure I was going to get any "
+                , Footnote "A false fear. The day after I accepted this job, I got offered a much cooler, but slightly lower-paying job. I would have much preferred the other job, I think. My primary reason for believing this is that many of the men there wore chelsea boots."
+                , Body "."
+                ]
+            , Paragraph
+                [ Body "The job description mentioned five projects that I would be working on during the eight months of my employment. The first one sounded quite interesting. There is this system that processes over $500,000 of transactions a day, sending reimbursements to gas stations, particularly those in Australia "
+                , Footnote "In most countries, when you buy gas, the gas station will pre-auth your card for $100 or so. This ensures that you have enough money to pay for your tank of gas. In Australia, it is illegal to pre-auth for more than $1, so fraudsters would load up prepaid cards with $1.01, fill up a tank with gas, and drive away. "
+                , Body ". This system ran at 4:00AM EST, to process this half of the world, and at 4:00AM in whatever timezone Australia is in, to process the other half of the world. And every day, between 4:00 and 5:00, it would fail, paging whoever was on call. This had been happening for three months."
+                ]
+            , Paragraph
+                [ Body "Let that sink in. On my team, there were two other people, and one of the two had been paged at 4AM, every day, for three months. Not every business day: every day. Weekends too. This is horrific. My first goal was to fix this system. Well, my first goal was to avoid getting put on this on-call rotation from hell, but my first project was to fix this system. I ask why none of the engineers (keep in mind, this office had roughly sixty full-time software engineers) had fixed it. My boss "
+                , Footnote "Not manager. Not team lead. She was my boss."
+                , Body " tells me that she has no clue, but that she thinks that they don't care, because their performance is measured strictly in terms of the number of tickets that they complete, and they don't know Python "
+                , Footnote "This part was shocking to me. I knew it was a Java shop, but I didn't know that no one even knew Python! It was like they had all been living under rocks. This is because they all had been living under rocks."
+                , Body ". This was when I had my first revelation about this job. I was only hired here to fix a political problem, namely the engineers refusing the help the business intelligence team."
+                ]
+            , Paragraph
+                [ Body "I could easily have fixed the system in an hour. If the system was developed by reasonable people. But, unfortunately, it was not."
+                ]
+            , Paragraph
+                [ Body "My first attempt to find the bug started out fine. I cloned the git repo with the code, and starting poking around. This code was horrific. Just absolutely horrific. It made me physically uneasy to read this code. There were strings, with data being interpolated in, which were then executed as SQL. I guess this is why they were happy I knew about SQL injection, in the interview. The SQL strings, instead of being multiline strings "
+                , Footnote "If you're going to do SQL injection, at least make the queries easy to read! Assholes."
+                , Body ", trailed on and on interminably, often three or four hundred characters long. And the entire project is full of these SQL strings, as the entire configuration for this tool is stored in a database "
+                , Footnote "This particular branch of PayPal used Oracle Database, a tool which is incredibly powerful and incredibly painful to use. My favorite fact about Oracle Database is that it does not support booleans. They recommend using a column with a single character, that is either 'y' or 'n'. Or was it 'Y' and 'N'? Or 'T' and 'F'?"
+                , Body ". And not in a nice, relational table, as you would expect. I could get behind that! Storing your database in a relational database, in a nice tabular format, is the sort of polite thing you do when you expect someone else to have to maintain your code later. But no. It was not that. Instead, it was a key-value store, implemented as a database table with two columns "
+                , Footnote "This hurt me."
+                , Body ". Even worse, not all of the keys were required, some of the keys being set required other keys to be set, sometimes one key being set to true meant that another key was present "
+                , Footnote "This hurt me more. You can just have the optional key, and check for it existing. You don't need to store a 'true' separately from the data, the mere existence of the data signals that the data is there. Idiots."
+                , Body "."
+                ]
+            , Paragraph
+                [ Body "At this point, I gave up and stormed off. Not out of the office, just over to the engineering side. I found the person who knew the most about this code, which was still not very much. And I asked them -\u{00A0}who wrote this? They told me that contractors had written it four years ago. And that it was so bad that the contractors were all fired when they submitted it for code review. AND THEN PAYPAL PUT IT IN PRODUCTION."
+                ]
+            , Paragraph
+                [ Body "This was unfortunate. I get access to the machines that actually run this code, and I start poking around on them. First of all, there is no deployment automation on these machines. You get a new version of the code out by scp'ing files into the right place. I cry a little, and then move on. Looking at the files that are currently on the machine, I notice that they are significantly different than what is in git. Turns out, people on my team had been ssh'ing into these production machines, using nano to edit the code, and then not checking it in to git."
+                ]
+            , Paragraph
+                [ Body "I would make fun of them for this, but I think being paged at 4AM every other week for three months is sufficient punishment."
+                ]
+            , Paragraph
+                [ Body "Anyway, most of my refactoring was now useless, as the code I had been working on was not the code in production. This set me back a full day's work. The people on my team knew that what was in git was not identical to what was on the production machines, but didn't tell me. I was a little upset, but what really baffled me is that they would be so useless. Every extra day that I spent working on this project was another day of them being woken up at 4AM."
+                ]
+            , Paragraph
+                [ Body "I eventually find the bug. Someone has added a single row to one of the four database tables that this tool looks at, but hasn't added matching tables to the other tables. So it read that row, tried to process it, and then choked. This became almost immediately obvious once I was given access to the machines that ran the tool, because the error logs were relatively informative, and I could add more easily."
+                ]
+            , Paragraph
+                [ Body "Once I've fixed this bug "
+                , Footnote "My team is less grateful than I thought they would be. They really do not value their sleep highly."
+                , Body ", I realize that there is no more engineering work to do. I settle in for seven and a half months of moderately-paid drudgery. There are some highlights, though. A coworker microwaves a hardboiled egg, and then it explodes, and she has to take a month off to recover from the burn wounds "
+                , Footnote "This one is sad, but also hilarious and informative. Don't microwave eggs, apparently."
+                , Body ". I realize that no cares, and so I start showing up at 10:30 and leaving at 4:00, and taking two or three hours off to walk around during work. I am drinking my body weight in alcohol every weekend during this time period, but for indepedent reasons, I think. Overall, I learned a little Python, got to play around with cloud computing on someone else's dime, read an incredible amount during my commute, was paid pretty well for the actual number of hours that I worked, and learned about some questions I should be asking during interviews."
+                ]
+            , Paragraph
+                [ Body ""
+
+                --                , Footnote ""
+                , Body ""
                 ]
             ]
         ]
