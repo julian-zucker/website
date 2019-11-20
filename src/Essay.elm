@@ -1490,7 +1490,7 @@ essays =
             [ Paragraph
                 [ Body "I once dated a girl who, whenever she would open her phone, would automatically, without realizing it, navigate to Instagram "
                 , Footnote "I want to say that this relationship didn't last long, but it lasted around eight months. Being good in bed can make up for many personality flaws."
-                , Body ". This was infuriating. Whenever she volunteered to find directions somewhere, she would have about a minute of lead time between pulling our her phone and actually starting to navigate. Whenever she got a text she had to reply to, it would also take a minute longer than it had to. Even, once, when putting on sex music, she paused to check Instagram. This one made me laugh. It was so clear that she wasn't consciously aware of her actions. It's hard to blame her, because Instagram develops its app intentionally to encourage this type of behavior. It's endemic of a bigger problem."
+                , Body ". This was infuriating. Whenever she volunteered to find directions somewhere, there would be about a minute of time between her pulling our her phone and her actually starting to navigate. Whenever she got a text she had to reply to, it would also take a minute longer than it had to. Even, once, when putting on sex music, she paused to check Instagram. This one made me laugh. It was so clear that she wasn't consciously aware of her actions. It's hard to blame her, because Instagram develops its app intentionally to encourage this type of behavior. It's endemic of a bigger problem."
                 ]
             , Paragraph
                 [ Body "We're all so damn distracted. Wake up, go to work, come home, order delivery, watch Netflix, and repeat. People can live their entire lives, nominally successfully, holding down a full-time job and and apartment and all the trappings of the middle class, and never think. Maybe you have to do some simple problem-solving for your job, but I mean think about who you are and what you want. It's possible to spend a whole day without having time for introspection, jumping from distraction to distraction, binging "
@@ -1651,5 +1651,32 @@ essays =
                 ]
             , Paragraph
                 [ Body "Diversity is important. But any email that says your office is \"74% diverse\" is bullshit and should be treated as such." ]
+            ]
+        , Model "The Best Time of Your Life"
+            "best-time-of-your-life"
+            Listed
+            [ Paragraph
+                [ Body "People keep telling me that the best time of my life will be during college, and then being confused when I want to stick around for a PhD. But this essay isn't about that. This essay is about timescales."
+                ]
+            , Paragraph
+                [ Body "The best hours of your life will be on drugs. Maybe they won't be the most fulfilling hours of your life. I know for a fact that the most fulfilling moment of my life to date is when I had a revelation about a new type of model for evolutionary game theory. The moment when I suddenly became the first person in the world to have a specific idea felt incredible. But it took two months for me to get to that point. And it doesn't compare to spending a summer day with a beautiful girl tripping on acid. Discovering this new model is a contender for the best sober experience I've ever had, but it hardly compares to May 11, 2019 "
+                , Footnote "At least one person reading this has reason to be offended by this date. Sorry!"
+                , Body ". If you're thinking on a timescale of hours, the way to have the best hour is to take drugs."
+                ]
+            , Paragraph
+                [ Body "But on a timescale of days or weeks, it's completely different. The best weeks I've had have been focused, intellectual, productive. Prolific. What weeks do you look back on approvingly? The weeks where you accomplish something, the weeks where you hit some major milestone in your life - those are the best weeks. A week is short enough that you can lock yourself in your room and work and work and work tirelessly, without suffering greatly. The best weeks of my life have been dead sober "
+                , Footnote "I've spent most of my adult life as a college undergrad, so maybe dead sober except for parties on Friday and Saturday."
+                , Body ". But those weeks were incredible! There were weeks when I aced homework assignments, was unexplainably productive in art or code or writing, and weeks where I read paper after paper learning about some new field. The best weeks of your life will be sober, focused deeply on some subject. A week is too long to spend under the influence, or at least too long to feel good after spending under the influence."
+                ]
+            , Paragraph
+                [ Body "But a month is too long to spend sober "
+                , Footnote "Maybe there's something to unpack here."
+                , Body ". The best months of my life have been spent alternating between hard work during the week and wild experiences on the weekends. I didn't pick the 5 day/2 day split, but it feels just about right. The best months of your life will be spent in balance between work and play. The best months on my life to date were May and June 2019, where I was working the hardest and producing the most I ever have, while also partying the second hardest I ever have "
+                , Footnote "Oh, summer after sophomore year, how I miss thee."
+                , Body ". Trying to emulate the circumstances that lead to the best months of your life is a reasonable aim, but emulating anything on a shorter timescale will lead you astray."
+                ]
+            , Paragraph
+                [ Body ""
+                ]
             ]
         ]
