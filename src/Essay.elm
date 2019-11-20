@@ -1630,11 +1630,26 @@ essays =
                 , Footnote "This one is sad, but also hilarious and informative. Don't microwave eggs, apparently."
                 , Body ". I realize that no cares, and so I start showing up at 10:30 and leaving at 4:00, and taking two or three hours off to walk around during work. I am drinking my body weight in alcohol every weekend during this time period, but for indepedent reasons, I think. Overall, I learned a little Python, got to play around with cloud computing on someone else's dime, read an incredible amount during my commute, was paid pretty well for the actual number of hours that I worked, and learned about some questions I should be asking during interviews."
                 ]
-            , Paragraph
-                [ Body ""
-
-                --                , Footnote ""
-                , Body ""
+            ]
+        , Model "PayPal's Bullshit Diversity Metrics"
+            "paypal-bullshit"
+            Listed
+            [ Paragraph
+                [ Body "About halfway through my job at PayPal, I got the most infuriating email of my life "
+                , Footnote "This email explicitly said it was an internal communication, not to be shared outside PayPal. Oops."
+                , Body ". It was the yearly report on the PayPal office located in Newton, Massachusetts. It started off with some basic corporate speak about how we're all doing great and so on. Then, it congratulated us for being the most diverse office PayPal had in America."
                 ]
+            , Paragraph
+                [ Body "This was somewhat confusing to me. I looked around my office, and diversity is not at all what I saw. The engineering side of the office was almost entirely Indian men, all between 25 and 40. There were a few white men there, and some Indian women, but for the most part, the engineering department entirely conformed to a slightly outdated stereotype of engineers. The sales team was entirely white men. The marketing team, however, was entirely white women. Again, a perfect conformance to stereotype. The designers were almost all women, and the male designers were all gay. All of the designers were better-dressed than the rest of the office "
+                , Footnote "Although sharp dressers aren't a protected class, so this one doesn't matter legally."
+                , Body ". The executives were all white men "
+                , Footnote "Five for five. All of the executives were white men, not just many of them."
+                , Body ". HR was entirely female. You get the idea."
+                ]
+            , Paragraph
+                [ Body "The email, however, went on to clarify what PayPal meant by diversity. It was the percentage of people that were not white men. By this metric, we were killing it. Most of our engineers were Indian men. This was diversity! Never mind that each business unit was almost entirely homogeneous, or that the exceptions to the homogeneity were still stereotype-compliant. We were diverse because we conformed to stereotypes!"
+                ]
+            , Paragraph
+                [ Body "Diversity is important. But any email that says your office is \"74% diverse\" is bullshit and should be treated as such." ]
             ]
         ]
