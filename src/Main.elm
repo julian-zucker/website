@@ -234,9 +234,7 @@ renderPage page =
         Essays key ->
             ( "Internalized blogphobia"
             , [ div []
-                    ([ p [ class "essay-header" ] [ text "Essays are just pretentious blog posts." ] ]
-                        ++ List.map Essay.viewEssayPreview Essay.essays
-                    )
+                    (List.map Essay.viewEssayPreview Essay.essays)
               ]
             )
 

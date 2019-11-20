@@ -1675,8 +1675,19 @@ essays =
                 , Footnote "Oh, summer after sophomore year, how I miss thee."
                 , Body ". Trying to emulate the circumstances that lead to the best months of your life is a reasonable aim, but emulating anything on a shorter timescale will lead you astray."
                 ]
+            ]
+        , Model
+            "Decaf Coffee and Caffeine Pills"
+            "decaf-coffee-and-caffeine-pills"
+            Listed
+            [ Paragraph
+                [ Body "I drink decaf coffee. I take caffeine pills. Most people either are completely decaf, or take caffeine pills to supplement coffee (if they like the taste) or replace it (if they don't). But I'm worried about caffeinated coffee. I really, really enjoy the taste of coffee, and the normal version has drugs in it. When I drink coffee, I cannot separate in my mind the taste and the drug, and so I cannot know if I am choosing to drink coffee for the taste or for the drug."
+                ]
             , Paragraph
-                [ Body ""
+                [ Body "I am uneasy about any action I take that results in the accidental or ancillary consumption of drugs. I like drugs, particularly caffeine, but I want to moderate and be aware of my use. If I take a caffeine pill once per day, at the same time, I can ensure that I'm having a fixed amount of caffeine. If I leave it up to chance, I take wildly varying amounts of this drug, based on how much free time I have to make coffee, whether I hang out at a coffeeshop that day, and all the other factors that affect the amount of coffee I drink. "
+                ]
+            , Paragraph
+                [ Body "Fortunately, decaf coffee does exist, and while it tastes slightly worse than normal coffee (undecaf?), it is still eminently drinkable. So I can separate my desire for this good-tasting drink for my desire from the nominally productivity-enhancing (but probably mostly sleep-deprivation-fighting) drug. Then, I can track the two desires separately. If I notice myself taking more caffeine then usual, that is a signal about the state I am in, not a signal about what types of beverage I want to drink. My drug consumption is deliberate."
                 ]
             ]
         ]
