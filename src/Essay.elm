@@ -1690,4 +1690,53 @@ essays =
                 [ Body "Fortunately, decaf coffee does exist, and while it tastes slightly worse than normal coffee (undecaf?), it is still eminently drinkable. So I can separate my desire for this good-tasting drink for my desire from the nominally productivity-enhancing (but probably mostly sleep-deprivation-fighting) drug. Then, I can track the two desires separately. If I notice myself taking more caffeine then usual, that is a signal about the state I am in, not a signal about what types of beverage I want to drink. My drug consumption is deliberate."
                 ]
             ]
+        , Model
+            "Impossibility and Deadlines"
+            "impossibility-and-deadlines"
+            Listed
+            [ Paragraph
+                [ Body "Recently, I missed a deadline. I was applying for a scholarship "
+                , Footnote "It was really an award for competence in STEM research disguised as a scholarship. The award would be worth more than the scholarship itself."
+                , Body ", and this scholarship had one official date that applications were due. But Northeastern had another due date, three months before, which I overlooked in the materials that they sent me. They sent me a reminder email one day before Northeastern's deadline. I didn't have enough time to complete an application in time "
+                , Footnote "Among other requirements, I had to write a four-page description of research I had done and write several many-hundred word essays."
+                , Body ", so I figured I may as well ask for an extension. I send an email to the organizers, and ask for more time. The response was one of the most infuriating emails I have ever gotten."
+                ]
+            , Paragraph
+                [ Body """"Dear Julian:", it begins innocently """
+                , Footnote "If a bit formally. Who uses colons after the greeting in an email?"
+                , Body """, "Thank you for being in touch". You're welcome! Another cordial sentence, and then: "In response to your question, has there been something else happening in your life that precluded your handing the materials in on time?" """
+                , Footnote "This is where a colon should be used: \"In response to your question\" is just begging for it."
+                , Body ". I am shocked, but keep reading. The rest of the email explains how students in my situation have made the deadline before "
+                , Footnote "Obviously other people have made the deadline. The point of my email was that I had not."
+                , Body ". And it concludes: \"Is something else going on that made it impossible for you to meet the deadline?\""
+                ]
+            , Paragraph
+                [ Body "This really sets me off. In some ways, it is obvious that it would have been possible for me to meet the deadline. I could have known about it months ago, and if I had read the entire ten-page booklet they gave me about the scholarship, I might have noticed it in time. If I knew the deadline, I would have worked on it. There is a note in my journal, now crossed out, to start working on this scholarship, for the week that came two months before the deadline. Two months would have been enough time. Instead, in some ways, I had one day's notice. So, yes, Dr. Whoever "
+                , Footnote "A brief aside: it is a bad sign when someone feels the need to put a Dr in their email signature."
+                , Body ", it was possible that I could have made the deadline."
+                ]
+            , Paragraph
+                [ Body "But I didn't. And I sent the email asking for an extension on the day of the deadline. The response came after the deadline had ended. So in some ways, it was impossible for me to have made the deadline: I did not, and at this point in time, as far as I understand time, it could not have been any other way. Now that we are in the present, a day after the deadline, with my materials still unsubmitted, it is impossible that I can submit them on time. No matter how hard I try today, and tomorrow, and the day after, I cannot submit these materials on time. It is impossible for the me who you are emailing to meet the deadline.  "
+                ]
+            , Paragraph
+                [ Body "And I dislike the wording of that first question: \"Has there been something else happening in your life that precluded your handing the materials in on time?\". Of course there has! I was busy writing and reading and drawing and drinking and fucking "
+                , Footnote "Maybe a bold assertion, but I'm going to assume that I have more sex than someone who signs off their email as a \"Dr.\"."
+                , Body ". I didn't see the deadline, until you emailed me a day before. Clearly, they're asking if there has been a tragedy that has prevented me from making the deadline. Is that the only valid excuse? If someone close to me died, or fell ill, would that let me have an extension on this scholarship? What if I was just incapacitated with fear about some world news? Now, I have to plead my case, point out that my life has been quite shitty recently, in order to get a deadline. This disgusts me. I am doing ok, and it's strange to think that doing worse might have been better for me, in this little way. If there's a deadline, there ought to be a deadline, and if there isn't, don't make me act out some misery porn so that you can feel good about yourself for extending it."
+                ]
+            , Paragraph
+                [ Body "I sent back an email with some of this sentiment: \"Dr. Whosit,\", I begin "
+                , Footnote "Note: comma, not colon."
+                , Body ", \"Many other things have happened in my life.\", and then a description of some of those "
+                , Footnote "Although I left drinking and fucking out from the list above."
+                , Body ", and then \"No great tragedy has befallen me recently, if that's what you're asking. Nothing made it impossible to meet the deadline.\", I say, honestly."
+                ]
+            , Paragraph
+                [ Body "And they reply, thanking me for my candor: \"My colleagues and I are grateful for your honest reply. Unfortunately, this means that in fairness to our other candidates that we cannot accept your late application at this time.\". Apparently, extending the deadline for me is fair to the other candidates if someone I know has died, and unfair otherwise."
+                ]
+            , Paragraph
+                [ Body "With good planning, my scholarship would have been done a month before the deadline, and even a major tragedy happening a month before the deadline would not have stopped me "
+                , Footnote "Okay, depends on how major. With a medium-to-large tragedy, though, I could probably manage to click Submit."
+                , Body ". Impossibility is a funny word, and the way that this doctor used it seems to rob me of some agency."
+                ]
+            ]
         ]
