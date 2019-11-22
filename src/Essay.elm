@@ -1739,4 +1739,36 @@ essays =
                 , Body ". Impossibility is a funny word, and the way that this doctor used it seems to rob me of some agency."
                 ]
             ]
+        , Model
+            "Refactor Long Papers"
+            "refactor-long-papers"
+            Listed
+            [ Paragraph
+                [ Body "Whenever I read a long philosophy paper, let's say over twenty pages, I feel somewhat disconcerted when I reach the end. If your paper is twenty pages long, you probably make one core argument, and then try to prove each premise, and then conclude. For shorter papers, this can work well, because you only have enough room to make arguments that directly support premises to your main argument. For longer papers, it's easy to go astray, and try to demonstrate that A is true, because you've just set up that A implies B, B implies C, and C implies a premise of your main argument. This is great and all, but when I get to the end of your argument for A, I have forgotten the link to the main argument, and for that matter, probably forgotten the main argument itself."
+                ]
+            , Paragraph
+                [ Body "Maybe this is my fault. After all, I am part of a generation notorious for its short attention spans. But I don't think so, or at least, I don't think my generation is to blame. I'm used to the programming world. I can understand programs far longer than 20 pages, because in the programming world, a function definition that lasts up more than 30 lines is considered a bad idea "
+                , Footnote "A citation should go here, but I figure you either already know this is true, or you don't program enough to fight me on this."
+                , Body ". The general idea is that each function should be understandable in its entirety. If you have something complicated to express, move it to its own function, and call it here. Each unique idea can take up one line, then. Maybe you do something arcane, call a function you've defined just to help this function be easier to understand. But still, I can read this function, and even if I know there is something else to understand, I can infer what it does from its name and the type of its inputs and outputs. I can understand how this function wires other things together, and then separately understand the things it wires together. Good code is code that is understandable in isolation."
+                ]
+            , Paragraph
+                [ Body "Papers often do not have this fractal quality. You can't really understand the main argument without understanding the side arguments at the same time, and the side arguments seem irrelevant and inconsequential if you miss the link to the main argument. Maybe this is because the tools we "
+                , Footnote "Programmers."
+                , Body " use to edit text let you navigate to a function's definition with a single keyboard shortcut. You can't do this with papers, at least not easily, because papers are represented as a single line, a series of words. Sure, there are section titles, and direct or indirect references to other sections of the paper, but the fundamental data is a single series of words. A program, on the other hand, is fundamentally a tree, and so it is easey to navigate as one."
+                ]
+            , Paragraph
+                [ Body "It would be really neat if someone made a tool for writing papers in some tree-like format. You have one main argument, and this is the root of the tree. Then, you have supporting arguments, which are on a second layer. Then, those arguments have supporting arguments themselves: the third layer. And so on, to whatever depth you wanted to go to. This would allow papers with a fractal structure of arguments for premises, and arguments for presmises in those arguments, and so on to be more comprehensible. Programmers realized a while ago that a series of words was not the best data representation for programs, so we created tools for treating our programs as words. Programming is unique, in that the tools programmers use are created by programmers, so when a programming problem can be solved by software, someone writes software to solve that problem. Philosophers, on the other hand, don't write software, and so this need goes unfulfilled."
+                ]
+            , Paragraph
+                [ Body "I am a programmer, but I'm not going to make this tool. That sounds like a lot of work, and I'm quite busy complaining about how this tool doesn't exist yet."
+                ]
+            ]
+        , Model
+            "Coffee"
+            "coffee"
+            Listed
+            [ Paragraph
+                [ Body ""
+                ]
+            ]
         ]
