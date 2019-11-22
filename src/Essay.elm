@@ -1777,4 +1777,57 @@ essays =
             -- TODO add horizontal line here? Or a "* * *" thingy
             , Plain "They pour coffee grounds and water into a machine, push a button, and minutes later, a beep tells them their coffee is okay. They pour some milk in, take a sip. It is okay. But it is a very different okay than yours."
             ]
+        , Model
+            "Gunshots"
+            "gunshots"
+            Listed
+            [ Paragraph
+                [ Body "The summer after my freshman year, I lived in Roxbury, the ghetto of Boston. I was working full-time as an intern, making $16 an hour. This was good money, in some senses, because it was significantly above minimum wage, and bad money, in many senses, because I was living in an expensive city and also because I was technically an independent contractor, which meant a 15% tax on top of regular income tax."
+                ]
+            , Paragraph
+                [ Body "I found a place to stay for the summer. Dorms were around $1200 a month "
+                , Footnote "Absurd, for a room that was essentially as small as the one I'm about to describe."
+                , Body ", so I found an apartment. Rent was $450 a month. This is absurdly low, for a prominent American city. But let me tell you a bit about this apartment first. My room fit a twin bed, with about two feet of space on two sides of the bed. Two feet at the foot, two feet on one side. The room, then must have been around 5.5 by 9.5 feet. That comes out to 52 square feet "
+                , Footnote "Which is, technically, illegal. Rented bedrooms in Boston have a lower bound on square footage, and this room was significantly under that limit."
+                , Body "."
+                ]
+            , Paragraph
+                [ Body "The rest of the apartment wasn't much better "
+                , Footnote "Although the other rooms were signficantly bigger."
+                , Body ". The kitchen had an oven and a microwave, although the oven itself didn't work for the whole summer. The burners on the stove worked, in that they emitted gas, but the spark didn't work, so you had to light it yourself. For the first half of that summer, there was a regular lighter in the kitchen, but after the fiftieth time I burnt my knuckles lighting the stove, I bought a long-necked lighter. The kitchen was covered in a layer of grime, coated thick enough that you could feel the oil on the cabinets above the stove when you touched them. After opening the cabinets, if I wasn't careful, my knuckles would end up greasy."
+                ]
+            , Paragraph
+                [ Body "I lived across from Section 8 housing. One day, stumbling home drunk "
+                , Footnote "I never appreciated the sense of fear that many women feel while walking home alone and drunk until this day. Walking around Boston proper, I never felt afraid, but walking back to Roxbury, through the back alleys and dimly-lit streets and drug dens that line the path back to my house, I felt the fear."
+                , Body "I met a man on the street who I had seen before. He always sat on his front porch, in one of those folding camping chairs, and would say hi to me in the mornings. He notices that I am drunk, and points it out. I had some alcohol in my backpack "
+                , Footnote "I brought alcohol to one of my friends over at BU, and we got far too drunk together, wandering around the campus listening to music. I miss summer nights."
+                , Body ", and offer to share "
+                , Footnote "I had a small amount of vodka on me, maybe $4 worth, so I figure that the story that will come out of this will be worth the $4."
+                , Body ". He invites me inside, with a thick accent that I can't place. I'm drunk, and figure this guy is harmless, so I say \"sure\", and walk in. His apartment is crowded oppressively, with knickknacks and empty liquor bottles and takeout boxes and trash taking up most of the available flat surfaces. He gets out three glasses, I pour vodka into them, he pours some mixer in. The third glass is explained a few seconds later, when a woman walks in. This man is quite small, she is easily six inches taller than him; I have no clue of their relationship. We drink and talk about Boston and Roxbury and life and travelling "
+                , Footnote "He was from Cuba, or something."
+                , Body ". After maybe fifteen minutes or so, I finish my drink. I think about what I should do next, and then suddenly I remember something my roommates have said. They claim that people who sit out on the street like this guy are taking notes for criminals about when houses are empty and when people leave for work, and then they sell this information. I am overtaken by fear that he has told someone I'm there, and I'm going to get robbed "
+                , Footnote "I have my laptop in my backpack, so I am concerned about robbery. Normally, I carry  small amounts of cash, so as long as the robbers don't take my driver's license, I wouldn't really mind being robbed that much."
+                , Body ". So, I tell him that I should head home "
+                , Footnote "Although the normal almost-excuse \"It'll take a while to get home\" doesn't apply here, because I live down the street, so I had to be quite blunt about my desire to leave."
+                , Body ". He asks for my number, I think \"why not?\", and give it to him. I head home. The next day, while I'm at work, he calls me and asks if he can borrow five dollars. "
+                ]
+            , Paragraph
+                [ Body "My job that summer was a pretty sweet gig, except for the small paycheck. I was working at a startup with ten employees. The copmany made websites for college career centers "
+                , Footnote "Or, if you look at their marketing materials, platforms for college career centers."
+                , Body ". I mostly just did whatever I thought would be helpful. There were some assigned tasks, like answering the scattering of customer questions we got, but for the most part, they let me roam free. One day, the sales guy asked me to help him send emails through HubSpot. I obliged, and spent the better part of a morning helping him, doing manual repetitive tasks, and then in the afternoon I wandered off to try and automate the task. I managed to automate sending emails to people, in a script that ran off an Excel spreadsheet. I felt good about myself, earned lots of respect from the people at the company, and improved my resume. That was one of the better weeks of my life. There was another intern that summer, a small Asian girl who was incredible enthusiastic about everything. She would often throw both fists in the air triumphantly while screaming \"Yes!\", about mundane things like someone saying that a sales call went well, her accomplishing some task, or whenever the staff of the WeWork we worked at brought us snacks."
+                ]
+            , Paragraph
+                [ Body "And one day, walking out of work with my coworker, it sarted to rain. This coworker, who was the CEO, offered me a ride home, telling me that \"Cotton in the rain is a bad look\", because I was wearing a peacoat. I declined, and biked home as always, savoring the splash and spray as I biked, the smell of fresh rain on the ground, and the muted grey hues of the empty city. But I appreciated the offer."
+                ]
+            , Paragraph
+                [ Body "The first Friday after I moved in, I came home from work, and settled in at the kitchen counter "
+                , Footnote "No room for a desk in my room."
+                , Body " to read Effective Java "
+                , Footnote "I am quite prolific when lonely."
+                , Body ". I get through a few pages, and then hear what I think is a firework going off. But then I hear a scream, a few more \"fireworks\", the scream ending, and a car pulling away. Some of my roommates step out of their rooms. I am distraught, pulling up police scanners to see if what I just heard was in fact a shooting. They tell me that there are shootings semi-regularly here. The police scanner informs me that someone is dead, and that bullets entered an apartment at 131 Eustis Street. I lived at 133 Eustis Street. Bullets entered the apartment next to mine, and a man was killed outside. I take some deep breaths, remind myself that I'm still safe, and keep reading. Eventually, I go to bed, and eventually, I fall asleep."
+                ]
+            , Paragraph
+                [ Body "The next day, I walk in to work, and there is blood on the street."
+                ]
+            ]
         ]
