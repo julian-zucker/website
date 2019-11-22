@@ -1765,10 +1765,16 @@ essays =
             ]
         , Model
             "Coffee"
-            "coffee"
+            "making-coffee"
             Listed
-            [ Paragraph
-                [ Body ""
-                ]
+            [ Plain "A bleary morning, you rub the sleep out of your eyes. Your vision isn't blurry, but it is unfocused. You stumble out of your bedroom, and flip a switch. The newfound, harsh light requires a lot more from your eyes, but helps you come to grips with the fact that today has started."
+            , Plain "You make coffee."
+            , Plain "Perhaps you have an espresso machine, and perhaps you grind your own beans. Take out the beans, put them in a grinder, and watch the portafilter fill with grounds as you turn and turn and turn the crank, and wake and wake and wake up. Tamp the grounds down into the portafilter, cautiously now - you don't want to miss slightly, the tamper misaligned, the grounds spilling on your counter, creating a new task that must be this morning. After all, it would be no good to leave the grounds there until you come back from your office, for a counter left unclean would haunt you during the day."
+            , Plain "The portafilter is ready, so you swivel it into place in the machine, press a button, and now you wait. Hot water at high pressure forces its way through the grounds, and into your cup, promising a bitter black cure for bleariness. Perhaps you froth milk, for you are a latte-drinker, so you pour the milk into the pitcher, heat the steam nozzle, and then work precisely, exactingly, holding the pitcher at the right angle and the right depth to froth the milk without a mishap. Many mishaps are possible, in the making of coffee. Some merely deprive you of coffee, or require you to clean up and try again, some could be more explosively disastrous."
+            , Plain "But all goes well, you've done this a thousand times, literally if you've been making coffee every day for three years, figuratively if you are new to the idea but still well-experience, falsely if you have just purchased this espresso maker. The milk is ready, and the espresso is ready, and you yourself are ready to combine the two, so you do. The kitchen smells of espresso and milk, and, the whole world forgotten, you take the first sip of your latte, the first truly relaxed moment of the day, the reward for your efforts."
+            , Plain "It is okay. You've done better."
+
+            -- TODO add horizontal line here? Or a "* * *" thingy
+            , Plain "They pour coffee grounds and water into a machine, push a button, and minutes later, a beep tells them their coffee is okay. They pour some milk in, take a sip. It is okay. But it is a very different okay than yours."
             ]
         ]
