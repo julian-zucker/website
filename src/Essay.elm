@@ -1895,4 +1895,45 @@ essays =
                 [ Body "Attempted art theft is the coolest way to get banned from a museum."
                 ]
             ]
+        , Model
+            "Quick vs Smart"
+            "quick-vs-smart"
+            Listed
+            [ Paragraph
+                [ Body "School rewards being quick to get a working understanding of concepts. In a math class, the aim is not to truly understand calculus, but to understand the series of symbol-manipulations that you have to carry out in order to transform a problem description into the right number "
+                , Footnote "At least, this is the immediate goal. I had to get an intuitive understanding of linear algebra in order to do anything in my machine learning class. But in my linear algebra class, I mostly learned how to do the right symbol manipulations."
+                , Body ". Even in English classes, there is a formula to be followed for essays. In elementary and middle and high school "
+                , Footnote "I don't know if kids in elementary school write essays, but I'm including them anyway. They have English classes, probably, and so I'm assuming they have to do some putatively creative work."
+                , Body ", you write the five-paragraph essay. In college, the format changes, but there is still just a single format expected "
+                , Footnote "Some philosophy papers I've written have been less formulaic, but mostly because I wanted them to be. The standard format would have worked."
+                , Body ". So what people call \"smart\" in school is primarily speed of understanding. The school system rewards being able to pick something up, at a shallow level, immediately."
+                ]
+            , Paragraph
+                [ Body " But this is not the only type of intelligence, and it is not the same type of intelligence that is required to be exceptional at one thing. To be really good at something, you need to build an intuition for what you're working on, to know why the symbol manipulations do what they do. From what I've seen, the reason people struggle so much with calculus is that they don't understand algebra. They understand how to \"turn the crank\", go through the steps, and end up with the correct answer, for the problems in algebra where they know what symbol manipulations are required to produce the answer. To solve new problems, or old problems that are disguised as new problems, you need to actually understand what you're doing. In middle and high school, I remember finding shortcuts for many algebriac steps, understanding that I could go from step 1 straight to step 4 and not have to bother with all the intermediate nonsense. Teachers got mad at me for this, because I wasn't manipulating the symbols in the way they wanted me to."
+                ]
+            , Paragraph
+                [ Body "The incentive structures in schools lead to memorizing the set of steps to solve particular problems, and not putting any effort into understanding the material beyond what is required to execute that set of steps. While there are long-term benefits to having a deeper understanding, for example, how understanding algebra will help you later, in calculus, those benefits are far away and not guaranteed. So it is completely understandable that people would not really try to learn algebra deeply in the hope that one day it will help them in calculus. What we need is a school system that directly and immediately rewards deep understanding."
+                ]
+            , Paragraph
+                [ Body "Many interventions would change these incentive structures. For example, giving people new types of problems on exams would require that people can apply what they've learned in new situations. People would complain that this is unfair, because you haven't taught them the exact material that is on the test. This is to be expected; anything that creates more work for students will naturally get some pushback. Students are incentivized to complain about anything that will lower their grade. Students with a deeper understanding would probably do better in later classes, and if this is true, the complaints might stop "
+                , Footnote "They almost certainly won't. But they might, and I want to believe that they will."
+                , Body "."
+                ]
+            , Paragraph
+                [ Body "Schools have accidentally equated quickness and intelligence, and should change their incentive structures to reward deeper learning. But they probably won't, because students would complain, and classes would become more difficult."
+                ]
+            ]
         ]
+
+
+
+-- , Model
+--    ""
+--    ""
+--    Listed
+--    [ Paragraph
+--        [ Body ""
+--        , Footnote""
+--        ,Body ""
+--        ]
+--    ]
