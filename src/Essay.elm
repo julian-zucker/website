@@ -1862,4 +1862,37 @@ essays =
                 [ Body "And I like the smug superiority I feel over the people who can't face the minor hardship of a walk in the snow."
                 ]
             ]
+        , Model
+            "Grand Theft Sunflower"
+            "grand-theft-sunflower"
+            Listed
+            [ Paragraph
+                [ Body "I am an art thief."
+                ]
+            , Paragraph
+                [ Body "During my sophomore year of college, I stole some art from Boston's Museum of Fine Art. It wasn't anything incredibly important, though. They had an temporary installation from Takashi Murakami, a Japanese artist who does a lot of cartoon drawings. He like sunflowers, and he created one  work that was a series of sunflowers that were planted in the ground in front of the MFA. Imagine a flat piece of metal, roughly sunflower-shaped, with a large smiling face. Like the image below, but entirely yellow. "
+                , Image { href = "../assets/murakami_sunflower.jpg" }
+                ]
+            , Paragraph
+                [ Body "A friend and I walked up to the MFA's lawn, late at night, and unscrewed one sunflower from the ground. There were dozens of sunflowers left on the lawn, so we figured this one wouldn't be missed. We draped a blanket over the sunflower, because the bright yellow smiling sunflower was somewhat conspicious, and carried it over to Ryder Hall. This was one of the buildings that overlooked the main open green space at Northeastern. We made it past the security guard at the entrace, up the stairs, and onto the fourth floor. There were some classrooms on the fourth floor that had windows that would open wide enough to let you step out onto the roof of the third floor. We clamber out, bringing the sunflower with us, and finally are standing on this roof."
+                ]
+            , Paragraph
+                [ Body "We revel for a moment. Being on this roof always gives you an incredible view, into some dorms where some shenanigans are always happening, and across campus into Boston's skyline. It's nice. We take the sunflower out to the edge of the roof, and stick it into an open pipe right on the edge of the roof, staring down at Centennial Commons."
+                ]
+            , Paragraph
+                [ Body "In the middle of a Boston winter, seeing a sunflower smiling down at you while you walk to class is pretty nice. Trudging through snow, people crowding around me, knowing that I have lots of homework I have not done, seeing a metal sunflower on the fourth floor of a building, remembering the night that I stole it and put it there, felt pretty damn good."
+                ]
+            , Paragraph
+                [ Body "I am somewhat upset that stealing the sunflower never got me laid."
+                ]
+            , Paragraph
+                [ Body "But it did make that winter more bearable. One day, it dissapeared, so I assumed that campus police found out about it and removed it. But that was not the case. At a friend's acquantance's party, a few months later, I see a similar sunflower leaning against one of their walls. I ask where they got it, and they tell me they took it from the roof of Ryder. I am somewhat upset about this. I was trying to be a Robin-Hood-esque figure, stealing art from the museums and putting it where the people would see it. These assholes took it just to decorate their home."
+                ]
+            , Paragraph
+                [ Body "I went back to the MFA to take another sunflower to decorate Ryder's roof with. But at this point, they had security guards. Apparently, someone had stolen over a dozen sunflowers, and was trying to sell them on eBay. I didn't know this at the time, though, so I went back in to take another one, and a man stopped me. I ended up in relatively little trouble, because I was white and young and clearly a college student. The attempted theft was allegedly a felony, because the sunflowers sold for many thousands of dollars, because they were art. They banned me from the MFA."
+                ]
+            , Paragraph
+                [ Body "Attempted art theft is the coolest way to get banned from a museum."
+                ]
+            ]
         ]
