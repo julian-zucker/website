@@ -1923,6 +1923,32 @@ essays =
                 [ Body "Schools have accidentally equated quickness and intelligence, and should change their incentive structures to reward deeper learning. But they probably won't, because students would complain, and classes would become more difficult."
                 ]
             ]
+        , Model
+            "Personal Website Analytics"
+            "personal-website-analytics"
+            Listed
+            [ Paragraph
+                [ Body "This website doesn't have any analytics or tracking. If you're reading this right now "
+                , Footnote "And you are, based on the fact that you're reading this."
+                , Body ", I have no clue. I don't know where you're from, what link referred you here, how long you stayed, how much you read. I know nothing about you, or your presence on this website."
+                ]
+            , Paragraph
+                [ Body "Personal website shouldn't have any user tracking. Adding user tracking would take me some non-trivial amount of time "
+                , Footnote "Because I'm an idiot and wrote this whole website by hand in Elm, instead of using a static site generator or a hosted blogging website."
+                , Body ", and remove some privacy from visitors to my website, so there would have to be a pretty significant upside to justify it. And I don't think there is one."
+                ]
+            , Paragraph
+                [ Body "It would be nice to know how many people visit this website, I guess. Tracking how many people click in to each essay from the essays page would help me refine my clickbait. But I don't want to write clickbait here, I want to write for the sake of writing. I'm writing primarily for myself, and publishing that writing on the internet keeps me honest and gives me a reason to make sure it's good. I don't care about maximizing clicks, clicks get me nothing. I want to publish interesting enough ideas and stories that people actually reach out to me. So, I can measure the number of emails I get from people visiting the site"
+                , Footnote "To date, one."
+                , Body ", and that will be a better measure of my goals here than clicks would be. If people are actually thinking about what I write, and reading it deeply, they might email me, people who click and skim and leave aren't interesting to me."
+                ]
+            , Paragraph
+                [ Body "And I'm pretty sure that viewership is low. Certainly, not high enough to warrant figuring out how to get advertising on this website. So, keeping track of viewership will probably not inspire me. But by intentionally not recording pageviews, I know that people may be looking. If I write something and publish it to an audience that could be any size, I feel some obligation to make it halfway decent. In the same way that open-sourcing some code requires good practices by the people writing the code, publishing your writing puts a lower bound on quality. I don't want other people to think that I write garbage, so I have to ensure that the things I write are not in fact garbage. If I kept track of viewership, I might realize that zero people have ever seen anything I've written, and I would feel no shame if a website with no viewers proudly displayed some garbage I had written."
+                ]
+            , Paragraph
+                [ Body "If I were running a business, I would keep track of pageviews and conversions and all that. But here, I just want to write, and have people read it. I don't need to know how many."
+                ]
+            ]
         ]
 
 
