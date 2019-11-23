@@ -1830,4 +1830,36 @@ essays =
                 [ Body "The next day, I walk in to work, and there is blood on the street."
                 ]
             ]
+        , Model
+            "A Light Dusting"
+            "a-light-dusting"
+            Listed
+            [ Paragraph
+                [ Body "I like the snow. Waking up to a transformed world, everything looking different from how it looks in your memory of yesterday, brings out a childlike joy. The snow brings out a contrast between the vertical and the horizontal, for the vertical is left unchanged, and the horizontal is covered, white, puffy."
+                ]
+            , Paragraph
+                [ Body "I like stepping in the fresh snow, watching it compact underfoot, feeling agency over my environment. Normally, in a city, the ground doesn't care at all when you walk on it, but after a snowstorm, each step creates change in the world. Even when other people have walked where you are walking, there is the noise of water pushed out from underfoot by the forces of gravity and your stride, each step providing a certain sense of satisfaction, a sense of affecting change in the world. Compacted snow squeaks underfoot, a cute noise for a footstep. The ice, when it forms, is scary, I lose my balance and slide and skitter and grab at whatever is nearby, but when I recover from the gyroscopic moment, I smile. The recovery is fun, even if the initial fall, or what seemed as though it would be a fall, makes your heart pound loud and your breath catch."
+                ]
+            , Paragraph
+                [ Body "I like to exhale, and watch the steam of my breath dissipate slowly as I walk. I don't smoke, so this is the only time I see my exhalations as physical objects. I remember the sixth grade, walking to the bus station, inhaling deeply and then blowing out all the air in my lungs, prancing around and pretending I was a dragon with a breath of steam."
+                ]
+            , Paragraph
+                [ Body "I like to feel my cheeks turning red. The wind blows savagely at my face, the tip of my nose goes numb, but not frostbitically. I feel the inflammation of my cheeks, my body working overdrive to preserve my extremities. The flush in my cheeks feels warm, like cupping a mug of tea in my hands, despite the bitter winter, the subfreezing mode of the air. What I feel is not the external world, but my body's reaction to it."
+                ]
+            , Paragraph
+                [ Body "I like the imprints my boots leave on the ground. I look back, as I walk, not out of fear but just watching the deep, geometrical imprints of my boots. The texture on the bottom, providing grip, is full of thirty and sixty degree angles, lines becoming diamonds that turn back into lines, a beautiful insignia printed upon the ground with each step. I look back, and marvel at the clearness of my passing, the obviousness of my footsteps, the subtlety of the my boot's scream of individuality. On snow that is particularly imprintable, you can read the name of the company that manufactured them."
+                ]
+            , Paragraph
+                [ Body "I like seeing other people react to the cold weather. The factions are apparent. There are the businesspeople, socially coerced into a particular outfit, or uniform, wearing some coat over a suit or a dress or a pantsuit. Their typical uniform, with additions to account for the weather. They all seem cold, their cheeks red, their scarves ornamental, not functional. And there are the people who understand the cold weather, the people's whose routine requires that they spend some time outside, long enough to come to terms with today. They wear beanies, or hoods, to protect their ears, scarves pulled up around their faces like TV gangsters wearing bandanas, to protect their face. Large coats, almost comically puffy, keep the snow out and the body heat in. Anyone wearing a wool coat in a snowstorm knows that they will only have to walk from a car to their office. The people wearing parkas have a signficant hike ahead of them."
+                ]
+            , Paragraph
+                [ Body "I like the very end of walks in the snow. Stepping inside, rubbing your hands together to bring them back to normal operating temperatures, them warning your nose and your ears with those same hands. The relief I feel, relief that the world is no longer attacking, that I am somewhere safe and warm. The deep joy of a mug of some hot beverage, each sip warming you from the inside out, the fire in your belly a celebration of victory over the hostile environs."
+                ]
+            , Paragraph
+                [ Body "I like seeing the city dressed like me. All white and black and grey, muted but bold. My body, clad in black and white, mirrors the contrast within the city, the clean lines of snow mounded atop tables and benches and chairs mirroring the goal of my coats and shirts and boots. I see sharp corners on buildings, highlighted by the mounds of snow pooled around their bases, the red and brown texture of brick cutting over to vast expanses of white. I see my black parka, zipper texturing the transition between darkness and light. The bright white of my shirt peeking out from behind the zipper and scarf, making itself heard."
+                ]
+            , Paragraph
+                [ Body "And I like the smug superiority I feel over the people who can't face the minor hardship of a walk in the snow."
+                ]
+            ]
         ]
