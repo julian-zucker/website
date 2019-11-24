@@ -2048,6 +2048,30 @@ essays =
                 , Body ". Nonetheless, she is worried about her boyfriend making out with someone at a bar. I think I broke her."
                 ]
             ]
+        , Model
+            "Passive and Active Media Consumption"
+            "passive-active-consumption"
+            Listed
+            [ Paragraph
+                [ Body "People binge-watch Netflix shows, but don't binge-read books. When I was in middle school, I read religiously "
+                , Footnote "I read lots of sci-fi and atheist nonfiction, so it's perhaps more accurate to say that I read anti-religiously."
+                , Body ". Even then, when I went through two or three books a week, I wouldn't say I binge-read. When I watched TV back then, though, I would sit and watch until I physically had to move - I had to use the bathroom, or I was hungry, or thirsty."
+                ]
+            , Paragraph
+                [ Body "Active media consumption requires constant effort to continue the consumption. Books are like this - if you look away for a moment and look back, nothing has happened, because you haven't read. When you finish a page, you have to physically flip it. This contrasts with passive media consumption, like watching TV. In TV, absolutely nothing is required from you, the show will keep playing if you look away, and it requires more effort to stop than to keep watching. Imagine if you had to push a button on a controller once per minute, to keep watching a TV show, the equivalent of having to flip a page. It would probably make you watch less TV."
+                ]
+            , Paragraph
+                [ Body "Every person I know wishes they watched less TV and read more "
+                , Footnote "Except for some film majors, who wish they watched less shitty TV and watched more good movies."
+                , Body ". But we don't. It is difficult to pick up a book, to find somewhere to read, to sit down for an hour. Reading requires silence, or at least a lack of interruption. It's no fun to be interrupted every three pages by someone talking to you, because you have to hold more context in your head. Watching TV, however, particularly TV shows, missing a few minutes won't be the end of the world. My siblings, when watching Netflix, will run to the backroom and back during the show intro, sometimes missing some of the beginning of the show. Recall that Netflix allows you to skip the intro, and that you can pause it afterwards. Why aren't they skipping the intro, pausing it, and coming back later? No one wants to walk into the bathroom with a deadline. But what they want even less is to turn their passive media into active media, to be required to find the remote and press a button."
+                ]
+            , Paragraph
+                [ Body "And active media consumption lends itself more easily to distraction. People who are addicted to phone use can set their phones aside while gripped in the moment of a movie, because any glance away from the screen displaying the movie to the screen of their phone would mean missing a potentially critical moment. But when reading, glancing away and checking your phone doesn't interrupt anything, and so people who are in the habit of checking their phone often can continue that habit while reading a book. This makes them read slower, and enjoy reading less. This in turn leads those people to spend more time checking their phones or otherwise distracted. A vicious cycle."
+                ]
+            , Paragraph
+                [ Body "Active media consumption requires you to opt back in constantly; the default is not consuming. Passive media consumption doesn't require anything; the default is consuming, and you have to actively opt out to make it stop. "
+                ]
+            ]
         ]
 
 
