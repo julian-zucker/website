@@ -1949,6 +1949,35 @@ essays =
                 [ Body "If I were running a business, I would keep track of pageviews and conversions and all that. But here, I just want to write, and have people read it. I don't need to know how many."
                 ]
             ]
+        , Model
+            "Office Moments"
+            "office-moments"
+            Listed
+            [ Paragraph
+                [ Body "Walking down a hallway, passing someone else, you feel forced to smile, they feel forced to smile. You see the void in their eyes, and can only imagine they see the void in yours. The smiles, the grimaces, linger on your face only until just after you pass each other, and then both faces fall slack. "
+                ]
+            , Paragraph
+                [ Body "Walking by a conference room, you see someone sitting alone. You make eye contact. As she turns her head back to her laptop, you initiate the mandatory smile, she sees it too late to turn her head back, and so she just smiles at her laptop. And then stops smiling, once she realizes that the smile isn't being directed at anyone. But your smile, at the sight of her sitting alone in a conference room, is heartfelt. "
+                ]
+            , Paragraph
+                [ Body "Walking down a hallway, someone else coming the other way, you nod your head, but they aren't looking, so you nod again when they are looking, or you thought they would see this one but they didn't, so you nod again. Off to the side of the hallway, someone sees it all, and nods at you. Finally, acknowledgement."
+                ]
+            , Paragraph
+                [ Body "You try to scan something. It scans blank. You flip the paper over in the scanner, and try again. Blank one more time. You flip it back to the original layout, and the scan isn't blank, but it is upside down. You flip the paper, and it scans upside down again. Guess what happens when you flip it back to the original layout. Also, one of your coworkers has been silently watching you bungle since attempt two, and audibly laughing since attempt four. The paperwork scans. You go to send it, and you see an email telling you that there is a new form that has to be filled out, and the old one doesn't matter anymore."
+                ]
+            , Paragraph
+                [ Body "You go to a lunch and learn about \"apis\". You know what an API is, but you want to learn more. The lunch and learn is actually about \"apis mellifica\", the latin name for the common honey bee."
+                ]
+            , Paragraph
+                [ Body "Your teammates drink with you at lunch. Back at the office, you settle in for a few more hours of work. You are pairing with someone who drank more than you. They are completely competent. You fall out of your chair."
+                ]
+            , Paragraph
+                [ Body "You print a paper. You try to staple your paper, but there are no staples in any of the staples. One of your coworkers laughs about printing reminding him of the '90s. You find the staples. A week later, you print another paper, and the same coworker makes the same joke. You try to staple your paper, but there are no staplers, although there are boxes upon boxes of staples."
+                ]
+            , Paragraph
+                [ Body "You play a game of ping pong, with your team. You play another game of ping pong, with other people. You play a third game of ping ping, with your team again. Someone asks if you ever work. You ask them if they want to play ping pong. They say yes."
+                ]
+            ]
         ]
 
 
