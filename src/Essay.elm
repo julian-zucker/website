@@ -227,7 +227,7 @@ essays =
             Listed
             [ Plain """Solving HackerRank-style programming challenges will not make you a better software developer. Day-to-day software engineering almost never requires implementation of algorithms, and when it does, it is important that your implementations are maintainable. Practicing how to write one-off algorithms then will not help you practice software engineering. It may give you skills that will be helpful in software engineering – learning the full API of the standard libraries of languages, practicing writing some types of code fast, and general debugging. But it won't help you as much as deliberate practice for software engineering."""
             , Plain """What would a programming challenge intended to be delibrate practice look like? I don't know exactly, and to figure it out we first have to define software engineering, so that we can see what it means to get better at it. Let's say software engineering is writing maintainable, correct code. If someone writes more maintainable code than they used to, we would say they're a better software engineer, and the same for writing code that is closer to correct. HackerRank-style challenges will help with correctness, as your code does have to pass a suite of unit tests. But it doesn't help you with _ensuring_ that your code is closer to correct, because you aren't writing your own unit tests. If you have someone else's test harness to lean on, you aren't practicing the skill of testing, which means a programming challenge where you have to write your own tests would be superior. HackerRank-style challenges also don't reward maintainability, in fact, by only judging competitors on speed to solve the problem, writing code that is maintainable will hurt your performance."""
-            , Plain """How can we test programmer's on their ability to test? One way of doing this is asking programmers to write unit tests for a problem without writing code, and then seeing if their tests pass with correct implementations and fail on incorrect implementations. This has some issues, most notably that typos in the unit tests would have a huge effect on outcomes, and that the iterative write-test/write-code/debug cycle is the skill we really care about, not writing the tests correctly on the first try. Perhaps it would be better to get developers to write code and tests, or just make the code complex enough that automated unit tests are useful."""
+            , Plain """How can we test programmers on their ability to test? One way of doing this is asking programmers to write unit tests for a problem without writing code, and then seeing if their tests pass with correct implementations and fail on incorrect implementations. This has some issues, most notably that typos in the unit tests would have a huge effect on outcomes, and that the iterative write-test/write-code/debug cycle is the skill we really care about, not writing the tests correctly on the first try. Perhaps it would be better to get developers to write code and tests, or just make the code complex enough that automated unit tests are useful."""
             , Plain """We can test maintainability of programs by having programmers maintain the programs they write for the coding challenge. We can't simulate the experience of opening up a file you haven't touched in a year and having no clue what's happening in it unless we are willing to wait a year. But waiting a year gets rid of the tight feedback loops that you need for deliberate practice. So, we will have people maintain their programs immediately. First, give your programmers a small task, have them implement it, and run their code past your unit tests. Score their solution on correctness on the first challenge, and then have them update the code, adding some features and changing some functionality. Repeat a few more times. Now, you can see how quickly a programmer was able to write and modify their code to meet changing requirements, as well as the functionality along each step of the way."""
             , Plain """If you're using this tool for deliberate practice, you would be able to see which of your decisions lead to maintainable code and which were difficult to update. This would allow you to practice writing maintainable code, something which current programming challenges don't allow. I appreciate that Object-Oriented Design at Northeastern does something similar. For the final two months of the class, you iteratively design a model, view, and controller for an animation that users can dynamically interact with. They manually grade test coverage for each assignment, but without tests, I doubt people would be able to make the third or fourth set of changes without regressions on the first set of requirements. """
             , Plain """Modifying code, not writing code, is most of software engineering, so our classes, challenges, and practice tools should focus on modifying code."""
@@ -1976,6 +1976,76 @@ essays =
                 ]
             , Paragraph
                 [ Body "You play a game of ping pong, with your team. You play another game of ping pong, with other people. You play a third game of ping ping, with your team again. Someone asks if you ever work. You ask them if they want to play ping pong. They say yes."
+                ]
+            ]
+        , Model
+            "She Didn't Let Me Fuck Other Girls, So I Broke Up With Her"
+            "sorry"
+            NotListed
+            [ Paragraph
+                [ Body "My first college girlfriend was my first serious excursion into polyamory. The summer before college, I was seeing two girls at the same time "
+                , Footnote "They were co-directing a musical, a fact I only learned when I went to the musical to support one of them and then saw them both at the afterparty. I ran away. They both knew I was seeing the other person, but it was very strange to interact with them both at the same time."
+                , Body ", but the inherent brevity of any summer-after-high-school relationship meant that everyone knew this was just temporary, and we were all fine with open relationships."
+                ]
+            , Paragraph
+                [ Body "I met this girl before the first day of classes. There was free ice cream somewhere, and I was standing in line with a friend. Two cute girls "
+                , Footnote "Maybe more accurately, one hot girl and one cute girl. "
+                , Body " cut us in line, and so I started hassling them about it. We banter back and forth, exchange phone numbers "
+                , Footnote "The beginning of freshman year is the time when people are the most unflinchingly social."
+                , Body "."
+                ]
+            , Paragraph
+                [ Body "I'm going to skip over most of my freshman self's attempts at flirting, because they were real bad. But the important bit is, I ended up dating this girl "
+                , Footnote "The one I described as hot, earlier, not the cute one. (This is me bragging.)"
+                , Body ". She struggled to make friends, so she joined a sorority "
+                , Footnote "A common story, and one that makes you wonder how fraternities and sororities are so socially successful, when most of their members are people who couldn't make friends naturally."
+                , Body ". This was a problem for our relationship, because I find group membership quite unnerving  "
+                , Footnote "I was raised as an atheist, and I generalized my distaste for American Christianity to all social groups."
+                , Body ". Whenever she would tell me about the cultish things that sororities do "
+                , Footnote "They have rituals where they wear all white and recite chants and sing songs together, illuminated only by candlelight. You can't deny that this is at least a little cultish."
+                , Body ", I would point out that those things were cultish, and this would cause a minor tiff. Generally, this tiff would last until we had sex, which probably reveals a lot of other things that should be unpacked, but I'm going to leave all that aside."
+                ]
+            , Paragraph
+                [ Body "She and I were in an open relationship. This was clear from day one "
+                , Footnote "Okay, day four. I got around to defining the relationship eventually, but on days one through three I was mostly just happy that someone wanted to make out with me."
+                , Body " of our relationship. We had a good time together, but it was clear that I was getting more play than she was "
+                , Footnote "When I'm drunk, I make out with the nearest attractive person who's willing to make out with me. So I'm going to have to give up either monogamy or drinking. If you know me, it's not difficult to guess which I'm planning to keep."
+                , Body ". In fact, she didn't want me to sleep around. She first told me that we could keep doing what we were doing if and only if "
+                , Footnote "She didn't say if and only if. She was pretty bad at formal logic, actually, I ended up helping her with her homework for \"Principles of Argumentation\", a class which somehow managed to satisfy her math requirement. She was a Communications major."
+                , Body " I didn't have sex with anyone else. Everything else was fair game, but sex was reserved with her. I agreed to this, and we continued on with our lives."
+                ]
+            , Paragraph
+                [ Body "Most of my closest friends at the time were female, which didn't help her latent jealousy at all. One day, cuddling in her twin-sized freshman dorm bed "
+                , Footnote "I swear, colleges give twin-sized beds to students to try to prevent them from having sex. It doesn't work, but sometimes sheets slide off the slick plastic mattresses and you get rugburn. This disincentives sex slightly, but not enough to stop teenagers from fucking."
+                , Body ", she mentions this, and her worries. I probably responded with something glib, and she tells me that she wants to have lunch with me at least four times a week."
+                ]
+            , Paragraph
+                [ Body "This is insane. Maybe slightly less insane than it sounds at first, because we're both first-years, so we eat in the dining halls anyway. If we both worked, if we would have to go out and meet up at some restaurant and pay for a lunch, this would be completely insane. But because I was eating lunch in a dining hall anyway, eating with her was no big problem. The real problem was that she was imposing quotas on me. One week, I met with a group to work on a project on Monday and Tuesday, submitted it on Tuesday night. Friday, drunk in her room, she tells me that she's unhappy that we only got lunch three times that week."
+                ]
+            , Paragraph
+                [ Body "That could have been the end of the relationship, but the sex was really good. "
+                ]
+            , Paragraph
+                [ Body "A few months later, I'm at a party with my friends. She calls me, and I ignore the first call. I felt like I had been neglecting my friends for people I was having sex with, and wanted to spend a night with them. Also, a loud frat basement is a bad place to take a call. So I let it ring. She calls again. I let it ring. She calls a third time. At this point, I am worried "
+                , Footnote "Although more worried about \"us\" than about her."
+                , Body ", so I pick up. She's having a panic attack, feels sick, etcetera. I leave to go help her. She is freaking out until the moment that I show up. This is when I realize the real issue. She was worried that I was hooking up with someone at this party. We chat for an hour or so, and then fall asleep."
+                ]
+            , Paragraph
+                [ Body "The next weekend finds us at a frat party together, with my friends. She says something that sets me off, although I don't remember what. I pull her upstairs, holding her hand, dragging her behind me. A man loitering on the staircase, shirt mostly unbuttoned, calls out after us \"Oh, y'all getting down, huh?\". No. We go up to a bedroom with two beds, and sit on opposite beds, staring at each other "
+                , Footnote "Please ponder this for a moment: this frat had a bedroom with unused beds open to the general public. What were they trying to encourage, you think?"
+                , Body ". At my urging, we crawl out the window, and sit on the roof. We talk. And we talk. And at the end of this talking, we have broken up."
+                ]
+            , Paragraph
+                [ Body "A few months later, the summer after freshman year, most of my friends head home, but I found an "
+                , Link { text = "internship in Boston", href = "./gunshots" }
+                , Body ", so I stick around. This particular ex lives near Boston, though, so we hang out quite often. We remind each other of our last year at Northeastern "
+                , Footnote "I guess, the good parts, the parts other than us breaking up."
+                , Body ". One day, we're sitting in her back lawn, passing a wine bottle back and forth, and talking about our plans for our futures. She is snapchatting with her new boyfriend, and at one point, he doesn't respond for thirty minutes. She starts telling me how she is worried that he's hooking up with someone at the bar he is at, because normally he's very responsive."
+                ]
+            , Paragraph
+                [ Body "My ex is, at this point, sitting alone with me, drinking. She is drinking with her ex, alone but for the two of us. This would cause some worrying in her boyfriend, I imagine "
+                , Footnote "Leaving aside the fact that we exchanged massages earlier that day. It was her idea."
+                , Body ". Nonetheless, she is worried about her boyfriend making out with someone at a bar. I think I broke her."
                 ]
             ]
         ]
