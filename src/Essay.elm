@@ -2072,6 +2072,28 @@ essays =
                 [ Body "Active media consumption requires you to opt back in constantly; the default is not consuming. Passive media consumption doesn't require anything; the default is consuming, and you have to actively opt out to make it stop. "
                 ]
             ]
+        , Model
+            "Mandatory Class Attendance"
+            "mandatory-class-attendance"
+            Listed
+            [ Paragraph
+                [ Body "Grading students on attendance is a sign of bad incentive structures. Certainly, you don't actually care about students showing up for the sake of them showing up. You must believe that them showing up will be good for them.  So, ideally, you could just measure those other things."
+                , Footnote ""
+                , Body ""
+                ]
+            , Paragraph
+                [ Body "If you think that your lectures do a great job of explaining concepts, test your students on knowledge of those concepts. If you think your lectures do a good job of explaining certain skills or how to solve certain problems, test your students on their ability to demonstrate those skills or solve those problems. If your lectures are actually useful in imparting skills or knowledge, then your tests will reflect attendance grades."
+                ]
+            , Paragraph
+                [ Body "If your lectures are useless, though, students will stop attending. If students aren't attending your lecture, it is because they don't see the value in these lectures. By imposing lower grades on students that don't show up, you will of course raise attendance. But attendance of lectures isn't the real end goal, it's a proxy for having students be excited about your lectures because the lectures teach students well. Attendance is a good signal, and you can use it as a proxy for the utility of your lectures, but it is not the true end goal."
+                ]
+            , Paragraph
+                [ Body "Participation grades are slightly different. Participation grades reward showing up and talking, so they have value if a goal of your class is to teach students how to discuss the concepts introduced in the class. But if the end goal really is a deep understanding of the material, and the discussions just exist to help facilitate that, don't reward participation in discussions for its own sake. You will reward it indirectly, if your tests work right, because students who participate in discussions will have better understanding and therefore get better grades. So, if participating in discussions really does help students understand, then, generally speaking, students will participate for self-interested reasons "
+                , Footnote "Some people are shy, and don't participate in classes often for that reason. Participation grades may draw out their participation, but presumably, they can understand the material on their own. If they can, that's great, if not, they will be encouraged to participate in discussions because it will help them understand."
+                , Body ". "
+                ]
+            , Plain "If you have to add an artificial reward to encourage some action, it's a pretty good sign that that action is not naturally rewarding."
+            ]
         ]
 
 
@@ -2081,6 +2103,11 @@ essays =
 --    ""
 --    Listed
 --    [ Paragraph
+--        [ Body ""
+--        , Footnote""
+--        ,Body ""
+--        ]
+--    , Paragraph
 --        [ Body ""
 --        , Footnote""
 --        ,Body ""
