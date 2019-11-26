@@ -2094,6 +2094,51 @@ essays =
                 ]
             , Plain "If you have to add an artificial reward to encourage some action, it's a pretty good sign that that action is not naturally rewarding."
             ]
+        , Model
+            "Realistic Rationality"
+            "realistic-rationality"
+            NotListed
+            [ Paragraph
+                [ Body "I try to act rationally, that is, to act in ways that bring about the worlds I enjoy "
+                , Footnote "Although I don't try to believe rationally. I have many inconsistent personal beliefs that I will cling to until the day that I die."
+                , Body ". This is the \"self-interested\" type of rationality, the type of rationality that aims at maximizing the things you value. Trying to think rationally often prevents you from acting rationally."
+                ]
+            , Paragraph
+                [ Body "We humans have many built-in, irrational desires. There is no reason derivable from pure logic for you to enjoy the sight of nature, or the taste of food, or sex. Perhaps there are reasons derivable from models of evolutionary processes that show that these desires are inherent, and guaranteed in any evolutionary process. But that just means that all evolved creatures will have these traits. Some sentient being that was brought into existence by fiat would not be guaranteed to have them."
+                ]
+            , Paragraph
+                [ Body "But they are important to take into consideration when making decisions. Maybe it's irrational to care more about money today than tomorrow, to be willing to spend an hour working to earn some amount of money, but not be willing to spend an equal amount of time doing equally boring paperwork to get that same amount of money. If you want something, it is rational to pursue it, even if you can't formulate a logical reason to want whatever it is. It's not irrational to do what will make you happy. Your desires don't have to be grounded in logical reasoning."
+                ]
+            , Paragraph
+                [ Body "Our minds are physically embodied in our brains "
+                , Footnote "Or supervene on our brains, or whatever. There's been a lot of time spent thinking about this, and no definitive conclusions, but everyone agrees that the physical state of our brains affects the state of our minds."
+                , Body ". So, doing things that affect the physical embodiment of your brain can be rational. There's no logical reason that walking should improve the way you feel, but it does. There's no logical reason that caffeine makes you think more clearly, but it does. So doing those things can be rational, because of the way they impact your brain, due to accidents of evolution."
+                ]
+            ]
+        , Model
+            "(Physical) Vulnerability is Sexy"
+            "physical-vulnerability-is-sexy"
+            Listed
+            [ Paragraph
+                [ Body "Power posing makes people more confident and attractive. Why would that be? I'm going to wildly speculate."
+                ]
+            , Paragraph
+                [ Body "Power poses are expressions of physical vulnerability. Imagine someone sitting at a desk, legs kicked up, arm dangling over a chair. This is a power pose, to be sure, and also a very very bad position to start a fight in. If someone were to physically assault you, and you were sitting in that position, you would be in some trouble. Compare this to poses that express low confidence. For example, sitting quietly, head tilted down, arms folded in your lap. This pose is only a few small movements away from the Muay Thai fighting stance. Wallflowers have their backs to the wall, while people socializing in the middle of a party are quite physically vulnerable."
+                ]
+            , Paragraph
+                [ Body "So, power poses are expressinos of physical vulnerability. Why would that be attractive? My assumption is that, in the past, people who are physically vulnerable in public either died, or were so strong and well-respected as a fighter that people would leave them alone. It's like staking your life on the outcome of a game of chess, where you start without a queen. It makes people assume that you are much better at chess than everyone else around you. Power poses probably worked similarly."
+                ]
+            , Paragraph
+                [ Body "This may also be hugging and confidence are so correlated. People "
+                , Footnote "Particularly men. Men hate hugging."
+                , Body " who hug are exposing themselves to all kinds of violence, and while in modern America it is unlikely that hugging someone will result in your death, in the evolutionary context, it was probably much more likely. If you hug someone, you are putting your life in their hands, or at least giving them a major leg up "
+                , Footnote "Or arm around."
+                , Body "in any fight they start."
+                ]
+            , Paragraph
+                [ Body "Power poses are expressions of physical vulnerability, which means they signal strength and respectedness, which are attractive."
+                ]
+            ]
         ]
 
 
