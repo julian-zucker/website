@@ -2210,6 +2210,28 @@ essays =
                 [ Body "Anyway, that's why I think I wouldn't enjoy having sex with a prostitute. "
                 ]
             ]
+        , Model
+            "Steve Jobs Is An Underrated Fashion Icon"
+            "jobs-fashion"
+            Listed
+            [ Paragraph
+                [ Body "Steve Jobs "
+                , Footnote "Who must be rolling in his grave after some of Apple's recent design decisions."
+                , Body " dressed like shit. But nonetheless, he is an underrated fashion icon."
+                ]
+            , Paragraph
+                [ Body "Let me first substantiate my claim that he dressed like shit. He wore the same thing every day, and that thing was distinctive. If you're going to dress the same way every day, at least wear something nondescript. You can pull off a grey t-shirt and blue jeans for a week without causing a fuss, but wearing a turtleneck and dad sneakers is such a look that you really ought to only wear it once per month "
+                , Footnote "Really, you should never wear this outfit, but I think Steve had already decided it was doing to happen. I'll let him have it some of the time."
+                , Body ". Also: black turtleneck, blue jeans? No thanks. Black turtleneck with black jeans I can respect, or even a light-wash jean. But no, Steve Jobs wouldn't do something that had been done before, so he sullied the subtle formality of a black turtleneck with the rest of his outfit. It's like he spent all of his fashion innovation budget on his top, and then gave up on his bottom half. "
+                ]
+            , Paragraph
+                [ Body "If you wear a black turtleneck today "
+                , Footnote "In case it wasn't clear, I wear black turtlenecks sometimes. Really, mine is a dark grey, but it's close enough."
+                , Body ", everyone will call you Steve Jobs. It's funny the first time "
+                , Footnote "It's not actually funny the first time. The first time I hear it in a day I don't feel any compulsion to kill whoever is calling me Steve Jobs. So it's at least less murder-inducing the first time."
+                , Body ". But everyone has closely associated this particular clothing item with a person. No one else in the popular mind today has a clothing item to tightly tied to their personal brand. Steve Jobs doesn't just wear a black turtleneck, you can't think of the idea of a black turtleneck without thinking of him. And this is why he's an underrated fashion icon. "
+                ]
+            ]
         ]
 
 
