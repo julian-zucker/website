@@ -2183,6 +2183,33 @@ essays =
                 [ Body "But Elm made me realize I could do it. I unlearned my helplessness. I no longer recoil from the mere mention of web programming. I'm not good at it, not yet, but at least now I know that I could be. "
                 ]
             ]
+        , Model
+            "Capitalism and Servility"
+            "capitalism-servility"
+            Listed
+            [ Paragraph
+                [ Body "My office has lunch catered once a week "
+                , Footnote "And breakfast every day, but that's not relevant to this tory."
+                , Body ". Normally, the caterers bring in a bunch of precooked food, set up the serving trays and plates and such, hang out for an hour, and then leave. I feel totally comfortable with this."
+                ]
+            , Paragraph
+                [ Body "One day, everything about the lunch felt a bit off. The caterers normally wear normal clothing that happens to be all black, but today they were wearing blazers. That wasn't completely unorthodox, I would understand if their uniform changed "
+                , Footnote "Although the idea of uniforms does seem strange. The interface I have with caterers is entirely through the food. They set food out and I eat it. What they wear doesn't affect me at all."
+                , Body ". They were also slightly more obsequious, slightly more snappy to respond to trays of food being emptied and apologizing for the tray running empty. This was confusing, because the tray of food running out was not their fault, and in fact meant that the food looked appetizing. There was one truly unnerving aspect of that lunch. One of the caterers was constantly circling all the tables in the dining area, picking up and throwing away everyone's plate when they were done. Many things can be done to improve service, but throwing away your plate takes only a few seconds, and you have to walk by trash cans to leave the dining area anyway. Clearing our plates wasn't a helpful act, in that it didn't make our lives noticeably easier. It was a servile act, signaling that the caterer's time was worth less than ours. "
+                ]
+            , Paragraph
+                [ Body "This was, strictly speaking, true. The people eating the lunch were software engineers, who got paid a lot more per hour than the caterer's. I felt icky. It's one thing to have someone do work that helps you, and another thing to have someone do work where the main point is to make you feel valued. I like being self-sufficient, in many ways, and I don't like imposing on others for things that would be just as easy for me to do by myself. I value the janitorial staff, and wouldn't want to occasionally have to mop the floors of my office, but I can walk my own plate to a trash can when I'm done eating. As long as someone else empties the trash can later."
+                ]
+            , Paragraph
+                [ Body "Also, I wasn't done with the plate. I was planning on going back for seconds and reusing the plate. When the caterer took my plate, I actually protested about this. She told me to get a new one. Which is fine, of course, I can get a new disposable plate. But I was planning on using the other one! Sometimes, I form internal plans or understandings about the future, and having other people try to be helpful can disrupt that."
+                ]
+            , Paragraph
+                [ Body "I also feel icky when waiters at fancy restaurants put napkins on people's laps for them. I am here to eat good food. But other people must be there to feel elite, because if everyone felt the way I did, waiters wouldn't put napkins on people's laps for them."
+                ]
+            , Paragraph
+                [ Body "Anyway, that's why I think I wouldn't enjoy having sex with a prostitute. "
+                ]
+            ]
         ]
 
 
