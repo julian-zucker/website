@@ -2120,7 +2120,7 @@ essays =
             "physical-vulnerability-is-sexy"
             Listed
             [ Paragraph
-                [ Body "Power posing makes people more confident and attractive. Why would that be? I'm going to wildly speculate."
+                [ Body "Doing power poses makes people more confident and attractive. Why would that be? I'm going to wildly speculate."
                 ]
             , Paragraph
                 [ Body "Power poses are expressions of physical vulnerability. Imagine someone sitting at a desk, legs kicked up, arm dangling over a chair. This is a power pose, to be sure, and also a very very bad position to start a fight in. If someone were to physically assault you, and you were sitting in that position, you would be in some trouble. Compare this to poses that express low confidence. For example, sitting quietly, head tilted down, arms folded in your lap. This pose is only a few small movements away from the Muay Thai fighting stance. Wallflowers have their backs to the wall, while people socializing in the middle of a party are quite physically vulnerable."
@@ -2137,6 +2137,22 @@ essays =
                 ]
             , Paragraph
                 [ Body "Power poses are expressions of physical vulnerability, which means they signal strength and respectedness, which are attractive."
+                ]
+            ]
+        , Model
+            "Writer's Block"
+            "writers-block"
+            NotListed
+            [ Paragraph
+                [ Body "Writer's block isn't the inability to write. It is simple to write: you just string words along one after another. If you just want to hit a certain word count, it is quite simple. Just repeat yourself. Or, if you're feeling contrarian, repeat yourself. And if that doesn't work for you, repeat yourself."
+                ]
+            , Paragraph
+                [ Body "Writer's block is the inability to write something you are satisfied with. The aim isn't just to hit a particular word count "
+                , Footnote "I am writing this for NaNoWriMo, which ostensibly is about writing 50,000 words in November. But I want them to be good words. I want to write something interesting. So repeating myself, although it has contributed several words to this essay, must be limited to where it has dramatic effect."
+                , Body ". The aim is to write something you like. And that is quite difficult. It's easy to look at something you've written and know how much you like it. You can, theoretically, use this ability to produce good content by writing a lot and then throwing out everything that is bad. Write enough, and eventually you'll end up with something you think is good. But that's a recipe for carpal tunnel, not success."
+                ]
+            , Paragraph
+                [ Body "When writing something you plan to publish, as with public speaking, there is the fear of rejection. What if people don't like this? What if I am mocked for presenting this idea? Those are things to be afraid of, but generally the benefits of writing outweigh the costs."
                 ]
             ]
         ]
