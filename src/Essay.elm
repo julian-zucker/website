@@ -2155,6 +2155,34 @@ essays =
                 [ Body "When writing something you plan to publish, as with public speaking, there is the fear of rejection. What if people don't like this? What if I am mocked for presenting this idea? Those are things to be afraid of, but generally the benefits of writing outweigh the costs."
                 ]
             ]
+        , Model
+            "Elm"
+            "elm"
+            Listed
+            [ Paragraph
+                [ Body "I really like the Elm programming language. In fact, this whole website was written in Elm! And I want to talk about that experience (which was good), and the decision to use Elm for this website (which was probably bad)."
+                ]
+            , Paragraph
+                [ Body "Before writing this website, I felt very incompetent as a web developer. I thought it wasn't for me, that there was something about me that prevented me from doing web development. This was partially true and partially false. JavaScript isn't for me, as both imperative languages with a focus on mutability and GUI development are types of programming I am very bad at. But the web itself is fine "
+                , Footnote "This is not, strictly speaking, true. The web is a flaming pile of garbage, and it's amazing that any website works at all."
+                , Body ". I can create websites, and understand that type of programming, it's just not my favorite."
+                ]
+            , Paragraph
+                [ Body "Writing code in Elm, I only had to deal with one unknown, only the web nonsense. I didn't have to deal with web nonsense at the same time as a programming paradigm that doesn't mesh with the way that I think. I was still offroading, in a sense, but at least I wasn't having to learn how to drive stick while offroading for the first time "
+                , Footnote "I learned how to drive in a car with a stick shift. It was difficult enough in an empty parking lot."
+                , Body ". Elm is a simple language, minimal without losing much power. Based on Haskell, Elm is just a pure functional core and nothing else. Its compiler sympathizes with your errors, giving cute and helpful messages explaining where you went wrong. The language guide explains the foreign way of thinking required to program in Elm as if it is normal, and convinces you. Elm is empty of extraneity, and it is beautiful."
+                ]
+            , Paragraph
+                [ Body "The web is still my least favorite place to program. The web wasn't designed for programmer productivity, because it wasn't designed. It works well enough, most of the time, and the fact that you're reading this attests to that "
+                , Footnote "Although I've spent hours wrangling with GCP to make http work. As you're reading this, it's possible that its not over https. Making websites work is hard, please have sympathy."
+                , Body ". But I spend most of my time "
+                , Footnote "Most of my time that I spent programming at least, but it's possible that it's most of my time."
+                , Body "in languages that have been designed to make my life easy, for platforms that succeeded because they were easy to develop for. The contrast is stark."
+                ]
+            , Paragraph
+                [ Body "But Elm made me realize I could do it. I unlearned my helplessness. I no longer recoil from the mere mention of web programming. I'm not good at it, not yet, but at least now I know that I could be. "
+                ]
+            ]
         ]
 
 
