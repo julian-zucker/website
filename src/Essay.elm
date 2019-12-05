@@ -1773,8 +1773,6 @@ essays =
             , Plain "The portafilter is ready, so you swivel it into place in the machine, press a button, and now you wait. Hot water at high pressure forces its way through the grounds, and into your cup, promising a bitter black cure for bleariness. Perhaps you froth milk, for you are a latte-drinker, so you pour the milk into the pitcher, heat the steam nozzle, and then work precisely, exactingly, holding the pitcher at the right angle and the right depth to froth the milk without a mishap. Many mishaps are possible, in the making of coffee. Some merely deprive you of coffee, or require you to clean up and try again, some could be more explosively disastrous."
             , Plain "But all goes well, you've done this a thousand times, literally if you've been making coffee every day for three years, figuratively if you are new to the idea but still well-experience, falsely if you have just purchased this espresso maker. The milk is ready, and the espresso is ready, and you yourself are ready to combine the two, so you do. The kitchen smells of espresso and milk, and, the whole world forgotten, you take the first sip of your latte, the first truly relaxed moment of the day, the reward for your efforts."
             , Plain "It is okay. You've done better."
-
-            -- TODO add horizontal line here? Or a "* * *" thingy
             , Plain "They pour coffee grounds and water into a machine, push a button, and minutes later, a beep tells them their coffee is okay. They pour some milk in, take a sip. It is okay. But it is a very different okay than yours."
             ]
         , Model
@@ -2230,6 +2228,27 @@ essays =
                 , Body ", everyone will call you Steve Jobs. It's funny the first time "
                 , Footnote "It's not actually funny the first time. The first time I hear it in a day I don't feel any compulsion to kill whoever is calling me Steve Jobs. So it's at least less murder-inducing the first time."
                 , Body ". But everyone has closely associated this particular clothing item with a person. No one else in the popular mind today has a clothing item to tightly tied to their personal brand. Steve Jobs doesn't just wear a black turtleneck, you can't think of the idea of a black turtleneck without thinking of him. And this is why he's an underrated fashion icon. "
+                ]
+            ]
+        , Model
+            "Optimizing Life"
+            "optimizing-life"
+            Listed
+            [ Paragraph
+                [ Body "In How to Do Nothing, Jenny Odell says that life is \"more than an instrument and therefore something that cannot be optimized\" "
+                , Footnote "I haven’t read this book, so I’m arguing just against this quote, not against the book itself."
+                , Body "I disagree, at least partially."
+                ]
+            , Paragraph
+                [ Body "While life as a whole cannot be optimized, and trying to maximize your happiness is likely to make you less happy, there are things that can be optimized. For example, when doing some drudgery, if I can find a better way to complete the drudgery, my life will probably be the better for it. When I say drudgery, I mean uninteresting repetitive toil."
+                ]
+            , Paragraph
+                [ Body "But some things that appear to be drudgery are not. For example, I believe that walking is wonderful for the soul. While walking takes a lot of time, and biking or taking a bus or driving is faster, spending less time on an activity is not always a good thing. An extreme case is going to the gym: I spent lots of time there, but that time is not something to be optimized away. Although, if I could get an equivalent increase in both physical strength "
+                , Footnote "Or, being more honest about my motivations for going to the gym, attractiveness."
+                , Body "and mental clarity from spending less time in the gym, I might prefer that. It’s nice to spend less time doing things you don’t value intrinsically. Anything you do strictly for instrumental value you can optimize away safely, anything with side effects you cannot."
+                ]
+            , Paragraph
+                [ Body "There are some cases where spending less time doing something causes a problem in and of itself. For example, reading books. If I were to try to read faster, I would not get the chance to really see what I was reading, to ponder the taste of each sentence in the books I’m reading and pick up on the tasting notes I would otherwise miss. I like spending time noticing the little quirks of a sentence, and thinking about what making a sentence I really like so good, and imagining good ideas coming into the mind of the authors. So those things, I certainly can’t optimize. Reading faster means reading less closely, and so trying to improve my life by reading faster is counter-productive."
                 ]
             ]
         ]
