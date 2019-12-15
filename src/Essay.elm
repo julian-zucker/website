@@ -2251,6 +2251,69 @@ essays =
                 [ Body "There are some cases where spending less time doing something causes a problem in and of itself. For example, reading books. If I were to try to read faster, I would not get the chance to really see what I was reading, to ponder the taste of each sentence in the books I’m reading and pick up on the tasting notes I would otherwise miss. I like spending time noticing the little quirks of a sentence, and thinking about what making a sentence I really like so good, and imagining good ideas coming into the mind of the authors. So those things, I certainly can’t optimize. Reading faster means reading less closely, and so trying to improve my life by reading faster is counter-productive."
                 ]
             ]
+        , Model
+            "Injury, Suffering, etc."
+            "injury-suffering-etc"
+            Listed
+            [ Paragraph
+                [ Body "It was a commute like any other. I walked into my office, ogling the more attractive strangers"
+                , Footnote "Any girl wearing Chelsea boots gets my undivided attention for a few seconds."
+                , Body ". Walking across the Millenium bridge "
+                , Footnote "A bridge in Denver, colloquially known as the Millenial bridge."
+                , Body ", or rather, walking down the stairs on the park side of the bridge, I slipped and fell."
+                ]
+            , Paragraph
+                [ Body "I fall a lot "
+                , Footnote "I have a hoodie that says \"Good at Falling\". It's referencing an album by the Japanese House, but it seems more personal than that."
+                , Body ". But this fall was particularly bad. I fell backwards "
+                , Footnote "Thank god, as much as I believe in one. Falling forwards down the stairs would have been much worse."
+                , Body ", landing on my backpack. As I fell, I reflexively threw my hand out. Unfortunately "
+                , Footnote "For me, although I suppose fortunately for some cyclists."
+                , Body ", this bridge happened to have a ramp to push bikes on. This ramp was essentially several 2-by-4's resting on the stairs. This meant that there were some nice, triangle-shaped pinch points on the bridge. As I threw my hand out, breaking my fall, I also start sliding down the stairs. Then, I stop moving, and looking to my side, I notice my finger caught in one of these triangles. I pull my finger out, and look at it for a little while: I see bone. I pull out my phone  "
+                , Footnote "With my left hand, because my right hand is somewhat busy bleeding."
+                , Body ", and I dial 911 "
+                , Footnote "In hindsight, I didn't need immediate medical assistance. But when you see your own bones, it's reasonable to call an ambulance."
+                , Body ". I wait outside my office, holding paper towels on the wound, and bleeding through the paper towels. I say hi to at least a few of my coworkers, as they walk in. Being severely injured is a good way to gauge your friendships with people: some of my coworkers ignored me standing in front of the building, some commiserated, and some offered to drive me to a hospital."
+                ]
+            , Paragraph
+                [ Body "Eventually the paramedics show up "
+                , Footnote "These motherfuckers took thirty minutes to show up. I was fine with waiting, while I was still hopped up on adrenaline. But ten minutes in, when the adrenaline wore off and the pain started to kick in, I started to question the notion of ambulances that take a half-hour to arrive."
+                , Body ". They clean the wound, wrap some gauze around my finger, and tell me that I'll need to get stitches. I hop in an Lyft to an urgent care center."
+                ]
+            , Paragraph
+                [ Body "I wait in the urgent care lobby for about five minutes, and then I'm called in. My urgent care doctor was a pro: without making a big deal out of it, he stuck out his left hand, and we shook left hands. I tried to comment on this, but he was busy poking and prodding at my hand."
+                ]
+            , Paragraph
+                [ Body "He sent me in for an X-ray, and then we looked at the X-rays together. I had a fractured bone. Back in the room, he poked at my finger, and told me he couldn't see my tendon. This was a problem."
+                ]
+            , Paragraph
+                [ Body "He tells me there are two options: either one of the hand surgeons he just texted calls him back, or -- and then he's cut off by his phone ringing. He picks up: \"Hi!... How are your kids? How's Anna?... That's good to hear. You free two weekends from now? Want to golf? "
+                , Footnote "I am somewhat disturbed by this exchange. It's weird to think of doctors as real humans, as opposed to just machines that perform surgeries. In the same way that becoming a software engineer gave me a deep-seated mistrust of all software, realizing that doctors are real humans made me much more afraid of all medical procedures."
+                , Body "... Alright, I'll pencil you in. Anyway, you working today? I have a patient who really ought to see you.\" This phone conversation resulted in me getting to a surgeon the same day, but was still somewhat unsettling."
+                ]
+            , Paragraph
+                [ Body "Anyway, I get surgery or whatever. I have spent too much time talking about the injury, and not enough on what was supposed to be the big takeaway."
+                ]
+            , Paragraph
+                [ Body "I get home from the surgery on Friday night. You're not supposed to drink after surgery "
+                , Footnote "Not that this stopped me, on future nights, but day-of, I gave up alcohol."
+                , Body ", so I cancelled my plans for the night, stayed in, and mused. I wanted to figure out how I felt about this injury."
+                ]
+            , Paragraph
+                [ Body "I realized this: I had two choices. I could either complain about the injury, the negligence embodied in Denver's anti-snow efforts "
+                , Footnote "I'm suing the city, but I'm not mad about it."
+                , Body ", or I could be thankful that I didn't suffer any permanent injury, or break any bones "
+                , Footnote "I fractured a bone, but compared to the severed tendon, it's no big deal."
+                , Body ". I chose the latter. Fix your frame of reference to the sentence \"I slipped on ice at the top of a staircase.\", and you'll realize I got a pretty good deal. I'm not happy about being injured, and all things considered I would rather have ten working fingers. But given that I fell at the top of a staircase, going down to 90% of my fingers working for a few months is a small price to pay. Things turned out alright."
+                ]
+            , Paragraph
+                [ Body "More generally, once the injury happened, I had two choices: be happy about it, or be unhappy about it "
+                , Footnote "Maybe there was a spectrum of choices, between the two. Regardless, I had to pick where on the happy-unhappy scale I lay."
+                , Body ". Given that I was already injured, being unhappy wouldn't help. I wish I could say that I rationally decided that being happy "
+                , Footnote "A nurse called me \"glib\"."
+                , Body " about it would be better than being unhappy about it. That's not the case, I'm just riding a wave of positive emotional inertia, so having a minor, non-life-alterting injury is something I can shrug off. But given the opportunity, I'd pick glibness over suffering. I'd rather be unjustifiably happy than unjustifiably sad. And any sadness that won't help you live a better life in the future is unjustifiable."
+                ]
+            ]
         ]
 
 
