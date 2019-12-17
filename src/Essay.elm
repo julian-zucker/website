@@ -2256,7 +2256,9 @@ essays =
             "injury-suffering-etc"
             Listed
             [ Paragraph
-                [ Body "It was a commute like any other. I walked into my office, ogling the more attractive strangers"
+                [ Body "It was a commute like any other"
+                , Footnote "Of course, anyone writing that something is \"like any other\" is surely about to tell you how this was is unlike the others."
+                , Body ". I walked into my office, ogling the more attractive strangers"
                 , Footnote "Any girl wearing Chelsea boots gets my undivided attention for a few seconds."
                 , Body ". Walking across the Millenium bridge "
                 , Footnote "A bridge in Denver, colloquially known as the Millenial bridge."
@@ -2312,6 +2314,38 @@ essays =
                 , Body ". Given that I was already injured, being unhappy wouldn't help. I wish I could say that I rationally decided that being happy "
                 , Footnote "A nurse called me \"glib\"."
                 , Body " about it would be better than being unhappy about it. That's not the case, I'm just riding a wave of positive emotional inertia, so having a minor, non-life-alterting injury is something I can shrug off. But given the opportunity, I'd pick glibness over suffering. I'd rather be unjustifiably happy than unjustifiably sad. And any sadness that won't help you live a better life in the future is unjustifiable."
+                ]
+            ]
+        , Model
+            "Hellscapes"
+            "hellscapes"
+            Listed
+            [ Paragraph
+                [ Body "What does a hellscape look like to me? Well that's easy to answer. Imagine this: a row of cars, all different, and a row of their owners, all the same. Behind them, another row, behind them, yet another. On and on, forever, people buying these metal boxes to try and be different, and they're all failing."
+                ]
+            , Paragraph
+                [ Body "Oh, a hellscape? Sure, I can answer that. Looking out into the distance, rolling mountains, the distance between them visible in gradations of greyness as they fade into infinity, the layered clouds rolling down to meet them, white on white on white, a thin blue line of the sky the only thing making one clearly distinct from another. But you can't see any of it, because someone built a goddamn highrise."
+                ]
+            , Paragraph
+                [ Body "Maniacal laughter. I see you're writing this down, so I want to be clear, for the record: I said the words maniacal laughter, I didn't laugh maniacally."
+                ]
+            , Paragraph
+                [ Body "Uh, what's a hellscape?"
+                ]
+            , Paragraph
+                [ Body "Imagine, okay, imagine with me for a second. Have you ever been in a call center? Okay, right, so, it's underground, right, like, no windows, just desk after desk after desk. People are on headsets, and this isn't just any call center, but it is a scam call center, and all the employees know, but they can't leave. What do you mean why not? They can't leave because they'd get fired, their families would go hungry. They can't leave. They have to keep scamming. Oh, uh, to answer your question, a hellscape is the looks in their eyes."
+                ]
+            , Paragraph
+                [ Body "A hellscape is the Trump administration. I don't think that requires any elaboration."
+                ]
+            , Paragraph
+                [ Body "A hellscape would be a Hillary administration. I don't think that requires any elaboration."
+                ]
+            , Paragraph
+                [ Body "Imagine World War I. The hellscape is the battlefield, the trenches, or at least that's what people think. That's the physical hellscape. But the emotional hellscape, the mental hellscape, that's sitting in a throne or whatever the fuck presidents sit in, and deciding that ten thousand more people will die. Maybe. Depends, which is worse: killing someone, or signing a piece of paper that will kill thousands? One is worse for the world, but that doesn't matter for hellscapery: what matters is which is worse for you."
+                ]
+            , Paragraph
+                [ Body "A hellscape? That's easy. According to the OED, a \"hellscape\" is \"an extremely unpleasant place or scene\". Can I go now?"
                 ]
             ]
         ]
