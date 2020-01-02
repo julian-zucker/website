@@ -2362,6 +2362,29 @@ essays =
                 [ Body "Perhaps it's not a signaling game. Maybe, instead, it's a way for people to justify buying nicer things. If it is typically best for you to economize, but optimal to also occasionally buy a luxury, having a nice indicator of when to buy nice things or not can help. It's similar to the concept of a Schelling point in game theory: here we want to pick \"economize\" usually, and \"luxuriate\" occasionally, and having one particular day that we decide to pick \"luxuriate\" helps us strike that balance. And maybe we ended up exchanging nice gifts because buying them for yourself feels wrong, like you're being excessively bougie, while buying nice things for other people feels like a kindness. This might also help explain why we don't give cash as a gift. If the point is to absolve yourself of the guilt of buying things that are slightly nicer than usual, you have to be given the item by someone else. Money is infinitely fungible, so when people give you money, you can't really justify luxuriating in it."
                 ]
             ]
+        , Model
+            "The Gift No One Has Given Me"
+            "gift-no-one-has-given"
+            Listed
+            [ Paragraph
+                [ Body "When people ask me what I want as a gift "
+                , Footnote "Generally, a bad question to ask, as part of the point of giving gifts is proving that you have a good mental model of what the gift's recipient wants."
+                , Body ", I always say the same thing: Buy a book, read it, annotate it, and then give it to me. I have yet to have anyone take me up on this offer."
+                ]
+            , Paragraph
+                [ Body "It is a bit strange, perhaps, to ask for a gift that intrinsically requires labor on the part of the gift-giver. Most gifts require some amount of effort; even if you're just clicking \"Order\" on Amazon, you have to decide what it is that you are going to buy, get the package, and wrap it. But that effort is all non-intrinsic, not part of the gift itself. With the annotated book, the gift is itself labor-intensive. And maybe that's a good thing! A book costs ~$20, but an annotated book from my friend I would value at much more than $20. This means that my friends can produce new value in the world by reading, and that getting me gifts is relatively cheap."
+                ]
+            , Paragraph
+                [ Body "An annotated book is a wonderful thing, because it captures some of your consciousness as you read. It's very similar to reading or discussing a book with someone, because you get insight into their thought process and their responses to parts of the book. It captures a person at a point in time. For example, the best way for me to see what I was like in high school is to re-read my twice-annotated copy of Cat's Cradle, and see what my younger self wrote in it "
+                , Footnote "Mostly drivel. He didn't have a great grasp on literature."
+                , Body "."
+                ]
+            , Paragraph
+                [ Body "And, giving someone a book you've read as a gift means you have one more thing to talk about. Possibly, if the book is really good, you can start trusting each other's taste in books a bit more. "
+                , Footnote "Mostly drivel. He didn't have a great grasp on literature."
+                , Body "."
+                ]
+            ]
         ]
 
 
