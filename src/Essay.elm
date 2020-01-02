@@ -2348,6 +2348,20 @@ essays =
                 [ Body "A hellscape? That's easy. According to the OED, a \"hellscape\" is \"an extremely unpleasant place or scene\". Can I go now?"
                 ]
             ]
+        , Model
+            "The Semiotics of Gift-Giving"
+            "gift-giving"
+            Listed
+            [ Paragraph
+                [ Body "Why do we give gifts? In our currency-mediated world, where anyone can convert money into physical objects very easily, cash should be king, but giving cash as a gift is seen as uncouth."
+                ]
+            , Paragraph
+                [ Body "Perhaps it is a signaling game. Giving someone a gift signals that you care about them. Less so during the holiday season, when giving gifts is basically mandatory, but it is always a costly signal of affection. If you give someone a good gift, you are demonstrating that your internal model of who they are is very accurate. If you are devoting lots of brain space to modeling someone and remembering the things they like, you are more likely to be empathetic to that person. So, giving good gifts is a way of signaling that you will be empathetic."
+                ]
+            , Paragraph
+                [ Body "Perhaps it's not a signaling game. Maybe, instead, it's a way for people to justify buying nicer things. If it is typically best for you to economize, but optimal to also occasionally buy a luxury, having a nice indicator of when to buy nice things or not can help. It's similar to the concept of a Schelling point in game theory: here we want to pick \"economize\" usually, and \"luxuriate\" occasionally, and having one particular day that we decide to pick \"luxuriate\" helps us strike that balance. And maybe we ended up exchanging nice gifts because buying them for yourself feels wrong, like you're being excessively bougie, while buying nice things for other people feels like a kindness. This might also help explain why we don't give cash as a gift. If the point is to absolve yourself of the guilt of buying things that are slightly nicer than usual, you have to be given the item by someone else. Money is infinitely fungible, so when people give you money, you can't really justify luxuriating in it."
+                ]
+            ]
         ]
 
 
