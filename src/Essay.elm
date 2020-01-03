@@ -1536,7 +1536,7 @@ essays =
             , Paragraph
                 [ Body "But can you call drinking and writing similarly wasteful? For me, drinking lets the words flow more easily, removes my inner censor, and dulls my hyperactive consciousness so that I don't tab out to a distraction after five minutes of writing. I think drinking might be a performance enhancing drug for writing. If so, if drinking allows me to write more than I would otherwise, it may be helping me do more interesting things with my life. This nullifies one of the principal arguments against drinking alone. It may or may not improve the writing I do produce "
                 , Footnote "I am certain that most things I write while drunk are full of misspellings and sentences that violate basic rules of grammar, but I'm going to call that a \"conversational style\", instead of trying to defend it."
-                , Body ", but it lets me spend more time writing. It has some value."
+                , Body ", but it lets me spend more time writing. It has some value. I would rather drink, and write, than be sober, and fail to write."
                 ]
             ]
         , Model
@@ -2422,6 +2422,39 @@ essays =
                 ]
             , Paragraph
                 [ Body "Eggs aren't my favorite food, but they are the food I eat most consistently."
+                ]
+            ]
+        , Model
+            "Commuting In Denver"
+            "commuting-denver"
+            Listed
+            [ Paragraph
+                [ Body "Commuting can be a great way to get a feel for a city. In Boston, I took the T, an hour each way "
+                , Footnote "A terrible idea. I limit myself now to very very short commutes."
+                , Body ", and I got to see, although not meet, a large slice of the city's population, that I wouldn't have met any other way. And in Denver, my commute also taught me a lot about the people of Denver."
+                ]
+            , Paragraph
+                [ Body "Let me tell you the story of one woman who I saw while walking into my office. She was walking her dog, which is a pretty normal activity. But what made me look more closely was her outfit and posture: she was wearing those giant, tinted-gradient sunglasses, two-and-a-half inch squares blocking out the sun; and a fluffy vest, you know, the real fluffy ones that look super soft "
+                , Footnote "Note that this sentence has both a colon and a semi-colon, putting it at 1.5 total colons."
+                , Body ". Her pelvis was thrusted forward, her legs seeming to pull her body around, her torso lagging a bit behind. Her dog (remember now that she was walking a dog) was on a leash, but she wasn't holding the leash –\u{00A0}it was clipped to her belt. It was clipped to her belt because both of her hands were busy. In her left hand, a thermos, probably coffee or tea. Reasonable. In her right hand, a White Claw. Given that it was 8:35 on a Tuesday, I'm going to go ahead and say: unreasonable."
+                ]
+            , Paragraph
+                [ Body "And there were the two guys I saw. One man was wearing a navy suit, brown shoes, looking sleek and clean and honestly pretty hot. Then, there was the other guy. He was wearing a tank top, really a wife-beater "
+                , Footnote "What a terrible name for a piece of clothing."
+                , Body ", and khaki cargo shorts. He looked a bit scruffy, like he hadn't shaven in a few days. The two men were engaged in conversation, at a volume slightly lower than a shouting match. Maybe they knew each other? Their encounter was happening about a block in front of me, so I was paying attention. Suddenly, the guy in the cargo shorts pulls a beer out from one of his cargo pockets, the man in the suit drops to one knee, accepts the beer, stabs it with his keys, and shotguns it right there on the street. I walk by as he finishes it, throws it into the street, and then says \"Fuck you\" to his friend "
+                , Footnote "For a loose definition of friend that includes anyone who has given you a beer."
+                , Body "And continues on to what I imagine must be his office job, slightly buzzed "
+                , Footnote "Or so you would think, but at altitude, one beer gets you pretty fucked up. I only hope for his career's sake that it was a light beer."
+                , Body "."
+                ]
+            , Paragraph
+                [ Body "Then there were the skaters. One path into my office took me past Denver Skate Park, and so I saw lots and lots of skaters over the six months I lived there. First, an important digression: one of the concrete slabs making up the sidewalk had been lifted slightly, raising it about an inch over the next piece of sidewalk. My first month there, I tripped on it often. One week, after stumbling over this slab four times in a row,Monday through Thursday, I walked by on Friday. I thought to myself, \"Alright, pay attention, don't trip again, you got this\". I did not, in fact, \"got this\". I was distracted by the skaters, as I always was, and I stumbled, again, over this one piece of concrete. One of the skaters turns to his friends and says \"check out this guy, five-day tripping streak!\" I don't think he meant for me to overhead, but I did."
+                ]
+            , Paragraph
+                [ Body "Back to the main story, though: these skaters were drinking and smoking at all hours. On my way into work? Some skater was sipping a beer in her car. On my way back from work? Some skater was sipping a beer in his car. On my way back from my apartment to the bars near my office? Same deal. "
+                ]
+            , Paragraph
+                [ Body "I guess the moral of the story is that people in Denver drink more flagrantly than other people do."
                 ]
             ]
         ]
