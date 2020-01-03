@@ -2385,6 +2385,45 @@ essays =
                 , Body "."
                 ]
             ]
+        , Model
+            "Six Eggs"
+            "six-eggs"
+            Listed
+            [ Paragraph
+                [ Body "Every day, for the last six years of my life, I have eaten six eggs "
+                , Footnote "I've missed some days, but I've had more than six on other days, so let's call it an even six."
+                , Body "."
+                ]
+            , Paragraph
+                [ Body "It started in high school, when I was rowing. Once I hit the varsity team "
+                , Footnote "Nothing to brag about, actually, because you were a novice for one year and then on varsity. It signaled seniority, not skill."
+                , Body ", we had morning practices at 5 AM, twice a week "
+                , Footnote "On Monday and Friday, the worst two days to have morning practices. I would have preferred two consecutive days, so that my sleep schedule could be even mentioned in the same sentence as the worst \"consistent\". And not Fridays, because waking up at 4:20 (nice) makes you want to go to bed early, and Fridays aren't generally your going-to-bed-early nights."
+                , Body ". I needed to eat something, so that I could make it through two hours of rowing, but I also wanted to sleep as much as possible. Cereal and equivalents "
+                , Footnote "Looking at you, muesli."
+                , Body " wouldn't do, because I wanted something with lots of protein. Eggs were the obvious option."
+                ]
+            , Paragraph
+                [ Body "I started with four eggs, but that wouldn't quite tide me over until lunch, and I didn't want to eat two breakfasts. So I went up to five eggs, and then six. Six felt right: ~600 calories "
+                , Footnote "I eat extra large eggs, because I'm an extra-large guy. You can scale your eggs appropriately."
+                , Body ", but still enough food to keep you full for quite a while. I started eating six eggs on the days I didn't have morning practice, and it gradually became habit."
+                ]
+            , Paragraph
+                [ Body "People try to tell me that eating lots of eggs is unhealthy. I respectfully "
+                , Footnote "Disrespectfully, if we're being honest."
+                , Body " disagree. High blood cholesterol is caused by eating saturated fat, not cholesterol "
+                , Footnote "Bet you thought this was going to be a citation."
+                , Body ". Eggs are great for you, a solid source of protein and fat. They'll get you through your workout and help you build muscle. And they cost like 10 cents each  "
+                , Footnote "As long as you're fine with a little animal abuse happening in the farms you buy them from."
+                , Body "."
+                ]
+            , Paragraph
+                [ Body "And eggs are easy to make, relatively. Find me another meal that's 100% protein and fat, and this cheap, and takes maybe 15 minutes to cook, and I'll start eating it every day for dinner. And they taste good! You can add spinach, or cheese, or sausage, or bacon, or mushrooms, or just about anything, to add some variety."
+                ]
+            , Paragraph
+                [ Body "Eggs aren't my favorite food, but they are the food I eat most consistently."
+                ]
+            ]
         ]
 
 
