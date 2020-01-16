@@ -2457,6 +2457,23 @@ essays =
                 [ Body "I guess the moral of the story is that people in Denver drink more flagrantly than other people do."
                 ]
             ]
+        , Model
+            "Useful Thoughts"
+            "useful-thoughts"
+            Listed
+            [ Paragraph
+                [ Body "Cognitive behavioral therapy contains many useful tools for changing the way your brain works. I'm going to talk about one, namely, asking yourself whether your thoughts are useful."
+                ]
+            , Paragraph
+                [ Body "First, a brief sidebar about depression. I think that depression is a sliding scale, going from perfect eukrasia, which is being completely able to actualize whatever brain state you want, and never suffering from weakness of will, to the opposite, perfect akrasia, being completely unable to control your brain state or accomplish the things you want to accomplish. Under this definition of depression, no one is fully depressed or fully non-depressed, but that's alright. If you buy this definition, you should believe that becoming less depressed is a good thing, regardless of how mentally well you are."
+                ]
+            , Paragraph
+                [ Body "Cognitive behavioral therapy provies a useful tool for this: asking yourself whether your thoughts are useful. This has two important pieces. First is figuring what a \"useful\" thought would even mean to you, which requires that you understand what your goals are. It also implies that your thoughts are the sort of thing hthat can be useful or not useful, and the sort of thing that you have some control over. This alone helps a lot, because whether or not you actually have control over your thoughts, it's better for you to believe that you do."
+                ]
+            , Paragraph
+                [ Body "Second is the ability to realize which thoughts are useful, and to focus on those. When you worry about some future plan or event that might go wrong , there are two distinct types of worrying. The first is worrying about things you have no control over, where worrying won't help the outcome is the predicted catastrophe does happen. One example is flying on a plane, and worrying about the plane crashing. Yes, it would be bad if the plane crashed, but worrying about it won't make it any less bad. This type of worrying is not useful. The second is worrying about outcomes you could make contingency plans for. For example, if you're going on a camping trip, and think \"What if some of our food spoils?\", you can actually intervene and help prevent this by packing fresh or non-spoiling food, and perhaps a little bit extra. This type of worrying is useful."
+                ]
+            ]
         ]
 
 
