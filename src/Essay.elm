@@ -2468,10 +2468,24 @@ essays =
                 [ Body "First, a brief sidebar about depression. I think that depression is a sliding scale, going from perfect eukrasia, which is being completely able to actualize whatever brain state you want, and never suffering from weakness of will, to the opposite, perfect akrasia, being completely unable to control your brain state or accomplish the things you want to accomplish. Under this definition of depression, no one is fully depressed or fully non-depressed, but that's alright. If you buy this definition, you should believe that becoming less depressed is a good thing, regardless of how mentally well you are."
                 ]
             , Paragraph
-                [ Body "Cognitive behavioral therapy provies a useful tool for this: asking yourself whether your thoughts are useful. This has two important pieces. First is figuring what a \"useful\" thought would even mean to you, which requires that you understand what your goals are. It also implies that your thoughts are the sort of thing hthat can be useful or not useful, and the sort of thing that you have some control over. This alone helps a lot, because whether or not you actually have control over your thoughts, it's better for you to believe that you do."
+                [ Body "Cognitive behavioral therapy proves a useful tool for this: asking yourself whether your thoughts are useful. This has two important pieces. First is figuring what a \"useful\" thought would even mean to you, which requires that you understand what your goals are. It also implies that your thoughts are the sort of thing that can be useful or not useful, and the sort of thing that you have some control over. This alone helps a lot, because whether or not you actually have control over your thoughts, it's better for you to believe that you do."
                 ]
             , Paragraph
                 [ Body "Second is the ability to realize which thoughts are useful, and to focus on those. When you worry about some future plan or event that might go wrong , there are two distinct types of worrying. The first is worrying about things you have no control over, where worrying won't help the outcome is the predicted catastrophe does happen. One example is flying on a plane, and worrying about the plane crashing. Yes, it would be bad if the plane crashed, but worrying about it won't make it any less bad. This type of worrying is not useful. The second is worrying about outcomes you could make contingency plans for. For example, if you're going on a camping trip, and think \"What if some of our food spoils?\", you can actually intervene and help prevent this by packing fresh or non-spoiling food, and perhaps a little bit extra. This type of worrying is useful."
+                ]
+            ]
+        , Model
+            "Walking in Winter"
+            "walking-in-winter"
+            Listed
+            [ Paragraph
+                [ Body "In the winter, I walk less. It's cold out, after all, and the cold is unpleasant. A summer walk is immediately revitalizing, while a winter walk feels like a bad idea from step one."
+                ]
+            , Paragraph
+                [ Body "But that's not because it's cold outside. It's because it's warm inside. If it were equally cold in my house and on the street, I would have no problem going for walks. In fact, they would warm me up –\u{00A0}I would probably walk even more than I do currently. The typical framing is \"If it were warmer outside, I'd go for a walk\", but the real sentiment is \"If it were equally temperate inside and outside, I'd go for a walk\". This reframing is quite different, and has different implications for how to make yourself walk more. Making the indoors colder, or the outside warmer, would be equally motivating."
+                ]
+            , Paragraph
+                [ Body "The general idea is that humans react more to differentials than to absolutes. If you want to make one options more appealing, make the other less appealing. Let's say you want to wake up and go to the gym. Putting your phone far away from your bed, so you have to get out of bed to turn the alarm off, may make a huge difference. Lying under the covers, all warm and cozy, it's difficult to muster the willpower to get out of bed and go to the gym. But standing by your desk, mostly naked, holding your phone, getting dressed and going to the gym is actually a pretty good deal. Sometimes, making the choices you don't want to make feel worse is easier than making the choices you want to take feel better."
                 ]
             ]
         ]
