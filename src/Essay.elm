@@ -82,10 +82,14 @@ viewContentItem item ( bodyAcc, footnoteAcc ) =
         Paragraph paragraphItems ->
             let
                 fn footnoteItems footnotesSoFar =
+                    let
+                        num =
+                            String.fromInt (List.length footnotesSoFar + 1)
+                    in
                     case footnoteItems of
                         Footnote content ->
                             div [ class "footnote" ]
-                                [ div [ class "footnote-number" ] [ text ("[" ++ String.fromInt (List.length footnotesSoFar + 1) ++ "]") ]
+                                [ div [ class "footnote-number" ] [ a [ name ("foot" ++ num), href ("#footnote" ++ num) ] [ text ("[" ++ num ++ "]") ] ]
                                 , div [ class "footnote-content" ] [ text content ]
                                 ]
                                 :: footnotesSoFar
@@ -125,7 +129,7 @@ htmlFromFootnoteItems footNoteItems footnoteNumber =
                     ( List.append soFar [ text content ], currentFootnoteNumber )
 
                 Footnote _ ->
-                    ( List.append soFar [ text ("[" ++ String.fromInt currentFootnoteNumber ++ "]") ], currentFootnoteNumber + 1 )
+                    ( List.append soFar [ a [ name ("footnote" ++ String.fromInt currentFootnoteNumber), href ("#foot" ++ String.fromInt currentFootnoteNumber) ] [ text ("[" ++ String.fromInt currentFootnoteNumber ++ "]") ] ], currentFootnoteNumber + 1 )
 
                 NumberedList list ->
                     ( List.append soFar [ ol [] (List.map (\e -> li [] [ text e ]) list) ], currentFootnoteNumber )
@@ -1917,6 +1921,27 @@ essays =
                 [ Body "The general idea is that humans react more to differentials than to absolutes. If you want to make one options more appealing, make the other less appealing. Let's say you want to wake up and go to the gym. Putting your phone far away from your bed, so you have to get out of bed to turn the alarm off, may make a huge difference. Lying under the covers, all warm and cozy, it's difficult to muster the willpower to get out of bed and go to the gym. But standing by your desk, mostly naked, holding your phone, getting dressed and going to the gym is actually a pretty good deal. Sometimes, making the choices you don't want to make feel worse is easier than making the choices you want to take feel better."
                 ]
             ]
+        , Model
+            "Intrinsic and Accidental Desires"
+            "intrinsic-and-accidental-desires"
+            Listed
+            [ Paragraph
+                [ Body "Only the desire to reproduce is intrinsic, everything else is accidental. Once evolution creates beings with desires, those that desire to reproduce will be more fit than those that don't have that desire. But let's think about every other desire, and see if any of those are intrinsic."
+                ]
+            , Paragraph
+                [ Body "One of the most obvious contenders is self-preservation. Humans tend to want to keep existing, except in some situations far from the situations we evolved in "
+                , Footnote "Like all of modern society, hence the developed world's continuing suicide problem."
+                , Body ". But self-preservation is not guaranteed by evolution. If reproducing killed you (and this is true of the males in several spider species), then self-preservation would be trumped by the desire to reproduce. Even then, those spiders have a desire "
+                , Footnote "For some loose definition of desire, because I don't think spiders are actively thinking."
+                , Body " to avoid death at all other times. Imagine, however, a species where the males showed off by performing dangerous acts in order to impress females. One such species is, well, humans. So it would seem that the desire for self-preservation, while likely to evolve, can be trumped by the desire to reproduce, and so is not intrinsic."
+                ]
+            , Paragraph
+                [ Body "There are other desires, like seeing your family flourish, that might be intrinsic. After all, your family shares your genetics, and so any gene that encourages your family's welfare is likely to be increasing it's own welfare. While this seems plausible in our society, where we have relatively nuclear families, people tend to know which kids are theirs, and people can have large impacts on their kids, this seems plausible. But we could just as easily imagine a society where people are unaware of their kids, like a species that laid eggs in a communal pile and raised each child as part of their society, without a clear understanding of who their parents were. There would be no notion of supporting one's family in this world. So, this desire is not intrinsic."
+                ]
+            , Paragraph
+                [ Body "In general, it seems that all desires, other than the desire to reproduce, which are shared between humans are shared only because we all happened to evolve in a specific way, so our biology and culture supports those traits. Those traits are shared because humanity took a common path to get to where we are today, not because they are guaranteed to evolve."
+                ]
+            ]
         ]
 
 
@@ -1927,12 +1952,12 @@ essays =
 --    Listed
 --    [ Paragraph
 --        [ Body ""
---        , Footnote""
+--        , Footnote ""
 --        ,Body ""
 --        ]
 --    , Paragraph
 --        [ Body ""
---        , Footnote""
+--        , Footnote ""
 --        ,Body ""
 --        ]
 --    ]
