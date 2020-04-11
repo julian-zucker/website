@@ -1918,13 +1918,13 @@ essays =
                 [ Body "But that's not because it's cold outside. It's because it's warm inside. If it were equally cold in my house and on the street, I would have no problem going for walks. In fact, they would warm me up –\u{00A0}I would probably walk even more than I do currently. The typical framing is \"If it were warmer outside, I'd go for a walk\", but the real sentiment is \"If it were equally temperate inside and outside, I'd go for a walk\". This reframing is quite different, and has different implications for how to make yourself walk more. Making the indoors colder, or the outside warmer, would be equally motivating."
                 ]
             , Paragraph
-                [ Body "The general idea is that humans react more to differentials than to absolutes. If you want to make one options more appealing, make the other less appealing. Let's say you want to wake up and go to the gym. Putting your phone far away from your bed, so you have to get out of bed to turn the alarm off, may make a huge difference. Lying under the covers, all warm and cozy, it's difficult to muster the willpower to get out of bed and go to the gym. But standing by your desk, mostly naked, holding your phone, getting dressed and going to the gym is actually a pretty good deal. Sometimes, making the choices you don't want to make feel worse is easier than making the choices you want to take feel better."
+                [ Body "The general idea is that humans react more to differentials than to absolutes. If you want to make one options more appealing, make the other less appealing. Let's say you want to wake up and go to the gym. Putting your phone far away from your bed, so you have to get out of bed to turn the alarm off, may make a huge difference. Lying under the covers, all warm and cozy, it's difficult to muster the willpower to get out of bed and go to the gym. But when you're standing by your desk, mostly naked, holding your phone, getting dressed and going to the gym is actually a pretty good deal. Sometimes, making the choices you don't want to make feel worse is easier than making the choices you want to take feel better."
                 ]
             ]
         , Model
             "Intrinsic and Accidental Desires"
             "intrinsic-and-accidental-desires"
-            Listed
+            NotListed
             [ Paragraph
                 [ Body "Only the desire to reproduce is intrinsic, everything else is accidental. Once evolution creates beings with desires, those that desire to reproduce will be more fit than those that don't have that desire. But let's think about every other desire, and see if any of those are intrinsic."
                 ]
@@ -1940,6 +1940,9 @@ essays =
                 ]
             , Paragraph
                 [ Body "In general, it seems that all desires, other than the desire to reproduce, which are shared between humans are shared only because we all happened to evolve in a specific way, so our biology and culture supports those traits. Those traits are shared because humanity took a common path to get to where we are today, not because they are guaranteed to evolve."
+                ]
+            , Paragraph
+                [ Body "Of course, humans mostly don't have a desire to reproduce – we have the desire to have sex. For the vast majority of the evolutionary timeline, sex was tantamount to reproduction, so we ended up enjoying sex. Because of this, fortunately, we can use birth control and enjoy the benefits of fulfilling our necessary desire without the downsides."
                 ]
             ]
         ]
