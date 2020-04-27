@@ -215,18 +215,14 @@ renderPage page =
                     [ p []
                         [ p [] [ text """Hi! Welcome to my website!""" ]
                         , p []
-                            [ text """My short-term goals are to grow as a software developer, create software that people can use, and publish research while I'm still an undergraduate. My longer-term goals are to get a PhD so that I can become a professor, although I may spend a while as a software engineer first. My research interests are computer science education, """
-                            , a [ href "https://github.com/evvo-labs/evvo" ] [ text "evolutionary computing" ]
-                            , text ", and evolutionary game theory."
+                            [ text """If you're interested in reading the things I've written, you can find them """
+                            , a [ href (Route.toUrlString Route.Essays) ] [ text "here" ]
+                            , text ". If you're interested in reading the code I've written, check out "
+                            , a [ href "https://github.com/julian-zucker" ] [ text "my GitHub." ]
                             ]
                         ]
                     , p []
-                        [ text "Check out my "
-                        , a [ href "https://github.com/julian-zucker" ] [ text "GitHub" ]
-                        , text "?"
-                        ]
-                    , p []
-                        [ text "If you're looking at this website, I probably want to hear from you. You can email me at julian.zucker@gmail.com." ]
+                        [ text "If you're looking at this website, I probably want to hear from you! You can email me at julian.zucker@gmail.com." ]
                     ]
               ]
             )
