@@ -1945,6 +1945,26 @@ essays =
                 [ Body "Of course, humans mostly don't have a desire to reproduce – we have the desire to have sex. For the vast majority of the evolutionary timeline, sex was tantamount to reproduction, so we ended up enjoying sex. Because of this, fortunately, we can use birth control and enjoy the benefits of fulfilling our necessary desire without the downsides."
                 ]
             ]
+        , Model
+            "Mug Design"
+            "mug-design"
+            Listed
+            [ Paragraph
+                [ Body "Most mugs suck. When I use someone else's mug, there's a high chance that I'll either burn my fingers, be unable to hold it properly using the handle, or the mug will be too small to properly steep a single teabag, or it will have some weird garbage around the rim that makes it difficult to drink."
+                ]
+            , Paragraph
+                [ Body "Handles are an easy one, so let's get them out of the way first. The handle of a mug serves one purpose: it provides a way to hold a mug without burning your fingers. You want the mug to store hot liquids, and you want those hot liquids to stay away from you. If you didn't care about the temperature of the liquid in the mug, you would just use a cup. So, how can you design a handle to protect people's hands? First, it has to have the right amount of spacing between the inside of the handle and the body of the mug. If there isn't enough spacing, then someone holding the mug by the handle will have their fingers touch the inside of the mug, defeating the purpose of the mug. Just having the right spacing is not enough, though. If the handle is too small to fit three fingers (preferably four), someone holding the mug will have to contort their hand and use all the weird small muscles that move your fingers side to side in order to clench the mug in place. Their hands will get tired, they'll have to use their other hand to stabilize the mug, and they'll burn their fingers on the side."
+                ]
+            , Paragraph
+                [ Body "Let's assume we have a mug with a good handle: four fingers fit inside, far enough from the body of the mug to avoid incidental knuckle-burns. The next most important thing is size. While \"not burning its users\" is necessary for a mug to be satisfactory, it is not sufficient. Different mugs serve different purposes, so coffee shops have many different sizes, for tea, black coffee, lattes, cortados, and shots of espresso. However, in a house, people typically just make tea and regular coffee. When making tea, whether you steep it from a teabag or loose leaves, there is usually one correct amount of water to steep: around 12 ounces. But some people have these tiny fucking mugs that aren't useful for anything. A teabag will oversteep 6 ounces of water, so you have to remove the teabag early, but that changes the flavor profile. And who wants only 6 ounces of tea? I don't trust people who own mugs that are excessively small."
+                ]
+            , Paragraph
+                [ Body "The rim of a mug is the second most important contact surface, after the handle. The rim is where I put my mouth, and where the contents of the mug comes out. Most mugs do a good job of this, and have a smooth circular surface. But some have wacky shapes, so that their cat-shaped mug can have cute ears or whiskers or something. This is fine, as long as the interruptions to the rim happen only above the handle and across from the handle: places where people aren't putting their mouth to drink. If there's a lumpy bit where I put my mouth, not only will it confuse me every time I try to drink from your mug, but it also makes it harder to form a seal against the mug with my mouth. If I can't form a seal with my mouth, there's a reasonable chance that I'll spill my drink while drinking. While this is always a bad thing, it's even worse when the thing I am drinking is guaranteed to be hot. I've drank enough nearly-boiling coffee and tea in my life to destroy all of my taste buds that can't handle those temperatures, but I don't make a habit of pouring nearly-boiling coffee and tea into my lap, and I'd prefer if mug designers understood that."
+                ]
+            , Paragraph
+                [ Body "I'm not asking for much. I want mugs to hold a reasonable amount of liquid, so they can serve their jobs as drinking vessels. And I want to be able to use them without being injured. Imagine someone made a computer keyboard that worked most of the time, but occassionally shocked you, and the designers figured that you only wanted half of the number keys, and had sharp bits on the wristrest so that the keyboard could look like a dragon You would sue. Stop accepting bad design for mugs. "
+                ]
+            ]
         ]
 
 
