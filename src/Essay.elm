@@ -1965,6 +1965,40 @@ essays =
                 [ Body "I'm not asking for much. I want mugs to hold a reasonable amount of liquid, so they can serve their jobs as drinking vessels. And I want to be able to use them without being injured. Imagine someone made a computer keyboard that worked most of the time, but occassionally shocked you, and the designers figured that you only wanted half of the number keys, and had sharp bits on the wristrest so that the keyboard could look like a dragon You would sue. Stop accepting bad design for mugs. "
                 ]
             ]
+        , Model
+            "Accidental Underworld"
+            "underworld"
+            Listed
+            [ Paragraph
+                [ Body "In February, I went to New York "
+                , Footnote "City is implied, I think, but I have some doubts, hence this footnote."
+                , Body ". While I was there, I tried to buy bagels, and ended up having one of the most surreal experiences of my life."
+                ]
+            , Paragraph
+                [ Body "I went to [REDACTED] Bagels, a bagel store my friend had recommended. I walked in, and placed my order, than waited and watched the people around me while my order was being prepared. The people there seemed normal"
+                , Footnote "For New Yorkers."
+                , Body ". [REDACTED] Bagels was full that day, so there was standing room only. I figured that my friend's recommendation must have been good, seeing as lots of locals seemed to like this place. I asked one of the baristas "
+                , Footnote "Are they baristas at a bagel shop? Maybe I mean bagelistas."
+                , Body "where the bathroom was, and got a pretty innocuous response: \"Oh, they're just downstairs\"."
+                ]
+            , Paragraph
+                [ Body "I found the stairs in the back. They were tiled with those little one-inch square tiles that evoke old-school train stations and new-school train station bathrooms. The stairs were grimy. Not dirty, which would imply that the tiles could be cleaned easily, perhaps just by sweeping. No. These tiles had been around for at least a hundred years, slowly accumulating a layer of whatever that stuff is that coats the soles of shoes you own after you wear them in a city for a month."
+                ]
+            , Paragraph
+                [ Body "I reached the bottom of the stairs, and I most emphatically did not find a bathroom. Instead, I found myself in a dimly-lit, smoke-filled bar. Dozens of people sat around this area, either at the bar or alone at tables, all drinking while typing away on Macbooks. Strange, for a Sunday morning. I pushed through the bar, toward the first doorway I saw, and walked into the next room. Contrasting with the ornate, mildly-cluttered look of the bar, this next room was bare. Dark, wood planks mounted on minimal brushed-aluminum brackets were mounted around the room, on the otherwise empty lavender walls. One wall, in a sans-serif font, proclaimed that this was an \"Algorithmic Perfumery\". A man wearing green-tinted sunglasses stood behind a cash register, staring at me. I turned away, and tried the next exit from the bar."
+                ]
+            , Paragraph
+                [ Body "But there was no bathroom through the second doorway either. This one was a similarly minimal clothing boutique. I tried the third doorway, which lead to another set of stairs down. I took them, figuring that \"downstairs\" might have meant \"down two flights of stairs, and ignore the fuckery going after the first flight\". As I descended, the stairs got much darker, until I reached the bottom, where the light was downright murky. I see a sign for the men's bathroom, and I follow it. Inside the bathroom, a man is standing shirtless in front of the mirror, flexing. When I walk in, he puts his shirt back on and then runs out."
+                ]
+            , Paragraph
+                [ Body "This gives me time to figure out the bathroom itself. It feels strangely out of place: large, bronze fixtures, a proper copper washbasin for a sink, and an oval mirror with ornate carvings in the mirror's frame."
+                ]
+            , Paragraph
+                [ Body "I walk back up the stairs to the bar. Then, I take another flight of stairs –\u{00A0}and find myself somewhere completely different. I am no longer in [REDACTED] Bagels, I am in a different restaurant. I go back down to the bar, find the correct set of stairs, and make it back to [REDACTED]. I pick up my order, and notice that the store is almost empty. When I went down to the bathroom, there was barely standing room, and now most of the chairs were empty. I hurry out." ]
+            , Paragraph
+                [ Body "The bagels were okay."
+                ]
+            ]
         ]
 
 
