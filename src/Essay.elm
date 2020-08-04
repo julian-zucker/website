@@ -1999,6 +1999,24 @@ essays =
                 [ Body "The bagels were okay."
                 ]
             ]
+        , Model
+            "Graduation"
+            "graduation"
+            Listed
+            [ Paragraph
+                [ Body "I graduated! Which was pretty monumental. Graduation, for most people, is the end of the third-to-last chapter of their life. If you don't go to grad school, change careers in a large way, all that's really left is starting a family. The second-to-last chapter, then, is the time you were graduated but didn't have kids, and the last chapter is the time in which you were both graduated and childful."
+                ]
+            , Paragraph
+                [ Body "But this essay isn't about dividing life into chapters, it's about figuring out what to optimize. I spend a lot of my time optimizing things. How can I type faster, find results on Google "
+                , Footnote "Or, more recently, DuckDuckGo."
+                , Body "faster, figure out algorithms faster, learn facts faster, read papers faster. And those optimizations are all useful under a backdrop of time pressure created by college. While I was in school, there were good goals to aim for. If I could figure out a way to work faster, I would have more time for myself! But now that I'm graduated and have a job "
+                , Footnote "Which is probably a good job, although I'm not sure I've sampled enough of the space of possible jobs to know that for sure."
+                , Body ", I am mysteriously out of things to optimize for. Maybe it's the fact that there's a pandemic on, but it really feels like I'm out of high-level goals to optimize for. There's plenty of things to do, I go backpacking and cook and I'm learning to make espresso and there's always more programming to learn. I have goals, to be sure, but it's not clear what I'm optimizing for!"
+                ]
+            , Paragraph
+                [ Body "While I still prefer to be efficient, I'm now assigned 40 hours a week of work. When you're assigned a fixed amount of hours of work per week, finishing early means that you get to do more work, not that you get time off to do what you want. It does kind of work that way in practice, particularly while working remotely –\u{00A0}once you're finished with an \"acceptable\" amount of work in a week, you can dick around and no one will complain. But it doesn't feel that way. If you plan on working 40 hours a week, and that's your primary goal, then optimizing stops being a useful thing for you. You are optimizing for someone else's benefit, not your own."
+                ]
+            ]
         ]
 
 
