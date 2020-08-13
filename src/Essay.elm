@@ -1115,24 +1115,26 @@ essays =
                 , Footnote "And that a little instability can be fun."
                 , Body ". Assume for a moment we just care about the heterosexual subset of the people at this party, and further, we only care about the people who are there to get laid "
                 , Footnote "When I say \"care\", I mean for the stable matching, not in general."
-                , Body "There is imperfect information, and people don't even know their own preference set over the people at the party "
+                , Body ". There is imperfect information, and people don't even know their own preference set over the people at the party "
                 , Footnote "Partially because people never know their exact preference set, partially because a dark basement with flashing lights is not the best place to evaluate someone else's attractiveness. "
                 , Body ", but the general principle is the same. People are trying to end the night matched with a partner, and they have some set of preferences over partners."
                 ]
             , Paragraph
                 [ Body "So let's examine these preference sets! It is pretty easy to observe that, on average, tall, muscular men are more attractive. You don't have to spend a lot of time at frat parties in order to discover these facts. But it is important to notice the girls that these men are making out with "
                 , Footnote "Making out with so very very publicly."
-                , Body ". They also fall within one particular archetype, slender and sorority-esque. Around the edges of the party, however, there are people that don't fit either of these archetypes. People who look more like musicians, or like art students, chat with each other. And they're pretty hot too! While many people find people who fit the main frat party archetypes attractive, those are not the only people there. In fact, because they are the largest group there, most people are tailoring the way they look to be attractive to those people."
+                , Body ". The girls they make out with fall within one particular archetype, slender and sorority-esque. Around the edges of the party, however, there are people that don't fit either of these archetypes. People who look more like musicians, or like art students, chat with each other. And they're pretty hot too! While many people are attracted primarily to people who fit the main frat party archetype, those are not the only people there. However, the standard frat archetype is the largest group present, so most people are tailoring the way they look to be attractive to those people."
                 ]
             , Paragraph
-                [ Body "But the more people that are competing for a girl's attention, the harder it will be for you to stand out. The hordes of tall, fit white men wearing button-downs and jeans are rough competition. As long as your preference set is similar to mine, where you find lots of different types of people attractive, you don't want to be competing for this oversaturated part of the population. Think about the preference sets of the girls that you find attractive. Some of them absolutely love the button-down look, and have plenty of options within that. But some of them prefer men wearing something else "
+                [ Body "But the more people that are competing for a girl's attention, the harder it will be for you to stand out. The hordes of tall, fit white men wearing button-downs and jeans are rough competition. As long as your preference set is similar to mine, where you find lots of different types of people attractive, you don't want to be competing for this oversaturated part of the population. Think about the preference sets of the girls that you find attractive. Some of them absolutely love the button-down look. They have plenty of options, so trying to be at the top of their preference set is difficult. But some of them prefer men wearing something else "
                 , Footnote "Of course, it's not just about physical appearance. Wearing a button-down and blue jeans signals very different things about who you are as a person compared to wearing black jeans and a black band t-shirt, especially in a frat context."
-                , Body ". And it is far easier to be at the top of their preference set. And, in my experience at least, it is better to be at the top of a few people's lists than in the top-middle-ish of many people's lists."
+                , Body ". It is far easier to be at the top of their preference set. And, in my experience at least, it is better to be at the top of a few people's lists than in the middle of many people's lists. If you're in the middle of someone's preference set, then even if they find you attractive, they're keeping their eyes on the top of their preference set, seeing if those people are interested. It doesn't matter if everyone in the room finds you passably attractive if no one is actively interested. However, if you are near the top of, say, four or five people's preference sets, presumably one of them will be willing to go home with you. "
                 ]
             , Paragraph
-                [ Body "I stopped going to frat parties, so this doesn't matter as much for me as it used to "
+                [ Body "I stopped going to frat parties "
+                , Footnote "Partially because I turned 21 and started having more options for basements to spend Friday and Saturday nights in, partially because I discovered ways to meet women outside of basements."
+                , Body " so this doesn't matter as much for me as it used to "
                 , Footnote "Also, I gained 40 lbs of muscle, which I'm sure changes the payoffs for different aesthetics. I was kicked out of a frat for having sex with someone on a couch in their basement while a party was happening upstairs. Prior to gaining weight, I don't think that people would have been as willing to have frat-basement-couch sex with me. "
-                , Body ". But it's an interesting thought experiment, and it made a large difference in how I experienced my junior year of college."
+                , Body ". But it's an interesting application of game theory, and it made a large difference in how I experienced my junior year of college."
                 ]
             ]
         , Model "The Punisher Guards My Pool"
