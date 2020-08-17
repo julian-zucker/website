@@ -2589,22 +2589,6 @@ essays =
                 [ Body "While I still prefer to be efficient, I'm now assigned 40 hours a week of work. When you're assigned a fixed amount of hours of work per week, finishing early means that you get to do more work, not that you get time off to do what you want. It does kind of work that way in practice, particularly while working remotely –\u{00A0}once you're finished with an \"acceptable\" amount of work in a week, you can dick around and no one will complain. But it doesn't feel that way. If you plan on working 40 hours a week, and that's your primary goal, then optimizing stops being a useful thing for you. You are optimizing for someone else's benefit, not your own."
                 ]
             ]
-        , Model
-            "Ethnic Identity"
-            "ethnic-identity"
-            Listed
-            [ Paragraph
-                [ Body ""
-                , Footnote ""
-                , Body ""
-                , Quote
-                ]
-            , Paragraph
-                [ Body ""
-                , Footnote ""
-                , Body ""
-                ]
-            ]
         ]
 
 
