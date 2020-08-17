@@ -7,7 +7,6 @@ import Route
 
 
 -- TODO The source of every essay has to be in code in this file. I want to store the text in markdown-esque files
--- TODO footnotes are janky, no links and show up as [1] instead of a superscript
 -- TODO include date that the essay was written
 -- TODO previous/next links?
 
@@ -1665,12 +1664,12 @@ essays =
                 [ Body "People keep telling me that the best time of my life will be during college, and then being confused when I want to stick around for a PhD. But this essay isn't about that. This essay is about timescales."
                 ]
             , Paragraph
-                [ Body "The best hours of your life will be on drugs. Maybe they won't be the most fulfilling hours of your life. I know for a fact that the most fulfilling moment of my life to date is when I had a revelation about a new type of model for evolutionary game theory. The moment when I suddenly became the first person in the world to have a specific idea felt incredible. But it took two months for me to get to that point. And it doesn't compare to spending a summer day with a beautiful girl tripping on acid. Discovering this new model is a contender for the best sober experience I've ever had, but it hardly compares to May 11, 2019 "
-                , Footnote "At least one person reading this has reason to be offended by this date. Sorry!"
-                , Body ". If you're thinking on a timescale of hours, the way to have the best hour is to take drugs."
+                [ Body "The best hours of your life will be on drugs. Maybe they won't be the most fulfilling hours of your life. The most fulfilling moment of my life to date is when I had a revelation and invented an entirely new type of model for evolutionary game theory, thus proving someone else wrong."
+                , Footnote "I want to say that it was the best moment because I invented a new thought for the first time, but I can't deny that proving someone else wrong added to the satisfaction"
+                , Body ". Becoming the first person in the world to have ever thought a specific thought was incredible. But it took two months of hard work and reading for me to get to that point. And it doesn't compare to a revelation-filled trip on a lasciviously temperate summer day with a beautiful girl. Discovering this new model is a contender for the best sober experience I've ever had, but it hardly compares to May 11, 2019 . If you're thinking on a timescale of hours, the way to have the best hour is to take drugs."
                 ]
             , Paragraph
-                [ Body "But on a timescale of days or weeks, it's completely different. The best weeks I've had have been focused, intellectual, productive. Prolific. What weeks do you look back on approvingly? The weeks where you accomplish something, the weeks where you hit some major milestone in your life - those are the best weeks. A week is short enough that you can lock yourself in your room and work and work and work tirelessly, without suffering greatly. The best weeks of my life have been dead sober "
+                [ Body "But on a timescale of days or weeks, it's completely different. The best weeks I've had have been focused, intellectual, productive. Prolific. What weeks do you look back on approvingly? The weeks where you accomplish something, the weeks where you hit some major milestone in your life - those are the best weeks. A week is short enough that you can lock yourself in your room and work and work and work tirelessly, without suffering too greatly. The best weeks of my life have been dead sober "
                 , Footnote "I've spent most of my adult life as a college undergrad, so maybe dead sober except for parties on Friday and Saturday."
                 , Body ". But those weeks were incredible! There were weeks when I aced homework assignments, was unexplainably productive in art or code or writing, and weeks where I read paper after paper learning about some new field. The best weeks of your life will be sober, focused deeply on some subject. A week is too long to spend under the influence, or at least too long to feel good after spending under the influence."
                 ]
@@ -1678,7 +1677,7 @@ essays =
                 [ Body "But a month is too long to spend sober "
                 , Footnote "Maybe there's something to unpack here."
                 , Body ". The best months of my life have been spent alternating between hard work during the week and wild experiences on the weekends. I didn't pick the 5 day/2 day split, but it feels just about right. The best months of your life will be spent in balance between work and play. The best months on my life to date were May and June 2019, where I was working the hardest and producing the most I ever have, while also partying the second hardest I ever have "
-                , Footnote "Oh, summer after sophomore year, how I miss thee."
+                , Footnote "The summer after my sophomore year, Northeastern randomly assigned me to a massive apartment they meant for four people, and gave me only one roommate, who wanted to throw parties even more than me."
                 , Body ". Trying to emulate the circumstances that lead to the best months of your life is a reasonable aim, but emulating anything on a shorter timescale will lead you astray."
                 ]
             ]
@@ -2588,6 +2587,22 @@ essays =
                 ]
             , Paragraph
                 [ Body "While I still prefer to be efficient, I'm now assigned 40 hours a week of work. When you're assigned a fixed amount of hours of work per week, finishing early means that you get to do more work, not that you get time off to do what you want. It does kind of work that way in practice, particularly while working remotely –\u{00A0}once you're finished with an \"acceptable\" amount of work in a week, you can dick around and no one will complain. But it doesn't feel that way. If you plan on working 40 hours a week, and that's your primary goal, then optimizing stops being a useful thing for you. You are optimizing for someone else's benefit, not your own."
+                ]
+            ]
+        , Model
+            "Ethnic Identity"
+            "ethnic-identity"
+            Listed
+            [ Paragraph
+                [ Body ""
+                , Footnote ""
+                , Body ""
+                , Quote
+                ]
+            , Paragraph
+                [ Body ""
+                , Footnote ""
+                , Body ""
                 ]
             ]
         ]
