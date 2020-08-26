@@ -1880,7 +1880,7 @@ essays =
                 [ Body "A friend and I walked up to the MFA's lawn, late at night, and unscrewed one sunflower from the ground. There were dozens of sunflowers left on the lawn, so we figured this one wouldn't be missed. We draped a blanket over the sunflower, because the bright yellow smiling sunflower was somewhat conspicious, and carried it over to Ryder Hall. This was one of the buildings that overlooked the main open green space at Northeastern. We made it past the security guard at the entrace, up the stairs, and onto the fourth floor. There were some classrooms on the fourth floor that had windows that would open wide enough to let you step out onto the roof of the third floor. We clamber out, bringing the sunflower with us, and finally are standing on this roof."
                 ]
             , Paragraph
-                [ Body "We revel for a moment. Being on this roof always gives you an incredible view, into some dorms where some shenanigans are always happening, and across campus into Boston's skyline. It's nice. We take the sunflower out to the edge of the roof, and stick it into an open pipe right on the edge of the roof, staring down at Centennial Commons."
+                [ Body "We revel for a moment. This roof has an awesomeview, letting you look into some dorms where some shenanigans are always happening, and across campus into Boston's skyline. It's nice. We take the sunflower out to the edge of the roof, and stick it into an open pipe right on the edge, staring down at Centennial Commons."
                 ]
             , Paragraph
                 [ Body "In the middle of a Boston winter, seeing a sunflower smiling down at you while you walk to class is pretty nice. Trudging through snow, people crowding around me, knowing that I have lots of homework I have not done, seeing a metal sunflower on the fourth floor of a building, remembering the night that I stole it and put it there, felt pretty damn good."
@@ -1975,7 +1975,7 @@ essays =
                 [ Body "Your teammates drink with you at lunch. Back at the office, you settle in for a few more hours of work. You are pairing with someone who drank more than you. They are completely competent. You fall out of your chair."
                 ]
             , Paragraph
-                [ Body "You print a paper. You try to staple your paper, but there are no staples in any of the staples. One of your coworkers laughs about printing reminding him of the '90s. You find the staples. A week later, you print another paper, and the same coworker makes the same joke. You try to staple your paper, but there are no staplers, although there are boxes upon boxes of staples."
+                [ Body "You print a paper. You try to staple your paper, but there are no staples in any of the staples. One of your coworkers laughs about printing reminding him of the '90s. You find the staplers. A week later, you print another paper, and the same coworker makes the same joke. You try to staple your paper, but there are no staplers, although there are boxes upon boxes of staples."
                 ]
             , Paragraph
                 [ Body "You play a game of ping pong, with your team. You play another game of ping pong, with other people. You play a third game of ping ping, with your team again. Someone asks if you ever work. You ask them if they want to play ping pong. They say yes."
