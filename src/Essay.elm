@@ -2081,8 +2081,6 @@ essays =
             Listed
             [ Paragraph
                 [ Body "Grading students on attendance is a sign of bad incentive structures. Certainly, you don't actually care about students showing up for the sake of them showing up. You must believe that them showing up will be good for them.  So, ideally, you could just measure those other things."
-                , Footnote ""
-                , Body ""
                 ]
             , Paragraph
                 [ Body "If you think that your lectures do a great job of explaining concepts, test your students on knowledge of those concepts. If you think your lectures do a good job of explaining certain skills or how to solve certain problems, test your students on their ability to demonstrate those skills or solve those problems. If your lectures are actually useful in imparting skills or knowledge, then your tests will reflect attendance grades."
