@@ -2132,9 +2132,7 @@ essays =
                 [ Body "So, power poses are expressions of physical vulnerability. Why would that be attractive? My assumption is that, in the past, people who are physically vulnerable in public either died, or were so strong and well-respected as a fighter that people would leave them alone. It's like staking your life on the outcome of a game of chess, where you start without a queen. It makes people assume that you are much better at chess than everyone else around you. Power poses probably worked similarly."
                 ]
             , Paragraph
-                [ Body "This may also be hugging and confidence are so correlated. People "
-                , Footnote "Particularly men. Men hate hugging."
-                , Body " who hug are exposing themselves to all kinds of violence, and while in modern America it is unlikely that hugging someone will result in your death, in the evolutionary context, it was probably much more likely. If you hug someone, you are putting your life in their hands, or at least giving them a major leg up "
+                [ Body "This may also be why hugging and confidence are so correlated. People who hug are exposing themselves to all kinds of violence, and while in modern America it is unlikely that hugging someone will result in your death, in the evolutionary context, it was probably much more likely. If you hug someone, you are putting your life in their hands, or at least giving them a major leg up "
                 , Footnote "Or arm around."
                 , Body "  in any fight they start."
                 ]
