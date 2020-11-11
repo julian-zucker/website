@@ -2585,6 +2585,40 @@ essays =
                 [ Body "While I still prefer to be efficient, I'm now assigned 40 hours a week of work. When you're assigned a fixed amount of hours of work per week, finishing early means that you get to do more work, not that you get time off to do what you want. It does kind of work that way in practice, particularly while working remotely –\u{00A0}once you're finished with an \"acceptable\" amount of work in a week, you can dick around and no one will complain. But it doesn't feel that way. If you plan on working 40 hours a week, and that's your primary goal, then optimizing stops being a useful thing for you. You are optimizing for someone else's benefit, not your own."
                 ]
             ]
+        , Model
+            "Carbon Dioxide"
+            "carbon-dioxide"
+            Listed
+            [ Paragraph
+                [ Body "Carbon dioxide poisoning is a real thing. When I talk about it, people assume that I either mean carbon monoxide, or that I'm trying to trick them by getting it wrong intentionally.  But I'm not - I honestly, really believe that carbon dioxide poisoning is a real concern."
+                ]
+            , Paragraph
+                [ Body "When humans breathe, we convert some amount of oxygen into carbon dioxide. That carbon dioxide just hangs around, unless some other air comes along to replace it with carbon dioxide levels that are at the same level as baseline, outdoor air. Over time, human carbon dioxide builds up. Everyone knows that this is a bad idea at the extremes: if you lock someone in a box for long enough, they will not be able to get enough oxygen and then they will suffocate."
+                ]
+            , Paragraph
+                [ Body "However, CO2 poisoning can happen at much lower levels than required for suffocation. The baseline on Earth is about 420 parts per million (ppm) "
+                , Footnote "For now. It was 320 ppm in 1960, and seems to still be on the rise. "
+                , Body ". Raising CO2 levels to even 1000ppm causes people to become sleepier, less motivated, and less capable of high-level thought. If you don't believe me, "
+                , Link { text = "read", href = "https://doi.org/10.1289/ehp.1510037" }
+                , Body " "
+                , Link { text = "some", href = "https://doi.org/10.1289/ehp.1104789" }
+                , Body " "
+                , Link { text = "of", href = "https://doi.org/10.1080/15459624.2015.1076160" }
+                , Body " "
+                , Link { text = "these", href = "https://doi.org/10.1016/j.egypro.2017.07.378" }
+                , Body " "
+                , Link { text = "studies", href = "https://doi.org/10.1016/j.enbuild.2007.04.013" }
+                , Footnote "I don't think that providing five non-literature-review studies is enough to prove a point compellingly, but my time on LessWrong has shown me that it is an effective strategy for convincing people you're right."
+                , Body ". Also, several people have recorded their CO2 levels while sleeping in a bedroom overnight, and reported the CO2 level hitting "
+                , Link { text = "1900", href = "https://www.reddit.com/r/dataisbeautiful/comments/cek4dm/co%E2%82%82_in_my_sons_bedroom_at_night/" }
+                , Body "or even"
+                , Link { text = "3500", href = "https://vair-monitor.com/2016/09/29/sleeping-closed-room-indoor-co2-analyze/" }
+                , Body "ppm. Office buildings, particularly meeting rooms, also worry me."
+                ]
+            , Paragraph
+                [ Body "I'm amazed that I've never heard about this - I have read lots about nootropics, and never heard \"open windows\" being mentioned. And somehow, architects keep making poorly-ventilated buildings. I wrote this article to spread the word about C02, and to see if I could justify spending $140 on a carbon dioxide detector. All in all, it seems like a small price to pay to potentially avoid a brain-damaging toxin, particularly when detecting it would allow me to fix it easily - just by opening a window. Also, the idea of walking into a meeting with a CO2 detector set to beep above 1000ppm, and leaving when it starts to beep, really appeals to me. It's the Geiger counter of the non-radioactive workplace. "
+                ]
+            ]
         ]
 
 
