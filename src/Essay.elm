@@ -2619,6 +2619,35 @@ essays =
                 [ Body "I'm amazed that I've never heard about this - I have read lots about nootropics, and never heard \"open windows\" being mentioned. And somehow, architects keep making poorly-ventilated buildings. I wrote this article to spread the word about C02, and to see if I could justify spending $140 on a carbon dioxide detector. All in all, it seems like a small price to pay to potentially avoid a brain-damaging toxin, particularly when detecting it would allow me to fix it easily - just by opening a window. Also, the idea of walking into a meeting with a CO2 detector set to beep above 1000ppm, and leaving when it starts to beep, really appeals to me. It's the Geiger counter of the non-radioactive workplace. "
                 ]
             ]
+        , Model
+            "The Queen's Gambit"
+            "the-queens-gambit"
+            Listed
+            [ Paragraph
+                [ Body "The Queen's Gambit was a decent show, with a terrible ending. The final episode opens with some suspense: Beth is going to Russia, and the State Department sends a man to accompany her. This is some intrigue - why is he following her?"
+                ]
+            , Paragraph
+                [ Body "The plot thickens on the flight to Moscow. The man reveals that he was brought along because the Russians are considering defecting (or maybe because they are trying to recruit Beth to the Soviet side). Interesting - the show brings a new character in, and has him reveal important information about the main characters. What could come next?"
+                ]
+            , Paragraph
+                [ Body "They arrive in Moscow. Beth wins a bunch. The final match is in progres, and then a recess is called. Beth sees the Russians huddled around a chess board, consulting her opponent on his next move; Beth gets similar consulation from her friends back in America. Seems like bullshit to be able to pause a chess game halfway through to consult your friends, but whatever. The parallels between America and Moscow are revealed. Will she win?"
+                ]
+            , Paragraph
+                [ Body "Yes, of course, because this is a feel-good show where the main character never loses without there being a good reason for it established first. And then, as her opponent concedes, he hands her the black king, and tells her to keep it, shaking her hand closely, enveloping it with two hands. Now, it is as clear as daylight that she has been handed a note - the State Department guy was foreshadowing this!"
+                ]
+            , Paragraph
+                [ Body "Nope. Beth pockets the king, goes back to the car, and nothing is revealed until she leaves for the airport to catch a flight to America. But wait! As she is driving to the airport, she stops the car and asks to walk - leaving the State Department guy to be by herself! Of course, the audience realizes, we were being kept in the dark, she has a note instructing her to meet the Russians and she is going to meet them now! "
+                ]
+            , Paragraph
+                [ Body "Nope. She just walks down the streets, enjoying her fame from winning the World Chess Championships. A group of people playing chess in the streets, mob her and reveal her celebrity status. She sits down with a random person from the crowd, looks him in the eyes, and says \"Let's play.\". And then - credits."
+                ]
+            , Paragraph
+                [ Body "What the fuck? What was all that foreshadowing about? I felt pissed about the ending, and felt that it missed something. I try not to get upset about things being bad unless I can come up with a better version in five minutes. Here, however, something occured to me in my five minutes. If she did receive a note, telling her to meet the Russian champions in the park, and went there after leaving the taxi, they could have had a conversation. He could have said \"come defect to Russia, we can train together\" or \"I want to defect to America, we can train together\". Beth could have said \"I have played a lot of chess. I think it's time I take a break.\", and then walked away. Then, her game with the stranger from the street is meaningful. She is playing chess for fun, not because she has to! She has proven herself, to herself, and can take time off, but she also genuinely enjoys the same."
+                ]
+            , Paragraph
+                [ Body "In my opinion, that ending would have been much more satisfying."
+                ]
+            ]
         ]
 
 
