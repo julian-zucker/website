@@ -2664,6 +2664,27 @@ essays =
                 , Body ". We agree that merging in late slows down traffic overall. But to him, this particular action was a \"thing locals did\", and so something that he was supposed to do, and something that signalled he was part of this group. Certainly whatever the locals do is just the local custom, and not complying is rude! We both saw that exact same interaction on the roads, and came to entirely different conclusions about what the \"correct\" or \"acceptable\" thing to do is."
                 ]
             ]
+        , Model
+            "When Worse Is Better"
+            "when-worse-is-better"
+            Listed
+            [ Paragraph
+                [ Body "Software engineers like to jokingly say "
+                , Link { text = "worse is better", href = "https=//en.wikipedia.org/wiki/Worse_is_better" }
+                , Body ", to mean that sometimes our ideals are in conflict. They usually don't mean that bad things are better than good things, but something more along the lines of \"properties other than code quailty matter\". But, sometimes it seems like there are ways to make things purely better, with no downsides. Like, improving the accuracy of Google Translate."
+                ]
+            , Paragraph
+                [ Body "Now, Google Translate is a wonderful tool. I've used it extensively, for example, to pass my high school Chinese classes. And in many cases, improving translation accuracy is good! For all the travelers who use Google Translate as a way to communicate with locals, people in multilingual cultures that need to communicate with someone who speaks a different language, and businesses that don't want to pay translators, a really high-quality Google Translate is the ideal!"
+                ]
+            , Paragraph
+                [ Body "But there's at least one case where high-quality Google Translate is bad. If you want to make sure that your English is clear to people who speak limited English, it can be useful to translate from your language to the other language and then back. If the \"round-tripped\" text is similar to what you put in, then the translation is good, and people with rudimentary grasp on the language will be able to understand it. After all, Google Translate only has a rudimentary grasp on the language, and itwas able to understand it - twice!"
+                ]
+            , Paragraph
+                [ Body "This isn't to say that Google should stop working on Translate. It's still a valuable tool, and almost every use case benefits from increased accuracy. But, as "
+                , Link { text = "XKCD has told us", href = "https=//xkcd.com/1172/" }
+                , Body ", every change breaks someone's workflow."
+                ]
+            ]
         ]
 
 
