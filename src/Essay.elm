@@ -2648,6 +2648,22 @@ essays =
                 [ Body "In my opinion, that ending would have been much more satisfying."
                 ]
             ]
+        , Model
+            "Merging Onto Storrow"
+            "merging-onto-storrow"
+            Listed
+            [ Paragraph
+                [ Body "I got a visceral reminder of how two people can interpret an interaction entirely differently over the summer. My friend was driving me and some others back from the beach. We took 93 into Boston, and drove over the bridge. I marveled at the view, like I always do. As we soared across the Charles into Boston proper, my friend mentioned that he can tell who the tourists are because they don't know how to merge on Storrow drive. As someone who has never driven in Boston, I wasn't quite sure what he meant, and asked him to elaborate."
+                ]
+            , Paragraph
+                [ Body "He told me that the tourists saw the sign saying \"Storrow Drive\", got in that lane a half-mile before they had to, and waited in traffic. Meanwhile, locals knew to drive down as far as they could before merging in to the lane that would end up as Storrow. Now, to me, the people who get in line are the kind people who obey the laws of traffic and maximize average speed, and the people who cut in at the last possible moment are doing whatever would save themselves time, even if it costs other people time. To me, the good side to be on is in the lane, and for him, the good side to be on is merging in later."
+                ]
+            , Paragraph
+                [ Body "We both agree, in general, that doing things that benefit yourself at the cost of other people is bad "
+                , Footnote "Although, he does work in finance, so I might have to double-check on this one."
+                , Body ". We agree that merging in late slows down traffic overall. But to him, this particular action was a \"thing locals did\", and so something that he was supposed to do, and something that signalled he was part of this group. Certainly whatever the locals do is just the local custom, and not complying is rude! We both saw that exact same interaction on the roads, and came to entirely different conclusions about what the \"correct\" or \"acceptable\" thing to do is."
+                ]
+            ]
         ]
 
 
