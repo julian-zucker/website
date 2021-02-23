@@ -1102,7 +1102,7 @@ essays =
             [ Paragraph
                 [ Body "You will have more sex if you use game theory to inform your choice of outfits "
                 , Footnote "This sentence perfectly captures who I am as a person."
-                , Body ". In this essay, I will argue that you should be wearing black to frat parties. If you're going to a frat party, I hope your goal is to have casual sex. I hope this for two reasons, first, because I go frat parties for casual sex, and having other people there with the same goal makes that easier, and second, because there is no other possible justification "
+                , Body ". In this essay, I will argue that you should be wearing black to frat parties. If you're going to a frat party, I hope your goal is to have casual sex. I hope this for two reasons, first, because I go to frat parties for casual sex, and having other people there with the same goal makes that easier, and second, because there is no other possible justification "
                 , Footnote "Well, the booze is cheap. If you're there to drink economically, I support that as well."
                 , Body " for spending several hours crammed in a smallish basement with a hundred people. Assuming that your goal is to find a partner, let's talk about the game theory behind this choice."
                 ]
@@ -1110,16 +1110,16 @@ essays =
                 [ Body "Finding a sexual partner at a frat party is roughly equivalent to the "
                 , Link { text = "stable marriage problem", href = "https://en.wikipedia.org/wiki/Stable_marriage_problem" }
                 , Body " "
-                , Footnote "Except that you're not looking for a marriage, or anything close to that."
+                , Footnote "Except that you're not looking for a marriage, or anything close to one."
                 , Footnote "And that a little instability can be fun."
                 , Body ". Assume for a moment we just care about the heterosexual subset of the people at this party, and further, we only care about the people who are there to get laid "
                 , Footnote "When I say \"care\", I mean for the stable matching, not in general."
-                , Body ". There is imperfect information, and people don't even know their own preference set over the people at the party "
+                , Body ". There is imperfect information, because people don't know their preferences over the people at the party "
                 , Footnote "Partially because people never know their exact preference set, partially because a dark basement with flashing lights is not the best place to evaluate someone else's attractiveness. "
                 , Body ", but the general principle is the same. People are trying to end the night matched with a partner, and they have some set of preferences over partners."
                 ]
             , Paragraph
-                [ Body "So let's examine these preference sets! It is pretty easy to observe that, on average, tall, muscular men are more attractive. You don't have to spend a lot of time at frat parties in order to discover these facts. But it is important to notice the girls that these men are making out with "
+                [ Body "So let's examine these preferences! It is pretty easy to observe that, on average, tall, muscular men are more attractive. You don't have to spend a lot of time at frat parties in order to discover that fact. But it is important to notice the girls that these men are making out with "
                 , Footnote "Making out with so very very publicly."
                 , Body ". The girls they make out with fall within one particular archetype, slender and sorority-esque. Around the edges of the party, however, there are people that don't fit either of these archetypes. People who look more like musicians, or like art students, chat with each other. And they're pretty hot too! While many people are attracted primarily to people who fit the main frat party archetype, those are not the only people there. However, the standard frat archetype is the largest group present, so most people are tailoring the way they look to be attractive to those people."
                 ]
@@ -2683,6 +2683,25 @@ essays =
                 [ Body "This isn't to say that Google should stop working on Translate. It's still a valuable tool, and almost every use case benefits from increased accuracy. But, as "
                 , Link { text = "XKCD has told us", href = "https=//xkcd.com/1172/" }
                 , Body ", every change breaks someone's workflow."
+                ]
+            ]
+        , Model
+            "The Writer's Eye, The Photographer's Eye"
+            "writers-eye-photographers-eye"
+            Listed
+            [ Paragraph
+                [ Body "Writers are constantly on the lookout for ideas they want to write about, and things that could easily be explained. Photographs are constantly on the lookout for images they want to capture, and things that could easily be photographed."
+                ]
+            , Paragraph
+                [ Body "If you practice searching for new thoughts, staring at a blank document and wondering what to start typing, you are training your mind to notice when you think something new or interesting. Instead of letting that thought pass, you pause, grab it, and write it down somewhere for further investigation. Before I started writing, I was constantly generating random little quips, or cute new ideas that I would mention to whoever I was walking with, and then forget forever. Once I started writing, I kept a little note on my phone that tracked all the ideas I had that might be worth writing about. Then, when I sat down to write"
+                , Footnote "Particularly during NaNoWriMo, when I was trying to crank out words at all costs."
+                , Body ", I would just look at the phone, and all my (writing-relevant) thinking would be easily accessible."
+                ]
+            , Paragraph
+                [ Body "The photographer's eye is different, and more prevalent. One of the impacts of visual social media, like Instagram, is that everyone is on the lookout for aesthetics. When I use social media more, I can feel myself noticing more visual moments, thinking things like \"It would look really good to pose in that windowsill\" or whatever. The photographer's eye comes from looking at lots of places through a lens and trying to figure out which of them look good. If you do that long enough, your mind starts to automatically notice places that would look good through a lens. This is a useful skill, if you are trying to take good photos, but it also can make you do silly things, like arranging your house for photographability, instead of your own enjoyment. "
+                ]
+            , Paragraph
+                [ Body "In general, whenever you spend lots of time trying to find some type of things, whether it is a good idea or an aesthetic spot, you will start automatically finding those things. "
                 ]
             ]
         ]
